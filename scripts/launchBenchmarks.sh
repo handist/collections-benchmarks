@@ -11,13 +11,16 @@
 # configurations that are common betwen all the configurations                 #
 ################################################################################
 # Nb of hosts on which to run the benchmark
-NB_HOSTS=4
+NB_HOSTS=1
 
 # If using a Beowuld cluster, the path to the hostfile to use
 HOSTFILE=hosts
 
 # Timeout in minutes in which the program is allowed to run
 TIMEOUT=30
+
+# Number of times any benchmark needs to be run
+REPETITIONS=5
 
 # Script which is in charge of eiter directly running the benchmark (in the
 # case a Beowulf cluster is used) or submitting the programs to a job
@@ -48,9 +51,26 @@ do
     else
         echo "[INFO] Directory $NAME exists"
     fi
+
+    # Check for the presence of the configuration file, copy it is absent
+    if [[ -f ${NAME}/${config_file} ]]
+    then
+        echo "Configuration file already present"
+        diff ${config_file} ${NAME}/${config_file} > /dev/null 2>&1
+        if [[ ! $? ]]
+        then
+            echo "Files are different !!!"
+            echo "Skipping"
+            continue
+        fi
+    else
+        echo "Copying configuration file ${config_file} in directory ${NAME}"
+        cp ${config_file} ${NAME}
+    fi
+
     cd $NAME
-
-
+    source ../${PROGRAM_LAUNCHER}
+    cd ..
     # Check if previous executions of benchmarks were made
     # This check is made based on the STDOUT and STDERR ouput file names.
     # If launching a program benchmark would produce files with the same names as
