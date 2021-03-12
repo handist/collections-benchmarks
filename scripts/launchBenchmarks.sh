@@ -3,7 +3,8 @@
 # File used to launch the benchmarks using the configuration files passed as   #
 # parameter.                                                                   #
 ################################################################################
-BENCHMARK_DIR="`pwd`/benchmarks"
+HOME=`pwd`
+BENCHMARK_DIR="${HOME}/benchmarks"
 BENCHMARKS="DummyBenchmark.sh"
 ################################################################################
 # CONFIGURATION                                                                #
@@ -11,18 +12,6 @@ BENCHMARKS="DummyBenchmark.sh"
 # Here are the variables that contain the settings / paths to files /          #
 # configurations that are common betwen all the configurations                 #
 ################################################################################
-# Nb of hosts on which to run the benchmark
-NB_HOSTS=1
-
-# If using a Beowuld cluster, the path to the hostfile to use
-HOSTFILE=hosts
-
-# Timeout in minutes in which the program is allowed to run
-TIMEOUT=30
-
-# Number of times any benchmark needs to be run
-REPETITIONS=5
-
 # Script which is in charge of eiter directly running the benchmark (in the
 # case a Beowulf cluster is used) or submitting the programs to a job
 # management system

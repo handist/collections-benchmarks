@@ -1,4 +1,12 @@
 # Just a dummy benchmark which generates dummy values
-BENCHMARK_NAME="DummyBenchmark"
-MAIN="handist.market.MarketSimulation"
-ARGS="Let's pretend to have some arguments"
+export BENCHMARK_NAME="DummyBenchmark"
+export MAIN="handist.market.MarketSimulation"
+export ARGS="Let's pretend to have some arguments"
+export TIMEOUT=30s
+
+# Nb of hosts on which to run this dummy benchmark
+export NB_HOSTS=1
+# Number of times any benchmark needs to be run
+export REPETITIONS=1
+
+
