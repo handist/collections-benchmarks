@@ -10,6 +10,8 @@
  ******************************************************************************/
 package handist.market;
 
+import java.util.Random;
+
 /**
  * Launcher for a market simulation
  * @author Patrick Finnerty
@@ -25,7 +27,12 @@ public class MarketSimulation {
      */
     public static void main(String[] args) {
         for (String s : args) {
-            System.out.println(s);
+            System.err.println(s);
         }
+        Random r = new Random();
+        int initTime = r.nextInt(10);
+        System.out.println("INITIALIZATION;" + initTime);
+        int executionTime = r.nextInt(300);
+        System.out.println("EXECUTION;" + executionTime);
     }
 }
