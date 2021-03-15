@@ -4,7 +4,7 @@
 # These variables are used to identify the library / name of the version being #
 # tested. They will be used to create directories and name files accordingly   #
 ################################################################################
-export NAME=ExampleConfiguration
+export NAME=localhost-result
 export COLLECTIONS_LIBRARY=/home/patrick/handistCollections/target/collections--SNAPSHOT.jar
 export BENCHMARK_LIBRARY=/home/patrick/benchmarks/target/benchmarks-0.0.1-SNAPSHOT.jar
 export APGAS_LIBRARY_AND_DEPENDANCIES=/home/apgaslibs/*

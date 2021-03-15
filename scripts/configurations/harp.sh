@@ -4,9 +4,11 @@
 # These variables are used to identify the library / name of the version being #
 # tested. They will be used to create directories and name files accordingly   #
 ################################################################################
-NAME=Harp
-COLLECTIONS_LIBRARY=/home/patrick/handist/collections/target/collections--SNAPSHOT.jar
-BENCHMARK_LIBRARY=/home/patrick/handist/benchmarks/target/benchmarks-0.0.1-SNAPSHOT.jar
+export NAME=harp-result
+export COLLECTIONS_LIBRARY=/home/patrick/handist/collections/target/collections--SNAPSHOT.jar
+export BENCHMARK_LIBRARY=/home/patrick/handist/benchmarks/target/benchmarks-0.0.1-SNAPSHOT.ja
+export APGAS_LIBRARY_AND_DEPENDANCIES=/home/apgaslibs/*
+export JAVA_LIBRARY_PATH=/home/patrick/mpi-for-java
 
 ################################################################################
 # Options and configurations of the handist collections library                #
@@ -16,12 +18,14 @@ BENCHMARK_LIBRARY=/home/patrick/handist/benchmarks/target/benchmarks-0.0.1-SNAPS
 # used to launch the benchamrks.                                               #
 ################################################################################
 # Granularity (-Dglb.grain=<grain>)
-GRAIN=100
+export GRAIN=100
 # Lifeline strategy (-Dglb.lifeline=<lifeline>)
-LIFELINE="handist.collections.glb.lifeline.NoFLifeline"
+export LIFELINE="handist.collections.glb.lifeline.NoFLifeline"
 # Mode used to make lifeline answers (-glb.serialization=<serialization>)
-SERIALIZATION="kryo"
+export SERIALIZATION="kryo"
 # Number of concurrent workers (-Dglb.workers)
-WORKERS=3
+export WORKERS=3
 # Core restriction (option of taskset -ca <core_restriction>)
-CORE_RESTRICTION="0-3"
+export CORE_RESTRICTION="0-3"
+# If using a Beowuld cluster, the path to the hostfile to use
+export HOSTFILE=/home/patrick/harp

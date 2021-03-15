@@ -1,5 +1,5 @@
 # Just a dummy benchmark which generates dummy values
-export BENCHMARK_NAME="DummyBenchmark"
+export BENCHMARK_NAME="dummy"
 export MAIN="handist.market.MarketSimulation"
 export ARGS="Let's pretend to have some arguments"
 export TIMEOUT=30s
