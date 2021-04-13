@@ -1,18 +1,13 @@
-<!--
-  Copyright (c) 2021 Handy Tools for Distributed Computing (HanDist) project.
-  
-  This program and the accompanying materials are made available to you under 
-  the terms of the Eclipse Public License 1.0 which accompanies this
-  distribution, 
-  and is available at https://www.eclipse.org/legal/epl-v10.html
-  
-  SPDX-License-Identifier: EPL-1.0
--->
+<!-- Copyright (c) 2021 Handy Tools for Distributed Computing (HanDist) project. 
+	This program and the accompanying materials are made available to you under 
+	the terms of the Eclipse Public License 1.0 which accompanies this distribution, 
+	and is available at https://www.eclipse.org/legal/epl-v10.html SPDX-License-Identifier: 
+	EPL-1.0 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>handist</groupId>
+	<groupId>com.github.handist</groupId>
 	<artifactId>benchmarks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Handist Distributed Collection Benchmarks</name>
@@ -25,38 +20,19 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
-	<profiles>
-		<profile>
-			<id>local</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<dependencies>
-				<dependency><!-- This will take the "snapshot" version which has been 
-						installed in the local Maven repository -->
-					<groupId>handist</groupId>
-					<artifactId>collections</artifactId>
-					<version>-SNAPSHOT</version><!-- TODO change when we make a first release -->
-					<scope>compile</scope>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<id>github</id>
-			<repositories>
-				<repository>
-					<id>jitpack.io</id>
-					<url>https://jitpack.io</url>
-				</repository>
-			</repositories>
-			<dependencies>
-				<dependency>
-					<groupId>com.github.handist</groupId>
-					<artifactId>handistcollections</artifactId>
-					<version>develop-SNAPSHOT</version><!-- TODO change when we make a first 
-						release -->
-				</dependency>
-			</dependencies>
-		</profile>
-	</profiles>
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.github.handist</groupId>
+			<artifactId>collections</artifactId>
+			<version>develop-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
 </project>
