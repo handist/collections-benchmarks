@@ -1,0 +1,39 @@
+Concurrent workers; 68
+Granulatiry; 8
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+[place(8)] Error when calling remove [72000,73000) on code 201
+Worker number 56 on place(8) sufferred a handist.collections.dist.DistManager$ParameterErrorException: [place(8)] Error when calling remove [72000,73000) on code 201
+Worker number 8 on place(4) sufferred a java.lang.NullPointerExceptionhandist.collections.dist.DistManager$ParameterErrorException: [place(8)] Error when calling remove [72000,73000) on code 201
+
+	at handist.collections.dist.DistManager.reject(DistManager.java:244)
+	at handist.collections.dist.DistManager.remove(DistManager.java:271)
+	at handist.collections.dist.DistCol.remove(DistCol.java:522)
+	at handist.collections.ChunkedList.attemptSplitChunkAtTwoPoints(ChunkedList.java:517)
+	at handist.collections.ChunkedList.splitChunks(ChunkedList.java:1263)
+	at handist.collections.dist.DistCol.moveRangeAtSync(DistCol.java:471)
+	at handist.collections.glb.DistColGlbTask.answerLifeline(DistColGlbTask.java:466)
+	at handist.collections.glb.GlbComputer.worker(GlbComputer.java:973)
+	at handist.collections.glb.GlbComputer.lambda$attemptToSpawnWorker$4128462c$1(GlbComputer.java:574)
+	at apgas.impl.UncountedTask.compute(UncountedTask.java:65)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)java.lang.NullPointerException
+
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at handist.collections.dist.DistManager.diffOfKeyIs(DistManager.java:135)	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+
+	at handist.collections.dist.DistManager.remove(DistManager.java:252)	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+
+	at handist.collections.dist.DistCol.remove(DistCol.java:522)
+	at handist.collections.ChunkedList.attemptSplitChunkAtTwoPoints(ChunkedList.java:517)
+	at handist.collections.ChunkedList.splitChunks(ChunkedList.java:1263)
+	at handist.collections.dist.DistCol.moveRangeAtSync(DistCol.java:471)
+	at handist.collections.glb.DistColGlbTask.answerLifeline(DistColGlbTask.java:466)
+	at handist.collections.glb.GlbComputer.worker(GlbComputer.java:973)
+	at handist.collections.glb.GlbComputer.lambda$attemptToSpawnWorker$4128462c$1(GlbComputer.java:574)
+	at apgas.impl.UncountedTask.compute(UncountedTask.java:65)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)

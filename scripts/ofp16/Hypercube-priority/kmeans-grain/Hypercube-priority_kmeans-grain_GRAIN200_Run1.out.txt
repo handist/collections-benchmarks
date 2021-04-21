@@ -1,0 +1,19 @@
+Starting process <9> on on <c3274.ofp>
+Starting process <2> on on <c3267.ofp>
+Starting process <1> on on <c3266.ofp>
+Starting process <15> on on <c3280.ofp>
+Starting process <8> on on <c3273.ofp>
+Starting process <4> on on <c3269.ofp>
+Starting process <5> on on <c3270.ofp>
+Starting process <0> on on <c3265.ofp>
+Starting process <10> on on <c3275.ofp>
+Starting process <12> on on <c3277.ofp>
+Starting process <13> on on <c3278.ofp>
+Starting process <7> on on <c3272.ofp>
+Starting process <11> on on <c3276.ofp>
+Starting process <3> on on <c3268.ofp>
+Starting process <6> on on <c3271.ofp>
+Starting process <14> on on <c3279.ofp>
+Init; 63787.335811 ms
+Iter 0; 3853.744768; ; 2536.972771; 748.728226; 568.043771
+Iter 1; 925.219804; ; 340.142765; 220.577373; 364.499666

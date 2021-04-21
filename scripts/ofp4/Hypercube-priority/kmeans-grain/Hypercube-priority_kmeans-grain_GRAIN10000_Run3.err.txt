@@ -1,0 +1,4 @@
+Concurrent workers; 68
+Granulatiry; 10000
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO

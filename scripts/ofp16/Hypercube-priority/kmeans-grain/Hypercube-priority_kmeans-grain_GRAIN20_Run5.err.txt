@@ -1,0 +1,22 @@
+Concurrent workers; 68
+Granulatiry; 20
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+[place(0)] Error when calling add [1196957,1197000) on code 103
+Worker number 13 on place(0) sufferred a handist.collections.dist.ElementLocationManager$ParameterErrorException: [place(0)] Error when calling add [1196957,1197000) on code 103
+handist.collections.dist.ElementLocationManager$ParameterErrorException: [place(0)] Error when calling add [1196957,1197000) on code 103
+	at handist.collections.dist.ElementLocationManager.reject(ElementLocationManager.java:249)
+	at handist.collections.dist.ElementLocationManager.add(ElementLocationManager.java:89)
+	at handist.collections.dist.DistCol.add_unchecked(DistCol.java:178)
+	at handist.collections.ChunkedList.attemptSplitChunkAtTwoPoints(ChunkedList.java:515)
+	at handist.collections.ChunkedList.splitChunks(ChunkedList.java:1263)
+	at handist.collections.dist.DistCol.moveRangeAtSync(DistCol.java:406)
+	at handist.collections.glb.DistColGlbTask.answerLifeline(DistColGlbTask.java:481)
+	at handist.collections.glb.GlbComputer.worker(GlbComputer.java:982)
+	at handist.collections.glb.GlbComputer.lambda$attemptToSpawnWorker$4128462c$1(GlbComputer.java:579)
+	at apgas.impl.UncountedTask.compute(UncountedTask.java:65)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:189)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)

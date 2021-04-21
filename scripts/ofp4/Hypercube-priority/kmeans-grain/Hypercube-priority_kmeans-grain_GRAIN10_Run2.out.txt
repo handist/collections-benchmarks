@@ -1,0 +1,9 @@
+Starting process <0> on on <c1612.ofp>
+Starting process <2> on on <c1614.ofp>
+Starting process <3> on on <c1615.ofp>
+Starting process <1> on on <c1613.ofp>
+Init; 60891.72787 ms
+Iter 0; 4632.883594; ; 3156.943553; 951.463528; 524.476513
+Iter 1; 785.953854; ; 396.587234; 172.39448; 216.97214
+Iter 2; 561.333028; ; 175.063741; 235.696883; 150.572404
+Iter 3; 675.069467; ; 227.389917; 293.149013; 154.530537

@@ -290,16 +290,18 @@ public class KMeans {
                 // Assign each point to a cluster
                 points.GLB.forEach(p -> p.assignCluster(centroids)).waitGlobalTermination();
 
+                long assignFinished = System.nanoTime();
                 // Calculate the average position of each cluster
                 AveragePosition avgClusterPosition = points.GLB.reduce(new AveragePosition(K, DIMENSION)).result();
 
+                long avgFinished = System.nanoTime();
                 // Calculate the new centroid of each cluster
                 ClosestPoint closestPoint = points.GLB
                         .reduce(new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters)).result();
                 clusterCentroids = closestPoint.closestPointCoordinates;
                 
                 long iterEnd = System.nanoTime();
-                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart)/1e6 + " ms");
+                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart)/1e6 + "; " + "; " + (assignFinished - iterStart)/1e6 + "; " + (avgFinished - assignFinished)/1e6 + "; " + (iterEnd - avgFinished)/1e6 );
             }
         });
 

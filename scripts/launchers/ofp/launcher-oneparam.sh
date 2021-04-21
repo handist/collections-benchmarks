@@ -18,7 +18,7 @@ do
 	# second job from being submitted with the same output file
 	touch ${OUTFILE}
 	touch ${ERRFILE}
-	echo "[${PARAM}:${value} Run ${run}] `pjsub -X --rsc-list rscgrp=${RSCGRP},node=${NB_HOSTS},elapse=${TIMEOUT} -o ${OUTFILE} -e ${ERRFILE} ${BENCH_HOME}/launchers/${HOST_TYPE}/program.sh 2>&1`"
+	echo "[${PARAM}:${value} Run ${run}] `pjsub -N ${BENCHMARK_NAME}${run} -X --rsc-list rscgrp=${RSCGRP},node=${NB_HOSTS},elapse=${TIMEOUT} -o ${OUTFILE} -e ${ERRFILE} ${BENCH_HOME}/launchers/${HOST_TYPE}/program.sh 2>&1`"
     fi
 done
 done

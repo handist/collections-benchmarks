@@ -10,7 +10,7 @@ do
         echo "[$STAMP] Skipping Run #${run}, execution output files present"
     else
         echo "[$STAMP] Launching Run #${run}"
-        nohup ${BENCH_HOME}/beowulfProgram.sh > ${OUTFILE} 2> ${ERRFILE}
+        nohup ${BENCH_HOME}/launchers/${HOST_TYPE}/program.sh > ${OUTFILE} 2> ${ERRFILE}
     fi
 done
 

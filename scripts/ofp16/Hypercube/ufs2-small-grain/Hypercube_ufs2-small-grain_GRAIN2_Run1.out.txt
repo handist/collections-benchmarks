@@ -1,0 +1,17 @@
+Starting process <1> on on <c0466.ofp>
+Starting process <6> on on <c0517.ofp>
+Starting process <3> on on <c0468.ofp>
+Starting process <9> on on <c0662.ofp>
+Starting process <7> on on <c0660.ofp>
+Starting process <13> on on <c0680.ofp>
+Starting process <14> on on <c0681.ofp>
+Starting process <12> on on <c0679.ofp>
+Starting process <15> on on <c0682.ofp>
+Starting process <2> on on <c0467.ofp>
+Starting process <5> on on <c0498.ofp>
+Starting process <11> on on <c0670.ofp>
+Starting process <8> on on <c0661.ofp>
+Starting process <4> on on <c0469.ofp>
+Starting process <0> on on <c0465.ofp>
+Starting process <10> on on <c0669.ofp>
+Round ; Elapsed Time (ms); h0 trees; h1 trees; h2 trees; h3 trees; h4 trees; h5 trees; h6 trees; h7 trees; h8 trees; h9 trees; h10 trees; h11 trees; h12 trees; h13 trees; h14 trees; h15 trees; h0 nodes; h1 nodes; h2 nodes; h3 nodes; h4 nodes; h5 nodes; h6 nodes; h7 nodes; h8 nodes; h9 nodes; h10 nodes; h11 nodes; h12 nodes; h13 nodes; h14 nodes; h15 nodes; 

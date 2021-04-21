@@ -1,0 +1,7 @@
+Starting process <2> on on <c0792.ofp>
+Starting process <0> on on <c0790.ofp>
+Starting process <1> on on <c0791.ofp>
+Starting process <3> on on <c0797.ofp>
+Round ; Elapsed Time (ms); h0 trees; h1 trees; h2 trees; h3 trees; h0 nodes; h1 nodes; h2 nodes; h3 nodes; 
+Round 0; 872370.525708; 400; 400; 400; 400; 2.099665301E9; 2.286758846E9; 2.452736215E9; 2.243309623E9; 
+Round 1; 834599.549142; 400; 400; 400; 400; 2.253809654E9; 2.126296847E9; 1.874771993E9; 2.352571624E9; 
