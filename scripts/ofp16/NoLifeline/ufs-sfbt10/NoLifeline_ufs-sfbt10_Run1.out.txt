@@ -1,0 +1,21 @@
+Starting process <14> on on <c0760.ofp>
+Starting process <4> on on <c0750.ofp>
+Starting process <2> on on <c0748.ofp>
+Starting process <15> on on <c0761.ofp>
+Starting process <13> on on <c0759.ofp>
+Starting process <12> on on <c0758.ofp>
+Starting process <11> on on <c0757.ofp>
+Starting process <5> on on <c0751.ofp>
+Starting process <7> on on <c0753.ofp>
+Starting process <0> on on <c0746.ofp>
+Starting process <9> on on <c0755.ofp>
+Starting process <8> on on <c0754.ofp>
+Starting process <3> on on <c0749.ofp>
+Starting process <10> on on <c0756.ofp>
+Starting process <1> on on <c0747.ofp>
+Starting process <6> on on <c0752.ofp>
+Round ; Elapsed Time (ms); h0 trees; h1 trees; h2 trees; h3 trees; h4 trees; h5 trees; h6 trees; h7 trees; h8 trees; h9 trees; h10 trees; h11 trees; h12 trees; h13 trees; h14 trees; h15 trees; h0 nodes; h1 nodes; h2 nodes; h3 nodes; h4 nodes; h5 nodes; h6 nodes; h7 nodes; h8 nodes; h9 nodes; h10 nodes; h11 nodes; h12 nodes; h13 nodes; h14 nodes; h15 nodes; 
+Round 0; 357368.563361; 700; 600; 600; 600; 600; 600; 700; 600; 600; 700; 700; 600; 600; 600; 600; 600; 9.73657034E8; 8.35070286E8; 8.39721391E8; 8.70847276E8; 8.61776995E8; 8.58640527E8; 9.52471046E8; 9.19802018E8; 8.74236086E8; 9.20456743E8; 1.005022982E9; 7.56475429E8; 7.58800302E8; 8.62345843E8; 8.74707077E8; 8.00392724E8; 
+Round 1; 361393.624602; 700; 600; 600; 600; 600; 600; 700; 600; 600; 700; 700; 600; 600; 600; 600; 600; 1.014617074E9; 8.65189833E8; 8.25398695E8; 8.6408672E8; 8.8862858E8; 8.67850585E8; 9.02147621E8; 8.75609577E8; 8.28887027E8; 8.89071495E8; 9.29306515E8; 8.06177202E8; 7.9721572E8; 8.31158742E8; 8.33020293E8; 9.68528948E8; 
+Round 2; 363775.655366; 700; 600; 600; 600; 600; 600; 700; 600; 600; 700; 700; 600; 600; 600; 600; 600; 1.023515511E9; 8.4388501E8; 8.05598489E8; 8.39593139E8; 8.5688955E8; 8.97189054E8; 8.88921693E8; 8.89798205E8; 8.87816902E8; 9.78429849E8; 1.015703628E9; 8.37747879E8; 8.54982851E8; 8.70776744E8; 8.8879681E8; 8.5308828E8; 
+Round 3; 385227.323366; 700; 600; 600; 600; 600; 600; 700; 600; 600; 700; 700; 600; 600; 600; 600; 600; 1.015870526E9; 7.95295157E8; 8.78835226E8; 8.90737335E8; 7.45307791E8; 8.41379909E8; 9.83432079E8; 8.34925518E8; 8.85896229E8; 9.65652571E8; 1.081363185E9; 7.87934821E8; 8.36453406E8; 8.22393134E8; 8.85984738E8; 7.69498734E8; 

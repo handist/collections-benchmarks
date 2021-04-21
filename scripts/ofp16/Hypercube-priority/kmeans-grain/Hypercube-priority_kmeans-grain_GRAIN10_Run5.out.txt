@@ -1,0 +1,17 @@
+Starting process <0> on on <c3009.ofp>
+Starting process <2> on on <c3011.ofp>
+Starting process <1> on on <c3010.ofp>
+Starting process <10> on on <c3019.ofp>
+Starting process <5> on on <c3014.ofp>
+Starting process <14> on on <c3023.ofp>
+Starting process <6> on on <c3015.ofp>
+Starting process <13> on on <c3022.ofp>
+Starting process <9> on on <c3018.ofp>
+Starting process <12> on on <c3021.ofp>
+Starting process <4> on on <c3013.ofp>
+Starting process <11> on on <c3020.ofp>
+Starting process <7> on on <c3016.ofp>
+Starting process <8> on on <c3017.ofp>
+Starting process <15> on on <c3024.ofp>
+Starting process <3> on on <c3012.ofp>
+Init; 66118.078375 ms

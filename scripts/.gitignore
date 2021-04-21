@@ -2,3 +2,5 @@ ofp/
 4piccolos/
 harp/
 localhost/
+debug/
+.*

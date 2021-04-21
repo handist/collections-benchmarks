@@ -1,0 +1,20 @@
+Starting process <7> on on <c2246.ofp>
+Starting process <9> on on <c2248.ofp>
+Starting process <5> on on <c2244.ofp>
+Starting process <6> on on <c2245.ofp>
+Starting process <11> on on <c2250.ofp>
+Starting process <0> on on <c2239.ofp>
+Starting process <4> on on <c2243.ofp>
+Starting process <2> on on <c2241.ofp>
+Starting process <15> on on <c2255.ofp>
+Starting process <1> on on <c2240.ofp>
+Starting process <3> on on <c2242.ofp>
+Starting process <14> on on <c2254.ofp>
+Starting process <8> on on <c2247.ofp>
+Starting process <12> on on <c2252.ofp>
+Starting process <10> on on <c2249.ofp>
+Starting process <13> on on <c2253.ofp>
+Round ; Elapsed Time (ms); h0 trees; h1 trees; h2 trees; h3 trees; h4 trees; h5 trees; h6 trees; h7 trees; h8 trees; h9 trees; h10 trees; h11 trees; h12 trees; h13 trees; h14 trees; h15 trees; h0 nodes; h1 nodes; h2 nodes; h3 nodes; h4 nodes; h5 nodes; h6 nodes; h7 nodes; h8 nodes; h9 nodes; h10 nodes; h11 nodes; h12 nodes; h13 nodes; h14 nodes; h15 nodes; 
+Round 0; 3090.472156; 63299; 62529; 63691; 62524; 61889; 61202; 60630; 63087; 62262; 62818; 63077; 62089; 62261; 62597; 63859; 62186; 3.48949323E8; 3.41084675E8; 3.47300309E8; 3.4276454E8; 3.38794418E8; 3.32829689E8; 3.3315671E8; 3.42502265E8; 3.38439444E8; 3.43095648E8; 3.45379141E8; 3.38698734E8; 3.39362128E8; 3.41018406E8; 3.49035049E8; 3.37936808E8; 
+Round 1; 2166.885776; 63409; 62686; 63259; 62504; 61976; 61378; 59503; 63153; 62643; 62210; 63259; 61784; 63210; 62693; 63621; 62712; 3.45313945E8; 3.41050667E8; 3.44979116E8; 3.42336686E8; 3.41009881E8; 3.33288126E8; 3.26408103E8; 3.4545206E8; 3.40794679E8; 3.40805467E8; 3.44635242E8; 3.39516011E8; 3.46059439E8; 3.43004037E8; 3.49805949E8; 3.39564159E8; 
+Round 2; 2036.836464; 63117; 62562; 62920; 62560; 62042; 62216; 59524; 62959; 62676; 62206; 63242; 61761; 63253; 62509; 63730; 62723; 3.4360536E8; 3.41067126E8; 3.45747944E8; 3.43901875E8; 3.3828105E8; 3.39302071E8; 3.25965707E8; 3.45716285E8; 3.4161475E8; 3.37217432E8; 3.47298727E8; 3.39015695E8; 3.47357944E8; 3.44591067E8; 3.47739245E8; 3.39008308E8; 
