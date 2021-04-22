@@ -8,7 +8,7 @@ export HOST=debug
 export HOST_TYPE=beowulf
 
 # All the benchmarks that we want to run with this host
-export BENCHMARKS="ufs3-debug.sh"
+export BENCHMARKS="kmeans-triangle.sh"
 # All the configurations that we want to test with this host
 export CONFIGS="nolifeline-priority.sh"
 #export CONFIGS="merge75-config.sh 74-explicititerations.sh 74-arrayiterations.sh 74-arrayiterationsV2.sh"
