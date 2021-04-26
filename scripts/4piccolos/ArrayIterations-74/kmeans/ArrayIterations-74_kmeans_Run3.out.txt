@@ -1,0 +1,35 @@
+Starting process <0> on on <piccolo04>
+Starting process <2> on on <piccolo06>
+Starting process <1> on on <piccolo05>
+Starting process <3> on on <piccolo07>
+Init; 30606.948057 ms
+Iter 0; 384.103807 ms
+Iter 1; 127.994549 ms
+Iter 2; 122.357692 ms
+Iter 3; 155.948291 ms
+Iter 4; 238.040781 ms
+Iter 5; 140.729625 ms
+Iter 6; 86.440638 ms
+Iter 7; 95.418585 ms
+Iter 8; 90.107539 ms
+Iter 9; 82.94819 ms
+Iter 10; 75.756137 ms
+Iter 11; 79.512948 ms
+Iter 12; 92.108956 ms
+Iter 13; 93.724038 ms
+Iter 14; 89.836449 ms
+Iter 15; 100.567004 ms
+Iter 16; 79.453076 ms
+Iter 17; 86.49814 ms
+Iter 18; 100.464061 ms
+Iter 19; 95.151462 ms
+Iter 20; 88.862791 ms
+Iter 21; 99.323163 ms
+Iter 22; 91.822132 ms
+Iter 23; 84.876323 ms
+Iter 24; 92.25523 ms
+Iter 25; 93.440901 ms
+Iter 26; 77.337193 ms
+Iter 27; 89.197037 ms
+Iter 28; 106.731812 ms
+Iter 29; 93.783909 ms
