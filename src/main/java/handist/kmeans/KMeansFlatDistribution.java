@@ -20,7 +20,7 @@ import handist.kmeans.KMeans.AveragePosition;
 import handist.kmeans.KMeans.ClosestPoint;
 import handist.kmeans.KMeans.Point;
 
-public class KMeansTriangleDistribution {
+public class KMeansFlatDistribution {
 
     public static void main(String[] args) {
         // ARGUMENT PARSING
@@ -82,17 +82,8 @@ public class KMeansTriangleDistribution {
             final CollectiveMoveManager mm = new CollectiveMoveManager(world);
             final int hostCount = world.size();
             int destinationHost = 0;
-            int tBound = hostCount;
             for (final LongRange lr : points.ranges()) {
-                points.moveRangeAtSync(lr, world.get(destinationHost++), mm);
-                // The following if's are here to make a triangular distribution
-                if (destinationHost == tBound) {
-                    destinationHost = 0;
-                    tBound--;
-                    if (tBound == 0) {
-                        tBound = hostCount;
-                    }
-                }
+                points.moveRangeAtSync(lr, world.get((destinationHost++) % hostCount), mm);
             }
             mm.sync();
         });
@@ -174,7 +165,7 @@ public class KMeansTriangleDistribution {
      * Prints usage onto standard error output
      */
     private static void printUsage() {
-        System.err.println("Usage: java -cp [...] " + KMeansTriangleDistribution.class.getCanonicalName()
+        System.err.println("Usage: java -cp [...] " + KMeansFlatDistribution.class.getCanonicalName()
                 + " <point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of points> [seed]");
         System.err.println(
                 "This version of the KMeans benchmark purposely makes a triangular distribution instead of a flat one.");
