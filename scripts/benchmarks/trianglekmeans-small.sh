@@ -6,7 +6,7 @@ export MAIN="handist.kmeans.KMeansTriangleDistribution"
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <number of points> [seed]
 export ARGS="5 10 20 10000 10000000 42"
 export TIMEOUT=10:00
-export REPETITIONS=1
+export REPETITIONS=5
 
 # Script used to combine the results of this benchmark
 PARSER=kmeans-parser.sh

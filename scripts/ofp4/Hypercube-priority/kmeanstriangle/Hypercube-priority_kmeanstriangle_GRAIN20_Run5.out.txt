@@ -1,0 +1,5 @@
+Starting process <1> on on <c0811.ofp>
+Starting process <0> on on <c0810.ofp>
+Starting process <2> on on <c0812.ofp>
+Starting process <3> on on <c0813.ofp>
+Init; 97850.430331 ms
