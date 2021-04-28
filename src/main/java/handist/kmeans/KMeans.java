@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.CollectiveMoveManager;
-import handist.collections.dist.DistCol;
+import handist.collections.dist.DistChunkedList;
 import handist.collections.dist.Reducer;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
@@ -37,7 +37,7 @@ public class KMeans {
 
         /**
          * Constructor
-         * 
+         *
          * @param k number of clusters considered for computation
          */
         public AveragePosition(int k, int dimension) {
@@ -86,7 +86,7 @@ public class KMeans {
 
         /**
          * Constructor
-         * 
+         *
          * @param k         number of clusters considered for computation
          * @param dimension dimension of the points used
          */
@@ -119,7 +119,7 @@ public class KMeans {
 
         @Override
         public void reduce(Point input) {
-            double distance = distance(input.position, clusterAverage[input.clusterAssignment]);
+            final double distance = distance(input.position, clusterAverage[input.clusterAssignment]);
             if (distance < distanceToAverage[input.clusterAssignment]) {
                 distanceToAverage[input.clusterAssignment] = distance;
                 for (int n = 0; n < input.position.length; n++) {
@@ -142,7 +142,7 @@ public class KMeans {
 
         /**
          * Constructor
-         * 
+         *
          * @param initialPosition array of {@link Double} containing the point
          *                        coordinates of this point
          */
@@ -156,7 +156,7 @@ public class KMeans {
         public void assignCluster(double[][] clusterCentroids) {
             double closestDistance = Double.MAX_VALUE;
             for (int i = 0; i < clusterCentroids.length; i++) {
-                double distance = distance(position, clusterCentroids[i]);
+                final double distance = distance(position, clusterCentroids[i]);
                 if (distance < closestDistance) {
                     closestDistance = distance;
                     clusterAssignment = i;
@@ -168,7 +168,7 @@ public class KMeans {
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
      * root is not applied to the sum of the squares as it preserves the order.
-     * 
+     *
      * @param a first point
      * @param b second point
      * @return the distance between the two points.
@@ -184,7 +184,7 @@ public class KMeans {
 
     /**
      * Method taken from the Renaissance JavaKMeans benchmark
-     * 
+     *
      * @param count        number of data points desired
      * @param dimension    number of dimensions of data points
      * @param clusterCount "K" in K-Means
@@ -225,32 +225,32 @@ public class KMeans {
             } else {
                 seed = System.nanoTime();
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             printUsage();
             System.err.println("Arguments received were " + Arrays.toString(args));
             return;
         }
-        
+
         Config.printConfiguration(System.err);
-        
+
         // initialize final constants for easier lambda serialization later
         final int K = k;
         final int DIMENSION = dimension;
         final int REPETITIONS = repetitions;
 
         // INITIALIZATION
-        long initStart = System.nanoTime();
-        Random r = new Random(seed);
+        final long initStart = System.nanoTime();
+        final Random r = new Random(seed);
 
-        DistCol<Point> points = new DistCol<>();
-        List<Double[]> initialPoints = generateData(dataSize, dimension, k);
-        List<Double[]> initialCentroids = randomSample(k, initialPoints, r);
+        final DistChunkedList<Point> points = new DistChunkedList<>();
+        final List<Double[]> initialPoints = generateData(dataSize, dimension, k);
+        final List<Double[]> initialCentroids = randomSample(k, initialPoints, r);
 
         // Additional step for our implementation, we need to place the points in our
         // DistCol collection
         for (int chunkNumber = 0; chunkNumber < chunkCount; chunkNumber++) {
-            LongRange chunkRange = new LongRange(chunkNumber * chunkSize, (chunkNumber + 1) * chunkSize);
-            Chunk<Point> c = new Chunk<>(chunkRange, l -> {
+            final LongRange chunkRange = new LongRange(chunkNumber * chunkSize, (chunkNumber + 1) * chunkSize);
+            final Chunk<Point> c = new Chunk<>(chunkRange, l -> {
                 return new Point(initialPoints.get(l.intValue()));
             });
             points.add(c);
@@ -259,10 +259,10 @@ public class KMeans {
         // Second additional step: we distribute the chunks evenly across hosts
         final TeamedPlaceGroup world = TeamedPlaceGroup.getWorld();
         world.broadcastFlat(() -> {
-            CollectiveMoveManager mm = new CollectiveMoveManager(world);
+            final CollectiveMoveManager mm = new CollectiveMoveManager(world);
             final int hostCount = world.size();
             int destinationHost = 0;
-            for (LongRange lr : points.ranges()) {
+            for (final LongRange lr : points.ranges()) {
                 points.moveRangeAtSync(lr, world.get((destinationHost++) % hostCount), mm);
             }
             mm.sync();
@@ -270,38 +270,41 @@ public class KMeans {
 
         // Third additional step, we convert the list of initial centroids to a 2Darray
         // of double
-        double[][] initialClusterCenter = new double[k][dimension];
+        final double[][] initialClusterCenter = new double[k][dimension];
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < dimension; j++) {
                 initialClusterCenter[i][j] = initialCentroids.get(i)[j];
             }
         }
-        
-        long initEnd = System.nanoTime();
-        
-        System.out.println("Init; " + (initEnd - initStart)/ 1e6 + " ms");
+
+        final long initEnd = System.nanoTime();
+
+        System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
         GlobalLoadBalancer.underGLB(() -> {
             double[][] clusterCentroids = initialClusterCenter;
             for (int iter = 0; iter < REPETITIONS; iter++) {
-                long iterStart = System.nanoTime();
+                final long iterStart = System.nanoTime();
                 final double[][] centroids = clusterCentroids;
                 // Assign each point to a cluster
                 points.GLB.forEach(p -> p.assignCluster(centroids)).waitGlobalTermination();
 
-                long assignFinished = System.nanoTime();
+                final long assignFinished = System.nanoTime();
                 // Calculate the average position of each cluster
-                AveragePosition avgClusterPosition = points.GLB.reduce(new AveragePosition(K, DIMENSION)).result();
+                final AveragePosition avgClusterPosition = points.GLB.reduce(new AveragePosition(K, DIMENSION))
+                        .result();
 
-                long avgFinished = System.nanoTime();
+                final long avgFinished = System.nanoTime();
                 // Calculate the new centroid of each cluster
-                ClosestPoint closestPoint = points.GLB
+                final ClosestPoint closestPoint = points.GLB
                         .reduce(new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters)).result();
                 clusterCentroids = closestPoint.closestPointCoordinates;
-                
-                long iterEnd = System.nanoTime();
-                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart)/1e6 + "; " + "; " + (assignFinished - iterStart)/1e6 + "; " + (avgFinished - assignFinished)/1e6 + "; " + (iterEnd - avgFinished)/1e6 );
+
+                final long iterEnd = System.nanoTime();
+                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
+                        + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
+                        + (iterEnd - avgFinished) / 1e6);
             }
         });
 
@@ -317,7 +320,7 @@ public class KMeans {
 
     /**
      * Selects some random points to be the initial centroids
-     * 
+     *
      * @param sampleCount number of centroids desired
      * @param data        the data from which to sample the initial centroids
      * @param random      random generator

@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import handist.collections.Chunk;
 import handist.collections.ChunkedList;
 import handist.collections.LongRange;
-import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.kmeans.KMeans.AveragePosition;
 import handist.kmeans.KMeans.ClosestPoint;
@@ -52,7 +51,6 @@ public class KMeansSequential {
         final int K = k;
         final int DIMENSION = dimension;
         final int REPETITIONS = repetitions;
-        final TeamedPlaceGroup WORLD = TeamedPlaceGroup.getWorld();
 
         // INITIALIZATION
         final long initStart = System.nanoTime();

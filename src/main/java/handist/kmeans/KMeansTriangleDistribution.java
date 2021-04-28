@@ -12,7 +12,7 @@ import apgas.Place;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.CollectiveMoveManager;
-import handist.collections.dist.DistCol;
+import handist.collections.dist.DistChunkedList;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
@@ -62,7 +62,7 @@ public class KMeansTriangleDistribution {
         final long initStart = System.nanoTime();
         final Random r = new Random(seed);
 
-        final DistCol<Point> points = new DistCol<>();
+        final DistChunkedList<Point> points = new DistChunkedList<>();
         final List<Double[]> initialPoints = generateData(dataSize, dimension, k);
         final List<Double[]> initialCentroids = randomSample(k, initialPoints, r);
 
