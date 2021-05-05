@@ -7,6 +7,7 @@ java -classpath ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
 -Djava.library.path=${JAVALIBRARYPATH} \
 -Dglb.grain=${GRAIN} \
 -Dglb.lifeline=${LIFELINE} \
--Dglb.serialization=${SERIALIZATION} \
+        -Dglb.trace=${TRACE} \
+        -Dglb.serialization=${SERIALIZATION} \
 handist.collections.launcher.Launcher 0 0 native \
 ${MAIN} ${ARGS}
