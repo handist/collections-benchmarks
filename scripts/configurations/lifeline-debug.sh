@@ -2,7 +2,7 @@
 # Configuration for the collections library whose last commit was the merge    #
 # from branch 78                                                               #
 ################################################################################
-export CONFIG_NAME="lifelibedebug"
+export CONFIG_NAME="lifelinedebug"
 export COLLECTIONS_LIBRARY=${BENCH_HOME}/jar/collections-v1.0.0.jar
 export DEPENDENCIES=${BENCH_HOME}/jar/deps
 ################################################################################
@@ -17,5 +17,5 @@ export GRAIN=40
 # Lifeline strategy (-Dglb.lifeline=<lifeline>)
 export LIFELINE="handist.collections.glb.lifeline.Hypercube"
 # Mode used to make lifeline answers (-glb.serialization=<serialization>)
-SERIALIZATION="kryo"
-TRACE="true"
+export SERIALIZATION="kryo"
+export TRACE="true"
