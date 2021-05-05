@@ -18,3 +18,4 @@ export GRAIN=100
 export LIFELINE="handist.collections.glb.lifeline.Hypercube"
 # Mode used to make lifeline answers (-glb.serialization=<serialization>)
 SERIALIZATION="kryo"
+export TRACE="false"
