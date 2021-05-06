@@ -9,7 +9,7 @@ export TIMEOUT=10:00
 export REPETITIONS=5
 
 # Script used to combine the results of this benchmark
-PARSER=kmeans-parser.sh
+PARSER=kmeans-grain-parser.sh
 
 PARAM="GRAIN"
 VALUES="4 10 20 40 100 200 1000 10000"
