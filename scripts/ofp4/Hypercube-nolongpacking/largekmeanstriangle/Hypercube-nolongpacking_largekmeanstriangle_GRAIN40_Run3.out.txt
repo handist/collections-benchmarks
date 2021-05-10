@@ -1,0 +1,7 @@
+Starting process <1> on on <c2440.ofp>
+Starting process <3> on on <c2442.ofp>
+Starting process <0> on on <c2439.ofp>
+Starting process <2> on on <c2441.ofp>
+Init; 67491.275979 ms
+Iter 0; 11041.021843; 7696.289182; 1803.590455; 1541.142206; 4056893; 2092538; 2793595; 1061954
+Iter 1; 2412.067823; 1911.978442; 142.245888; 357.843493; 4069688; 2054917; 2766115; 1114260
