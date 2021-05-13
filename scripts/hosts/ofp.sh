@@ -5,7 +5,7 @@ export HOST=ofp
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-export BENCHMARKS="flatkmeans-small.sh sequentialkmeans-small.sh"   #"kmeans.sh kmeans-grain.sh ufs-debug.sh"
+export BENCHMARKS="flatkmeans-small.sh sequentialkmeans-small.sh JFRkmeans-huge.sh"   #"kmeans.sh kmeans-grain.sh ufs-debug.sh"
 # List of library configruations that we want to test
 export CONFIGS="nolifeline-nolongboxing.sh"
 # Path to the MPI bindings

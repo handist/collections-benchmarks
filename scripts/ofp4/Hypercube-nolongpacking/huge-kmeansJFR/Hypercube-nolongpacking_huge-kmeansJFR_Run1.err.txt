@@ -1,0 +1,11 @@
+openjdk version "1.8.0_222"
+OpenJDK Runtime Environment (build 1.8.0_222-b10)
+OpenJDK 64-Bit Server VM (build 25.222-b10, mixed mode)
+Unrecognized VM option 'printGCDetails'
+Did you mean '(+/-)PrintGCDetails'?
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[mpiexec@c2134.ofp] HYD_sock_write (../../../../../src/pm/i_hydra/libhydra/sock/hydra_sock_intel.c:362): write error (Bad file descriptor)
+[mpiexec@c2134.ofp] HYD_sock_write (../../../../../src/pm/i_hydra/libhydra/sock/hydra_sock_intel.c:362): write error (Bad file descriptor)
+[ERR.] PLE 0017 plexec The process terminated with the signal.(rank=0)(nid=0x05ff0040)(sig=9)
+[mpiexec@c2134.ofp] wait_proxies_to_terminate (../../../../../src/pm/i_hydra/mpiexec/intel/i_mpiexec.c:528): downstream from host 172.30.167.62 exited with status 137
