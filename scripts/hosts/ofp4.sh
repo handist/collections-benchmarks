@@ -12,7 +12,7 @@ export BENCHMARKS="kmeans-grain.sh trianglekmeans-small.sh flatkmeans-small.sh t
 #"trianglekmeans2-small.sh"
 
 # List of library configruations that we want to test
-export CONFIGS="nolifeline-nolongboxing.sh hypercube-nolongboxing.sh lifeline-noanswerafterintraLB.sh" #" # lifeline-debug.sh 
+export CONFIGS="nolifeline-nolongboxing.sh hypercube-nolongboxing.sh lifeline-noanswerafterintraLB.sh hypercube-bugfix.sh" #" # lifeline-debug.sh
 # Path to the MPI bindings
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
