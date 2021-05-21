@@ -7,7 +7,8 @@ export HOST_TYPE=ofp
 # List of benchmarks that we want to run
 #export BENCHMARKS="cardgame2-larger.sh cardgame2-huge.sh cardgame2-largerv2.sh cargame2-hugev2.sh flatcardgame-larger.sh flatcardgame-huge.sh"
 #export BENCHMARKS="ufs-small.sh ufs-sfbt8.sh ufs-sfbt9.sh ufs-sfbt10.sh ufs-sfbt11.sh ufs-sfbt11v2.sh ufs2-small.sh ufs2ub-small.sh ufs2-small-grain.sh"
-export BENCHMARKS="kmeans-grain.sh trianglekmeans-small.sh flatkmeans-small.sh trianglekmeans-larger.sh flatkmeans-larger.sh flatkmeans-huge.sh trianglekmeans-huge.sh JFRkmeans-huge.sh"
+#export BENCHMARKS="kmeans-grain.sh trianglekmeans-small.sh flatkmeans-small.sh trianglekmeans-larger.sh flatkmeans-larger.sh flatkmeans-huge.sh trianglekmeans-huge.sh JFRkmeans-huge.sh"
+export BENCHMARKS="flatkmeans-huge.sh trianglekmeans-huge.sh JFRkmeans-huge.sh"
 # trianglekmeans-larger.sh flatkmeans-larger.sh flatkmeans-huge.sh trianglekmeans-huge.sh"
 #"trianglekmeans2-small.sh"
 
