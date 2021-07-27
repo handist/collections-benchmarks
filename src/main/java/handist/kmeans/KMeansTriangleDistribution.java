@@ -2,6 +2,8 @@ package handist.kmeans;
 
 import static handist.kmeans.KMeans.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -13,9 +15,11 @@ import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.CollectiveMoveManager;
 import handist.collections.dist.DistChunkedList;
+import handist.collections.dist.DistLog;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
+import handist.collections.glb.util.GlbLog;
 import handist.kmeans.KMeans.AveragePosition;
 import handist.kmeans.KMeans.ClosestPoint;
 import handist.kmeans.KMeans.Point;
@@ -31,6 +35,7 @@ public class KMeansTriangleDistribution {
 
         int dimension, k, repetitions, chunkSize, dataSize, chunkCount;
         long seed;
+        String logFilePrefix = null;
         try {
             dimension = Integer.parseInt(args[0]);
             k = Integer.parseInt(args[1]);
@@ -42,6 +47,9 @@ public class KMeansTriangleDistribution {
                 seed = Long.parseLong(args[5]);
             } else {
                 seed = System.nanoTime();
+            }
+            if (args.length > 6) {
+                logFilePrefix = args[6];
             }
         } catch (final Exception e) {
             printUsage();
@@ -111,6 +119,7 @@ public class KMeansTriangleDistribution {
         System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
+        int glbProgramCounter = 0; // used as suffix when saving the logs of the successive GLB programs
         double[][] clusterCentroids = initialClusterCenter;
         for (int iter = 0; iter < REPETITIONS; iter++) {
             final long iterStart = System.nanoTime();
@@ -118,10 +127,9 @@ public class KMeansTriangleDistribution {
             // Assign each point to a cluster
             final double[][] centroids = clusterCentroids;
             GlobalLoadBalancer.underGLB(() -> {
-
                 points.GLB.forEach(p -> p.assignCluster(centroids)).waitGlobalTermination();
             });
-
+            final DistLog clusterAssignLog = GlobalLoadBalancer.getPreviousLog();
             final long assignFinished = System.nanoTime(); // Time tracking
 
             // Compute the average position for each cluster
@@ -130,6 +138,7 @@ public class KMeansTriangleDistribution {
                 // Calculate the average position of each cluster
                 points.GLB.reduce(avgClusterPosition);
             });
+            final DistLog clusterAverageLog = GlobalLoadBalancer.getPreviousLog();
 
             final long avgFinished = System.nanoTime(); // Time tracking
 
@@ -139,6 +148,7 @@ public class KMeansTriangleDistribution {
                 // Calculate the new centroid of each cluster
                 points.GLB.reduce(closestPoint).result();
             });
+            final DistLog centroidAssignLog = GlobalLoadBalancer.getPreviousLog();
 
             final long iterEnd = System.nanoTime(); // Time tracking
 
@@ -163,6 +173,33 @@ public class KMeansTriangleDistribution {
             }
             System.out.println(sb.toString());
 
+            // If a prefix for the logs was specified, save the three successive DistLog
+            // instances
+            if (logFilePrefix != null) {
+                final GlbLog assignGlbLog = new GlbLog(clusterAssignLog);
+                final GlbLog averageGlbLog = new GlbLog(clusterAverageLog);
+                final GlbLog centroidGlbLog = new GlbLog(centroidAssignLog);
+
+                try {
+
+                    final String assignFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    assignGlbLog.saveToFile(new File(assignFilename));
+                    glbProgramCounter++;
+
+                    final String averageFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    averageGlbLog.saveToFile(new File(averageFilename));
+                    glbProgramCounter++;
+
+                    final String centroidFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    centroidGlbLog.saveToFile(new File(centroidFilename));
+                    glbProgramCounter++;
+
+                } catch (final IOException e) {
+                    System.err.println("Program encountered when log file");
+                    e.printStackTrace();
+                }
+            }
+
 //            System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
 //                    + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
 //                    + (iterEnd - avgFinished) / 1e6);
@@ -175,7 +212,7 @@ public class KMeansTriangleDistribution {
      */
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] " + KMeansTriangleDistribution.class.getCanonicalName()
-                + " <point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of points> [seed]");
+                + " <point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of points> [seed] [prefix for log file]");
         System.err.println(
                 "This version of the KMeans benchmark purposely makes a triangular distribution instead of a flat one.");
         System.err.println(

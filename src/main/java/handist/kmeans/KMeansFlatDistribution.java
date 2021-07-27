@@ -2,6 +2,8 @@ package handist.kmeans;
 
 import static handist.kmeans.KMeans.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -13,9 +15,11 @@ import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.CollectiveMoveManager;
 import handist.collections.dist.DistChunkedList;
+import handist.collections.dist.DistLog;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
+import handist.collections.glb.util.GlbLog;
 import handist.kmeans.KMeans.AveragePosition;
 import handist.kmeans.KMeans.ClosestPoint;
 import handist.kmeans.KMeans.Point;
@@ -31,6 +35,7 @@ public class KMeansFlatDistribution {
 
         int dimension, k, repetitions, chunkSize, dataSize, chunkCount;
         long seed;
+        String logFilePrefix = null;
         try {
             dimension = Integer.parseInt(args[0]);
             k = Integer.parseInt(args[1]);
@@ -42,6 +47,9 @@ public class KMeansFlatDistribution {
                 seed = Long.parseLong(args[5]);
             } else {
                 seed = System.nanoTime();
+            }
+            if (args.length > 6) {
+                logFilePrefix = args[6];
             }
         } catch (final Exception e) {
             printUsage();
@@ -102,6 +110,7 @@ public class KMeansFlatDistribution {
         System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
+        int glbProgramCounter = 0; // used as suffix when saving the logs of the successive GLB programs
         double[][] clusterCentroids = initialClusterCenter;
         for (int iter = 0; iter < REPETITIONS; iter++) {
             final long iterStart = System.nanoTime();
@@ -112,7 +121,7 @@ public class KMeansFlatDistribution {
 
                 points.GLB.forEach(p -> p.assignCluster(centroids)).waitGlobalTermination();
             });
-
+            final DistLog clusterAssignLog = GlobalLoadBalancer.getPreviousLog();
             final long assignFinished = System.nanoTime(); // Time tracking
 
             // Compute the average position for each cluster
@@ -121,7 +130,7 @@ public class KMeansFlatDistribution {
                 // Calculate the average position of each cluster
                 points.GLB.reduce(avgClusterPosition);
             });
-
+            final DistLog clusterAverageLog = GlobalLoadBalancer.getPreviousLog();
             final long avgFinished = System.nanoTime(); // Time tracking
 
             // Find the closest point to each centroid
@@ -130,7 +139,7 @@ public class KMeansFlatDistribution {
                 // Calculate the new centroid of each cluster
                 points.GLB.reduce(closestPoint).result();
             });
-
+            final DistLog centroidAssignLog = GlobalLoadBalancer.getPreviousLog();
             final long iterEnd = System.nanoTime(); // Time tracking
 
             clusterCentroids = closestPoint.closestPointCoordinates;
@@ -153,6 +162,31 @@ public class KMeansFlatDistribution {
                 sb.append("; " + l);
             }
             System.out.println(sb.toString());
+
+            if (logFilePrefix != null) {
+                final GlbLog assignGlbLog = new GlbLog(clusterAssignLog);
+                final GlbLog averageGlbLog = new GlbLog(clusterAverageLog);
+                final GlbLog centroidGlbLog = new GlbLog(centroidAssignLog);
+
+                try {
+
+                    final String assignFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    assignGlbLog.saveToFile(new File(assignFilename));
+                    glbProgramCounter++;
+
+                    final String averageFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    averageGlbLog.saveToFile(new File(averageFilename));
+                    glbProgramCounter++;
+
+                    final String centroidFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
+                    centroidGlbLog.saveToFile(new File(centroidFilename));
+                    glbProgramCounter++;
+
+                } catch (final IOException e) {
+                    System.err.println("Program encountered when log file");
+                    e.printStackTrace();
+                }
+            }
 
 //            System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
 //                    + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
