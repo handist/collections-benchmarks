@@ -4,7 +4,7 @@ export BENCHMARK_NAME="hugekmeansflat"
 export MAIN="handist.kmeans.KMeansFlatDistribution"
 # There are 5 compulsory arguments and 1 optional:
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <number of points> [seed] [log file prefix]
-export ARGS="5 10000 20 10000 10000000 42 ${FILE_PREFIX}"
+export ARGS="5 10 20 10000 10000000 42 ${FILE_PREFIX}"
 export TIMEOUT=10:00
 export BEO_TIMEOUT=20m
 export REPETITIONS=5

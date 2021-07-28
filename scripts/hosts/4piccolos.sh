@@ -8,7 +8,7 @@ export HOST=4piccolos
 export HOST_TYPE=beowulf
 
 # All the benchmarks that we want to run with this host
-export BENCHMARKS="flatkmeans-huge-log.sh trianglekmeans-huge-log.sh"
+export BENCHMARKS="flatkmeans-small-log.sh trianglekmeans-small-log.sh"
 # All the configurations that we want to test with this host
 #export CONFIGS="nolifeline.sh hypercube.sh nolifeline-priority.sh hypercube-priority.sh"
 export CONFIGS="logger-lifeline.sh logger-nolifeline.sh"

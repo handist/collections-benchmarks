@@ -6,6 +6,7 @@ export MAIN="handist.kmeans.KMeansTriangleDistribution"
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <number of points> [seed] [prefix for logged files]
 export ARGS="5 10000 20 10000 10000000 42 ${FILE_PREFIX}"
 export TIMEOUT=10:00
+export BEO_TIMEOUT=20m
 export REPETITIONS=1
 
 # Script used to combine the results of this benchmark
