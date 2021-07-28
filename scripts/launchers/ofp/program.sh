@@ -13,4 +13,4 @@ java -cp ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
 -Dglb.serialization=${SERIALIZATION} \
 -Dglb.trace=${TRACE} \
 handist.collections.launcher.Launcher 0 0 native \
-${MAIN} ${ARGS}
+${MAIN} ${ARGS} ${EXTRA_ARGS}
