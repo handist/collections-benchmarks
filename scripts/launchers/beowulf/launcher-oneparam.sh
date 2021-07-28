@@ -9,7 +9,7 @@ do
     STAMP=`date +"%m-%d-%y %R"`
     OUTFILE=${CONFIG_NAME}_${BENCHMARK_NAME}_${PARAM}${value}_Run${run}.out.txt
     ERRFILE=${CONFIG_NAME}_${BENCHMARK_NAME}_${PARAM}${value}_Run${run}.err.txt
-    export FILE_PREFIX=${CONFIG_NAME}_${BENCHMARK_NAME}_${PARAM}${value}_Run${run}
+    export EXTRA_ARGS=${CONFIG_NAME}_${BENCHMARK_NAME}_${PARAM}${value}_Run${run} # used by logging glb
     if [[ -f ${OUTFILE} || -f ${ERRFILE} ]]
     then
         echo "[$STAMP] Skipping  ${PARAM}:${value} Run #${run}, execution output files present"

@@ -1,6 +1,6 @@
 # Configuration for the K-Means benchmark
 PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/launcher-oneparam.sh"
-export BENCHMARK_NAME="hugekmeanstriangle"
+export BENCHMARK_NAME="logged-hugekmeanstriangle"
 export MAIN="handist.kmeans.KMeansTriangleDistribution"
 # There are 5 compulsory arguments and 1 optional:
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <number of points> [seed] [prefix for logged files]

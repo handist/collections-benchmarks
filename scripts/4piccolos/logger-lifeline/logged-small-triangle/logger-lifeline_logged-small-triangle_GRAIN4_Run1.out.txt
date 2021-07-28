@@ -1,0 +1,5 @@
+Starting process <0> on on <piccolo00>
+Starting process <2> on on <piccolo04>
+Starting process <3> on on <piccolo05>
+Starting process <1> on on <piccolo01>
+Init; 155.185609 ms

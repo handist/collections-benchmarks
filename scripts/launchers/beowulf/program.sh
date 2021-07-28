@@ -10,4 +10,4 @@ java -classpath ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
         -Dglb.trace=${TRACE} \
         -Dglb.serialization=${SERIALIZATION} \
 handist.collections.launcher.Launcher 0 0 native \
-${MAIN} ${ARGS}
+${MAIN} ${ARGS} ${EXTRA_ARGS}

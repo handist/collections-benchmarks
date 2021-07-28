@@ -1,6 +1,6 @@
 # Configuration for the K-Means benchmark
 PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/launcher-oneparam.sh"
-export BENCHMARK_NAME="hugekmeansflat"
+export BENCHMARK_NAME="logged-hugekmeansflat"
 export MAIN="handist.kmeans.KMeansFlatDistribution"
 # There are 5 compulsory arguments and 1 optional:
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <number of points> [seed] [log file prefix]
