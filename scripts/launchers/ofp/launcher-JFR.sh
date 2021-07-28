@@ -6,6 +6,7 @@ do
     OUTFILE=${CONFIG_NAME}_${BENCHMARK_NAME}_Run${run}.out.txt
     ERRFILE=${CONFIG_NAME}_${BENCHMARK_NAME}_Run${run}.err.txt
     export JFR_FILE=${CONFIG_NAME}_${BENCHMARK_NAME}_Run${run}.jfr
+    export FILE_PREFIX=${CONFIG_NAME}_${BENCHMARK_NAME}_${PARAM}${value}_Run${run}
     if [[ -f ${OUTFILE} || -f ${ERRFILE} ]]
     then
         echo "[$STAMP] Skipping Run #${run}, execution output files present"
