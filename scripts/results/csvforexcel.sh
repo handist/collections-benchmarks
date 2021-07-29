@@ -4,7 +4,7 @@
 
 HOST="ofp4"
 PROGRAMS="hugekmeansflat hugekmeanstriangle"
-CONFIGS="NoLifeline-nolongpacking Hypercube-nolongpacking lifelinenoanswerafterintraLB Hypercube-bugfix"
+CONFIGS="NoLifeline-nolongpacking Hypercube-nolongpacking lifelinenoanswerafterintraLB Hypercube-bugfix logger-lifeline logger-nolifeline"
 
 for prog in ${PROGRAMS}
 do
