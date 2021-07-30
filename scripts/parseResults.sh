@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Script used to parse the results of the various benchamrk executions and     #
+# Script used to parse the results of the various benchmark executions and     #
 # generate CSV files which can then be used easily as inputs for an Excel file #
 #------------------------------------------------------------------------------#
 # 1 parameter: the "hosts" script used as configuration when launching the     #
@@ -13,7 +13,7 @@ PARSERS_DIR=${BENCH_HOME}/parsers
 
 source $1
 
-# Prepare direcotry for the parsed results of this host
+# Prepare directory for the parsed results of this host
 mkdir -p results/${HOST}
 
 for config_file in ${CONFIGS}
