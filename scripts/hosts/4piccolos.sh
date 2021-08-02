@@ -8,9 +8,10 @@ export HOST=4piccolos
 export HOST_TYPE=beowulf
 
 # All the benchmarks that we want to run with this host
-export BENCHMARKS="kmeans.sh kmeans-grain.sh"
+export BENCHMARKS="flatkmeans-small-log.sh trianglekmeans-small-log.sh"
 # All the configurations that we want to test with this host
-export CONFIGS="nolifeline.sh hypercube.sh nolifeline-priority.sh hypercube-priority.sh"
+#export CONFIGS="nolifeline.sh hypercube.sh nolifeline-priority.sh hypercube-priority.sh"
+export CONFIGS="logger-lifeline.sh logger-nolifeline.sh"
 # Path to the MPI-binding libraries for this host
 export JAVALIBRARYPATH="${MPJ_HOME}/lib"
 # Hostfile to use for this host

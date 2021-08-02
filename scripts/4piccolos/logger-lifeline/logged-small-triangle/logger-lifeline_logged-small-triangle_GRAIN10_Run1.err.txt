@@ -1,0 +1,5 @@
+nohup: ignoring input
+/home/patrick/benchmarks/scripts/launchers/beowulf/program.sh: line 13: 10403 Killed                  timeout -k ${BEO_TIMEOUT} -s 9 ${BEO_TIMEOUT} taskset -ca ${CORE_RESTRICTION} mpirun -n ${NB_HOSTS} --hostfile ${HOSTFILE} java -classpath ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* -Djava.library.path=${JAVALIBRARYPATH} -Dglb.grain=${GRAIN} -Dglb.lifeline=${LIFELINE} -Dglb.trace=${TRACE} -Dglb.serialization=${SERIALIZATION} handist.collections.launcher.Launcher 0 0 native ${MAIN} ${ARGS} ${EXTRA_ARGS}
+ssh_dispatch_run_fatal: Connection to 192.168.3.4 port 22: Broken pipe
+ssh_dispatch_run_fatal: Connection to 192.168.3.5 port 22: Broken pipe
+ssh_dispatch_run_fatal: Connection to 192.168.3.1 port 22: Broken pipe

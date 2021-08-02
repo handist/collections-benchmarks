@@ -1,0 +1,5 @@
+Concurrent workers; 68
+Granulatiry; 400
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+Arguments received were [5, 10000, 20, 10000, 10000000, 42, param400/logger-lifeline_hugekmeansflat_GRAIN400_Run4]

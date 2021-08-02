@@ -1,0 +1,1205 @@
+Concurrent workers; 68
+Granulatiry; 10000
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+Arguments received were [5, 10, 20, 10000, 10000000, 42]
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@5
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@5
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@5
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@5
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@5
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@5
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@5place(1): resumed after waiting on handist.collections.glb.GlbOperation@5
+
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@b
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@b
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@b
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@b
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@b
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@b
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@b
+place(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@b
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@12
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@12
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@12
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@12
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@12
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@12
+place(1) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@12
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)place(3): resumed after waiting on handist.collections.glb.GlbOperation@12
+
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1f
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1f
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1f
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1f
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1f
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1f
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1f
+place(3) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1f
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@25
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@25
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@25place(3): thread waiting on operation handist.collections.glb.GlbOperation@25
+
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@25
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@25
+place(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@25
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@25
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@2c
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@2c
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@2c
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@2c
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@2c
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@2c
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@2c
+place(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@2c
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@39
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@39
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@39
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@39
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@39
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@39
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@39
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@39
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@3f
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@3f
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@3fplace(3): thread waiting on operation handist.collections.glb.GlbOperation@3f
+
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@3f
+place(2) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@3f
+place(0) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@3f
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@3f
+place(3) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@46
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@46
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@46
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@46
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@46
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@46
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@46
+place(3) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@46
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@53
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@53
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@53
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@53
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@53
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@53
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@53
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@53
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@59
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@59
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@59
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@59
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@59
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@59
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@59
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@59
+place(3) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@60
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@60
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@60
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@60
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@60
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@60
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@60
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@60
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@6d
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@6d
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@6dplace(3): thread waiting on operation handist.collections.glb.GlbOperation@6d
+
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@6d
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@6d
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workersplace(3) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@6d
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@6d
+
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@73
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@73
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@73place(3): thread waiting on operation handist.collections.glb.GlbOperation@73
+
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@73
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@73
+place(3) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@73
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@73
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@7a
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@7a
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@7aplace(3): thread waiting on operation handist.collections.glb.GlbOperation@7a
+
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@7a
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@7a
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@7a
+place(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@7a
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@87
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@87
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@87place(3): thread waiting on operation handist.collections.glb.GlbOperation@87
+
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@87
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@87place(1) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@87
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@87
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@8d
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@8d
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@8d
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@8d
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@8d
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@8d
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@8d
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@8d
+place(3) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@94
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@94
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@94place(2): thread waiting on operation handist.collections.glb.GlbOperation@94
+
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@94
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workersplace(3): resumed after waiting on handist.collections.glb.GlbOperation@94
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@94
+place(2) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@94
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@a1
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@a1
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@a1
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@a1
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@a1
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@a1
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@a1
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@a1
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@a7
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@a7
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@a7
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@a7
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@a7
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@a7
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@a7
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@a7
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@ae
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@ae
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@ae
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@ae
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@ae
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@ae
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@ae
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(1): resumed after waiting on handist.collections.glb.GlbOperation@aeplace(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@bb
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@bb
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@bb
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@bb
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@bb
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@bbplace(1): resumed after waiting on handist.collections.glb.GlbOperation@bb
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(1) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@bb
+place(2) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@c1
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@c1place(3): thread waiting on operation handist.collections.glb.GlbOperation@c1place(1): thread waiting on operation handist.collections.glb.GlbOperation@c1
+
+
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@c1
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@c1
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@c1place(3): resumed after waiting on handist.collections.glb.GlbOperation@c1
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@c8
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@c8
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@c8
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@c8
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@c8
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@c8
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@c8
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@c8
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@d5
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@d5
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@d5
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@d5
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@d5
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@d5
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@d5
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@d5
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@db
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@db
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@db
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@db
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@db
+place(3) worker(0) stopped --- 68 stopped workersplace(1): resumed after waiting on handist.collections.glb.GlbOperation@db
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@db
+
+place(1) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@db
+place(2) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@e2
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@e2
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@e2place(3): thread waiting on operation handist.collections.glb.GlbOperation@e2
+
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@e2
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@e2
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@e2
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@e2
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@ef
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@ef
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@ef
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@ef
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@ef
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@ef
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@ef
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@ef
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@f5
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@f5
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@f5
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@f5
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@f5
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@f5
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@f5
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@f5
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@fc
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@fc
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@fc
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@fc
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@fc
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@fc
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@fc
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@fc
+place(3) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@109
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@109
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@109
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@109
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@109
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@109
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@109
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@109
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@10f
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@10f
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@10f
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@10f
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@10f
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@10f
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@10f
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@10f
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@116
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@116
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@116
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@116
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@116
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@116place(2): resumed after waiting on handist.collections.glb.GlbOperation@116
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@116
+place(3) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@123place(1): thread waiting on operation handist.collections.glb.GlbOperation@123
+
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@123
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@123
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@123
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@123
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@123
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@123
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@129
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@129
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@129place(1): thread waiting on operation handist.collections.glb.GlbOperation@129
+
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@129
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@129
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@129
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@129
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@130
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@130
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@130place(2): thread waiting on operation handist.collections.glb.GlbOperation@130
+
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@130
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@130
+place(1) worker(0) stopped --- 68 stopped workersplace(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@130
+
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@130
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@13d
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@13d
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@13d
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@13d
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@13d
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@13dplace(3): resumed after waiting on handist.collections.glb.GlbOperation@13d
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@13d
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@143
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@143
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@143
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@143
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@143
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@143
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@143
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@143
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@14a
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@14a
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@14a
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@14a
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@14a
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@14a
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@14aplace(3): resumed after waiting on handist.collections.glb.GlbOperation@14a
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@157
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@157
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@157
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@157
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@157
+place(3) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@157
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@157
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@157
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@15d
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@15d
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@15d
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@15d
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@15d
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@15d
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@15d
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@15d
+place(3) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@164
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@164
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@164
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@164
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@164
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@164
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@164
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@164
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@171
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@171
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@171
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@171
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@171
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@171
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@171
+place(3) worker(0) stopped --- 68 stopped workersplace(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@171
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@177
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@177
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@177
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@177
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@177
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@177
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@177
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@177
+place(3) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@17e
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@17e
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@17e
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@17e
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@17e
+place(0) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@17e
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@17e
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@17e
+place(3) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@18b
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@18b
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@18b
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@18b
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@18bplace(2): resumed after waiting on handist.collections.glb.GlbOperation@18b
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@18b
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@18b
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@191
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@191
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@191
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@191
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@191
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@191
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@191
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@191
+place(2) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@198
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@198
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@198
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@198
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@198
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@198
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@198
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@198place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1a5
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1a5
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1a5
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1a5
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1a5place(2): resumed after waiting on handist.collections.glb.GlbOperation@1a5
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(2) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1a5
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1a5
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1ab
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1ab
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1ab
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1ab
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1ab
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1ab
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1ab
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1ab
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1b2
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1b2
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1b2
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1b2
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1b2
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1b2
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1b2
+place(3) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1b2
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1bf
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1bf
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1bf
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1bf
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1bf
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1bf
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1bf
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1bf
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1c5
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1c5
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1c5
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1c5
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1c5
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1c5
+place(1) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1c5
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1c5
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1cc
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1cc
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1cc
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1cc
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1cc
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1cc
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1cc
+place(3) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1cc
+place(1) worker(0) stopped --- 68 stopped workers
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1d9
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1d9
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1d9
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1d9
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1d9place(3): resumed after waiting on handist.collections.glb.GlbOperation@1d9
+place(1) worker(0) stopped --- 68 stopped workers
+
+place(3) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1d9
+place(2) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1d9
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1df
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1df
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1df
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1df
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1df
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1df
+place(1) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1df
+place(3) worker(0) stopped --- 68 stopped workers
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1df
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1e6
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1e6
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1e6
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1e6
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1e6
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1e6
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1e6
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1e6
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1f3
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1f3
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1f3
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1f3
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1f3
+place(2) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@1f3
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(1) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1f3
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1f3
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@1f9
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@1f9
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@1f9
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@1f9
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@1f9
+place(0) worker(0) stopped --- 68 stopped workers
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@1f9place(3): resumed after waiting on handist.collections.glb.GlbOperation@1f9
+
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@1f9
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) worker(0) stopped --- 68 stopped workers
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(0): thread waiting on operation handist.collections.glb.GlbOperation@200
+place(1): thread waiting on operation handist.collections.glb.GlbOperation@200
+place(2): thread waiting on operation handist.collections.glb.GlbOperation@200
+place(3): thread waiting on operation handist.collections.glb.GlbOperation@200
+place(0) worker(0) stopped --- 68 stopped workers
+place(0): resumed after waiting on handist.collections.glb.GlbOperation@200
+place(0) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(0) established lifeline on place(2) for collection DistChunkedList:gid(1)
+place(2): resumed after waiting on handist.collections.glb.GlbOperation@200
+place(2) worker(0) stopped --- 68 stopped workers
+place(1): resumed after waiting on handist.collections.glb.GlbOperation@200
+place(1) worker(0) stopped --- 68 stopped workers
+place(3) worker(0) stopped --- 68 stopped workers
+place(3): resumed after waiting on handist.collections.glb.GlbOperation@200
+place(2) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(2) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(0) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(1) for collection DistChunkedList:gid(1)
+place(1) established lifeline on place(3) for collection DistChunkedList:gid(1)
+place(3) established lifeline on place(2) for collection DistChunkedList:gid(1)

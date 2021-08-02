@@ -1,0 +1,11 @@
+openjdk version "1.8.0_222"
+OpenJDK Runtime Environment (build 1.8.0_222-b10)
+OpenJDK 64-Bit Server VM (build 25.222-b10, mixed mode)
+Unrecognized VM option 'printGCDetails'
+Did you mean '(+/-)PrintGCDetails'?
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[ERR.] PLE 0017 plexec The process terminated with the signal.(rank=0)(nid=0x02ff0311)(sig=9)
+[ERR.] PLE 0017 plexec The process terminated with the signal.(rank=0)(nid=0x02ff0312)(sig=9)
+[mpiexec@c1693.ofp] wait_proxies_to_terminate (../../../../../src/pm/i_hydra/mpiexec/intel/i_mpiexec.c:528): downstream from host 172.30.158.99 exited with status 137
+[mpiexec@c1693.ofp] wait_proxies_to_terminate (../../../../../src/pm/i_hydra/mpiexec/intel/i_mpiexec.c:528): downstream from host 172.30.158.100 exited with status 137

@@ -11,5 +11,6 @@ java -cp ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
 -Dglb.grain=${GRAIN} \
 -Dglb.lifeline=${LIFELINE} \
 -Dglb.serialization=${SERIALIZATION} \
+-Dglb.trace=${TRACE} \
 handist.collections.launcher.Launcher 0 0 native \
-${MAIN} ${ARGS}
+${MAIN} ${ARGS} ${EXTRA_ARGS}

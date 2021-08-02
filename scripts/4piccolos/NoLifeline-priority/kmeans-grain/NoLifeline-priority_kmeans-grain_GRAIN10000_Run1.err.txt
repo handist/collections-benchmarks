@@ -1,0 +1,4 @@
+Concurrent workers; 8
+Granulatiry; 10000
+Lifeline class; handist.collections.glb.lifeline.NoLifeline
+Serialization; KRYO

@@ -1,0 +1,7 @@
+nohup: ignoring input
+Concurrent workers; 8
+Granulatiry; 4
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+Arguments received were [5, 10, 20, 10000, 10000, 42, logger-lifeline_logged-small-triangle_GRAIN4_Run1]
+/home/patrick/benchmarks/scripts/launchers/beowulf/program.sh: line 13: 10241 Killed                  timeout -k ${BEO_TIMEOUT} -s 9 ${BEO_TIMEOUT} taskset -ca ${CORE_RESTRICTION} mpirun -n ${NB_HOSTS} --hostfile ${HOSTFILE} java -classpath ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* -Djava.library.path=${JAVALIBRARYPATH} -Dglb.grain=${GRAIN} -Dglb.lifeline=${LIFELINE} -Dglb.trace=${TRACE} -Dglb.serialization=${SERIALIZATION} handist.collections.launcher.Launcher 0 0 native ${MAIN} ${ARGS} ${EXTRA_ARGS}

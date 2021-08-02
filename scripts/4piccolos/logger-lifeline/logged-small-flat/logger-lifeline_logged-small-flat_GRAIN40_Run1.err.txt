@@ -1,0 +1,6 @@
+nohup: ignoring input
+Concurrent workers; 8
+Granulatiry; 40
+Lifeline class; handist.collections.glb.lifeline.Hypercube
+Serialization; KRYO
+Arguments received were [5, 10, 20, 10000, 10000, 42, logger-lifeline_logged-small-flat_GRAIN40_Run1]

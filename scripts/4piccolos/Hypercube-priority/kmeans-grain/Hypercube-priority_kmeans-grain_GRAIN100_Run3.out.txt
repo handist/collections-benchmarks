@@ -1,0 +1,6 @@
+Starting process <0> on on <piccolo04>
+Starting process <1> on on <piccolo05>
+Starting process <2> on on <piccolo06>
+Starting process <3> on on <piccolo07>
+Init; 30496.063247 ms
+Iter 0; 909.571255; ; 428.639991; 344.479339; 136.451925

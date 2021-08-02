@@ -1,0 +1,6 @@
+Starting process <1> on on <c4444.ofp>
+Starting process <0> on on <c4443.ofp>
+Starting process <3> on on <c4446.ofp>
+Starting process <2> on on <c4445.ofp>
+Init; 82975.948803 ms
+Iter 0; 8599.612419; 5148.408241; 1990.010027; 1461.194151; 2772632; 2324214; 2378574; 2524580
