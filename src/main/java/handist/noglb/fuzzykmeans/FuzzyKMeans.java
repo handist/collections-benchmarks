@@ -44,7 +44,7 @@ public class FuzzyKMeans {
         public void merge(AveragePosition reducer) {
             for (int c = 0; c < numerator.length; c++) {
                 denominator[c] += reducer.denominator[c];
-                for (int dim = 0; dim < numerator.length; dim++) {
+                for (int dim = 0; dim < numerator[c].length; dim++) {
                     numerator[c][dim] += reducer.numerator[c][dim];
                 }
             }
@@ -104,12 +104,14 @@ public class FuzzyKMeans {
          *
          * @param initialPosition array of {@link Double} containing the point
          *                        coordinates of this point
+         * @param clusterCount    the number of clusters considered in this algorithm
          */
-        Point(Double[] initialPosition) {
+        Point(Double[] initialPosition, int clusterCount) {
             position = new double[initialPosition.length];
             for (int i = 0; i < position.length; i++) {
                 position[i] = initialPosition[i];
             }
+            clusterAssignment = new double[clusterCount];
         }
 
         /**
@@ -201,6 +203,7 @@ public class FuzzyKMeans {
             return;
         }
 
+        System.err.println("Arguments received were " + Arrays.toString(args));
         Config.printConfiguration(System.err);
 
         // initialize final constants for easier lambda serialization later
@@ -208,6 +211,8 @@ public class FuzzyKMeans {
         final int DIMENSION = dimension;
         final int REPETITIONS = repetitions;
         final float M = m;
+
+        System.err.println("Starting Initialization");
 
         // INITIALIZATION
         final long initStart = System.nanoTime();
@@ -222,10 +227,12 @@ public class FuzzyKMeans {
         for (int chunkNumber = 0; chunkNumber < chunkCount; chunkNumber++) {
             final LongRange chunkRange = new LongRange(chunkNumber * chunkSize, (chunkNumber + 1) * chunkSize);
             final Chunk<Point> c = new Chunk<>(chunkRange, l -> {
-                return new Point(initialPoints.get(l.intValue()));
+                return new Point(initialPoints.get(l.intValue()), K);
             });
             points.add(c);
         }
+
+        System.err.println("Chunked Initialized");
 
         // Second additional step: we distribute the chunks evenly across hosts
         final TeamedPlaceGroup world = TeamedPlaceGroup.getWorld();
@@ -238,6 +245,8 @@ public class FuzzyKMeans {
             }
             mm.sync();
         });
+
+        System.err.println("Chunks distributed");
 
         // Third additional step, we convert the list of initial centroids to a 2Darray
         // of double
