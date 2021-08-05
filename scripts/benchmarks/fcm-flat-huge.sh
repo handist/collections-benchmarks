@@ -4,7 +4,7 @@ export MAIN="handist.noglb.fuzzykmeans.FuzzyKMeans"
 export BENCHMARK_NAME="fcm-flat-huge"
 # There are 6 compulsory arguments and 1 optional:
 # <point dimension> <nb of clusters "k"> <fuzziness m> <nb iterations> <chunk size> <number of points> [seed]
-export ARGS="5 100 2.0 20 10000 10000000 42"
+export ARGS="5 10 2.0 20 500 10000 42"
 export TIMEOUT=15:00
 export REPETITIONS=1
 
