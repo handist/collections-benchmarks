@@ -280,9 +280,11 @@ public class FuzzyKMeans {
                 points.parallelForEach(p -> p.assignCluster(clusters, M));
 
                 final long iterEnd = System.nanoTime();
-                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; "
-                        + (centroidAverageFinished - iterStart) / 1e6 + "; " + (iterEnd - centroidAverageFinished) / 1e6
-                        + "; ");
+                if (world.rank() == 0) {
+                    System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; "
+                            + (centroidAverageFinished - iterStart) / 1e6 + "; "
+                            + (iterEnd - centroidAverageFinished) / 1e6 + "; ");
+                }
             }
         });
     }
