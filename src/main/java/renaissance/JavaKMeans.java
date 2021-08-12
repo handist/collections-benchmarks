@@ -304,28 +304,42 @@ public final class JavaKMeans {
      * @param args
      */
     public static void main(String[] args) {
+        System.err.println(JavaKMeans.class.getCanonicalName() + "; arguments received were " + Arrays.toString(args));
+
         if (args.length < 5) {
             System.err.println("Not enough arguments");
             printUsage();
             return;
         }
         int dim, threadCount, k, iter, nbPoints;
+        long seed;
         try {
             dim = Integer.parseInt(args[0]);
             k = Integer.parseInt(args[1]);
             iter = Integer.parseInt(args[2]);
             nbPoints = Integer.parseInt(args[3]);
             threadCount = Integer.parseInt(args[4]);
+            if (args.length >= 6) {
+                seed = Long.parseLong(args[5]);
+            } else {
+                seed = System.nanoTime();
+            }
         } catch (final Exception e) {
             e.printStackTrace();
             printUsage();
             return;
         }
 
+        // INITIALIZATION
+        final long startInit = System.nanoTime();
         final JavaKMeans kmeans = new JavaKMeans(dim, threadCount);
+        final Random rnd = new Random(seed);
         final List<Double[]> data = generateData(nbPoints, dim, k);
+        final List<Double[]> centroids = randomSample(k, data, rnd);
+        final long totalInit = System.nanoTime() - startInit;
+        System.out.println("Init; " + totalInit / 1e6 + " ms");
         try {
-            kmeans.run(k, data, iter);
+            kmeans.run(k, data, centroids, iter);
         } catch (final InterruptedException e) {
             e.printStackTrace();
         } catch (final ExecutionException e) {
@@ -351,7 +365,11 @@ public final class JavaKMeans {
 
     public static void printUsage() {
         System.err.println("Usage: java -cp [...] " + JavaKMeans.class.getCanonicalName()
-                + " <point dimension> <nb of clusters \"k\"> <repetitions> <number of points> <thread count>");
+                + " <point dimension> <nb of clusters \"k\"> <repetitions> <number of points> <thread count> [seed]");
+    }
+
+    private static List<Double[]> randomSample(final int sampleCount, final List<Double[]> data, final Random random) {
+        return random.ints(sampleCount, 0, data.size()).mapToObj(data::get).collect(Collectors.toList());
     }
 
     private final int dimension;
@@ -375,13 +393,9 @@ public final class JavaKMeans {
         return sizeLimit / (elementSize + pointerSize);
     }
 
-    private List<Double[]> randomSample(final int sampleCount, final List<Double[]> data, final Random random) {
-        return random.ints(sampleCount, 0, data.size()).mapToObj(data::get).collect(Collectors.toList());
-    }
+    public List<Double[]> run(final int clusterCount, final List<Double[]> data, List<Double[]> centroids,
+            final int iterationCount) throws InterruptedException, ExecutionException {
 
-    public List<Double[]> run(final int clusterCount, final List<Double[]> data, final int iterationCount)
-            throws InterruptedException, ExecutionException {
-        List<Double[]> centroids = randomSample(clusterCount, data, new Random(100));
         for (int iteration = 0; iteration < iterationCount; iteration++) {
             final long iterStart = System.nanoTime();
             final AssignmentTask assignmentTask = new AssignmentTask(data, centroids);

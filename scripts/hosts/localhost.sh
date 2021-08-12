@@ -9,7 +9,7 @@ export HOST_TYPE=beowulf
 
 # All the benchmarks that we want to run with this host
 # export BENCHMARKS="kmeans.sh kmeans-grain.sh"
-export BENCHMARKS="article-renaissancekmeans.sh"
+export BENCHMARKS="article-renaissancekmeans.sh article-nompikmeans.sh"
 # All the configurations that we want to test with this host
 export CONFIGS="logger-nolifeline.sh"
 # Path to the MPI-binding libraries for this host

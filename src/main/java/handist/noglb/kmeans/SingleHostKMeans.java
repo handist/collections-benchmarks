@@ -64,15 +64,20 @@ public class SingleHostKMeans {
             return;
         }
 
-        int dimension, k, repetitions, chunkSize, chunkCount, dataSize;
+        int dimension, k, repetitions, dataSize, chunkSize, chunkCount;
         long seed;
         try {
             dimension = Integer.parseInt(args[0]);
             k = Integer.parseInt(args[1]);
             repetitions = Integer.parseInt(args[2]);
-            chunkSize = Integer.parseInt(args[3]);
-            chunkCount = Integer.parseInt(args[4]);
-            dataSize = chunkSize * chunkCount;
+            dataSize = Integer.parseInt(args[3]);
+            chunkSize = Integer.parseInt(args[4]);
+            chunkCount = dataSize / chunkSize;
+
+            if (chunkCount * chunkSize != dataSize) {
+                System.err.println("Chunk size not uniform!");
+                return;
+            }
 
             if (args.length > 5) {
                 seed = Long.parseLong(args[5]);
@@ -154,7 +159,7 @@ public class SingleHostKMeans {
      */
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] " + SingleHostKMeans.class.getCanonicalName()
-                + " <point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of chunks> [<seed>]");
+                + " <point dimension> <nb of clusters \"k\"> <repetitions> <nb points> <chunk size> [<seed>]");
     }
 
     /**
