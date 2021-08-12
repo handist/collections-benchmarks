@@ -149,8 +149,6 @@ public final class JavaKMeans {
         protected abstract int forkThreshold();
     }
 
-    //
-
     final class UpdateTask extends RangedTask<Map<Double[], List<Double[]>>> {
 
         private final List<List<Double[]>> clusters;
@@ -301,6 +299,40 @@ public final class JavaKMeans {
         }).collect(Collectors.toList());
     }
 
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        if (args.length < 5) {
+            System.err.println("Not enough arguments");
+            printUsage();
+            return;
+        }
+        int dim, threadCount, k, iter, nbPoints;
+        try {
+            dim = Integer.parseInt(args[0]);
+            k = Integer.parseInt(args[1]);
+            iter = Integer.parseInt(args[2]);
+            nbPoints = Integer.parseInt(args[3]);
+            threadCount = Integer.parseInt(args[4]);
+        } catch (final Exception e) {
+            e.printStackTrace();
+            printUsage();
+            return;
+        }
+
+        final JavaKMeans kmeans = new JavaKMeans(dim, threadCount);
+        final List<Double[]> data = generateData(nbPoints, dim, k);
+        try {
+            kmeans.run(k, data, iter);
+        } catch (final InterruptedException e) {
+            e.printStackTrace();
+        } catch (final ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static <T> Map<T, List<T>> merge(final Map<T, List<T>> left, final Map<T, List<T>> right) {
         //
         // When merging values with the same key, create a new ArrayList to avoid
@@ -315,6 +347,11 @@ public final class JavaKMeans {
         }));
 
         return result;
+    }
+
+    public static void printUsage() {
+        System.err.println("Usage: java -cp [...] " + JavaKMeans.class.getCanonicalName()
+                + " <point dimension> <nb of clusters \"k\"> <repetitions> <number of points> <thread count>");
     }
 
     private final int dimension;
@@ -346,10 +383,16 @@ public final class JavaKMeans {
             throws InterruptedException, ExecutionException {
         List<Double[]> centroids = randomSample(clusterCount, data, new Random(100));
         for (int iteration = 0; iteration < iterationCount; iteration++) {
+            final long iterStart = System.nanoTime();
             final AssignmentTask assignmentTask = new AssignmentTask(data, centroids);
+            final long assignFinished = System.nanoTime();
             final UpdateTask updateTask = new UpdateTask(forkJoin.invoke(assignmentTask));
+            final long avgFinished = System.nanoTime();
             final Map<Double[], List<Double[]>> clusters = forkJoin.invoke(updateTask);
-
+            final long iterEnd = System.nanoTime();
+            System.out.println("Iter " + iteration + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
+                    + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
+                    + (iterEnd - avgFinished) / 1e6);
             centroids = new ArrayList<>(clusters.keySet());
         }
 
@@ -366,5 +409,4 @@ public final class JavaKMeans {
             throw new RuntimeException(ie);
         }
     }
-
 }
