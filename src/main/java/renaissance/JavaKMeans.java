@@ -399,14 +399,13 @@ public final class JavaKMeans {
         for (int iteration = 0; iteration < iterationCount; iteration++) {
             final long iterStart = System.nanoTime();
             final AssignmentTask assignmentTask = new AssignmentTask(data, centroids);
-            final long assignFinished = System.nanoTime();
+            // Cluster assignment and centroid computation are done together
             final UpdateTask updateTask = new UpdateTask(forkJoin.invoke(assignmentTask));
-            final long avgFinished = System.nanoTime();
+            final long assignFinished = System.nanoTime();
             final Map<Double[], List<Double[]>> clusters = forkJoin.invoke(updateTask);
             final long iterEnd = System.nanoTime();
-            System.out.println("Iter " + iteration + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
-                    + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
-                    + (iterEnd - avgFinished) / 1e6);
+            System.out.println("Iter " + iteration + "; " + (iterEnd - iterStart) / 1e6 + "; "
+                    + (assignFinished - iterStart) / 1e6 + "; " + (iterEnd - assignFinished) / 1e6);
             centroids = new ArrayList<>(clusters.keySet());
         }
 
