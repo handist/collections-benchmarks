@@ -4,7 +4,7 @@ export BENCHMARK_NAME="renaissance-kmeans"
 export MAIN="renaissance.JavaKMeans"
 # There are 5 compulsory arguments:
 # <point dimension> <nb of clusters "k"> <repetitions> <number of points> <thread count>
-export ARGS="3 5 30 10000000 ${WORKERS}"
+export ARGS="3 50 30 10000000 ${WORKERS}"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
 export REPETITIONS=5
