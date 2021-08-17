@@ -5,7 +5,8 @@ export HOST=article-ofp1
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-export BENCHMARKS=""
+#export BENCHMARKS=""
+export BENCHMARKS="article-ofp-renaissancekmeans.sh article-ofp-nompikmeans.sh"
 # List of library configruations that we want to test
 export CONFIGS="logger-nolifeline.sh"
 # Path to the MPI bindings
