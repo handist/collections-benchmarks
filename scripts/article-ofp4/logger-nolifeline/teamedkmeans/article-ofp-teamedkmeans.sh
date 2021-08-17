@@ -6,7 +6,7 @@ export MAIN="handist.noglb.kmeans.KMeans"
 # <point dimension> <nb of clusters "k"> <repetitions> <chunk size> <nb of chunks> [seed]
 export ARGS="3 50 30 10000000 2000 42"
 export TIMEOUT=10:00
-export REPETITIONS=5
+export REPETITIONS=1
 
 # Script used to combine the results of this benchmark
 PARSER=kmeans-grain-parser.sh
