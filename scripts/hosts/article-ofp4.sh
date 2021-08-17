@@ -5,7 +5,7 @@ export HOST=article-ofp4
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-export BENCHMARKS=""
+export BENCHMARKS="article-ofp-teamedkmeans.sh"
 
 # List of library configruations that we want to test
 export CONFIGS="logger-nolifeline.sh"
