@@ -4,10 +4,10 @@ export BENCHMARK_NAME="singlehost-kmeans2"
 export MAIN="handist.noglb.kmeans.SingleHostKMeans"
 # There are 5 compulsory arguments, 1 optional:
 # <point dimension> <nb of clusters "k"> <repetitions> <number of points> <chunk size> [seed]
-export ARGS="5 250 30 10000000 5000 42"
+export ARGS="30 50 30 10000000 5000 42"
 export TIMEOUT=10:00
 export BEO_TIMEOUT=10m
-export REPETITIONS=5
+export REPETITIONS=1
 
 # Script used to combine the results of this benchmark
 PARSER=kmeans-parser.sh
