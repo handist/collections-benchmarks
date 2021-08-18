@@ -14,7 +14,7 @@ PARSERS_DIR=${BENCH_HOME}/parsers
 source $1
 
 # Prepare directory for the parsed results of this host
-mkdir -p results/${HOST}
+# mkdir -p results/${HOST}
 
 for config_file in ${CONFIGS}
 do
