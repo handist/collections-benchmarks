@@ -6,6 +6,7 @@ export I_MPI_PIN=0
 
 taskset -ca ${CORE_RESTRICTION} \
 java -cp ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
+-Xms40g -Xmx80g \
 -Djava.library.path=${JAVALIBRARYPATH} \
 -Dglb.grain=${GRAIN} \
 -Dglb.lifeline=${LIFELINE} \
