@@ -7,7 +7,7 @@ export MAIN="handist.moldyn.Moldyn"
 export ARGS="8 ${WORKERS} 3 3"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
-export REPETITIONS=1
+export REPETITIONS=5
 
 # Script used to combine the results of this benchmark
 #PARSER=kmeans-parser.sh
