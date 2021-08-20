@@ -8,10 +8,10 @@ export HOST=localhost
 export HOST_TYPE=beowulf
 
 # All the benchmarks that we want to run with this host
-export BENCHMARKS="kmeans.sh kmeans-grain.sh"
+# export BENCHMARKS="kmeans.sh kmeans-grain.sh"
+export BENCHMARKS="article-renaissancekmeans.sh article-nompikmeans.sh"
 # All the configurations that we want to test with this host
-export CONFIGS="74-explicititerations.sh" 
-#export CONFIGS="merge75-config.sh 74-explicititerations.sh 74-arrayiterations.sh 74-arrayiterationsV2.sh"
+export CONFIGS="logger-nolifeline.sh"
 # Path to the MPI-binding libraries for this host
 export JAVALIBRARYPATH="${MPJ_HOME}/lib"
 # Hostfile to use for this host

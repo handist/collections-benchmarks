@@ -1,0 +1,63 @@
+Starting process <18> on on <c3791.ofp>
+Starting process <1> on on <c3774.ofp>
+Starting process <16> on on <c3789.ofp>
+Starting process <4> on on <c3777.ofp>
+Starting process <30> on on <c3803.ofp>
+Starting process <12> on on <c3785.ofp>
+Starting process <23> on on <c3796.ofp>
+Starting process <14> on on <c3787.ofp>
+Starting process <6> on on <c3779.ofp>
+Starting process <19> on on <c3792.ofp>
+Starting process <27> on on <c3800.ofp>
+Starting process <24> on on <c3797.ofp>
+Starting process <10> on on <c3783.ofp>
+Starting process <8> on on <c3781.ofp>
+Starting process <28> on on <c3801.ofp>
+Starting process <20> on on <c3793.ofp>
+Starting process <0> on on <c3773.ofp>
+Starting process <17> on on <c3790.ofp>
+Starting process <5> on on <c3778.ofp>
+Starting process <31> on on <c3804.ofp>
+Starting process <13> on on <c3786.ofp>
+Starting process <22> on on <c3795.ofp>
+Starting process <15> on on <c3788.ofp>
+Starting process <7> on on <c3780.ofp>
+Starting process <26> on on <c3799.ofp>
+Starting process <25> on on <c3798.ofp>
+Starting process <11> on on <c3784.ofp>
+Starting process <9> on on <c3782.ofp>
+Starting process <29> on on <c3802.ofp>
+Starting process <21> on on <c3794.ofp>
+Starting process <2> on on <c3775.ofp>
+Starting process <3> on on <c3776.ofp>
+Init; 39943.463185 ms
+Iter 0; 2523.03464; ; 468.77132; 1660.976193; 393.287127
+Iter 1; 502.677097; ; 332.991931; 105.643475; 64.041691
+Iter 2; 463.161309; ; 325.373063; 83.8446; 53.943646
+Iter 3; 464.485467; ; 325.070164; 86.794705; 52.620598
+Iter 4; 452.384926; ; 290.483128; 116.632268; 45.26953
+Iter 5; 451.330877; ; 287.606372; 119.708764; 44.015741
+Iter 6; 443.474519; ; 324.572884; 75.275143; 43.626492
+Iter 7; 449.198511; ; 323.733236; 83.25527; 42.210005
+Iter 8; 445.565796; ; 315.815438; 86.707375; 43.042983
+Iter 9; 437.815109; ; 320.688461; 74.270824; 42.855824
+Iter 10; 438.921346; ; 322.933667; 76.81195; 39.175729
+Iter 11; 435.516522; ; 317.865475; 79.309826; 38.341221
+Iter 12; 437.836618; ; 318.309414; 80.074905; 39.452299
+Iter 13; 435.432091; ; 317.683645; 80.909484; 36.838962
+Iter 14; 434.778183; ; 318.567864; 79.976115; 36.234204
+Iter 15; 435.313112; ; 276.39395; 122.359399; 36.559763
+Iter 16; 425.594977; ; 317.389885; 72.441168; 35.763924
+Iter 17; 431.313039; ; 320.422451; 69.237372; 41.653216
+Iter 18; 431.168448; ; 318.256504; 78.010979; 34.900965
+Iter 19; 423.512451; ; 317.747145; 71.896029; 33.869277
+Iter 20; 423.596261; ; 318.632394; 71.934098; 33.029769
+Iter 21; 425.855817; ; 285.348556; 105.640745; 34.866516
+Iter 22; 423.9889; ; 268.530692; 122.26482; 33.193388
+Iter 23; 421.560884; ; 317.731575; 70.8758; 32.953509
+Iter 24; 432.338847; ; 320.97396; 71.972788; 39.392099
+Iter 25; 424.478099; ; 317.364056; 71.709388; 35.404655
+Iter 26; 424.941178; ; 317.789655; 72.549867; 34.601656
+Iter 27; 426.777496; ; 317.060036; 76.578401; 33.139059
+Iter 28; 422.132223; ; 316.647257; 72.010138; 33.474828
+Iter 29; 426.044046; ; 317.932075; 75.150923; 32.961048
