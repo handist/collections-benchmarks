@@ -1,5 +1,5 @@
 # Configuration for the Moldyn benchmark
-PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/launcher.sh"
+PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/directmpilauncher.sh"
 export BENCHMARK_NAME="moldynmpi"
 export MAIN="handist.moldyn.MoldynMPI"
 # There are 4 compulsory arguments and 1 optional:

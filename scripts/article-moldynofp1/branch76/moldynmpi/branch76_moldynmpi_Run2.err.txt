@@ -1,1 +1,0 @@
-Usage: java -cp [...] mpjexpress.moldyn.MoldynMPI <data size index(0or1)> <result file name>
