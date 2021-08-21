@@ -129,7 +129,7 @@ public class MoldynMPI {
           MPI.Finalize();
           
           if(rank == 0) {
-              File file = new File("results/" + fileName);
+              File file = new File(fileName);
               file.createNewFile();
               FileWriter fw = new FileWriter(file, true);
               fw.write((end_ns-start_ns)/1.0e9 + "\n");

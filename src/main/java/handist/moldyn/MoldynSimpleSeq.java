@@ -33,7 +33,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 
-public class MoldynSinpleSeq implements Serializable {
+public class MoldynSimpleSeq implements Serializable {
 
     public static int datasizes[] = {8,13};
     public static double refval[] = {1731.4306625334357,7397.392307839352};
@@ -93,7 +93,7 @@ public class MoldynSinpleSeq implements Serializable {
         final int problemSize = Integer.parseInt(args[0]);
         final String fileName = args[1];
         
-        MoldynSinpleSeq m = new MoldynSinpleSeq();
+        MoldynSimpleSeq m = new MoldynSimpleSeq();
         
         try {
             System.out.println("start warmup for " + m.warmup + " times");
@@ -114,7 +114,7 @@ public class MoldynSinpleSeq implements Serializable {
             System.out.println("############## simple seq (with warm up) time: "+ (end-start)/1.0e9);
             m.tidyup();
             
-            File file = new File("results/" + fileName);
+            File file = new File(fileName);
             file.createNewFile();
             FileWriter fw = new FileWriter(file, true);
             fw.write((end-start)/1.0e9 + "\n");
@@ -425,9 +425,9 @@ public class MoldynSinpleSeq implements Serializable {
             fzi = 0.0;
 
             for (i = x + 1; i < mdsize; i++) {
-                xx = xi - MoldynSinpleSeq.one[i].xcoord;
-                yy = yi - MoldynSinpleSeq.one[i].ycoord;
-                zz = zi - MoldynSinpleSeq.one[i].zcoord;
+                xx = xi - MoldynSimpleSeq.one[i].xcoord;
+                yy = yi - MoldynSimpleSeq.one[i].ycoord;
+                zz = zi - MoldynSimpleSeq.one[i].zcoord;
 
                 if (xx < (-sideh)) {
                     xx = xx + side;
@@ -458,24 +458,24 @@ public class MoldynSinpleSeq implements Serializable {
                     rrd6 = rrd2 * rrd4;
                     rrd7 = rrd6 * rrd;
 
-                    MoldynSinpleSeq.epot = MoldynSinpleSeq.epot + (rrd6 - rrd3);
+                    MoldynSimpleSeq.epot = MoldynSimpleSeq.epot + (rrd6 - rrd3);
                     r148 = rrd7 - 0.5 * rrd4;
 
-                    MoldynSinpleSeq.vir = MoldynSinpleSeq.vir - rd * r148;
+                    MoldynSimpleSeq.vir = MoldynSimpleSeq.vir - rd * r148;
 
                     forcex = xx * r148;
                     fxi = fxi + forcex;
-                    MoldynSinpleSeq.one[i].xforce = MoldynSinpleSeq.one[i].xforce - forcex;
+                    MoldynSimpleSeq.one[i].xforce = MoldynSimpleSeq.one[i].xforce - forcex;
 
                     forcey = yy * r148;
                     fyi = fyi + forcey;
-                    MoldynSinpleSeq.one[i].yforce = MoldynSinpleSeq.one[i].yforce - forcey;
+                    MoldynSimpleSeq.one[i].yforce = MoldynSimpleSeq.one[i].yforce - forcey;
 
                     forcez = zz * r148;
                     fzi = fzi + forcez;
-                    MoldynSinpleSeq.one[i].zforce = MoldynSinpleSeq.one[i].zforce - forcez;
+                    MoldynSimpleSeq.one[i].zforce = MoldynSimpleSeq.one[i].zforce - forcez;
 
-                    MoldynSinpleSeq.interactions++;
+                    MoldynSimpleSeq.interactions++;
                 }
 
             }
@@ -511,7 +511,7 @@ public class MoldynSinpleSeq implements Serializable {
             sq = Math.sqrt(xvelocity * xvelocity + yvelocity * yvelocity + zvelocity * zvelocity);
 
             if (sq > vaverh) {
-                MoldynSinpleSeq.count = MoldynSinpleSeq.count + 1.0;
+                MoldynSimpleSeq.count = MoldynSimpleSeq.count + 1.0;
             }
 
             velt = sq;

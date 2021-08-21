@@ -321,7 +321,7 @@ public class MoldynSeqMT implements Serializable {
             System.out.println("############## handist 2CProdMT time: " + (end - start) / 1.0e9);
             m.tidyup();
             
-            File file = new File("results/" + fileName);
+            File file = new File(fileName);
             file.createNewFile();
             FileWriter fw = new FileWriter(file, true);
             fw.write((end-start)/1.0e9 + "\n");
