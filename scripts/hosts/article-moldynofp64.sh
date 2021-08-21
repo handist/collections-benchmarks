@@ -11,7 +11,7 @@ export CONFIGS="76-2dtrial-outputproduct.sh"
 # Path to the MPI bindings
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
-export NB_HOSTS=1
+export NB_HOSTS=64
 # Number of concurrent workers *(-Dglb.workers)
 export WORKERS=68
 # Core restriction

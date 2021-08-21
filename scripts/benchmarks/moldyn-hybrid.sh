@@ -4,7 +4,7 @@ export BENCHMARK_NAME="moldynhybrid"
 export MAIN="handist.moldyn.MoldynHybrid"
 # There are 4 compulsory arguments and 1 optional:
 # <datasize index(0or1)> <number of workers> <number of split>
-export ARGS="1 ${WORKERS} 32 ${HOST}_hybrid.csv"
+export ARGS="1 ${WORKERS} 32 ${HOST}_hybrid_${WORKERS}.csv"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
 export REPETITIONS=5
