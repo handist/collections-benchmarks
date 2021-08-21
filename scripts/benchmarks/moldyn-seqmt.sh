@@ -1,10 +1,10 @@
 # Configuration for the Moldyn benchmark
 PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/launcher-nompi.sh"
-export BENCHMARK_NAME="moldyn"
-export MAIN="handist.moldyn.Moldyn"
+export BENCHMARK_NAME="moldynseqmt"
+export MAIN="handist.moldyn.MoldynSeqMT"
 # There are 4 compulsory arguments and 1 optional:
-# <datasize> <number of workers> <number of split x> <number of split y>
-export ARGS="8 ${WORKERS} 3 3"
+# <datasize index(0or1)> <number of workers> <number of split>
+export ARGS="1 ${WORKERS} 32"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
 export REPETITIONS=5

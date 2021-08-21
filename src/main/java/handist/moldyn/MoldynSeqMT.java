@@ -1,3 +1,27 @@
+/**************************************************************************
+*                                                                         *
+*             Java Grande Forum Benchmark Suite - MPJ Version 1.0         *
+*                                                                         *
+*                            produced by                                  *
+*                                                                         *
+*                  Java Grande Benchmarking Project                       *
+*                                                                         *
+*                                at                                       *
+*                                                                         *
+*                Edinburgh Parallel Computing Centre                      *
+*                                                                         *
+*                email: epcc-javagrande@epcc.ed.ac.uk                     *
+*                                                                         *
+*                  Original version of this code by                       *
+*                         Dieter Heermann                                 *
+*                       converted to Java by                              *
+*                Lorna Smith  (l.smith@epcc.ed.ac.uk)                     *
+*                   (see copyright notice below)                          *
+*                                                                         *
+*      This version copyright (c) The University of Edinburgh, 2001.      *
+*                         All rights reserved.                            *
+*                                                                         *
+**************************************************************************/
 package handist.moldyn;
 
 import static apgas.Constructs.*;
@@ -11,33 +35,39 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 
 import apgas.MultipleException;
 import handist.collections.Chunk;
 import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.RangedList;
-import handist.collections.RangedListProduct;
+import handist.collections.dist.Reducer;
 import mpi.MPIException;
 
-public class Moldyn implements Serializable {
+public class MoldynSeqMT implements Serializable {
+
+    static class DoubleBox {
+        double val;
+    }
+
     private static final class LocalStatics {
         double epot, vir;
         int interactions;
     }
 
-    static class MyAccumM extends AccumulatorManager<Particle, SumForce> {
+    static class MyAccumM extends AccumulatorManager<Particle, Sp> {
         public MyAccumM(ChunkedList<Particle> target) {
             super(target);
         }
 
         @Override
-        protected SumForce init() {
-            return new SumForce();
+        protected Sp init() {
+            return new Sp();
         }
 
         @Override
-        protected void reduce(Particle target, SumForce copy) {
+        protected void reduce(Particle target, Sp copy) {
             target.xforce += copy.x;
             copy.x = 0;
             target.yforce += copy.y;
@@ -47,7 +77,31 @@ public class Moldyn implements Serializable {
         }
     }
 
-    public final class Particle implements Serializable {
+    static class MyReducer extends Reducer<MyReducer, Particle> {
+        double val;
+        final Function<Particle, Double> func;
+
+        MyReducer(Function<Particle, Double> func) {
+            this.func = func;
+        }
+
+        @Override
+        public void merge(MyReducer reducer) {
+            this.val += reducer.val;
+        }
+
+        @Override
+        public MyReducer newReducer() {
+            return new MyReducer(func);
+        }
+
+        @Override
+        public void reduce(Particle input) {
+            val += func.apply(input);
+        }
+    }
+
+    public final static class Particle implements Serializable {
 
         private static final long serialVersionUID = 4019649624174733374L;
         public double xcoord, ycoord, zcoord;
@@ -111,85 +165,6 @@ public class Moldyn implements Serializable {
 
         }
 
-        public void force(double side, double rcoff, int mdsize, int x, Object[] ane, Moldyn md) {
-
-            double sideh;
-            double rcoffs;
-
-            double xx, yy, zz, xi, yi, zi, fxi, fyi, fzi;
-            double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
-            double forcex, forcey, forcez;
-
-            int i;
-
-            sideh = 0.5 * side;
-            rcoffs = rcoff * rcoff;
-
-            xi = xcoord;
-            yi = ycoord;
-            zi = zcoord;
-            fxi = 0.0;
-            fyi = 0.0;
-            fzi = 0.0;
-
-//       for (i=x+1;i<mdsize;i++) {
-            for (i = 0; i < x; i++) {
-                final Particle p1 = ((Particle) ane[i]);
-                xx = xi - p1.xcoord;
-                yy = yi - p1.ycoord;
-                zz = zi - p1.zcoord;
-
-                if (xx < (-sideh)) {
-                    xx = xx + side;
-                }
-                if (xx > (sideh)) {
-                    xx = xx - side;
-                }
-                if (yy < (-sideh)) {
-                    yy = yy + side;
-                }
-                if (yy > (sideh)) {
-                    yy = yy - side;
-                }
-                if (zz < (-sideh)) {
-                    zz = zz + side;
-                }
-                if (zz > (sideh)) {
-                    zz = zz - side;
-                }
-
-                rd = xx * xx + yy * yy + zz * zz;
-
-                if (rd <= rcoffs) {
-                    rrd = 1.0 / rd;
-                    rrd2 = rrd * rrd;
-                    rrd3 = rrd2 * rrd;
-                    rrd4 = rrd2 * rrd2;
-                    rrd6 = rrd2 * rrd4;
-                    rrd7 = rrd6 * rrd;
-                    md.epot = md.epot + (rrd6 - rrd3);
-                    r148 = rrd7 - 0.5 * rrd4;
-                    md.vir = md.vir - rd * r148;
-                    forcex = xx * r148;
-                    fxi = fxi + forcex;
-                    p1.xforce = p1.xforce - forcex;
-                    forcey = yy * r148;
-                    fyi = fyi + forcey;
-                    p1.yforce = p1.yforce - forcey;
-                    forcez = zz * r148;
-                    fzi = fzi + forcez;
-                    p1.zforce = p1.zforce - forcez;
-                    md.interactions++;
-                }
-
-            }
-
-            xforce = xforce + fxi;
-            yforce = yforce + fyi;
-            zforce = zforce + fzi;
-
-        }
-
         public double mkekin(double hsq2) {
 
             double sumt = 0.0;
@@ -222,7 +197,7 @@ public class Moldyn implements Serializable {
             sq = Math.sqrt(xvelocity * xvelocity + yvelocity * yvelocity + zvelocity * zvelocity);
 
             if (sq > vaverh) {
-                Moldyn.count = Moldyn.count + 1.0;
+                MoldynSeqMT.count = MoldynSeqMT.count + 1.0;
             }
 
             velt = sq;
@@ -230,7 +205,7 @@ public class Moldyn implements Serializable {
         }
     }
 
-    public final class Random implements Serializable {
+    public final static class Random implements Serializable {
 
         private static final long serialVersionUID = 6984646650689608506L;
         public int iseed;
@@ -245,7 +220,6 @@ public class Moldyn implements Serializable {
         public double next() {
 
             double s, u1, u2, r;
-            s = 1.0;
             do {
                 u1 = update();
                 u2 = update();
@@ -296,10 +270,6 @@ public class Moldyn implements Serializable {
         public double z = 0.0;
     }
 
-    private static final class SumForce {
-        double x, y, z;
-    }
-
     public static int datasizes[] = { 8, 13 };
     public static double refval[] = { 1731.4306625334357, 7397.392307839352 };
     private static final long serialVersionUID = 1364008814489556197L;
@@ -309,42 +279,45 @@ public class Moldyn implements Serializable {
     public static double vir = 0.0; // virial
     public static double count = 0.0; // ???
     public static int interactions = 0; // count of interactions between particles
-    static int Nworkers = 2; // num workers
-    static int splitX = 3;
+    static int Nworkers; // num workers
+    static int Ndivide;
 
-    static int splitY = 3;
-
-    private static boolean DEBUG = false;
+    private static final boolean DEBUG = false;
 
     public static String filePath(int id) {
         return "handistSeq" + String.format("%02d", id) + ".csv";
     }
 
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
+                + "<data size index(0or1)> <number of workers> <number of divide>");
+    }
+    
     public static void main(String[] args) {
-        final Moldyn m = new Moldyn();
-        if (args.length != 4) {
+        if (args.length != 3) {
             printUsage();
             return;
         }
-
-        m.mm = Integer.parseInt(args[0]);
+        final int problemSize = Integer.parseInt(args[0]);
         Nworkers = Integer.parseInt(args[1]);
-        splitX = Integer.parseInt(args[2]);
-        splitY = Integer.parseInt(args[3]);
+        Ndivide = Integer.parseInt(args[2]);
 
+        final MoldynSeqMT m0 = new MoldynSeqMT();
         // Measurer.turnVerboseMode(true);
+        
         try {
-            System.out.println("start warmup for " + m.warmup + " times");
-            for (int i = 0; i < m.warmup; i++) {
+            System.out.println("start warmup for " + m0.warmup + " times");
+            for (int i = 0; i < m0.warmup; i++) {
                 System.out.println("##################################################");
-                System.out.println("warmup " + (i + 1) + "/" + m.warmup);
-                m.initialise(datasizes[0]);
-                m.runiters(true);
+                System.out.println("warmup " + (i + 1) + "/" + m0.warmup);
+                m0.initialise(datasizes[0]);
+                m0.runiters(true);
                 // m.tidyup();
             }
+
             System.out.println("##################################################");
             System.out.println("main run");
-            final int problemSize = 0; // or 1
+            final MoldynSeqMT m = new MoldynSeqMT();
             m.initialise(datasizes[problemSize]);
             final long start = System.nanoTime();
             m.runiters(false);
@@ -357,50 +330,46 @@ public class Moldyn implements Serializable {
         }
     }
 
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.moldyn.Moldyn "
-                + "<point dimension> <mm datasize> <Nworkers> <splitX> <splitX");
-    }
-
     final double den = 0.83134; // density
     final double tref = 0.722;
-    final double h = 0.064;
 
+    final double h = 0.064;
     public List<LongRange> ranges;
     public LongRange allRange;
     public Chunk<Particle> one;
+    public ChunkedList<Particle> oneX;
+
     public int nprocess;
     public int nchunks;
 
-    int mm = 8; // one side length for each rank
     int mdsize; // number of particles
+
     int ijk, i, j, k, lg, move; // iteration variables
 
-    double rcoff, rcoffs, side, sideh, hsq, hsq2, vel;
+    double rcoff, rcoffs, side, sideh, hsq, hsq2;
 
     double r, tscale, sc, ek;
 
     double vaver, vaverh;
 
     double etot, temp, pres, rp; // results(total energy/temperature/pressure/???)
-
     int irep = 10;
     int istop = 19;
+
     int iprint = 10;
 
     int movemx = 50;
 
     int warmup = 5;
+
     Random randnum;
-    MyAccumM myAccM;
+    transient MyAccumM myAccM;
 
     private final void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {
         double sideh;
         double rcoffs;
 
         double xi, yi, zi, fxi, fyi, fzi;
-
-        final int i;
 
         sideh = 0.5 * side;
         rcoffs = rcoff * rcoff;
@@ -411,24 +380,13 @@ public class Moldyn implements Serializable {
         fxi = 0.0;
         fyi = 0.0;
         fzi = 0.0;
-        // SumForce f = new SumForce();
-        // f.x = 0.0; f.y=0.0; f.z = 0.0;
-        final double fx = 0.0;
-        final double fy = 0.0;
-        final double fz = 0.0;
 
-//       for (i=x+1;i<mdsize;i++) {
-//      Object[] ane = ((Chunk)one).a;
-        // for (i=0;i<x;i++) {
-
-//      one.forEach(new LongRange(0, x), (Particle p1)->{
-        final RangedList<SumForce> fs = myAccM.getCopy(pairs.getRange());
-        final Iterator<SumForce> fiterator = fs != null ? fs.iterator() : null;
+        final RangedList<Sp> fs = myAccM.getCopy(pairs.getRange());
+        final Iterator<Sp> fiterator = fs != null ? fs.iterator() : null;
         double vir0 = 0.0, epot0 = 0.0;
         int inters0 = 0;
         for (final Particle p1 : pairs) {
-            // Particle p1 = ((Particle)ane[i]);
-            final SumForce p1f = fiterator.next();
+            final Sp p1f = fiterator.next();
             double xx = xi - p1.xcoord;
             double yy = yi - p1.ycoord;
             double zz = zi - p1.zcoord;
@@ -465,28 +423,21 @@ public class Moldyn implements Serializable {
                 r148 = rrd7 - 0.5 * rrd4;
                 vir0 = vir0 - rd * r148;
                 final double forcex = xx * r148;
-                // f.x = f.x + forcex;
                 fxi += forcex;
-                // p1.xforce = p1.xforce - forcex;
                 p1f.x -= forcex;
                 final double forcey = yy * r148;
-                // f.y = f.y + forcey;
                 fyi += forcey;
-                // p1.yforce = p1.yforce - forcey;
                 p1f.y -= forcey;
                 final double forcez = zz * r148;
-                // f.z = f.z + forcez;
                 fzi += forcez;
-                // p1.zforce = p1.zforce - forcez;
                 p1f.z -= forcez;
                 inters0++;
             }
-//                  });
         }
-        s.epot = epot0;
-        s.vir = vir0;
-        s.interactions = inters0;
-        synchronized (p0) {
+        synchronized (this) {
+            s.epot += epot0;
+            s.vir += vir0;
+            s.interactions += inters0;
             p0.xforce = p0.xforce + fxi;
             p0.yforce = p0.yforce + fyi;
             p0.zforce = p0.zforce + fzi;
@@ -511,8 +462,9 @@ public class Moldyn implements Serializable {
 
         /* Particle Generation */
         allRange = new LongRange(0, mdsize);
-        // one = new ChunkedList<>();
+        oneX = new ChunkedList<>();
         one = new Chunk<>(allRange);
+        oneX.add(one);
 
         final double a = side / mm;
         ijk = 0;
@@ -603,68 +555,8 @@ public class Moldyn implements Serializable {
         }
 
         /* setup result output files */
-
         Timer.fileSetup(filePath(0));
 
-    }
-
-    private void interForce(Particle p1, Particle p2, SumForce f) {
-        double xx, yy, zz;
-        double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
-        double forcex, forcey, forcez;
-
-        xx = p1.xcoord - p2.xcoord;
-        yy = p1.ycoord - p2.ycoord;
-        zz = p1.zcoord - p2.zcoord;
-
-        if (xx < (-sideh)) {
-            xx = xx + side;
-        }
-        if (xx > (sideh)) {
-            xx = xx - side;
-        }
-        if (yy < (-sideh)) {
-            yy = yy + side;
-        }
-        if (yy > (sideh)) {
-            yy = yy - side;
-        }
-        if (zz < (-sideh)) {
-            zz = zz + side;
-        }
-        if (zz > (sideh)) {
-            zz = zz - side;
-        }
-
-        rd = xx * xx + yy * yy + zz * zz;
-
-        if (rd <= rcoffs) {
-            rrd = 1.0 / rd;
-            rrd2 = rrd * rrd;
-            rrd3 = rrd2 * rrd;
-            rrd4 = rrd2 * rrd2;
-            rrd6 = rrd2 * rrd4;
-            rrd7 = rrd6 * rrd;
-
-            Moldyn.epot = Moldyn.epot + (rrd6 - rrd3);
-
-            r148 = rrd7 - 0.5 * rrd4;
-            Moldyn.vir = Moldyn.vir - rd * r148;
-
-            forcex = xx * r148;
-            f.x += forcex; // in order to avoid to information loss
-            p2.xforce -= forcex;
-
-            forcey = yy * r148;
-            f.y += forcey;
-            p2.yforce -= forcey;
-
-            forcez = zz * r148;
-            f.z += forcez;
-            p2.zforce -= forcez;
-
-            Moldyn.interactions++;
-        }
     }
 
     // main routine
@@ -679,9 +571,9 @@ public class Moldyn implements Serializable {
             /* move the particles and update velocities, no use global variables */
             Timer.start();
 
-            for (final Particle p : one) {// one.forEach((p) -> {
+            oneX.parallelForEach(Nworkers, (p) -> {
                 p.domove(side);
-            } // );
+            });
 
             Timer.finish(Timer.Phase.domove);
 
@@ -695,13 +587,12 @@ public class Moldyn implements Serializable {
             /* compute forces */
             epot = 0.0;
             vir = 0.0;
-            final SumForce sf = new SumForce(); // tmp variable in order to avoid to information loss
 
             Timer.start();
             // split but sequential exec
 
             final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
-                    .splitN(splitX, splitY, Nworkers, false);
+                    .splitN(Ndivide, Ndivide, Nworkers, false);
             final List<LocalStatics> lss = new ArrayList<>();
             finish(() -> {
                 for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
@@ -716,23 +607,12 @@ public class Moldyn implements Serializable {
                     });
                 }
             });
-            myAccM.merge();
+            myAccM.parallelMerge(Nworkers);
             for (final LocalStatics ls : lss) {
                 epot += ls.epot;
                 vir += ls.vir;
                 interactions += ls.interactions;
             }
-            /*
-             * one.forEach(allRange, (i1, p1) -> { force1(p1, side, rcoff, i1); });
-             */
-            /*
-             * forEach(allRange, (i1, p1) -> { force1(p1, side, rcoff, i1); });
-             */
-            /*
-             * Object[] ane = ((Chunk)one).a; for(int i1=0; i1<mdsize; i1++) { Particle p1 =
-             * (Particle)ane[i1]; //p1.force(side, rcoff, mdsize, i1, ane, this); force1(p1,
-             * side, rcoff, i1); };
-             */
 
             Timer.finish(Timer.Phase.interForces);
 
@@ -743,51 +623,15 @@ public class Moldyn implements Serializable {
             }
 
             // ===================================================================================================
-            /* global reduction on partial sums of the forces, epot, vir and interactions */
-            Timer.start();
-
-            /*
-             * one.allreduce((Particle p) -> { return p; }, (Particle p, Particle recv) -> {
-             * p.xforce += recv.xforce; p.yforce += recv.yforce; p.zforce += recv.zforce;
-             * });
-             */
-
-            Timer.finish(Timer.Phase.reduceForces);
-
-            if (DEBUG) {
-                System.out.println(" #after force reduce");
-                System.out.println(" " + one.get(0));
-                System.out.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-            // ===================================================================================================
-            /* reduce parameters */
-            Timer.start();
-
-            // TODO
-            Timer.finish(Timer.Phase.reduceParams);
-
-            // placeGroup.barrier(); // TODO: Not need? written in original code.
-
-            if (DEBUG) {
-                System.out.println(" #after epot reduce");
-                System.out.println(" " + one.get(0));
-                System.out.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-
-            // ===================================================================================================
             /* scale forces, update velocities */
             Timer.start();
 
-            class TmpSum {
-                double v;
-            }
-            final TmpSum sum = new TmpSum();
-            sum.v = 0.0;
-
-            for (final Particle p : one) {// one.forEach((Particle p) -> {
-                sum.v += p.mkekin(hsq2);
-            } // );
-            ekin = sum.v / hsq;
+            // TODO reduce
+            final MyReducer ekinReduce = new MyReducer((p) -> {
+                return p.mkekin(hsq2);
+            });
+            oneX.parallelReduce(ekinReduce);
+            ekin = ekinReduce.val / hsq;
 
             Timer.finish(Timer.Phase.scaleForces);
 
@@ -801,17 +645,15 @@ public class Moldyn implements Serializable {
             /* average velocity */
             Timer.start();
 
-            class TmpVel {
-                double v;
-            }
-            final TmpVel vel = new TmpVel();
-            vel.v = 0.0;
+            double vel = 0.0;
             count = 0.0;
 
-            for (final Particle p : one) {// -> {
-                vel.v += p.velavg(vaverh, h);
-            } // );
-            vel.v = vel.v / h;
+            // TODO reduce
+            final MyReducer veravgReduce = new MyReducer((p) -> {
+                return p.velavg(vaverh, h);
+            });
+            oneX.parallelReduce(Nworkers, veravgReduce);
+            vel = veravgReduce.val / h;
 
             Timer.finish(Timer.Phase.averVelocity);
 
@@ -827,11 +669,9 @@ public class Moldyn implements Serializable {
 
             if ((move < istop) && (((move + 1) % irep) == 0)) {
                 sc = Math.sqrt(tref / (tscale * ekin));
-                // one.forEach((p) -> {
-                for (final Particle p : one) {
+                oneX.parallelForEach(Nworkers, (p) -> {
                     p.dscal(sc);
-                }
-                // });
+                });
                 ekin = tref / tscale;
             }
 
@@ -844,12 +684,13 @@ public class Moldyn implements Serializable {
                 etot = ek + epot;
                 temp = tscale * ekin;
                 pres = den * 16.0 * (ekin - vir) / mdsize;
-                vel.v = vel.v / mdsize;
+                vel = vel / mdsize;
                 rp = (count / mdsize) * 100.0;
 
                 System.out.println("#Iteration " + move);
                 System.out.println(" interactions : " + interactions);
                 System.out.println(" total energy : " + etot);
+                // System.out.println(" average vel : " + vel);
                 // writeCoordinates(move);
 
             }
