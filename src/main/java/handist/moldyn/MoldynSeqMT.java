@@ -42,6 +42,7 @@ import handist.collections.Chunk;
 import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.RangedList;
+import handist.collections.RangedListProduct;
 import handist.collections.dist.Reducer;
 import mpi.MPIException;
 
@@ -288,11 +289,6 @@ public class MoldynSeqMT implements Serializable {
         return "handistSeq" + String.format("%02d", id) + ".csv";
     }
 
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
-                + "<data size index(0or1)> <number of workers> <number of divide>");
-    }
-    
     public static void main(String[] args) {
         if (args.length != 3) {
             printUsage();
@@ -304,7 +300,7 @@ public class MoldynSeqMT implements Serializable {
 
         final MoldynSeqMT m0 = new MoldynSeqMT();
         // Measurer.turnVerboseMode(true);
-        
+
         try {
             System.out.println("start warmup for " + m0.warmup + " times");
             for (int i = 0; i < m0.warmup; i++) {
@@ -328,6 +324,11 @@ public class MoldynSeqMT implements Serializable {
         } catch (final MultipleException me) {
             me.printStackTrace();
         }
+    }
+
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
+                + "<data size index(0or1)> <number of workers> <number of divide>");
     }
 
     final double den = 0.83134; // density
