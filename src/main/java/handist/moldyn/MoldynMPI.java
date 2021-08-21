@@ -24,9 +24,9 @@
 **************************************************************************/
 package handist.moldyn;
 
-import handist.moldyn.Timer.Phase;
-
-//package moldyn;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import mpi.*;
 
@@ -78,24 +78,21 @@ public class MoldynMPI {
 	
 	private static boolean DEBUG = false;
 	
-	public static String filePath(int id) {
-		return "target/original/Time" + String.format("%02d", id) + ".csv";
-	}
-	
 	public static int nprocess;
 	public static int rank;
 	
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] mpjexpress.moldyn.MoldynMPI "
-                + "<data size index(0or1)>");
+                + "<data size index(0or1)> <result file name>");
 	}
     	
-    public static void main(String argv[]) throws MPIException {
-          if(argv.length != 4) {
+    public static void main(String argv[]) throws MPIException, IOException {
+          if(argv.length != 5) {
               printUsage();
               return;
           }
           final int problemSize = Integer.parseInt(argv[3]);
+          final String fileName = argv[4];
           
           /* Initialise MPI */
           MPI.Init(argv);
@@ -103,9 +100,11 @@ public class MoldynMPI {
           nprocess = MPI.COMM_WORLD.Size();
           
           MoldynMPI m = new MoldynMPI();
+          long start_ns = 0, end_ns = 0;
+          
           System.out.println("start warmup for " + m.warmup + " times");
           for(int i = 0; i < m.warmup; i++) {
-                  System.out.println("##################################################");
+              System.out.println("##################################################");
               System.out.println("warmup " + (i+1) + "/" + m.warmup);
               m.initialise(0);
               MPI.COMM_WORLD.Barrier();
@@ -117,13 +116,25 @@ public class MoldynMPI {
           System.out.println("main run");
           m.initialise(problemSize);
           MPI.COMM_WORLD.Barrier();
+          if(rank == 0)
+              start_ns = System.nanoTime();
           m.runiters(false);
+          if(rank == 0)
+              end_ns = System.nanoTime();
           MPI.COMM_WORLD.Barrier();
           m.validate(problemSize);
           m.tidyup();
     
           /* Finalise MPI */
-          MPI.Finalize();    
+          MPI.Finalize();
+          
+          if(rank == 0) {
+              File file = new File("results/" + fileName);
+              file.createNewFile();
+              FileWriter fw = new FileWriter(file, true);
+              fw.write((end_ns-start_ns)/1.0e9 + "\n");
+              fw.close();
+          }
     }
 
 	public void initialise(int size) {
@@ -263,10 +274,6 @@ public class MoldynMPI {
 			System.out.println("#Initialized");
 			printFirstParticleInfo();
 		}
-		
-		/* setup result output files */
-		Timer.fileSetup(filePath(rank));
-		
 	}
 
 	public void runiters(boolean isWarmup) throws MPIException {
@@ -275,13 +282,9 @@ public class MoldynMPI {
 		for (move = 0; move < movemx; move++) {	// iteration
 			// ===================================================================================================
 			/* move the particles and update velocities, no use global variables */
-			Timer.start();
-			
 			for (i = 0; i < mdsize; i++) {
 				one[i].domove(side); 
 			}
-			
-			Timer.finish(Timer.Phase.domove);
 			
 			if(rank == 0 && DEBUG) {
 				System.out.println(" #after domove");
@@ -295,13 +298,9 @@ public class MoldynMPI {
 
 			MPI.COMM_WORLD.Barrier();
 
-			Timer.start();
-			
 			for (i = 0 + rank; i < mdsize; i += nprocess) {
 				one[i].force(side, rcoff, mdsize, i);
 			}
-			
-			Timer.finish(Timer.Phase.interForces);
 
 			MPI.COMM_WORLD.Barrier();
 			
@@ -312,9 +311,7 @@ public class MoldynMPI {
 			}
 			
 			// ===================================================================================================
-			/* global reduction on partial sums of the forces, epot, vir and interactions */
-			Timer.start();
-			
+			/* global reduction on partial sums of the forces, epot, vir and interactions */			
 			for (i = 0; i < mdsize; i++) {
 				tmp_xforce[i] = one[i].xforce;
 				tmp_yforce[i] = one[i].yforce;
@@ -331,8 +328,6 @@ public class MoldynMPI {
 				one[i].zforce = tmp_zforce[i];
 			}
 			
-			Timer.finish(Timer.Phase.reduceForces);
-			
 			if(rank == 0 && DEBUG) { 
 				System.out.println(" #after force reduce");
 				printFirstParticleInfo(); 
@@ -340,8 +335,6 @@ public class MoldynMPI {
 			}
 			
 			// ===================================================================================================
-			Timer.start();
-			
 			tmp_epot[0] = epot;
 			tmp_vir[0] = vir;
 			tmp_interactions[0] = interactions;
@@ -353,8 +346,6 @@ public class MoldynMPI {
 			epot = tmp_epot[0];
 			vir = tmp_vir[0];
 			interactions = tmp_interactions[0];
-			
-			Timer.finish(Timer.Phase.reduceParams);
 
 			MPI.COMM_WORLD.Barrier();
 			
@@ -365,7 +356,6 @@ public class MoldynMPI {
 			}
 			
 			// ===================================================================================================
-			Timer.start();
 			
 			sum = 0.0;
 
@@ -375,8 +365,6 @@ public class MoldynMPI {
 
 			ekin = sum / hsq;
 			
-			Timer.finish(Phase.scaleForces);
-			
 			if(rank == 0 && DEBUG) { 
 				System.out.println(" #after mkekin");
 				printFirstParticleInfo(); 
@@ -384,8 +372,6 @@ public class MoldynMPI {
 			}
 
 			// ===================================================================================================
-			Timer.start();
-			
 			vel = 0.0;
 			count = 0.0;
 
@@ -395,8 +381,6 @@ public class MoldynMPI {
 
 			vel = vel / h;
 			
-			Timer.finish(Timer.Phase.averVelocity);
-			
 			if(rank == 0 && DEBUG) { 
 				System.out.println(" #after valavg");
 				printFirstParticleInfo(); 
@@ -405,8 +389,6 @@ public class MoldynMPI {
 
 			// ===================================================================================================
 			/* tmeperature scale if required */
-			Timer.start();
-			
 			if ((move < istop) && (((move + 1) % irep) == 0)) {
 				sc = Math.sqrt(tref / (tscale * ekin));
 				for (i = 0; i < mdsize; i++) {
@@ -415,7 +397,6 @@ public class MoldynMPI {
 				ekin = tref / tscale;
 			}
 
-			Timer.finish(Timer.Phase.tempScale);
 			// ===================================================================================================
 			/* sum to get full potential energy and virial */ 
 			if (((move + 1) % iprint) == 0) {
@@ -433,16 +414,7 @@ public class MoldynMPI {
 					//printFirstParticleInfo();
 				}
 			}
-			
-			if(isWarmup) {
-				Timer.clear();
-				continue;
-			}
-			
-			Timer.write(filePath(rank), move);
-
 		}
-
 	}
 	
 	private void tidyup() {

@@ -30,8 +30,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -285,22 +283,23 @@ public class MoldynSeqMT implements Serializable {
 
     private static final boolean DEBUG = false;
 
-    public static String filePath(int id) {
-        return "handistSeq" + String.format("%02d", id) + ".csv";
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
+                + "<data size index(0or1)> <number of workers> <number of divide> <result filename");
     }
-
-    public static void main(String[] args) {
-        if (args.length != 3) {
+    
+    public static void main(String[] args) throws IOException {
+        if (args.length != 4) {
             printUsage();
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
         Nworkers = Integer.parseInt(args[1]);
         Ndivide = Integer.parseInt(args[2]);
+        final String fileName = args[3];
 
         final MoldynSeqMT m0 = new MoldynSeqMT();
-        // Measurer.turnVerboseMode(true);
-
+        
         try {
             System.out.println("start warmup for " + m0.warmup + " times");
             for (int i = 0; i < m0.warmup; i++) {
@@ -321,14 +320,15 @@ public class MoldynSeqMT implements Serializable {
             m.validate(problemSize);
             System.out.println("############## handist 2CProdMT time: " + (end - start) / 1.0e9);
             m.tidyup();
+            
+            File file = new File("results/" + fileName);
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file, true);
+            fw.write((end-start)/1.0e9 + "\n");
+            fw.close();
         } catch (final MultipleException me) {
             me.printStackTrace();
         }
-    }
-
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
-                + "<data size index(0or1)> <number of workers> <number of divide>");
     }
 
     final double den = 0.83134; // density
@@ -554,14 +554,9 @@ public class MoldynSeqMT implements Serializable {
             System.out.println("#Initialized");
             System.out.println(" " + one.get(0));
         }
-
-        /* setup result output files */
-        Timer.fileSetup(filePath(0));
-
     }
 
     // main routine
-    @SuppressWarnings("deprecation")
     public void runiters(boolean isWarmup) throws MPIException {
         final ChunkedList<Particle> oneX = new ChunkedList<>();
         oneX.add(one);
@@ -570,13 +565,9 @@ public class MoldynSeqMT implements Serializable {
         for (move = 0; move < movemx; move++) {
             // ===================================================================================================
             /* move the particles and update velocities, no use global variables */
-            Timer.start();
-
             oneX.parallelForEach(Nworkers, (p) -> {
                 p.domove(side);
             });
-
-            Timer.finish(Timer.Phase.domove);
 
             if (DEBUG) {
                 System.out.println(" #after domove");
@@ -589,7 +580,6 @@ public class MoldynSeqMT implements Serializable {
             epot = 0.0;
             vir = 0.0;
 
-            Timer.start();
             // split but sequential exec
 
             final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
@@ -615,8 +605,6 @@ public class MoldynSeqMT implements Serializable {
                 interactions += ls.interactions;
             }
 
-            Timer.finish(Timer.Phase.interForces);
-
             if (DEBUG) {
                 System.out.println(" #after force");
                 System.out.println(" " + one.get(0));
@@ -625,16 +613,13 @@ public class MoldynSeqMT implements Serializable {
 
             // ===================================================================================================
             /* scale forces, update velocities */
-            Timer.start();
-
+            
             // TODO reduce
             final MyReducer ekinReduce = new MyReducer((p) -> {
                 return p.mkekin(hsq2);
             });
             oneX.parallelReduce(ekinReduce);
             ekin = ekinReduce.val / hsq;
-
-            Timer.finish(Timer.Phase.scaleForces);
 
             if (DEBUG) {
                 System.out.println(" #after mkekin");
@@ -644,8 +629,6 @@ public class MoldynSeqMT implements Serializable {
 
             // ===================================================================================================
             /* average velocity */
-            Timer.start();
-
             double vel = 0.0;
             count = 0.0;
 
@@ -656,8 +639,6 @@ public class MoldynSeqMT implements Serializable {
             oneX.parallelReduce(Nworkers, veravgReduce);
             vel = veravgReduce.val / h;
 
-            Timer.finish(Timer.Phase.averVelocity);
-
             if (DEBUG) {
                 System.out.println(" #after velavg");
                 System.out.println(" " + one.get(0));
@@ -666,8 +647,6 @@ public class MoldynSeqMT implements Serializable {
 
             // ===================================================================================================
             /* tmeperature scale if required */
-            Timer.start();
-
             if ((move < istop) && (((move + 1) % irep) == 0)) {
                 sc = Math.sqrt(tref / (tscale * ekin));
                 oneX.parallelForEach(Nworkers, (p) -> {
@@ -676,7 +655,6 @@ public class MoldynSeqMT implements Serializable {
                 ekin = tref / tscale;
             }
 
-            Timer.finish(Timer.Phase.tempScale);
             // ===================================================================================================
             /* sum to get full potential energy and virial */
             if (((move + 1) % iprint) == 0) {
@@ -692,16 +670,7 @@ public class MoldynSeqMT implements Serializable {
                 System.out.println(" interactions : " + interactions);
                 System.out.println(" total energy : " + etot);
                 // System.out.println(" average vel : " + vel);
-                // writeCoordinates(move);
-
             }
-
-            if (isWarmup) {
-                Timer.clear();
-                continue;
-            }
-
-            Timer.write(filePath(0), move);
         }
     }
 
@@ -715,30 +684,6 @@ public class MoldynSeqMT implements Serializable {
         if (dev > 1.0e-12) {
             System.out.println("Validation failed");
             System.out.println("Kinetic Energy = " + ek + "  " + refval[size] + " diff:" + dev + "  " + size);
-        }
-    }
-
-    private void writeCoordinates(int iter) {
-        try {
-            // directory setup
-            final File target = new File("target");
-            if (!target.exists()) {
-                Files.createDirectories(Paths.get("target"));
-            }
-            // file steaming
-            final String filePath = "target/Coord_" + String.format("%02d", iter) + ".csv";
-            final FileWriter fw = new FileWriter(filePath, true);
-            fw.write("index,xcoord,ycoord,zcoord\n");
-            one.forEach((i, p) -> {
-                try {
-                    fw.write(i + "," + p.xcoord + "," + p.ycoord + "," + p.zcoord + "\n");
-                } catch (final IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            fw.close();
-        } catch (final IOException e) {
-            e.printStackTrace();
         }
     }
 }

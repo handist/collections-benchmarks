@@ -91,24 +91,20 @@ public class MoldynHybrid implements Serializable {
 	
 	private static final boolean DEBUG = false;
 	
-	public static String filePath(int id) {
-		return "handistSeq" + String.format("%02d", id) + ".csv";
-	}
-	
 	private static void printUsage() {
         System.err.println("Usage: java -cp [...] handist.moldyn.MoldynHybrid "
-                + "<data size index(0or1)> <number of workers> <number of divide>");
+                + "<data size index(0or1)> <number of workers> <number of divide> <result file name>");
 	}
 	
-	public static void main(String[] args) {
-		//Timer.turnVerboseMode(true);
-	    if(args.length != 3) {
+	public static void main(String[] args) throws IOException {
+	    if(args.length != 4) {
 	        printUsage();
             return;
 	    }
 	    final int problemSize = Integer.parseInt(args[0]);
 	    Nworkers = Integer.parseInt(args[1]);
 	    Ndivide = Integer.parseInt(args[2]);
+	    final String fileName = args[3];
 	    
 		try {
 			MoldynHybrid m0 = new MoldynHybrid();
@@ -130,6 +126,12 @@ public class MoldynHybrid implements Serializable {
 			m.validate(problemSize);
 			System.out.println("############## handist 2CProdDist time: "+ (end-start)/1.0e9);
 			m.tidyup();
+			
+			File file = new File("results/" + fileName);
+			file.createNewFile();
+			FileWriter fw = new FileWriter(file, true);
+            fw.write((end-start)/1.0e9 + "\n");
+            fw.close();
 		} catch (MultipleException me) {
 			me.printStackTrace();
 		}
@@ -142,10 +144,12 @@ public class MoldynHybrid implements Serializable {
             System.out.println("Kinetic Energy = " + ek + "  " + refval[size] + " diff:" + dev + "  " + size);
         }
     }
+    
     private void tidyup() {
         one = null;
         System.gc();
     }
+    
 	static class Sp implements Serializable {
 		public double x = 0.0;
 		public double y = 0.0;
@@ -276,11 +280,6 @@ public class MoldynHybrid implements Serializable {
 			System.out.println("#Initialized");
 			System.out.println(" " + one.get(0));
 		}
-		
-		/* setup result output files */
-
-			Timer.fileSetup(filePath(0));
-
 	}
 
 	static class MyReducer extends Reducer<MyReducer, Particle> {
@@ -319,13 +318,9 @@ public class MoldynHybrid implements Serializable {
 			for (move = 0; move < movemx; move++) {
 				// ===================================================================================================
 				/* move the particles and update velocities, no use global variables */
-				Timer.start();
-
 				oneX.parallelForEach(Nworkers, (p)->{
 					p.domove(side);
 				});
-				
-				Timer.finish(Timer.Phase.domove);
 				
 				if(placeGroup.rank() == 0 && DEBUG) {
 					System.out.println(" #after domove");
@@ -340,7 +335,6 @@ public class MoldynHybrid implements Serializable {
 
 				placeGroup.barrier();
 
-				Timer.start();
 				int prevInteractions = interactions;
 				interactions = 0;
 				// split but sequential exec
@@ -371,7 +365,6 @@ public class MoldynHybrid implements Serializable {
 				vir = placeGroup.allReduce1(vir, MPI.SUM);
 				interactions = placeGroup.allReduce1(interactions, MPI.SUM);
 				interactions += prevInteractions;
-				Timer.finish(Timer.Phase.interForces);
 
 				placeGroup.barrier();
 
@@ -384,13 +377,9 @@ public class MoldynHybrid implements Serializable {
 				placeGroup.barrier(); // TODO: Not need? written in original code.
 				// ===================================================================================================
 				/* scale forces, update velocities */
-				Timer.start();
-				
 				MyReducer ekinReduce = new MyReducer((p)->p.mkekin(hsq2));
 				oneX.parallelReduce(ekinReduce);
 				ekin = ekinReduce.val / hsq;
-
-				Timer.finish(Timer.Phase.scaleForces);
 				
 				if(placeGroup.rank() == 0 && DEBUG) {
 					System.out.println(" #after mkekin");
@@ -400,8 +389,6 @@ public class MoldynHybrid implements Serializable {
 
 				// ===================================================================================================
 				/* average velocity */
-				Timer.start();
-				
 				double vel = 0.0;
 				count = 0.0;
 
@@ -409,8 +396,6 @@ public class MoldynHybrid implements Serializable {
 
 				oneX.parallelReduce(Nworkers, veravgReduce);
 				vel = veravgReduce.val / h;
-				
-				Timer.finish(Timer.Phase.averVelocity);
 				
 				if(placeGroup.rank() == 0 && DEBUG) {
 					System.out.println(" #after velavg");
@@ -420,8 +405,6 @@ public class MoldynHybrid implements Serializable {
 
 				// ===================================================================================================
 				/* tmeperature scale if required */
-				Timer.start();
-
 				if ((move < istop) && (((move + 1) % irep) == 0)) {
 					sc = Math.sqrt(tref / (tscale * ekin));
 					oneX.parallelForEach(Nworkers, (p) -> {
@@ -430,7 +413,6 @@ public class MoldynHybrid implements Serializable {
 					ekin = tref / tscale;
 				}
 				
-				Timer.finish(Timer.Phase.tempScale);
 				// ===================================================================================================
 				/* sum to get full potential energy and virial */
 				if (((move + 1) % iprint) == 0) {
@@ -446,16 +428,8 @@ public class MoldynHybrid implements Serializable {
 						System.out.println(" interactions : " + interactions);
 						System.out.println(" total energy : " + etot);
 						// System.out.println(" average vel : " + vel);
-						//writeCoordinates(move);
 					}
 				}
-				
-				if(isWarmup) {
-					Timer.clear();
-					continue;
-				}
-				
-				Timer.write(filePath(placeGroup.rank()), move);
 			}
 	}
 	private static final class LocalStatics {
@@ -559,30 +533,6 @@ public class MoldynHybrid implements Serializable {
 			p0.zforce = p0.zforce + fzi;
 		}
 
-	}
-
-	private void writeCoordinates(int iter) {
-		try {
-			// directory setup
-			File target = new File("target");
-			if(!target.exists()) {
-				Files.createDirectories(Paths.get("target"));
-			}
-			// file steaming
-			String filePath = "target/Coord_" + String.format("%02d", iter) + ".csv";
-			FileWriter fw = new FileWriter(filePath, true);
-			fw.write("index,xcoord,ycoord,zcoord\n");
-			one.forEach((i, p) -> {
-					try {
-						fw.write(i + "," + p.xcoord + "," + p.ycoord + "," + p.zcoord + "\n");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-			});
-			fw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public final static class Particle implements Serializable {

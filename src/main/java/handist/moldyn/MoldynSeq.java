@@ -33,8 +33,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -80,24 +78,20 @@ public class MoldynSeq implements Serializable {
 	
 	private static final boolean DEBUG = false;
 	
-	public static String filePath(int id) {
-		return "handistSeq" + String.format("%02d", id) + ".csv";
-	}
-	
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeq "
-                + "<data size index(0or1)>");
+                + "<data size index(0or1)> <result file name>");
     }
 	
-	public static void main(String[] args) {
-        if(args.length != 1) {
+	public static void main(String[] args) throws IOException {
+        if(args.length != 2) {
             printUsage();
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
+        final String fileName = args[1];
         
 		MoldynSeq m = new MoldynSeq();
-		//Timer.turnVerboseMode(true);
 		
 		try {
 			System.out.println("start warmup for " + m.warmup + " times");
@@ -117,6 +111,12 @@ public class MoldynSeq implements Serializable {
 			m.validate(problemSize);
 			System.out.println("############## handist Seq time: "+ (end-start)/1.0e9);
 			m.tidyup();
+			
+            File file = new File("results/" + fileName);
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file, true);
+            fw.write((end-start)/1.0e9 + "\n");
+            fw.close();
 		} catch (MultipleException me) {
 			me.printStackTrace();
 		}
@@ -129,10 +129,12 @@ public class MoldynSeq implements Serializable {
             System.out.println("Kinetic Energy = " + ek + "  " + dev + "  " + size);
         }
     }
+    
     private void tidyup() {
         one = null;
         System.gc();
     }
+    
 	static class Sp {
 		public double x = 0.0;
 		public double y = 0.0;
@@ -250,28 +252,17 @@ public class MoldynSeq implements Serializable {
 			System.out.println("#Initialized");
 			System.out.println(" " + one.get(0));
 		}
-		
-		/* setup result output files */
-
-			Timer.fileSetup(filePath(0));
-
 	}
 
 	// main routine
-	@SuppressWarnings("deprecation")
 	public void runiters(boolean isWarmup) throws MPIException {
-
 			move = 0;
 			for (move = 0; move < movemx; move++) {
 				// ===================================================================================================
 				/* move the particles and update velocities, no use global variables */
-				Timer.start();
-				
 				for(Particle p: one) {//one.forEach((p) -> {
 					p.domove(side);
 				}//);
-				
-				Timer.finish(Timer.Phase.domove);
 				
 				if(DEBUG) {
 					System.out.println(" #after domove");
@@ -284,13 +275,9 @@ public class MoldynSeq implements Serializable {
 				epot = 0.0;
 				vir = 0.0;
 
-				Timer.start();
-
 				one.forEach(allRange, (i1, p1) -> {
 					force1(p1, side, rcoff, i1);
 				});
-
-				Timer.finish(Timer.Phase.interForces);
 
 				if(DEBUG) {
 					System.out.println(" #after force");
@@ -299,17 +286,13 @@ public class MoldynSeq implements Serializable {
 				}
 
 				// ===================================================================================================
-				/* scale forces, update velocities */
-				Timer.start();
-				
+				/* scale forces, update velocities */				
 				double sum = 0.0;
 
 				for(Particle p: one) {//one.forEach((Particle p) -> {
 					sum += p.mkekin(hsq2);
 				}//);
 				ekin = sum / hsq;
-				
-				Timer.finish(Timer.Phase.scaleForces);
 				
 				if(DEBUG) {
 					System.out.println(" #after mkekin");
@@ -319,8 +302,6 @@ public class MoldynSeq implements Serializable {
 
 				// ===================================================================================================
 				/* average velocity */
-				Timer.start();
-
 				double vel = 0.0;
 				count = 0.0;
 
@@ -328,8 +309,6 @@ public class MoldynSeq implements Serializable {
 					vel += p.velavg(vaverh, h);
 				}
 				vel = vel / h;
-				
-				Timer.finish(Timer.Phase.averVelocity);
 				
 				if(DEBUG) {
 					System.out.println(" #after velavg");
@@ -339,8 +318,6 @@ public class MoldynSeq implements Serializable {
 
 				// ===================================================================================================
 				/* tmeperature scale if required */
-				Timer.start();
-
 				if ((move < istop) && (((move + 1) % irep) == 0)) {
 					sc = Math.sqrt(tref / (tscale * ekin));
 					for(Particle p:one) {
@@ -349,7 +326,6 @@ public class MoldynSeq implements Serializable {
 					ekin = tref / tscale;
 				}
 				
-				Timer.finish(Timer.Phase.tempScale);
 				// ===================================================================================================
 				/* sum to get full potential energy and virial */
 				if (((move + 1) % iprint) == 0) {
@@ -365,16 +341,7 @@ public class MoldynSeq implements Serializable {
 						System.out.println(" interactions : " + interactions);
 						System.out.println(" total energy : " + etot);
 						// System.out.println(" average vel : " + vel);
-						//writeCoordinates(move);
-
 				}
-				
-				if(isWarmup) {
-					Timer.clear();
-					continue;
-				}
-				
-				Timer.write(filePath(0), move);
 			}
 	}
 	
@@ -446,31 +413,6 @@ public class MoldynSeq implements Serializable {
 		p0.yforce = p0.yforce + fyi;
 		p0.zforce = p0.zforce + fzi;
 
-	}
-
-	
-	private void writeCoordinates(int iter) {
-		try {
-			// directory setup
-			File target = new File("target");
-			if(!target.exists()) {
-				Files.createDirectories(Paths.get("target"));
-			}
-			// file steaming
-			String filePath = "target/Coord_" + String.format("%02d", iter) + ".csv";
-			FileWriter fw = new FileWriter(filePath, true);
-			fw.write("index,xcoord,ycoord,zcoord\n");
-			one.forEach((i, p) -> {
-					try {
-						fw.write(i + "," + p.xcoord + "," + p.ycoord + "," + p.zcoord + "\n");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-			});
-			fw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public final static class Particle implements Serializable {

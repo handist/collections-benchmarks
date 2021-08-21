@@ -4,7 +4,7 @@ export BENCHMARK_NAME="moldynseq"
 export MAIN="handist.moldyn.MoldynSeq"
 # There are 4 compulsory arguments and 1 optional:
 # <datasize index(0or1)>
-export ARGS="1"
+export ARGS="1 ${HOST}_seq.csv"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
 export REPETITIONS=5

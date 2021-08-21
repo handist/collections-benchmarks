@@ -26,9 +26,11 @@ package handist.moldyn;
 
 import apgas.MultipleException;
 import handist.collections.LongRange;
-import handist.moldyn.Timer.Phase;
 import mpi.MPIException;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 
 public class MoldynSinpleSeq implements Serializable {
@@ -77,25 +79,21 @@ public class MoldynSinpleSeq implements Serializable {
     Random randnum;
 
     private static boolean DEBUG = false;
-
-    public static String filePath(int id) {
-        return "simpleSeq" + String.format("%02d", id) + ".csv";
-    }
     
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSimpleSeq "
-                + "<data size index(0or1)>");
+                + "<data size index(0or1)> <result file name");
     }
     
-    public static void main(String[] args) {
-        if(args.length != 1) {
+    public static void main(String[] args) throws IOException {
+        if(args.length != 2) {
             printUsage();
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
+        final String fileName = args[1];
         
         MoldynSinpleSeq m = new MoldynSinpleSeq();
-        //Timer.turnVerboseMode(true);
         
         try {
             System.out.println("start warmup for " + m.warmup + " times");
@@ -115,6 +113,12 @@ public class MoldynSinpleSeq implements Serializable {
             m.validate(problemSize);
             System.out.println("############## simple seq (with warm up) time: "+ (end-start)/1.0e9);
             m.tidyup();
+            
+            File file = new File("results/" + fileName);
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file, true);
+            fw.write((end-start)/1.0e9 + "\n");
+            fw.close();
         } catch (MultipleException me) {
             me.printStackTrace();
         }
@@ -128,6 +132,7 @@ public class MoldynSinpleSeq implements Serializable {
             System.out.println("Kinetic Energy = " + ek + "  " + dev + "  " + size);
         }
     }
+    
     private void tidyup() {
         one = null;
         System.gc();
@@ -251,26 +256,18 @@ public class MoldynSinpleSeq implements Serializable {
 
         System.out.println("#Initialized");
         System.out.println(" " + one[0]);
-
-        /* setup result output files */
-        Timer.fileSetup(filePath(0));
     }
 
     // main routine
-    @SuppressWarnings("deprecation")
     public void runiters(boolean isWarmup) throws MPIException {
 
         move = 0;
         for (move = 0; move < movemx; move++) {
             // ===================================================================================================
             /* move the particles and update velocities, no use global variables */
-            Timer.start();
-
             for (i = 0; i < mdsize; i++) {
                 one[i].domove(side);
             }
-
-            Timer.finish(Timer.Phase.domove);
 
             if (DEBUG) {
                 System.out.println(" #after domove");
@@ -282,12 +279,9 @@ public class MoldynSinpleSeq implements Serializable {
             epot = 0.0;
             vir = 0.0;
 
-            Timer.start();
-
             for (int i = 0; i < mdsize; i++) {
                 one[i].force(side, rcoff, mdsize, i);
             }
-            Timer.finish(Phase.interForces);
 
             if (DEBUG) {
                 System.out.println(" #after force");
@@ -296,39 +290,12 @@ public class MoldynSinpleSeq implements Serializable {
             }
 
             // ===================================================================================================
-            /* global reduction on partial sums of the forces, epot, vir and interactions */
-            Timer.start();
-
-            Timer.finish(Phase.reduceForces);
-
-            if (DEBUG) {
-                System.out.println(" #after force reduce");
-                System.out.println(" " + one[0]);
-                System.out.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-            // ===================================================================================================
-            /* reduce parameters */
-            Timer.start();
-
-            Timer.finish(Phase.reduceParams);
-
-            if (DEBUG) {
-                System.out.println(" #after epot reduce");
-                System.out.println(" " + one[0]);
-                System.out.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-
-            // ===================================================================================================
             /* scale forces, update velocities */
-            Timer.start();
-
             double sum = 0.0;
             for (int i = 0; i < mdsize; i++) {
                 sum += one[i].mkekin(hsq2);
             }
             ekin = sum / hsq;
-
-            Timer.finish(Phase.scaleForces);
 
             if (DEBUG) {
                 System.out.println(" #after mkekin");
@@ -338,18 +305,14 @@ public class MoldynSinpleSeq implements Serializable {
 
             // ===================================================================================================
             /* average velocity */
-            Timer.start();
-
             vel = 0.0;
             count = 0.0;
 
             for (int i = 0; i < mdsize; i++) {
                 vel += one[i].velavg(vaverh, h);
             }
-            ;
+            
             vel = vel / h;
-
-            Timer.finish(Phase.averVelocity);
 
             if (DEBUG) {
                 System.out.println(" #after velavg");
@@ -359,8 +322,6 @@ public class MoldynSinpleSeq implements Serializable {
 
             // ===================================================================================================
             /* tmeperature scale if required */
-            Timer.start();
-
             if ((move < istop) && (((move + 1) % irep) == 0)) {
                 sc = Math.sqrt(tref / (tscale * ekin));
                 for (int i = 0; i < mdsize; i++) {
@@ -369,7 +330,6 @@ public class MoldynSinpleSeq implements Serializable {
                 ekin = tref / tscale;
             }
 
-            Timer.finish(Phase.tempScale);
             // ===================================================================================================
             /* sum to get full potential energy and virial */
             if (((move + 1) % iprint) == 0) {
@@ -384,15 +344,7 @@ public class MoldynSinpleSeq implements Serializable {
                 System.out.println("#Iteration " + move);
                 System.out.println(" interactions : " + interactions);
                 System.out.println(" total energy : " + etot);
-                //writeCoordinates(move);
             }
-
-            if (isWarmup) {
-                Timer.clear();
-                continue;
-            }
-
-            Timer.write(filePath(0), move);
         }
     }
 
