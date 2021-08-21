@@ -1,7 +1,7 @@
 ################################################################################
 # Configuration for executions on OFP                                          #
 ################################################################################
-export HOST=article-moldynofp64
+export HOST=article-moldynofp2
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
@@ -11,7 +11,7 @@ export CONFIGS="76-2dtrial-outputproduct.sh"
 # Path to the MPI bindings
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
-export NB_HOSTS=64
+export NB_HOSTS=2
 # Number of concurrent workers *(-Dglb.workers)
 export WORKERS=68
 # Core restriction
