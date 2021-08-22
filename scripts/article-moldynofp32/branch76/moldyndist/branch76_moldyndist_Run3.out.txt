@@ -1,0 +1,138 @@
+Starting process <28> on on <c3681.ofp>
+Starting process <29> on on <c3682.ofp>
+Starting process <10> on on <c3654.ofp>
+Starting process <3> on on <c3647.ofp>
+Starting process <1> on on <c3645.ofp>
+Starting process <9> on on <c3653.ofp>
+Starting process <18> on on <c3662.ofp>
+Starting process <16> on on <c3660.ofp>
+Starting process <15> on on <c3659.ofp>
+Starting process <22> on on <c3666.ofp>
+Starting process <24> on on <c3677.ofp>
+Starting process <4> on on <c3648.ofp>
+Starting process <12> on on <c3656.ofp>
+Starting process <21> on on <c3665.ofp>
+Starting process <31> on on <c3684.ofp>
+Starting process <6> on on <c3650.ofp>
+Starting process <11> on on <c3655.ofp>
+Starting process <2> on on <c3646.ofp>
+Starting process <0> on on <c3644.ofp>
+Starting process <8> on on <c3652.ofp>
+Starting process <19> on on <c3663.ofp>
+Starting process <17> on on <c3661.ofp>
+Starting process <14> on on <c3658.ofp>
+Starting process <23> on on <c3676.ofp>
+Starting process <25> on on <c3678.ofp>
+Starting process <5> on on <c3649.ofp>
+Starting process <13> on on <c3657.ofp>
+Starting process <20> on on <c3664.ofp>
+Starting process <30> on on <c3683.ofp>
+Starting process <26> on on <c3679.ofp>
+Starting process <7> on on <c3651.ofp>
+Starting process <27> on on <c3680.ofp>
+start warmup for 5 times
+##################################################
+warmup 1/5
+#Iteration 9
+ interactions : 213909
+ total energy : -8997.728613137586
+#Iteration 19
+ interactions : 473320
+ total energy : -9150.459836890737
+#Iteration 29
+ interactions : 744974
+ total energy : -9528.000061056411
+#Iteration 39
+ interactions : 1023718
+ total energy : -9866.47574571703
+#Iteration 49
+ interactions : 1308167
+ total energy : -10073.252482342315
+##################################################
+warmup 2/5
+#Iteration 9
+ interactions : 1522076
+ total energy : -8997.728613137586
+#Iteration 19
+ interactions : 1781487
+ total energy : -9150.459836890735
+#Iteration 29
+ interactions : 2053141
+ total energy : -9528.00006105641
+#Iteration 39
+ interactions : 2331885
+ total energy : -9866.47574571703
+#Iteration 49
+ interactions : 2616334
+ total energy : -10073.252482342314
+##################################################
+warmup 3/5
+#Iteration 9
+ interactions : 2830243
+ total energy : -8997.728613137586
+#Iteration 19
+ interactions : 3089654
+ total energy : -9150.459836890737
+#Iteration 29
+ interactions : 3361308
+ total energy : -9528.000061056413
+#Iteration 39
+ interactions : 3640052
+ total energy : -9866.47574571703
+#Iteration 49
+ interactions : 3924501
+ total energy : -10073.252482342317
+##################################################
+warmup 4/5
+#Iteration 9
+ interactions : 4138410
+ total energy : -8997.728613137586
+#Iteration 19
+ interactions : 4397821
+ total energy : -9150.459836890737
+#Iteration 29
+ interactions : 4669475
+ total energy : -9528.000061056411
+#Iteration 39
+ interactions : 4948219
+ total energy : -9866.47574571703
+#Iteration 49
+ interactions : 5232668
+ total energy : -10073.252482342315
+##################################################
+warmup 5/5
+#Iteration 9
+ interactions : 5446577
+ total energy : -8997.728613137586
+#Iteration 19
+ interactions : 5705988
+ total energy : -9150.459836890737
+#Iteration 29
+ interactions : 5977642
+ total energy : -9528.000061056411
+#Iteration 39
+ interactions : 6256386
+ total energy : -9866.47574571703
+#Iteration 49
+ interactions : 6540835
+ total energy : -10073.252482342315
+##################################################
+main run
+#Iteration 9
+ interactions : 12270599
+ total energy : -45554.37398075574
+#Iteration 19
+ interactions : 17635509
+ total energy : -45514.52252693235
+#Iteration 29
+ interactions : 22922180
+ total energy : -46935.40070355161
+#Iteration 39
+ interactions : 28217272
+ total energy : -48420.49905336168
+#Iteration 49
+ interactions : 33543477
+ total energy : -49237.02595876291
+Validation failed
+Kinetic Energy = 9656.875038734534  7397.392307839352 diff:2259.4827308951817  1
+############## handist 2CProdDist time: 5.956358159

@@ -1,0 +1,170 @@
+Starting process <41> on on <c2972.ofp>
+Starting process <40> on on <c2971.ofp>
+Starting process <43> on on <c2974.ofp>
+Starting process <42> on on <c2973.ofp>
+Starting process <45> on on <c2976.ofp>
+Starting process <47> on on <c2978.ofp>
+Starting process <44> on on <c2975.ofp>
+Starting process <46> on on <c2977.ofp>
+Starting process <33> on on <c2964.ofp>
+Starting process <32> on on <c2963.ofp>
+Starting process <35> on on <c2966.ofp>
+Starting process <34> on on <c2965.ofp>
+Starting process <31> on on <c2962.ofp>
+Starting process <29> on on <c2960.ofp>
+Starting process <30> on on <c2961.ofp>
+Starting process <28> on on <c2959.ofp>
+Starting process <21> on on <c2853.ofp>
+Starting process <23> on on <c2954.ofp>
+Starting process <22> on on <c2953.ofp>
+Starting process <20> on on <c2824.ofp>
+Starting process <9> on on <c2813.ofp>
+Starting process <8> on on <c2739.ofp>
+Starting process <10> on on <c2814.ofp>
+Starting process <11> on on <c2815.ofp>
+Starting process <24> on on <c2955.ofp>
+Starting process <25> on on <c2956.ofp>
+Starting process <26> on on <c2957.ofp>
+Starting process <27> on on <c2958.ofp>
+Starting process <48> on on <c2980.ofp>
+Starting process <50> on on <c3267.ofp>
+Starting process <49> on on <c2981.ofp>
+Starting process <51> on on <c3616.ofp>
+Starting process <53> on on <c3618.ofp>
+Starting process <55> on on <c3620.ofp>
+Starting process <52> on on <c3617.ofp>
+Starting process <54> on on <c3619.ofp>
+Starting process <1> on on <c2714.ofp>
+Starting process <2> on on <c2715.ofp>
+Starting process <3> on on <c2716.ofp>
+Starting process <0> on on <c2713.ofp>
+Starting process <17> on on <c2821.ofp>
+Starting process <16> on on <c2820.ofp>
+Starting process <18> on on <c2822.ofp>
+Starting process <19> on on <c2823.ofp>
+Starting process <62> on on <c3630.ofp>
+Starting process <60> on on <c3628.ofp>
+Starting process <61> on on <c3629.ofp>
+Starting process <63> on on <c3631.ofp>
+Starting process <5> on on <c2718.ofp>
+Starting process <6> on on <c2719.ofp>
+Starting process <4> on on <c2717.ofp>
+Starting process <7> on on <c2724.ofp>
+Starting process <38> on on <c2969.ofp>
+Starting process <37> on on <c2968.ofp>
+Starting process <39> on on <c2970.ofp>
+Starting process <36> on on <c2967.ofp>
+Starting process <13> on on <c2817.ofp>
+Starting process <14> on on <c2818.ofp>
+Starting process <15> on on <c2819.ofp>
+Starting process <12> on on <c2816.ofp>
+Starting process <56> on on <c3621.ofp>
+Starting process <59> on on <c3624.ofp>
+Starting process <57> on on <c3622.ofp>
+Starting process <58> on on <c3623.ofp>
+start warmup for 5 times
+##################################################
+warmup 1/5
+#Iteration 9
+ interactions : 213839
+ total energy : -8994.715146380724
+#Iteration 19
+ interactions : 472843
+ total energy : -9158.63279181009
+#Iteration 29
+ interactions : 744049
+ total energy : -9558.846407020672
+#Iteration 39
+ interactions : 1022733
+ total energy : -9897.375946977689
+#Iteration 49
+ interactions : 1307310
+ total energy : -10112.5190731986
+##################################################
+warmup 2/5
+#Iteration 9
+ interactions : 1521149
+ total energy : -8994.715146380724
+#Iteration 19
+ interactions : 1780153
+ total energy : -9158.63279181009
+#Iteration 29
+ interactions : 2051359
+ total energy : -9558.846407020672
+#Iteration 39
+ interactions : 2330043
+ total energy : -9897.375946977689
+#Iteration 49
+ interactions : 2614620
+ total energy : -10112.5190731986
+##################################################
+warmup 3/5
+#Iteration 9
+ interactions : 2828459
+ total energy : -8994.715146380724
+#Iteration 19
+ interactions : 3087463
+ total energy : -9158.63279181009
+#Iteration 29
+ interactions : 3358669
+ total energy : -9558.846407020672
+#Iteration 39
+ interactions : 3637353
+ total energy : -9897.375946977689
+#Iteration 49
+ interactions : 3921930
+ total energy : -10112.5190731986
+##################################################
+warmup 4/5
+#Iteration 9
+ interactions : 4135769
+ total energy : -8994.715146380724
+#Iteration 19
+ interactions : 4394773
+ total energy : -9158.63279181009
+#Iteration 29
+ interactions : 4665979
+ total energy : -9558.846407020672
+#Iteration 39
+ interactions : 4944663
+ total energy : -9897.375946977689
+#Iteration 49
+ interactions : 5229240
+ total energy : -10112.519073198599
+##################################################
+warmup 5/5
+#Iteration 9
+ interactions : 5443079
+ total energy : -8994.715146380724
+#Iteration 19
+ interactions : 5702083
+ total energy : -9158.63279181009
+#Iteration 29
+ interactions : 5973289
+ total energy : -9558.846407020672
+#Iteration 39
+ interactions : 6251973
+ total energy : -9897.375946977689
+#Iteration 49
+ interactions : 6536550
+ total energy : -10112.519073198599
+##################################################
+main run
+#Iteration 9
+ interactions : 12266123
+ total energy : -45550.32994529641
+#Iteration 19
+ interactions : 17629892
+ total energy : -45533.03529361871
+#Iteration 29
+ interactions : 22914985
+ total energy : -47010.61157145264
+#Iteration 39
+ interactions : 28207675
+ total energy : -48583.84409210276
+#Iteration 49
+ interactions : 33531977
+ total energy : -49512.9663652421
+Validation failed
+Kinetic Energy = 9582.460018874574  7397.392307839352 diff:2185.0677110352217  1
+############## handist 2CProdDist time: 3.76528141
