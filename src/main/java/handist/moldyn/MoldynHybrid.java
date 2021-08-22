@@ -84,7 +84,7 @@ public class MoldynHybrid implements Serializable {
 	int movemx 	= 50;
 	int warmup	= 5;
 	
-	private  int Nworkers; // num workers
+	private int Nworkers; // num workers
 	private int Ndivide; // num workers
 
 	Random randnum;
@@ -101,15 +101,16 @@ public class MoldynHybrid implements Serializable {
 	        printUsage();
             return;
 	    }
-        MoldynHybrid m0 = new MoldynHybrid();
-        
 	    final int problemSize = Integer.parseInt(args[0]);
-	    m0.Nworkers = Integer.parseInt(args[1]);
-	    m0.Ndivide = Integer.parseInt(args[2]);
+	    final int workers = Integer.parseInt(args[1]);
+	    final int divides = Integer.parseInt(args[2]);
 	    final String fileName = args[3];
 	    
 		try {
 			System.out.println("start warmup for " + m0.warmup + " times");
+	        MoldynHybrid m0 = new MoldynHybrid();
+	        m0.Nworkers = workers;
+	        m0.Ndivide = divides;
 			for(int i = 0; i < m0.warmup; i++) {
 				System.out.println("##################################################");
 				System.out.println("warmup " + (i+1) + "/" + m0.warmup);
@@ -120,6 +121,8 @@ public class MoldynHybrid implements Serializable {
 			System.out.println("##################################################");
 			System.out.println("main run");
 			MoldynHybrid m = new MoldynHybrid();
+			m.Nworkers = workers;
+			m.Ndivide = divides;
 			m.initialise(datasizes[problemSize]);
 			long start = System.nanoTime();
 			m.runiters(false);
