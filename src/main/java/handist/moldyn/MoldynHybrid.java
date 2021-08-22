@@ -107,8 +107,8 @@ public class MoldynHybrid implements Serializable {
 	    final String fileName = args[3];
 	    
 		try {
+		    MoldynHybrid m0 = new MoldynHybrid();
 			System.out.println("start warmup for " + m0.warmup + " times");
-	        MoldynHybrid m0 = new MoldynHybrid();
 	        m0.Nworkers = workers;
 	        m0.Ndivide = divides;
 			for(int i = 0; i < m0.warmup; i++) {
