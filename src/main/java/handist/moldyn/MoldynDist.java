@@ -70,7 +70,7 @@ public class MoldynDist implements Serializable {
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
-        final String fileName = args[3];
+        final String fileName = args[1];
         
         try {
             MoldynDist m0 = new MoldynDist();
@@ -307,7 +307,7 @@ public class MoldynDist implements Serializable {
                 oneX.subList(ranges.get(placeGroup.rank())).forEach((i1, p1) -> {
                     p1.force(oneX, side, rcoff, mdsize, (int)i1);
                 });
-                oneX.subList(ranges.get(ranges.size() - placeGroup.rank())).forEach((i1, p1) -> {
+                oneX.subList(ranges.get(ranges.size() - placeGroup.rank() - 1)).forEach((i1, p1) -> {
                     p1.force(oneX, side, rcoff, mdsize, (int)i1);
                 });
              
