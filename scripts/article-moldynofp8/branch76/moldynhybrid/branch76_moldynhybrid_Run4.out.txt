@@ -1,11 +1,11 @@
-Starting process <1> on on <c2769.ofp>
-Starting process <5> on on <c2773.ofp>
-Starting process <3> on on <c2771.ofp>
-Starting process <6> on on <c2774.ofp>
-Starting process <2> on on <c2770.ofp>
-Starting process <7> on on <c2775.ofp>
-Starting process <0> on on <c2768.ofp>
-Starting process <4> on on <c2772.ofp>
+Starting process <2> on on <c0351.ofp>
+Starting process <7> on on <c0356.ofp>
+Starting process <3> on on <c0352.ofp>
+Starting process <0> on on <c0349.ofp>
+Starting process <1> on on <c0350.ofp>
+Starting process <4> on on <c0353.ofp>
+Starting process <6> on on <c0355.ofp>
+Starting process <5> on on <c0354.ofp>
 start warmup for 5 times
 ##################################################
 warmup 1/5
@@ -14,7 +14,7 @@ warmup 1/5
  total energy : -9092.32424652331
 #Iteration 19
  interactions : 466213
- total energy : -9214.936118965412
+ total energy : -9214.936118965408
 #Iteration 29
  interactions : 728183
  total energy : -9232.128109243506
@@ -23,7 +23,7 @@ warmup 1/5
  total energy : -9227.305698253422
 #Iteration 49
  interactions : 1253101
- total energy : -9233.318484655414
+ total energy : -9233.318484655416
 ##################################################
 warmup 2/5
 #Iteration 9
@@ -40,7 +40,7 @@ warmup 2/5
  total energy : -9227.305698253422
 #Iteration 49
  interactions : 2506202
- total energy : -9233.318484655414
+ total energy : -9233.318484655412
 ##################################################
 warmup 3/5
 #Iteration 9
@@ -48,7 +48,7 @@ warmup 3/5
  total energy : -9092.32424652331
 #Iteration 19
  interactions : 2972415
- total energy : -9214.93611896541
+ total energy : -9214.936118965408
 #Iteration 29
  interactions : 3234385
  total energy : -9232.128109243506
@@ -68,13 +68,13 @@ warmup 4/5
  total energy : -9214.936118965408
 #Iteration 29
  interactions : 4487486
- total energy : -9232.128109243506
+ total energy : -9232.128109243504
 #Iteration 39
  interactions : 4749857
  total energy : -9227.305698253424
 #Iteration 49
  interactions : 5012404
- total energy : -9233.318484655412
+ total energy : -9233.318484655414
 ##################################################
 warmup 5/5
 #Iteration 9
@@ -96,13 +96,13 @@ warmup 5/5
 main run
 #Iteration 9
  interactions : 12002825
- total energy : -46069.969621413475
+ total energy : -46069.96962141346
 #Iteration 19
  interactions : 17375850
  total energy : -46006.266846476916
 #Iteration 29
  interactions : 22663329
- total energy : -45996.55712716367
+ total energy : -45996.55712716369
 #Iteration 39
  interactions : 27939399
  total energy : -45996.87960960546
@@ -110,5 +110,5 @@ main run
  interactions : 33217460
  total energy : -45997.63672161882
 Validation failed
-Kinetic Energy = 7397.39230783936  7397.392307839352 diff:8.185452315956354E-12  1
-############## handist 2CProdDist time: 4.482268431
+Kinetic Energy = 7397.392307839362  7397.392307839352 diff:1.000444171950221E-11  1
+############## handist 2CProdDist time: 4.998948914
