@@ -84,8 +84,8 @@ public class MoldynHybrid implements Serializable {
 	int movemx 	= 50;
 	int warmup	= 5;
 	
-	static int Nworkers; // num workers
-	static int Ndivide; // num workers
+	private  int Nworkers; // num workers
+	private int Ndivide; // num workers
 
 	Random randnum;
 	
@@ -101,13 +101,14 @@ public class MoldynHybrid implements Serializable {
 	        printUsage();
             return;
 	    }
+        MoldynHybrid m0 = new MoldynHybrid();
+        
 	    final int problemSize = Integer.parseInt(args[0]);
-	    Nworkers = Integer.parseInt(args[1]);
-	    Ndivide = Integer.parseInt(args[2]);
+	    m0.Nworkers = Integer.parseInt(args[1]);
+	    m0.Ndivide = Integer.parseInt(args[2]);
 	    final String fileName = args[3];
 	    
 		try {
-			MoldynHybrid m0 = new MoldynHybrid();
 			System.out.println("start warmup for " + m0.warmup + " times");
 			for(int i = 0; i < m0.warmup; i++) {
 				System.out.println("##################################################");
