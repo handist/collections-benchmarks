@@ -269,7 +269,7 @@ public class MoldynSeqMT implements Serializable {
         public double z = 0.0;
     }
 
-    public static int datasizes[] = { 8, 13 };
+    public static int datasizes[] = { 8, 13, 50 };
     public static double refval[] = { 1731.4306625334357, 7397.392307839352 };
     private static final long serialVersionUID = 1364008814489556197L;
     public static double epot = 0.0; // potential energy

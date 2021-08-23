@@ -3,8 +3,8 @@ PROGRAM_LAUNCHER="${BENCH_HOME}/launchers/${HOST_TYPE}/launcher-nompi.sh"
 export BENCHMARK_NAME="moldynseqmt"
 export MAIN="handist.moldyn.MoldynSeqMT"
 # There are 4 compulsory arguments and 1 optional:
-# <datasize index(0or1)> <number of workers> <number of split>
-export ARGS="1 ${WORKERS} 11 ${HOST}_seqmt.csv"
+# <datasize index(0or1or2)> <number of workers> <number of split>
+export ARGS="2 ${WORKERS} ${SPLIT} ${HOST}_seqmt.csv"
 export TIMEOUT=5:00
 export BEO_TIMEOUT=5m
 export REPETITIONS=5
