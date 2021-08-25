@@ -13,11 +13,11 @@ export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
 export NB_HOSTS=1
 # Number of concurrent workers *(-Dglb.workers)
-export WORKERS=64
+export WORKERS=1
 # Number of divide block
-export SPLIT=11
+export SPLIT=1
 # Core restriction
-export CORE_RESTRICTION="0-63"
+export CORE_RESTRICTION="0-67"
 
 ########################## Options specific to OFP #############################
 # Resource group

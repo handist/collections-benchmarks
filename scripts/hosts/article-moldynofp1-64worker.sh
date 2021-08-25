@@ -1,23 +1,23 @@
 ################################################################################
 # Configuration for executions on OFP                                          #
 ################################################################################
-export HOST=article-moldynofp2
+export HOST=article-moldynofp1-64worker
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-export BENCHMARKS="moldyn-hybrid.sh moldyn-mpi.sh moldyn-dist.sh"
+export BENCHMARKS="moldyn-hybrid.sh moldyn-hybrid-large.sh moldyn-seqmt.sh"
 # List of library configruations that we want to test
 export CONFIGS="76-2dtrial-outputproduct.sh"
 # Path to the MPI bindings
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
-export NB_HOSTS=2
+export NB_HOSTS=1
 # Number of concurrent workers *(-Dglb.workers)
 export WORKERS=64
 # Number of divide block
-export SPLIT=16
+export SPLIT=64
 # Core restriction
-export CORE_RESTRICTION="0-63"
+export CORE_RESTRICTION="0-67"
 
 ########################## Options specific to OFP #############################
 # Resource group

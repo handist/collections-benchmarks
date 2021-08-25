@@ -48,7 +48,7 @@ import static apgas.Constructs.finish;
 
 public class MoldynHybrid implements Serializable {
 
-    public static int datasizes[] = {8,13,20};
+    public static int datasizes[] = {8,13,26};
     public static double refval[] = {1731.4306625334357,7397.392307839352,-1};
 
     private static final long serialVersionUID = 1364008814489556197L;
