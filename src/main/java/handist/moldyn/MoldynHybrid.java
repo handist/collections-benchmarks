@@ -48,8 +48,8 @@ import static apgas.Constructs.finish;
 
 public class MoldynHybrid implements Serializable {
 
-    public static int datasizes[] = {8,13};
-    public static double refval[] = {1731.4306625334357,7397.392307839352};
+    public static int datasizes[] = {8,13,20};
+    public static double refval[] = {1731.4306625334357,7397.392307839352,-1};
 
     private static final long serialVersionUID = 1364008814489556197L;
 
@@ -530,8 +530,8 @@ public class MoldynHybrid implements Serializable {
 						inters0++;
 					}
 				}
-		synchronized(this) {
-			s.epot += epot0; s.vir += vir0; s.interactions += inters0;
+        s.epot += epot0; s.vir += vir0; s.interactions += inters0;
+		synchronized(p0) {
 			p0.xforce = p0.xforce + fxi;
 			p0.yforce = p0.yforce + fyi;
 			p0.zforce = p0.zforce + fzi;

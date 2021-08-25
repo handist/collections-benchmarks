@@ -269,8 +269,8 @@ public class MoldynSeqMT implements Serializable {
         public double z = 0.0;
     }
 
-    public static int datasizes[] = { 8, 13, 50 };
-    public static double refval[] = { 1731.4306625334357, 7397.392307839352 };
+    public static int datasizes[] = { 8, 13, 20 };
+    public static double refval[] = { 1731.4306625334357, 7397.392307839352, -1 };
     private static final long serialVersionUID = 1364008814489556197L;
     public static double epot = 0.0; // potential energy
     public static double ekin = 0.0; // kinematic energy
@@ -283,11 +283,6 @@ public class MoldynSeqMT implements Serializable {
 
     private static final boolean DEBUG = false;
 
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
-                + "<data size index(0or1)> <number of workers> <number of divide> <result filename");
-    }
-    
     public static void main(String[] args) throws IOException {
         if (args.length != 4) {
             printUsage();
@@ -299,7 +294,7 @@ public class MoldynSeqMT implements Serializable {
         final String fileName = args[3];
 
         final MoldynSeqMT m0 = new MoldynSeqMT();
-        
+
         try {
             System.out.println("start warmup for " + m0.warmup + " times");
             for (int i = 0; i < m0.warmup; i++) {
@@ -320,15 +315,20 @@ public class MoldynSeqMT implements Serializable {
             m.validate(problemSize);
             System.out.println("############## handist 2CProdMT time: " + (end - start) / 1.0e9);
             m.tidyup();
-            
-            File file = new File(fileName);
+
+            final File file = new File(fileName);
             file.createNewFile();
-            FileWriter fw = new FileWriter(file, true);
-            fw.write((end-start)/1.0e9 + "\n");
+            final FileWriter fw = new FileWriter(file, true);
+            fw.write((end - start) / 1.0e9 + "\n");
             fw.close();
         } catch (final MultipleException me) {
             me.printStackTrace();
         }
+    }
+
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
+                + "<data size index(0or1)> <number of workers> <number of divide> <result filename");
     }
 
     final double den = 0.83134; // density
@@ -435,10 +435,10 @@ public class MoldynSeqMT implements Serializable {
                 inters0++;
             }
         }
-        synchronized (this) {
-            s.epot += epot0;
-            s.vir += vir0;
-            s.interactions += inters0;
+        s.epot += epot0;
+        s.vir += vir0;
+        s.interactions += inters0;
+        synchronized (p0) {
             p0.xforce = p0.xforce + fxi;
             p0.yforce = p0.yforce + fyi;
             p0.zforce = p0.zforce + fzi;
@@ -613,7 +613,7 @@ public class MoldynSeqMT implements Serializable {
 
             // ===================================================================================================
             /* scale forces, update velocities */
-            
+
             // TODO reduce
             final MyReducer ekinReduce = new MyReducer((p) -> {
                 return p.mkekin(hsq2);
