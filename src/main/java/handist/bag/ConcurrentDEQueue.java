@@ -2,7 +2,7 @@ package handist.bag;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.function.Consumer;
 
 import handist.collections.Chunk;
@@ -10,14 +10,14 @@ import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.ParallelReceiver;
 
-public class ConcurrentListEval {
+public class ConcurrentDEQueue {
 
-    public static class ConcListReceiver<T> implements ParallelReceiver<T> {
+    public static class ConcDequeReceiver<T> implements ParallelReceiver<T> {
 
-        final ConcurrentLinkedQueue<T> list;
+        final ConcurrentLinkedDeque<T> list;
 
-        public ConcListReceiver() {
-            list = new ConcurrentLinkedQueue<>();
+        public ConcDequeReceiver() {
+            list = new ConcurrentLinkedDeque<>();
         }
 
         @Override
@@ -52,8 +52,7 @@ public class ConcurrentListEval {
     }
 
     public static void main(String[] args) {
-        System.err
-                .println(ConcurrentListEval.class.getCanonicalName() + " received arguments " + Arrays.toString(args));
+        System.err.println(ConcurrentDEQueue.class.getCanonicalName() + " received arguments " + Arrays.toString(args));
         System.err.println("Available 'cores' on host: " + Runtime.getRuntime().availableProcessors());
 
         int actorCount, chunkSize, iterationCount, parallelism, computationWeight;
@@ -85,7 +84,7 @@ public class ConcurrentListEval {
 
         // MAIN LOAD
         for (int i = 0; i < iterationCount; i++) {
-            final ConcListReceiver<Order> orders = new ConcListReceiver<>();
+            final ConcDequeReceiver<Order> orders = new ConcDequeReceiver<>();
             final long start = System.nanoTime();
             actors.parallelForEach(parallelism, (actor, collecter) -> {
                 final Order o = actor.getOrder(computationWeight);

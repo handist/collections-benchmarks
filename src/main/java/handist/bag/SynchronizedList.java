@@ -1,8 +1,8 @@
 package handist.bag;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 
 import handist.collections.Chunk;
@@ -10,14 +10,14 @@ import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.ParallelReceiver;
 
-public class ConcurrentListEval {
+public class SynchronizedList {
 
-    public static class ConcListReceiver<T> implements ParallelReceiver<T> {
+    public static class SynchronizedReceiver<T> implements ParallelReceiver<T> {
 
-        final ConcurrentLinkedQueue<T> list;
+        final ArrayList<T> list;
 
-        public ConcListReceiver() {
-            list = new ConcurrentLinkedQueue<>();
+        public SynchronizedReceiver(int capacity) {
+            list = new ArrayList<>(capacity);
         }
 
         @Override
@@ -32,7 +32,11 @@ public class ConcurrentListEval {
 
         @Override
         public Consumer<T> getReceiver() {
-            return (o) -> list.add(o);
+            return (o) -> {
+                synchronized (list) {
+                    list.add(o);
+                }
+            };
         }
 
         @Override
@@ -49,11 +53,11 @@ public class ConcurrentListEval {
         public int size() {
             return list.size();
         }
+
     }
 
     public static void main(String[] args) {
-        System.err
-                .println(ConcurrentListEval.class.getCanonicalName() + " received arguments " + Arrays.toString(args));
+        System.err.println(SynchronizedList.class.getCanonicalName() + " received arguments " + Arrays.toString(args));
         System.err.println("Available 'cores' on host: " + Runtime.getRuntime().availableProcessors());
 
         int actorCount, chunkSize, iterationCount, parallelism, computationWeight;
@@ -85,7 +89,7 @@ public class ConcurrentListEval {
 
         // MAIN LOAD
         for (int i = 0; i < iterationCount; i++) {
-            final ConcListReceiver<Order> orders = new ConcListReceiver<>();
+            final SynchronizedReceiver<Order> orders = new SynchronizedReceiver<>(actorCount);
             final long start = System.nanoTime();
             actors.parallelForEach(parallelism, (actor, collecter) -> {
                 final Order o = actor.getOrder(computationWeight);
