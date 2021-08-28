@@ -277,7 +277,6 @@ public class MoldynHybrid extends Md implements Serializable {
         oneX = new CachableChunkedList<>(placeGroup);
         one = new Chunk<>(allRange);
         oneX.add(one);
-        myAccM = new MyAccumM(oneX);
 
         final double a = side / mm;
         int ijk = 0;
@@ -389,6 +388,7 @@ public class MoldynHybrid extends Md implements Serializable {
     @Override
     public void runIters() throws MPIException {
         placeGroup.broadcastFlat(() -> {
+            myAccM = new MyAccumM(oneX);
             super.runIters();
         });
     }
