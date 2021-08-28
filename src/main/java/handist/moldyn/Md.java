@@ -240,6 +240,9 @@ public abstract class Md {
             final double total = (end - start) / 1.0e9;
             domove_ns = domove_ns / 1.0e9;
             force_ns = force_ns / 1.0e9;
+            forceSplit_ns = forceSplit_ns / 1.0e9;
+            forceCalc_ns = forceCalc_ns / 1.0e9;
+            forceMerge_ns = forceMerge_ns / 1.0e9;
             reduce_ns = reduce_ns / 1.0e9;
             others_ns = others_ns / 1.0e9;
             System.out.println("Iter" + i + ";" + total + ";" + domove_ns + ";" + force_ns + ";" + forceSplit_ns + ";"

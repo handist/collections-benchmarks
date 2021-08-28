@@ -168,7 +168,7 @@ public class MoldynSeqMT extends Md implements Serializable {
             }
         });
         end = System.nanoTime();
-        forceCalc_ns = (end - start);
+        forceCalc_ns += (end - start);
 
         start = System.nanoTime();
         myAccM.parallelMerge(Nworkers);
