@@ -9,11 +9,11 @@
 *                                at                                       *
 *                                                                         *
 *                Edinburgh Parallel Computing Centre                      *
-*                                                                         * 
+*                                                                         *
 *                email: epcc-javagrande@epcc.ed.ac.uk                     *
 *                                                                         *
 *                  Original version of this code by                       *
-*                         Dieter Heermann                                 * 
+*                         Dieter Heermann                                 *
 *                       converted to Java by                              *
 *                Lorna Smith  (l.smith@epcc.ed.ac.uk)                     *
 *                   (see copyright notice below)                          *
@@ -24,664 +24,329 @@
 **************************************************************************/
 package handist.moldyn;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
-import mpi.*;
+import mpi.MPI;
+import mpi.MPIException;
 
-public class MoldynMPI {
+public class MoldynMPI extends Md {
 
-	public static final int ITERS = 100;
-	public static final double LENGTH = 50e-10;
-	public static final double m = 4.0026;
-	public static final double mu = 1.66056e-27;
-	public static final double kb = 1.38066e-23;
-	public static final double TSIM = 50;
-	public static final double deltat = 5e-16;
-	public static particle one[] = null;
-	public static double epot = 0.0;
-	public static double vir = 0.0;
-	public static double count = 0.0;
-	int datasizes[] = { 4, 13 };
+    public static int interactions = 0;
+    public static int nprocess;
+    public static int rank;
 
-	public static int interactions = 0;
-
-	int i, j, k, lg, mdsize, move, mm;
-
-	double rcoff, rcoffs, side, sideh, hsq, hsq2, vel;
-	double a, r, sum, tscale, sc, ekin, ek, ts, sp;
-	double den = 0.83134;
-	double tref = 0.722;
-	double h = 0.064;		
-	double vaver, vaverh, rand;
-	double etot, temp, pres, rp;
-	double u1, u2, v1, v2, s;
-
-	double[] tmp_xforce;
-	double[] tmp_yforce;
-	double[] tmp_zforce;
-
-	double[] tmp_epot;
-	double[] tmp_vir;
-	int[] tmp_interactions;
-	// double[] tmp_interactions;
-
-	int ijk, npartm, PARTSIZE, iseed, tint;
-	int irep = 10;
-	int istop = 19;
-	int iprint = 10;
-	int movemx = 50;
-	int warmup = 5;
-
-	random randnum;
-	
-	private static boolean DEBUG = false;
-	
-	public static int nprocess;
-	public static int rank;
-	
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] mpjexpress.moldyn.MoldynMPI "
-                + "<data size index(0or1)> <result file name>");
-	}
-    	
     public static void main(String argv[]) throws MPIException, IOException {
-          if(argv.length != 5) {
-              printUsage();
-              return;
-          }
-          final int problemSize = Integer.parseInt(argv[3]);
-          final String fileName = argv[4];
-          
-          /* Initialise MPI */
-          MPI.Init(argv);
-          rank = MPI.COMM_WORLD.Rank();
-          nprocess = MPI.COMM_WORLD.Size();
-          
-          MoldynMPI m = new MoldynMPI();
-          long start_ns = 0, end_ns = 0;
-          
-          System.out.println("start warmup for " + m.warmup + " times");
-          for(int i = 0; i < m.warmup; i++) {
-              System.out.println("##################################################");
-              System.out.println("warmup " + (i+1) + "/" + m.warmup);
-              m.initialise(0);
-              MPI.COMM_WORLD.Barrier();
-              m.runiters(true);
-              MPI.COMM_WORLD.Barrier();
-              m.tidyup(); 
-          }
-          System.out.println("##################################################");
-          System.out.println("main run");
-          m.initialise(problemSize);
-          MPI.COMM_WORLD.Barrier();
-          if(rank == 0)
-              start_ns = System.nanoTime();
-          m.runiters(false);
-          if(rank == 0)
-              end_ns = System.nanoTime();
-          MPI.COMM_WORLD.Barrier();
-          m.validate(problemSize);
-          m.tidyup();
-    
-          /* Finalise MPI */
-          MPI.Finalize();
-          
-          if(rank == 0) {
-              File file = new File(fileName);
-              file.createNewFile();
-              FileWriter fw = new FileWriter(file, true);
-              fw.write((end_ns-start_ns)/1.0e9 + "\n");
-              fw.close();
-          }
+        if (argv.length != 4) {
+            System.err.println("Usage: java -cp [...] mpjexpress.moldyn.MoldynMPI " + "<data size index(0or1or2)>");
+            return;
+        }
+        final int problemSize = Integer.parseInt(argv[3]);
+
+        /* Initialise MPI */
+        MPI.Init(argv);
+        rank = MPI.COMM_WORLD.Rank();
+        nprocess = MPI.COMM_WORLD.Size();
+
+        final MoldynMPI m = new MoldynMPI();
+        m.runBenchmarks(problemSize);
+
+        /* Finalise MPI */
+        MPI.Finalize();
     }
 
-	public void initialise(int size) {
+    public Particle one[] = null;
 
-		/* Parameter determination */
+    double[] tmp_xforce;
+    double[] tmp_yforce;
+    double[] tmp_zforce;
+    double[] tmp_epot;
+    double[] tmp_vir;
+    int[] tmp_interactions;
 
-		mm = datasizes[size];
-		PARTSIZE = mm * mm * mm * 4;
-		mdsize = PARTSIZE;
-		one = new particle[mdsize];
-
-		side = Math.pow((mdsize / den), 0.3333333);
-		rcoff = mm / 4.0;
-
-		a = side / mm;
-		sideh = side * 0.5;
-		hsq = h * h;
-		hsq2 = hsq * 0.5;
-		npartm = mdsize - 1;
-		rcoffs = rcoff * rcoff;
-		tscale = 16.0 / (1.0 * mdsize - 1.0);
-		vaver = 1.13 * Math.sqrt(tref / 24.0);
-		vaverh = vaver * h;
-
-		/* temporary arrays for MPI operations */
-
-		tmp_xforce = new double[mdsize];
-		tmp_yforce = new double[mdsize];
-		tmp_zforce = new double[mdsize];
-
-		tmp_epot = new double[1];
-		tmp_vir = new double[1];
-		tmp_interactions = new int[1];
-
-		/* Particle Generation */
-
-		ijk = 0;
-		for (lg = 0; lg <= 1; lg++) {
-			for (i = 0; i < mm; i++) {
-				for (j = 0; j < mm; j++) {
-					for (k = 0; k < mm; k++) {
-						one[ijk] = new particle((i * a + lg * a * 0.5), (j * a + lg * a * 0.5), (k * a), 0.0, 0.0, 0.0,
-								0.0, 0.0, 0.0);
-						ijk = ijk + 1;
-					}
-				}
-			}
-		}
-		for (lg = 1; lg <= 2; lg++) {
-			for (i = 0; i < mm; i++) {
-				for (j = 0; j < mm; j++) {
-					for (k = 0; k < mm; k++) {
-						one[ijk] = new particle((i * a + (2 - lg) * a * 0.5), (j * a + (lg - 1) * a * 0.5),
-								(k * a + a * 0.5), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-						ijk = ijk + 1;
-					}
-				}
-			}
-		}
-
-		/* Initialise velocities */
-
-		iseed = 0;
-		v1 = 0.0;
-		v2 = 0.0;
-
-		randnum = new random(iseed, v1, v2);
-
-		for (i = 0; i < mdsize; i += 2) {
-			r = randnum.seed();
-			one[i].xvelocity = r * randnum.v1;
-			one[i + 1].xvelocity = r * randnum.v2;
-		}
-
-		for (i = 0; i < mdsize; i += 2) {
-			r = randnum.seed();
-			one[i].yvelocity = r * randnum.v1;
-			one[i + 1].yvelocity = r * randnum.v2;
-		}
-
-		for (i = 0; i < mdsize; i += 2) {
-			r = randnum.seed();
-			one[i].zvelocity = r * randnum.v1;
-			one[i + 1].zvelocity = r * randnum.v2;
-		}
-
-		/* velocity scaling */
-
-		ekin = 0.0;	
-		sp = 0.0;
-
-		for (i = 0; i < mdsize; i++) {
-			sp = sp + one[i].xvelocity;
-		}
-		sp = sp / mdsize;
-
-		for (i = 0; i < mdsize; i++) {
-			one[i].xvelocity = one[i].xvelocity - sp;
-			ekin = ekin + one[i].xvelocity * one[i].xvelocity;
-		}
-
-		sp = 0.0;
-		for (i = 0; i < mdsize; i++) {
-			sp = sp + one[i].yvelocity;
-		}
-		sp = sp / mdsize;
-
-		for (i = 0; i < mdsize; i++) {
-			one[i].yvelocity = one[i].yvelocity - sp;
-			ekin = ekin + one[i].yvelocity * one[i].yvelocity;
-		}
-
-		sp = 0.0;
-		for (i = 0; i < mdsize; i++) {
-			sp = sp + one[i].zvelocity;
-		}
-		sp = sp / mdsize;
-
-		for (i = 0; i < mdsize; i++) {
-			one[i].zvelocity = one[i].zvelocity - sp;
-			ekin = ekin + one[i].zvelocity * one[i].zvelocity;
-		}
-
-		ts = tscale * ekin;
-		sc = h * Math.sqrt(tref / ts);
-
-		for (i = 0; i < mdsize; i++) {
-
-			one[i].xvelocity = one[i].xvelocity * sc;
-			one[i].yvelocity = one[i].yvelocity * sc;
-			one[i].zvelocity = one[i].zvelocity * sc;
-
-		}
-
-		/* MD simulation */
-		if(rank == 0 && DEBUG) { 
-			System.out.println("#Initialized");
-			printFirstParticleInfo();
-		}
-	}
-
-	public void runiters(boolean isWarmup) throws MPIException {
-
-		move = 0;
-		for (move = 0; move < movemx; move++) {	// iteration
-			// ===================================================================================================
-			/* move the particles and update velocities, no use global variables */
-			for (i = 0; i < mdsize; i++) {
-				one[i].domove(side); 
-			}
-			
-			if(rank == 0 && DEBUG) {
-				System.out.println(" #after domove");
-			       	printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-			// ===================================================================================================
-			/* compute forces */
-			epot = 0.0;	
-			vir = 0.0; 	
-
-			MPI.COMM_WORLD.Barrier();
-
-			for (i = 0 + rank; i < mdsize; i += nprocess) {
-				one[i].force(side, rcoff, mdsize, i);
-			}
-
-			MPI.COMM_WORLD.Barrier();
-			
-			if(rank == 0 && DEBUG) { 
-				System.out.println(" #after force");
-				printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-			
-			// ===================================================================================================
-			/* global reduction on partial sums of the forces, epot, vir and interactions */			
-			for (i = 0; i < mdsize; i++) {
-				tmp_xforce[i] = one[i].xforce;
-				tmp_yforce[i] = one[i].yforce;
-				tmp_zforce[i] = one[i].zforce;
-			}
-
-			MPI.COMM_WORLD.Allreduce(tmp_xforce, 0, tmp_xforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
-			MPI.COMM_WORLD.Allreduce(tmp_yforce, 0, tmp_yforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
-			MPI.COMM_WORLD.Allreduce(tmp_zforce, 0, tmp_zforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
-
-			for (i = 0; i < mdsize; i++) {
-				one[i].xforce = tmp_xforce[i];
-				one[i].yforce = tmp_yforce[i];
-				one[i].zforce = tmp_zforce[i];
-			}
-			
-			if(rank == 0 && DEBUG) { 
-				System.out.println(" #after force reduce");
-				printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-			
-			// ===================================================================================================
-			tmp_epot[0] = epot;
-			tmp_vir[0] = vir;
-			tmp_interactions[0] = interactions;
-
-			MPI.COMM_WORLD.Allreduce(tmp_epot, 0, tmp_epot, 0, 1, MPI.DOUBLE, MPI.SUM);
-			MPI.COMM_WORLD.Allreduce(tmp_vir, 0, tmp_vir, 0, 1, MPI.DOUBLE, MPI.SUM);
-			MPI.COMM_WORLD.Allreduce(tmp_interactions, 0, tmp_interactions, 0, 1, MPI.INT, MPI.SUM);
-
-			epot = tmp_epot[0];
-			vir = tmp_vir[0];
-			interactions = tmp_interactions[0];
-
-			MPI.COMM_WORLD.Barrier();
-			
-			if(rank == 0 && DEBUG) { 
-				System.out.println(" #after reduce epot");
-				printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-			
-			// ===================================================================================================
-			
-			sum = 0.0;
-
-			for (i = 0; i < mdsize; i++) {
-				sum = sum + one[i].mkekin(hsq2); /* scale forces, update velocities */
-			}
-
-			ekin = sum / hsq;
-			
-			if(rank == 0 && DEBUG) { 
-				System.out.println(" #after mkekin");
-				printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-
-			// ===================================================================================================
-			vel = 0.0;
-			count = 0.0;
-
-			for (i = 0; i < mdsize; i++) {
-				vel = vel + one[i].velavg(vaverh, h); /* average velocity */
-			}
-
-			vel = vel / h;
-			
-			if(rank == 0 && DEBUG) { 
-				System.out.println(" #after valavg");
-				printFirstParticleInfo(); 
-				System.out.println(" ekin:" + ekin + "/epot:" + epot);
-			}
-
-			// ===================================================================================================
-			/* tmeperature scale if required */
-			if ((move < istop) && (((move + 1) % irep) == 0)) {
-				sc = Math.sqrt(tref / (tscale * ekin));
-				for (i = 0; i < mdsize; i++) {
-					one[i].dscal(sc, 1);
-				}
-				ekin = tref / tscale;
-			}
-
-			// ===================================================================================================
-			/* sum to get full potential energy and virial */ 
-			if (((move + 1) % iprint) == 0) {
-				ek = 24.0 * ekin;
-				epot = 4.0 * epot;
-				etot = ek + epot;	//energy total
-				temp = tscale * ekin;	// temperature
-				pres = den * 16.0 * (ekin - vir) / mdsize;
-				vel = vel / mdsize;	//
-				rp = (count / mdsize) * 100.0;
-				if(rank == 0) {
-					System.out.println("#Iteration " + move);
-					System.out.println(" interactions : " + interactions);
-					System.out.println(" total energy : " + etot);
-					//printFirstParticleInfo();
-				}
-			}
-		}
-	}
-	
-	private void tidyup() {
-	    one = null;
-	    System.gc();
-	}
-	
-    public void validate(int size){
-      double refval[] = {1731.4306625334357,7397.392307839352};
-      double dev = Math.abs(ek - refval[size]);
-      if (dev > 1.0e-12 ){
-        System.out.println("Validation failed");
-        System.out.println("Kinetic Energy = " + ek + "  " + dev + "  " + size);
-      }
+    @Override
+    protected void domove() {
+        for (i = 0; i < mdsize; i++) {
+            one[i].domove(side);
+        }
     }
-	
-	private void printFirstParticleInfo() {
-		System.out.println(" " + one[0]);
-	}
 
-}
+    @Override
+    protected void force() {
+        epot = 0.0;
+        vir = 0.0;
 
-class particle {
+        for (i = 0 + rank; i < mdsize; i += nprocess) {
+            force1(one[i], side, rcoff, mdsize, i);
+        }
+    }
 
-	public double xcoord, ycoord, zcoord;
-	public double xvelocity, yvelocity, zvelocity;
-	public double xforce, yforce, zforce;
+    public void force1(Particle p0, double side, double rcoff, int mdsize, int x) {
 
-	public particle(double xcoord, double ycoord, double zcoord, double xvelocity, double yvelocity, double zvelocity,
-			double xforce, double yforce, double zforce) {
+        double sideh;
+        double rcoffs;
 
-		this.xcoord = xcoord;
-		this.ycoord = ycoord;
-		this.zcoord = zcoord;
-		this.xvelocity = xvelocity;
-		this.yvelocity = yvelocity;
-		this.zvelocity = zvelocity;
-		this.xforce = xforce;
-		this.yforce = yforce;
-		this.zforce = zforce;
+        double xx, yy, zz, xi, yi, zi, fxi, fyi, fzi;
+        double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
+        double forcex, forcey, forcez;
 
-	}
+        int i;
 
-	public void domove(double side) {
+        sideh = 0.5 * side;
+        rcoffs = rcoff * rcoff;
 
-		xcoord = xcoord + xvelocity + xforce; 
-		ycoord = ycoord + yvelocity + yforce; 
-		zcoord = zcoord + zvelocity + zforce;
+        xi = p0.xcoord;
+        yi = p0.ycoord;
+        zi = p0.zcoord;
+        fxi = 0.0;
+        fyi = 0.0;
+        fzi = 0.0;
 
-		if (xcoord < 0) {
-			xcoord = xcoord + side;
-		}
-		if (xcoord > side) {
-			xcoord = xcoord - side;
-		}
-		if (ycoord < 0) {
-			ycoord = ycoord + side;
-		}
-		if (ycoord > side) {
-			ycoord = ycoord - side;
-		}
-		if (zcoord < 0) {
-			zcoord = zcoord + side;
-		}
-		if (zcoord > side) {
-			zcoord = zcoord - side;
-		}
+        for (i = x + 1; i < mdsize; i++) {
+            xx = xi - one[i].xcoord;
+            yy = yi - one[i].ycoord;
+            zz = zi - one[i].zcoord;
 
-		xvelocity = xvelocity + xforce;
-		yvelocity = yvelocity + yforce;
-		zvelocity = zvelocity + zforce;
+            if (xx < (-sideh)) {
+                xx = xx + side;
+            }
+            if (xx > (sideh)) {
+                xx = xx - side;
+            }
+            if (yy < (-sideh)) {
+                yy = yy + side;
+            }
+            if (yy > (sideh)) {
+                yy = yy - side;
+            }
+            if (zz < (-sideh)) {
+                zz = zz + side;
+            }
+            if (zz > (sideh)) {
+                zz = zz - side;
+            }
 
-		xforce = 0.0;
-		yforce = 0.0;
-		zforce = 0.0;
+            rd = xx * xx + yy * yy + zz * zz;
 
-	}
+            if (rd <= rcoffs) {
+                rrd = 1.0 / rd;
+                rrd2 = rrd * rrd;
+                rrd3 = rrd2 * rrd;
+                rrd4 = rrd2 * rrd2;
+                rrd6 = rrd2 * rrd4;
+                rrd7 = rrd6 * rrd;
 
-	public void force(double side, double rcoff, int mdsize, int x) {
+                MoldynSimpleSeq.epot = MoldynSimpleSeq.epot + (rrd6 - rrd3);
+                r148 = rrd7 - 0.5 * rrd4;
 
-		double sideh;
-		double rcoffs;
+                MoldynSimpleSeq.vir = MoldynSimpleSeq.vir - rd * r148;
 
-		double xx, yy, zz, xi, yi, zi, fxi, fyi, fzi;
-		double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
-		double forcex, forcey, forcez;
+                forcex = xx * r148;
+                fxi = fxi + forcex;
+                one[i].xforce = one[i].xforce - forcex;
 
-		int i;
+                forcey = yy * r148;
+                fyi = fyi + forcey;
+                one[i].yforce = one[i].yforce - forcey;
 
-		sideh = 0.5 * side;
-		rcoffs = rcoff * rcoff;
+                forcez = zz * r148;
+                fzi = fzi + forcez;
+                one[i].zforce = one[i].zforce - forcez;
 
-		xi = xcoord;
-		yi = ycoord;
-		zi = zcoord;
-		fxi = 0.0;
-		fyi = 0.0;
-		fzi = 0.0;
+                MoldynSimpleSeq.interactions++;
+            }
+        }
+        p0.xforce = p0.xforce + fxi;
+        p0.yforce = p0.yforce + fyi;
+        p0.zforce = p0.zforce + fzi;
+    }
 
-		for (i = x + 1; i < mdsize; i++) {
-			xx = xi - MoldynMPI.one[i].xcoord;
-			yy = yi - MoldynMPI.one[i].ycoord;
-			zz = zi - MoldynMPI.one[i].zcoord;
+    @Override
+    public void initialize(int mm) {
+        /* Parameter determination */
+        mdsize = mm * mm * mm * 4;
+        one = new Particle[mdsize];
 
-			if (xx < (-sideh)) {
-				xx = xx + side;
-			}
-			if (xx > (sideh)) {
-				xx = xx - side;
-			}
-			if (yy < (-sideh)) {
-				yy = yy + side;
-			}
-			if (yy > (sideh)) {
-				yy = yy - side;
-			}
-			if (zz < (-sideh)) {
-				zz = zz + side;
-			}
-			if (zz > (sideh)) {
-				zz = zz - side;
-			}
+        side = Math.pow((mdsize / den), 0.3333333);
+        rcoff = mm / 4.0;
 
-			rd = xx * xx + yy * yy + zz * zz;
-			
-			if (rd <= rcoffs) {
-				rrd = 1.0 / rd;
-				rrd2 = rrd * rrd;
-				rrd3 = rrd2 * rrd;
-				rrd4 = rrd2 * rrd2;
-				rrd6 = rrd2 * rrd4;
-				rrd7 = rrd6 * rrd;
-				
-				MoldynMPI.epot = MoldynMPI.epot + (rrd6 - rrd3);
-				r148 = rrd7 - 0.5 * rrd4;
-				
-				MoldynMPI.vir = MoldynMPI.vir - rd * r148;
-				
-				forcex = xx * r148;
-				fxi = fxi + forcex;
-				MoldynMPI.one[i].xforce = MoldynMPI.one[i].xforce - forcex;
-				
-				forcey = yy * r148;
-				fyi = fyi + forcey;
-				MoldynMPI.one[i].yforce = MoldynMPI.one[i].yforce - forcey;
-				
-				forcez = zz * r148;
-				fzi = fzi + forcez;
-				MoldynMPI.one[i].zforce = MoldynMPI.one[i].zforce - forcez;
-				
-				MoldynMPI.interactions++;
-			}
+        final double a = side / mm;
+        sideh = side * 0.5;
+        hsq = h * h;
+        hsq2 = hsq * 0.5;
+        rcoffs = rcoff * rcoff;
+        tscale = 16.0 / (1.0 * mdsize - 1.0);
+        vaver = 1.13 * Math.sqrt(tref / 24.0);
+        vaverh = vaver * h;
 
-		}
+        /* temporary arrays for MPI operations */
 
-		xforce = xforce + fxi;
-		yforce = yforce + fyi;
-		zforce = zforce + fzi;
+        tmp_xforce = new double[mdsize];
+        tmp_yforce = new double[mdsize];
+        tmp_zforce = new double[mdsize];
 
-	}
+        tmp_epot = new double[1];
+        tmp_vir = new double[1];
+        tmp_interactions = new int[1];
 
+        /* Particle Generation */
 
-	public double mkekin(double hsq2) {
+        int ijk = 0;
+        for (lg = 0; lg <= 1; lg++) {
+            for (i = 0; i < mm; i++) {
+                for (j = 0; j < mm; j++) {
+                    for (k = 0; k < mm; k++) {
+                        one[ijk] = new Particle((i * a + lg * a * 0.5), (j * a + lg * a * 0.5), (k * a), 0.0, 0.0, 0.0,
+                                0.0, 0.0, 0.0);
+                        ijk = ijk + 1;
+                    }
+                }
+            }
+        }
+        for (lg = 1; lg <= 2; lg++) {
+            for (i = 0; i < mm; i++) {
+                for (j = 0; j < mm; j++) {
+                    for (k = 0; k < mm; k++) {
+                        one[ijk] = new Particle((i * a + (2 - lg) * a * 0.5), (j * a + (lg - 1) * a * 0.5),
+                                (k * a + a * 0.5), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+                        ijk = ijk + 1;
+                    }
+                }
+            }
+        }
 
-		double sumt = 0.0;
+        /* Initialise velocities */
+        randnum = new Random(0, 0.0, 0.0);
 
-		xforce = xforce * hsq2;
-		yforce = yforce * hsq2;
-		zforce = zforce * hsq2;
+        for (i = 0; i < mdsize; i += 2) {
+            r = randnum.next();
+            one[i].xvelocity = r * randnum.v1;
+            one[i + 1].xvelocity = r * randnum.v2;
+        }
 
-		xvelocity = xvelocity + xforce;
-		yvelocity = yvelocity + yforce;
-		zvelocity = zvelocity + zforce;
+        for (i = 0; i < mdsize; i += 2) {
+            r = randnum.next();
+            one[i].yvelocity = r * randnum.v1;
+            one[i + 1].yvelocity = r * randnum.v2;
+        }
 
-		sumt = (xvelocity * xvelocity) + (yvelocity * yvelocity) + (zvelocity * zvelocity);
-		return sumt;
-	}
+        for (i = 0; i < mdsize; i += 2) {
+            r = randnum.next();
+            one[i].zvelocity = r * randnum.v1;
+            one[i + 1].zvelocity = r * randnum.v2;
+        }
 
-	public double velavg(double vaverh, double h) {
+        /* velocity scaling */
 
-		double velt;
-		double sq;
+        ekin = 0.0;
+        double sp = 0.0;
 
-		sq = Math.sqrt(xvelocity * xvelocity + yvelocity * yvelocity + zvelocity * zvelocity);
+        for (i = 0; i < mdsize; i++) {
+            sp = sp + one[i].xvelocity;
+        }
+        sp = sp / mdsize;
 
-		if (sq > vaverh) {
-			MoldynMPI.count = MoldynMPI.count + 1.0;
-		}
+        for (i = 0; i < mdsize; i++) {
+            one[i].xvelocity = one[i].xvelocity - sp;
+            ekin = ekin + one[i].xvelocity * one[i].xvelocity;
+        }
 
-		velt = sq;
-		return velt;
-	}
+        sp = 0.0;
+        for (i = 0; i < mdsize; i++) {
+            sp = sp + one[i].yvelocity;
+        }
+        sp = sp / mdsize;
 
-	public void dscal(double sc, int incx) {
+        for (i = 0; i < mdsize; i++) {
+            one[i].yvelocity = one[i].yvelocity - sp;
+            ekin = ekin + one[i].yvelocity * one[i].yvelocity;
+        }
 
-		xvelocity = xvelocity * sc;
-		yvelocity = yvelocity * sc;
-		zvelocity = zvelocity * sc;
+        sp = 0.0;
+        for (i = 0; i < mdsize; i++) {
+            sp = sp + one[i].zvelocity;
+        }
+        sp = sp / mdsize;
 
-	}
-	
-	@Override
-	public String toString() {
-		//return String.format("particle"
-		//		+ "{ coord(%.2f, %.2f, %.2f) / velocity(%.2f, %.2f, %.2f) / force(%.2f, %.2f, %.2f) }", 
-		//		xcoord, ycoord, zcoord, xvelocity, yvelocity ,zvelocity ,xforce, yforce, zforce);
-		return String.format("coord(%5.5f, %5.5f, %5.5f) \t velocity(%3.5f, %3.5f, %3.5f) \t force(%2.5f, %2.5f, %2.5f)",
-			       	xcoord * 1000, ycoord * 1000, zcoord* 1000, xvelocity * 10000, yvelocity * 10000, zvelocity * 10000, xforce * 10000, yforce * 10000, zforce * 10000);
-	}
+        for (i = 0; i < mdsize; i++) {
+            one[i].zvelocity = one[i].zvelocity - sp;
+            ekin = ekin + one[i].zvelocity * one[i].zvelocity;
+        }
 
-}
+        final double ts = tscale * ekin;
+        sc = h * Math.sqrt(tref / ts);
 
-class random {
+        for (i = 0; i < mdsize; i++) {
+            one[i].xvelocity = one[i].xvelocity * sc;
+            one[i].yvelocity = one[i].yvelocity * sc;
+            one[i].zvelocity = one[i].zvelocity * sc;
+        }
 
-	public int iseed;
-	public double v1, v2;
+        /* MD simulation */
+    }
 
-	public random(int iseed, double v1, double v2) {
-		this.iseed = iseed;
-		this.v1 = v1;
-		this.v2 = v2;
-	}
+    @Override
+    protected void reduce() {
+        for (i = 0; i < mdsize; i++) {
+            tmp_xforce[i] = one[i].xforce;
+            tmp_yforce[i] = one[i].yforce;
+            tmp_zforce[i] = one[i].zforce;
+        }
 
-	public double update() {
+        MPI.COMM_WORLD.Allreduce(tmp_xforce, 0, tmp_xforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
+        MPI.COMM_WORLD.Allreduce(tmp_yforce, 0, tmp_yforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
+        MPI.COMM_WORLD.Allreduce(tmp_zforce, 0, tmp_zforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
 
-		double rand;
-		double scale = 4.656612875e-10;
+        for (i = 0; i < mdsize; i++) {
+            one[i].xforce = tmp_xforce[i];
+            one[i].yforce = tmp_yforce[i];
+            one[i].zforce = tmp_zforce[i];
+        }
 
-		int is1, is2, iss2;
-		int imult = 16807;
-		int imod = 2147483647;
+        tmp_epot[0] = epot;
+        tmp_vir[0] = vir;
+        tmp_interactions[0] = interactions;
 
-		if (iseed <= 0) {
-			iseed = 1;
-		}
+        MPI.COMM_WORLD.Allreduce(tmp_epot, 0, tmp_epot, 0, 1, MPI.DOUBLE, MPI.SUM);
+        MPI.COMM_WORLD.Allreduce(tmp_vir, 0, tmp_vir, 0, 1, MPI.DOUBLE, MPI.SUM);
+        MPI.COMM_WORLD.Allreduce(tmp_interactions, 0, tmp_interactions, 0, 1, MPI.INT, MPI.SUM);
 
-		is2 = iseed % 32768;
-		is1 = (iseed - is2) / 32768;
-		iss2 = is2 * imult;
-		is2 = iss2 % 32768;
-		is1 = (is1 * imult + (iss2 - is2) / 32768) % (65536);
+        epot = tmp_epot[0];
+        vir = tmp_vir[0];
+        interactions = tmp_interactions[0];
+    }
 
-		iseed = (is1 * 32768 + is2) % imod;
+    @Override
+    protected void tidyup() {
+        one = null;
+        System.gc();
+    }
 
-		rand = scale * iseed;
+    @Override
+    protected void updateParams() {
+        double sum = 0.0;
 
-		return rand;
+        for (i = 0; i < mdsize; i++) {
+            sum = sum + one[i].mkekin(hsq2); /* scale forces, update velocities */
+        }
 
-	}
+        ekin = sum / hsq;
 
-	public double seed() {
+        vel = 0.0;
+        count = 0.0;
 
-		double s, u1, u2, r;
-		s = 1.0;
-		do {
-			u1 = update();
-			u2 = update();
+        for (i = 0; i < mdsize; i++) {
+            vel = vel + one[i].velavg(vaverh, h); /* average velocity */
+        }
 
-			v1 = 2.0 * u1 - 1.0;
-			v2 = 2.0 * u2 - 1.0;
-			s = v1 * v1 + v2 * v2;
+        vel = vel / h;
 
-		} while (s >= 1.0);
-
-		r = Math.sqrt(-2.0 * Math.log(s) / s);
-
-		return r;
-
-	}
+        /* tmeperature scale if required */
+        if ((move < istop) && (((move + 1) % irep) == 0)) {
+            sc = Math.sqrt(tref / (tscale * ekin));
+            for (i = 0; i < mdsize; i++) {
+                one[i].dscal(sc);
+            }
+            ekin = tref / tscale;
+        }
+    }
 }
