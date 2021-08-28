@@ -156,9 +156,16 @@ public class MoldynHybrid extends Md implements Serializable {
         prevInteractions = interactions;
         interactions = 0;
 
+        double start, end;
+
         // split but sequential exec
+        start = System.nanoTime();
         final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
                 .splitNM(Ndivide, Ndivide, placeGroup.rank(), placeGroup.size(), Nworkers, new java.util.Random(0));
+        end = System.nanoTime();
+        forceSplit_ns += (end - start);
+
+        start = System.nanoTime();
         final List<LocalStatics> lss = new ArrayList<>(Nworkers);
         finish(() -> {
             for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
@@ -173,13 +180,18 @@ public class MoldynHybrid extends Md implements Serializable {
                 });
             }
         });
+        end = System.nanoTime();
+        forceCalc_ns += (end - start);
 
+        start = System.nanoTime();
         myAccM.parallelMerge(Nworkers);
         for (final LocalStatics ls : lss) {
             epot += ls.epot;
             vir += ls.vir;
             interactions += ls.interactions;
         }
+        end = System.nanoTime();
+        forceMerge_ns += (end - start);
     }
 
     private void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {

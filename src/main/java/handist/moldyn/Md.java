@@ -182,6 +182,7 @@ public abstract class Md {
     transient final int mainLoop = 10;
 
     transient double domove_ns, force_ns, reduce_ns, others_ns; // timer
+    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
 
     Random randnum;
 
@@ -241,8 +242,8 @@ public abstract class Md {
             force_ns = force_ns / 1.0e9;
             reduce_ns = reduce_ns / 1.0e9;
             others_ns = others_ns / 1.0e9;
-            System.out.println(
-                    "Iter" + i + ";" + total + ";" + domove_ns + ";" + force_ns + ";" + reduce_ns + ";" + others_ns);
+            System.out.println("Iter" + i + ";" + total + ";" + domove_ns + ";" + force_ns + ";" + forceSplit_ns + ";"
+                    + forceCalc_ns + ";" + forceMerge_ns + ";" + reduce_ns + ";" + others_ns);
         }
     }
 
@@ -251,6 +252,9 @@ public abstract class Md {
         move = 0;
         domove_ns = 0;
         force_ns = 0;
+        forceSplit_ns = 0;
+        forceCalc_ns = 0;
+        forceMerge_ns = 0;
         reduce_ns = 0;
         others_ns = 0;
 

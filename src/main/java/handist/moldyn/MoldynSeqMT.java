@@ -143,11 +143,17 @@ public class MoldynSeqMT extends Md implements Serializable {
         epot = 0.0;
         vir = 0.0;
 
-        // split but sequential exec
+        double start, end;
 
+        // split but sequential exec
+        start = System.nanoTime();
         final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
                 .splitN(Ndivide, Ndivide, Nworkers, false);
-        final List<LocalStatics> lss = new ArrayList<>();
+        end = System.nanoTime();
+        forceSplit_ns = (end - start);
+
+        start = System.nanoTime();
+        final List<LocalStatics> lss = new ArrayList<>(Nworkers);
         finish(() -> {
             for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
                 final LocalStatics ls = new LocalStatics();
@@ -161,12 +167,18 @@ public class MoldynSeqMT extends Md implements Serializable {
                 });
             }
         });
+        end = System.nanoTime();
+        forceCalc_ns = (end - start);
+
+        start = System.nanoTime();
         myAccM.parallelMerge(Nworkers);
         for (final LocalStatics ls : lss) {
             epot += ls.epot;
             vir += ls.vir;
             interactions += ls.interactions;
         }
+        end = System.nanoTime();
+        forceMerge_ns += (end - start);
     }
 
     private final void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {
