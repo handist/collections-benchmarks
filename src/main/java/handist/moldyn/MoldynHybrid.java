@@ -395,7 +395,7 @@ public class MoldynHybrid extends Md implements Serializable {
 
     @Override
     protected void tidyup() {
-        oneX.remove(allRange);
+        oneX = null;
         System.gc();
     }
 
