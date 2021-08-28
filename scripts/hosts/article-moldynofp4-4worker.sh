@@ -5,7 +5,7 @@ export HOST=article-moldynofp4-4worker
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-export BENCHMARKS="moldyn-hybrid.sh"
+export BENCHMARKS="moldyn-hybrid.sh moldyn-hybrid-split16.sh"
 # List of library configruations that we want to test
 export CONFIGS="76-2dtrial-outputproduct.sh"
 # Path to the MPI bindings
@@ -14,8 +14,6 @@ export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 export NB_HOSTS=4
 # Number of concurrent workers *(-Dglb.workers)
 export WORKERS=4
-# Number of divide block
-export SPLIT=64
 # Core restriction
 export CORE_RESTRICTION="0-67"
 
