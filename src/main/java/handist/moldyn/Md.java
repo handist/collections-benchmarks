@@ -96,7 +96,7 @@ public abstract class Md {
 
             sq = Math.sqrt(xvelocity * xvelocity + yvelocity * yvelocity + zvelocity * zvelocity);
             if (sq > vaverh) {
-                MoldynHybrid.count = MoldynHybrid.count + 1.0;
+                count = count + 1.0;
             }
             velt = sq;
 
