@@ -1,0 +1,2 @@
+handist.bag.BagEval received arguments [500000, 1000, 15, 68, 5]
+Available 'cores' on host: 68
