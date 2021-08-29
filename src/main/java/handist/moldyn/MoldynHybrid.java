@@ -384,16 +384,25 @@ public class MoldynHybrid extends Md implements Serializable {
 
     @Override
     protected void reduce() {
+        double start, end;
+
+        start = System.nanoTime();
+        placeGroup.barrier();
+        end = System.nanoTime();
+        barrier_ns += (end - start);
+
+        start = System.nanoTime();
         oneX.allreduce((p) -> new Sp(p.xforce, p.yforce, p.zforce), (p, sp) -> {
             p.xforce += sp.x;
             p.yforce += sp.y;
             p.zforce += sp.z;
         });
-
         epot = placeGroup.allReduce1(epot, MPI.SUM);
         vir = placeGroup.allReduce1(vir, MPI.SUM);
         interactions = placeGroup.allReduce1(interactions, MPI.SUM);
         interactions += prevInteractions;
+        end = System.nanoTime();
+        reduce_ns += (end - start);
     }
 
     // main routine

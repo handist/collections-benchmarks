@@ -286,11 +286,20 @@ public class MoldynMPI extends Md {
 
     @Override
     protected void reduce() {
+        double start, end;
+
         for (i = 0; i < mdsize; i++) {
             tmp_xforce[i] = one[i].xforce;
             tmp_yforce[i] = one[i].yforce;
             tmp_zforce[i] = one[i].zforce;
         }
+
+        start = System.nanoTime();
+        MPI.COMM_WORLD.Barrier();
+        end = System.nanoTime();
+        barrier_ns += (end - start);
+
+        start = System.nanoTime();
 
         MPI.COMM_WORLD.Allreduce(tmp_xforce, 0, tmp_xforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
         MPI.COMM_WORLD.Allreduce(tmp_yforce, 0, tmp_yforce, 0, mdsize, MPI.DOUBLE, MPI.SUM);
@@ -313,6 +322,9 @@ public class MoldynMPI extends Md {
         epot = tmp_epot[0];
         vir = tmp_vir[0];
         interactions = tmp_interactions[0];
+
+        end = System.nanoTime();
+        reduce_ns += (end - start);
     }
 
     @Override
