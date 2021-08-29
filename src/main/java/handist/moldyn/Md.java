@@ -155,7 +155,7 @@ public abstract class Md {
 
     protected static boolean DEBUG = false;
 
-    public static int datasizes[] = { 8, 13, 26 };
+    public static int datasizes[] = { 8, 13, 20 };
     public static double refval[] = { 1731.4306625334357, 7397.392307839352, -1 };
     final static double den = 0.83134;
     final static double tref = 0.722;
@@ -179,7 +179,7 @@ public abstract class Md {
     transient final int iprint = 10;
     transient final int movemx = 50;
     transient final int warmup = 2;
-    transient final int mainLoop = 10;
+    transient final int mainLoop = 5;
 
     transient double domove_ns, force_ns, reduce_ns, others_ns; // timer
     transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer

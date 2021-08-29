@@ -12,10 +12,6 @@ export CONFIGS="76-2dtrial-outputproduct.sh"
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired
 export NB_HOSTS=64
-# Number of concurrent workers *(-Dglb.workers)
-export WORKERS=1
-# Number of divide block
-export SPLIT=64
 # Core restriction
 export CORE_RESTRICTION="0-67"
 

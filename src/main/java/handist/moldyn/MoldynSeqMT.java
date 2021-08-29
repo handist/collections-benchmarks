@@ -111,12 +111,12 @@ public class MoldynSeqMT extends Md implements Serializable {
     public static void main(String[] args) throws IOException {
         if (args.length != 3) {
             System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
-                    + "<data size index(0or1or2)> <number of workers> <number of divide>");
+                    + "<data size index(0or1or2)> <number of divide> <number of workers>");
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
-        Nworkers = Integer.parseInt(args[1]);
-        Ndivide = Integer.parseInt(args[2]);
+        Ndivide = Integer.parseInt(args[1]);
+        Nworkers = Integer.parseInt(args[2]);
 
         final MoldynSeqMT m0 = new MoldynSeqMT();
         m0.runBenchmarks(problemSize);
