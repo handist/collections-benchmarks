@@ -1,0 +1,21 @@
+Starting process <15> on on <c1999.ofp>
+Starting process <7> on on <c1990.ofp>
+Starting process <10> on on <c1993.ofp>
+Starting process <0> on on <c1981.ofp>
+Starting process <13> on on <c1996.ofp>
+Starting process <6> on on <c1989.ofp>
+Starting process <8> on on <c1991.ofp>
+Starting process <12> on on <c1995.ofp>
+Starting process <9> on on <c1992.ofp>
+Starting process <2> on on <c1984.ofp>
+Starting process <5> on on <c1987.ofp>
+Starting process <1> on on <c1982.ofp>
+Starting process <4> on on <c1986.ofp>
+Starting process <3> on on <c1985.ofp>
+Starting process <11> on on <c1994.ofp>
+Starting process <14> on on <c1997.ofp>
+Iter0;1.234027418;0.020531628;0.865152104;0.050943132;0.718122504;0.095476729;0.0;0.1014299
+Iter1;1.235010056;0.016717641;0.848721479;0.04762071;0.709125662;0.091683118;0.0;0.099037477
+Iter2;1.291053229;0.017016936;0.846432991;0.04820787;0.709032456;0.088893355;0.0;0.101322909
+Iter3;1.198598714;0.015207521;0.829639317;0.047377401;0.688423086;0.093533491;0.0;0.093028062
+Iter4;1.223412424;0.015532109;0.831396153;0.047224028;0.70069767;0.083136455;0.0;0.092313858

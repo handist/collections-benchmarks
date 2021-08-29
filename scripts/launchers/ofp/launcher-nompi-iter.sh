@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for value in ${VALUES}
+for value in ${VALUES[@]}
 do
     # Set the VALUE to the appropriate Variable
     export ${PARAM}=${value}

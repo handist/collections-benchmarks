@@ -1,0 +1,169 @@
+##################################################
+warmup 1/2
+#Iteration 9, interactions 4320, total energy -626.3987411039093
+#Iteration 9, interactions 4784, total energy -703.106492409679
+#Iteration 9, interactions 5184, total energy -1413.885335556453
+#Iteration 9, interactions 5608, total energy -298.3630190679214
+#Iteration 19, interactions 4784, total energy -625.6436476621438
+#Iteration 19, interactions 4320, total energy -535.8983628104925
+#Iteration 19, interactions 5184, total energy -1310.9433297307228
+#Iteration 19, interactions 6129, total energy -331.12963595031624
+#Iteration 29, interactions 4784, total energy -490.63419432472847
+#Iteration 29, interactions 5184, total energy -1145.7914523258319
+#Iteration 29, interactions 4320, total energy -375.6494957657519
+#Iteration 29, interactions 6326, total energy -343.208371468525
+#Iteration 39, interactions 4784, total energy -298.0781323974279
+#Iteration 39, interactions 5184, total energy -918.429703341782
+#Iteration 39, interactions 4320, total energy -145.6521399696876
+#Iteration 39, interactions 6483, total energy -352.7801571296395
+#Iteration 49, interactions 4784, total energy -47.975461880248076
+#Iteration 49, interactions 5184, total energy -628.8580827785745
+#Iteration 49, interactions 4320, total energy 154.09370457770228
+#Iteration 49, interactions 6658, total energy -363.6389998272475
+##################################################
+warmup 2/2
+#Iteration 9, interactions 4784, total energy -703.106492409679
+#Iteration 9, interactions 5608, total energy -298.3630190679214
+#Iteration 9, interactions 4320, total energy -626.3987411039093
+#Iteration 9, interactions 5184, total energy -1413.885335556453
+#Iteration 19, interactions 4784, total energy -625.6436476621438
+#Iteration 19, interactions 6129, total energy -331.12963595031624
+#Iteration 19, interactions 5184, total energy -1310.9433297307228
+#Iteration 19, interactions 4320, total energy -535.898362810492
+#Iteration 29, interactions 4784, total energy -490.63419432472665
+#Iteration 29, interactions 5184, total energy -1145.7914523258319
+#Iteration 29, interactions 4320, total energy -375.6494957657519
+#Iteration 29, interactions 6326, total energy -343.208371468525
+#Iteration 39, interactions 4784, total energy -298.07813239742836
+#Iteration 39, interactions 5184, total energy -918.4297033417829
+#Iteration 39, interactions 4320, total energy -145.65213996968714
+#Iteration 39, interactions 6483, total energy -352.7801571296395
+#Iteration 49, interactions 4784, total energy -47.97546188024762
+#Iteration 49, interactions 5184, total energy -628.8580827785754
+#Iteration 49, interactions 4320, total energy 154.09370457770137
+#Iteration 49, interactions 6658, total energy -363.63899982724706
+##################################################
+main run 1/5
+#Iteration 9, interactions 1761560, total energy -19779.926662730417
+#Iteration 9, interactions 1533800, total energy -14113.430123894628
+#Iteration 9, interactions 2004000, total energy -37645.25644779307
+#Iteration 9, interactions 1547129, total energy -10219.683337357885
+#Iteration 19, interactions 1761560, total energy -18223.59372755309
+#Iteration 19, interactions 1533800, total energy -12974.658082594106
+#Iteration 19, interactions 2004000, total energy -36351.950329597326
+#Iteration 19, interactions 1565541, total energy -10235.113952844076
+#Iteration 29, interactions 1761560, total energy -15580.228174218122
+#Iteration 29, interactions 1533800, total energy -11049.309447083302
+#Iteration 29, interactions 2004000, total energy -34164.52982985084
+#Iteration 29, interactions 1579971, total energy -10236.57156816539
+#Iteration 39, interactions 1761560, total energy -11849.830002725445
+#Iteration 39, interactions 1533800, total energy -8337.384217362254
+#Iteration 39, interactions 2004000, total energy -31082.99494855364
+#Iteration 39, interactions 1588999, total energy -10240.275681249681
+#Iteration 49, interactions 1761560, total energy -7032.399213075099
+#Iteration 49, interactions 1533800, total energy -4838.88239343094
+#Iteration 49, interactions 2004000, total energy -27107.345685705688
+#Iteration 49, interactions 1594552, total energy -10244.035576220187
+Validation failed
+Kinetic Energy = 37274.0488195631  -1.0 diff:37275.0488195631  2
+########################################## time: 489.443341021
+##################################################
+main run 2/5
+#Iteration 9, interactions 1761560, total energy -19779.926662730417
+#Iteration 9, interactions 1533800, total energy -14113.430123894628
+#Iteration 9, interactions 2004000, total energy -37645.25644779307
+#Iteration 9, interactions 1547129, total energy -10219.683337357885
+#Iteration 19, interactions 1761560, total energy -18223.59372755309
+#Iteration 19, interactions 1533800, total energy -12974.658082594091
+#Iteration 19, interactions 2004000, total energy -36351.950329597355
+#Iteration 19, interactions 1565541, total energy -10235.113952844062
+#Iteration 29, interactions 1761560, total energy -15580.228174218122
+#Iteration 29, interactions 1533800, total energy -11049.309447083295
+#Iteration 29, interactions 2004000, total energy -34164.52982985085
+#Iteration 29, interactions 1579971, total energy -10236.57156816539
+#Iteration 39, interactions 1761560, total energy -11849.830002725437
+#Iteration 39, interactions 1533800, total energy -8337.384217362247
+#Iteration 39, interactions 2004000, total energy -31082.99494855364
+#Iteration 39, interactions 1588999, total energy -10240.275681249674
+#Iteration 49, interactions 1761560, total energy -7032.399213075099
+#Iteration 49, interactions 1533800, total energy -4838.882393430911
+#Iteration 49, interactions 2004000, total energy -27107.345685705703
+#Iteration 49, interactions 1594552, total energy -10244.03557622018
+Validation failed
+Kinetic Energy = 37274.048819563104  -1.0 diff:37275.048819563104  2
+########################################## time: 489.546605393
+##################################################
+main run 3/5
+#Iteration 9, interactions 1761560, total energy -19779.926662730417
+#Iteration 9, interactions 1533800, total energy -14113.430123894628
+#Iteration 9, interactions 2004000, total energy -37645.25644779307
+#Iteration 9, interactions 1547129, total energy -10219.683337357885
+#Iteration 19, interactions 1761560, total energy -18223.59372755309
+#Iteration 19, interactions 1533800, total energy -12974.658082594091
+#Iteration 19, interactions 2004000, total energy -36351.950329597326
+#Iteration 19, interactions 1565541, total energy -10235.113952844076
+#Iteration 29, interactions 1761560, total energy -15580.228174218122
+#Iteration 29, interactions 1533800, total energy -11049.309447083302
+#Iteration 29, interactions 2004000, total energy -34164.52982985084
+#Iteration 29, interactions 1579971, total energy -10236.571568165418
+#Iteration 39, interactions 1761560, total energy -11849.83000272543
+#Iteration 39, interactions 1533800, total energy -8337.384217362247
+#Iteration 39, interactions 2004000, total energy -31082.99494855362
+#Iteration 39, interactions 1588999, total energy -10240.27568124971
+#Iteration 49, interactions 1761560, total energy -7032.399213075099
+#Iteration 49, interactions 1533800, total energy -4838.882393430911
+#Iteration 49, interactions 2004000, total energy -27107.345685705688
+#Iteration 49, interactions 1594552, total energy -10244.035576220202
+Validation failed
+Kinetic Energy = 37274.048819563075  -1.0 diff:37275.048819563075  2
+########################################## time: 488.588347769
+##################################################
+main run 4/5
+#Iteration 9, interactions 1761560, total energy -19779.926662730417
+#Iteration 9, interactions 1533800, total energy -14113.430123894628
+#Iteration 9, interactions 2004000, total energy -37645.25644779307
+#Iteration 9, interactions 1547129, total energy -10219.683337357885
+#Iteration 19, interactions 1761560, total energy -18223.59372755309
+#Iteration 19, interactions 1533800, total energy -12974.658082594091
+#Iteration 19, interactions 2004000, total energy -36351.95032959735
+#Iteration 19, interactions 1565541, total energy -10235.113952844062
+#Iteration 29, interactions 1761560, total energy -15580.228174218122
+#Iteration 29, interactions 1533800, total energy -11049.309447083295
+#Iteration 29, interactions 2004000, total energy -34164.52982985086
+#Iteration 29, interactions 1579971, total energy -10236.57156816539
+#Iteration 39, interactions 1761560, total energy -11849.830002725445
+#Iteration 39, interactions 1533800, total energy -8337.384217362247
+#Iteration 39, interactions 2004000, total energy -31082.99494855364
+#Iteration 39, interactions 1588999, total energy -10240.275681249674
+#Iteration 49, interactions 1761560, total energy -7032.399213075107
+#Iteration 49, interactions 1533800, total energy -4838.882393430911
+#Iteration 49, interactions 2004000, total energy -27107.345685705695
+#Iteration 49, interactions 1594552, total energy -10244.03557622018
+Validation failed
+Kinetic Energy = 37274.048819563104  -1.0 diff:37275.048819563104  2
+########################################## time: 488.558336197
+##################################################
+main run 5/5
+#Iteration 9, interactions 1761560, total energy -19779.926662730417
+#Iteration 9, interactions 1533800, total energy -14113.430123894628
+#Iteration 9, interactions 2004000, total energy -37645.25644779307
+#Iteration 9, interactions 1547129, total energy -10219.683337357885
+#Iteration 19, interactions 1761560, total energy -18223.593727553096
+#Iteration 19, interactions 1533800, total energy -12974.658082594098
+#Iteration 19, interactions 2004000, total energy -36351.95032959734
+#Iteration 19, interactions 1565541, total energy -10235.113952844076
+#Iteration 29, interactions 1761560, total energy -15580.22817421813
+#Iteration 29, interactions 1533800, total energy -11049.309447083302
+#Iteration 29, interactions 2004000, total energy -34164.52982985084
+#Iteration 29, interactions 1579971, total energy -10236.571568165418
+#Iteration 39, interactions 1761560, total energy -11849.830002725437
+#Iteration 39, interactions 1533800, total energy -8337.384217362247
+#Iteration 39, interactions 2004000, total energy -31082.994948553627
+#Iteration 39, interactions 1588999, total energy -10240.275681249717
+#Iteration 49, interactions 1761560, total energy -7032.399213075107
+#Iteration 49, interactions 1533800, total energy -4838.882393430911
+#Iteration 49, interactions 2004000, total energy -27107.345685705695
+#Iteration 49, interactions 1594552, total energy -10244.035576220194
+Validation failed
+Kinetic Energy = 37274.04881956308  -1.0 diff:37275.04881956308  2
+########################################## time: 488.769161047

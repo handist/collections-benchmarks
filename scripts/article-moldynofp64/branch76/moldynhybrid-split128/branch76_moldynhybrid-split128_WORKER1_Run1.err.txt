@@ -1,0 +1,2269 @@
+##################################################
+warmup 1/2
+#Iteration 9, interactions 229, total energy 2114.100138541391
+#Iteration 9, interactions 256, total energy 2074.0375094452115
+#Iteration 9, interactions 184, total energy 2103.683137417791
+#Iteration 9, interactions 264, total energy 2019.4868588714485
+#Iteration 9, interactions 472, total energy 1872.730185570622
+#Iteration 9, interactions 224, total energy 2049.7565307807404
+#Iteration 9, interactions 224, total energy 2073.4134655084986
+#Iteration 9, interactions 312, total energy 2023.3800416174865
+#Iteration 9, interactions 512, total energy 1866.1174483890886
+#Iteration 9, interactions 160, total energy 2078.0796113170136
+#Iteration 9, interactions 344, total energy 1964.8617487348038
+#Iteration 9, interactions 256, total energy 2038.552107353574
+#Iteration 9, interactions 144, total energy 2122.1243419632037
+#Iteration 9, interactions 336, total energy 1978.01276353499
+#Iteration 9, interactions 240, total energy 2070.7683706358853
+#Iteration 9, interactions 224, total energy 2079.327699190438
+#Iteration 9, interactions 208, total energy 2081.972794063052
+#Iteration 9, interactions 240, total energy 2047.111435908127
+#Iteration 9, interactions 272, total energy 2035.9070124809605
+#Iteration 9, interactions 320, total energy 1986.5720920895435
+#Iteration 19, interactions 240, total energy 2113.3857181412613
+#Iteration 9, interactions 384, total energy 1946.4205441893916
+#Iteration 9, interactions 168, total energy 2088.5855312445856
+#Iteration 9, interactions 328, total energy 2050.306115154571
+#Iteration 9, interactions 184, total energy 2115.51160478167
+#Iteration 9, interactions 336, total energy 1995.755464580808#Iteration 19, interactions 264, total energy 2032.6247198724718
+
+#Iteration 19, interactions 184, total energy 2110.5742995253995
+#Iteration 9, interactions 296, total energy 2037.8536038539792
+#Iteration 9, interactions 288, total energy 2009.6049828805885
+#Iteration 9, interactions 336, total energy 1942.527361443353
+#Iteration 19, interactions 472, total energy 1891.4542379655452
+#Iteration 19, interactions 256, total energy 2081.6110644054893
+#Iteration 9, interactions 264, total energy 2025.401092553388
+#Iteration 9, interactions 200, total energy 2083.2953414993585
+#Iteration 9, interactions 312, total energy 2070.693911073003
+#Iteration 19, interactions 224, total energy 2082.5123875466443
+#Iteration 9, interactions 304, total energy 2054.2737574634916
+#Iteration 9, interactions 384, total energy 1975.9917125990885
+#Iteration 9, interactions 312, total energy 2005.6373405716681
+#Iteration 9, interactions 352, total energy 1963.5392012984976
+#Iteration 9, interactions 272, total energy 2035.9070124809605
+#Iteration 9, interactions 312, total energy 2047.036976345245#Iteration 9, interactions 248, total energy 2039.8746547898802
+
+#Iteration 9, interactions 248, total energy 2057.6173558356995
+#Iteration 9, interactions 408, total energy 1954.2813692443501
+#Iteration 9, interactions 304, total energy 2024.7025890537939#Iteration 9, interactions 176, total energy 2105.0056848540976
+
+#Iteration 9, interactions 448, total energy 1906.2689962892402
+#Iteration 9, interactions 248, total energy 2069.4458231995786
+#Iteration 9, interactions 208, total energy 2070.144326699173#Iteration 9, interactions 112, total energy 2174.728401163947
+#Iteration 19, interactions 144, total energy 2127.1784928030283
+
+#Iteration 19, interactions 336, total energy 1986.0716583398448
+#Iteration 9, interactions 352, total energy 1987.196136026255
+#Iteration 9, interactions 312, total energy 2058.8654437091245
+#Iteration 9, interactions 208, total energy 2076.0585603811123
+#Iteration 19, interactions 512, total energy 1887.332256817011
+#Iteration 9, interactions 248, total energy 2045.7888884718207
+#Iteration 19, interactions 344, total energy 1975.9148488433425
+#Iteration 9, interactions 200, total energy 2101.038042545177
+#Iteration 19, interactions 160, total energy 2086.7929269521132
+#Iteration 19, interactions 208, total energy 2091.84945677497
+#Iteration 19, interactions 312, total energy 2033.4630858924809
+#Iteration 29, interactions 184, total energy 2122.0598342997523
+#Iteration 19, interactions 272, total energy 2042.9960286040987#Iteration 9, interactions 184, total energy 2109.5973710997305
+
+#Iteration 19, interactions 240, total energy 2075.865010679325#Iteration 29, interactions 264, total energy 2054.0647702783986#Iteration 29, interactions 249, total energy 2112.8199273302157
+
+
+#Iteration 9, interactions 344, total energy 1941.2048140070463
+#Iteration 9, interactions 232, total energy 2060.2624507083133#Iteration 9, interactions 568, total energy 1845.031148971062
+
+#Iteration 9, interactions 344, total energy 1994.4329171445022
+#Iteration 29, interactions 472, total energy 1920.831383393185
+#Iteration 19, interactions 224, total energy 2087.2368286102405
+#Iteration 9, interactions 472, total energy 1902.3013539803194
+#Iteration 9, interactions 272, total energy 2018.1643114351418
+#Iteration 19, interactions 288, total energy 2022.3712849850886
+#Iteration 9, interactions 344, total energy 1994.432917144502
+#Iteration 19, interactions 240, total energy 2054.18934667523#Iteration 29, interactions 256, total energy 2093.572070163771
+
+#Iteration 9, interactions 384, total energy 2005.562881008786
+#Iteration 9, interactions 240, total energy 2100.339539045583
+#Iteration 9, interactions 264, total energy 2019.4868588714485
+#Iteration 19, interactions 200, total energy 2088.888391184814
+#Iteration 29, interactions 224, total energy 2097.463108082029
+#Iteration 19, interactions 328, total energy 2058.2033832871102
+#Iteration 19, interactions 256, total energy 2046.5276251825082
+#Iteration 19, interactions 384, total energy 1959.934827671227#Iteration 19, interactions 184, total energy 2119.1165480577747
+
+#Iteration 29, interactions 144, total energy 2136.1338426410116#Iteration 19, interactions 264, total energy 2038.2300122586062
+
+#Iteration 19, interactions 336, total energy 1952.0358533426404
+#Iteration 19, interactions 312, total energy 2078.8817557946336
+#Iteration 29, interactions 512, total energy 1920.5435317792585
+#Iteration 29, interactions 344, total energy 1995.1472147770164#Iteration 29, interactions 336, total energy 2000.8306792669546
+
+#Iteration 19, interactions 168, total energy 2097.46942022677
+#Iteration 9, interactions 360, total energy 1979.9593549080093
+#Iteration 19, interactions 296, total energy 2051.3300738072417
+#Iteration 19, interactions 312, total energy 2058.388496128398
+#Iteration 19, interactions 448, total energy 1922.901461490873#Iteration 39, interactions 184, total energy 2138.1397417408434
+
+#Iteration 19, interactions 352, total energy 1974.960537376659
+#Iteration 19, interactions 208, total energy 2074.3640981672843#Iteration 19, interactions 384, total energy 1984.9259016324174
+
+#Iteration 19, interactions 112, total energy 2176.0312258240842
+#Iteration 19, interactions 352, total energy 2002.0892979171256
+#Iteration 19, interactions 336, total energy 2001.9009885386856
+#Iteration 19, interactions 312, total energy 2068.837062059345
+#Iteration 29, interactions 208, total energy 2107.2420746087246
+#Iteration 39, interactions 264, total energy 2083.8070100892305
+#Iteration 29, interactions 240, total energy 2085.5882537661723
+#Iteration 29, interactions 272, total energy 2055.63323022574
+#Iteration 19, interactions 408, total energy 1965.9888505816257
+#Iteration 19, interactions 248, total energy 2048.370235899431#Iteration 39, interactions 472, total energy 1960.8616218535428#Iteration 39, interactions 258, total energy 2112.267729897645
+
+#Iteration 19, interactions 248, total energy 2062.631095219589
+
+#Iteration 19, interactions 312, total energy 2009.8734605439827
+#Iteration 19, interactions 304, total energy 2031.0678814893804#Iteration 29, interactions 160, total energy 2101.500502199857
+#Iteration 29, interactions 224, total energy 2099.4582046158234
+
+#Iteration 19, interactions 248, total energy 2077.0746900451823
+#Iteration 29, interactions 288, total energy 2042.5504244160607
+#Iteration 29, interactions 240, total energy 2067.086825562906
+#Iteration 39, interactions 256, total energy 2109.9205267200555
+#Iteration 29, interactions 200, total energy 2098.7184832438297#Iteration 39, interactions 224, total energy 2118.2656271146548#Iteration 19, interactions 344, total energy 1957.0351270470508
+
+
+#Iteration 19, interactions 320, total energy 1993.8488304055343
+#Iteration 19, interactions 248, total energy 2053.1344472940464
+#Iteration 29, interactions 312, total energy 2050.1233327099626#Iteration 19, interactions 224, total energy 2059.144185993261
+
+#Iteration 19, interactions 568, total energy 1856.1807248627138
+#Iteration 29, interactions 256, total energy 2060.764039714165
+#Iteration 29, interactions 328, total energy 2071.245736639565
+#Iteration 19, interactions 208, total energy 2079.906058582438
+#Iteration 19, interactions 176, total energy 2111.425239620443
+#Iteration 19, interactions 384, total energy 2017.0663765737886
+#Iteration 19, interactions 184, total energy 2115.7825909427074
+#Iteration 19, interactions 304, total energy 2063.8673745228148
+#Iteration 39, interactions 144, total energy 2148.9903914771558
+#Iteration 19, interactions 272, total energy 2043.6864745968724
+#Iteration 19, interactions 272, total energy 2029.711803281698
+#Iteration 29, interactions 264, total energy 2057.81082599838
+#Iteration 39, interactions 344, total energy 2022.558846535827
+#Iteration 19, interactions 344, total energy 2002.1563050851285
+#Iteration 39, interactions 336, total energy 2022.2898263163188#Iteration 29, interactions 312, total energy 2092.3073283214208
+
+#Iteration 39, interactions 512, total energy 1965.7512732758337
+#Iteration 19, interactions 344, total energy 2001.8956009645258
+#Iteration 19, interactions 232, total energy 2070.4445130473514
+#Iteration 19, interactions 472, total energy 1920.9344394657599
+#Iteration 29, interactions 296, total energy 2072.0232026771287
+#Iteration 29, interactions 384, total energy 1982.4162923946371
+#Iteration 49, interactions 184, total energy 2158.814021848676
+#Iteration 19, interactions 264, total energy 2032.490869896863
+#Iteration 29, interactions 336, total energy 1971.8985708079028
+#Iteration 29, interactions 352, total energy 1995.70233644482
+#Iteration 29, interactions 184, total energy 2126.7193814620373
+#Iteration 29, interactions 384, total energy 2002.3878927073154#Iteration 39, interactions 208, total energy 2128.1506475643164
+
+#Iteration 49, interactions 264, total energy 2121.8514393049663
+#Iteration 29, interactions 112, total energy 2178.7956020336055#Iteration 29, interactions 312, total energy 2075.156483753539
+
+#Iteration 29, interactions 352, total energy 2025.1421880974933#Iteration 29, interactions 448, total energy 1951.696290642153
+
+#Iteration 29, interactions 312, total energy 2084.8646046256904
+#Iteration 29, interactions 208, total energy 2083.438881465317
+#Iteration 19, interactions 360, total energy 1995.8651720662958
+#Iteration 49, interactions 472, total energy 2011.5449533466192
+#Iteration 39, interactions 272, total energy 2073.818617345886
+#Iteration 39, interactions 240, total energy 2099.938099896427
+#Iteration 49, interactions 274, total energy 2111.290158932875
+#Iteration 9, interactions 288, total energy 1985.9480481528308
+#Iteration 29, interactions 248, total energy 2062.9997415871803
+#Iteration 19, interactions 200, total energy 2106.23586351582
+#Iteration 29, interactions 312, total energy 2019.6899963914648
+#Iteration 39, interactions 224, total energy 2115.9918272071905
+#Iteration 39, interactions 288, total energy 2070.1424011735085#Iteration 29, interactions 248, total energy 2090.619816141358
+
+#Iteration 39, interactions 160, total energy 2122.202337060245
+#Iteration 29, interactions 248, total energy 2072.260694187996
+#Iteration 29, interactions 168, total energy 2111.7833166596815
+#Iteration 29, interactions 336, total energy 2013.355545749662#Iteration 29, interactions 344, total energy 1982.0999554059447
+
+#Iteration 29, interactions 408, total energy 1986.1422348341152
+#Iteration 39, interactions 200, total energy 2112.785617676409
+#Iteration 29, interactions 320, total energy 2006.9881106776527
+#Iteration 39, interactions 240, total energy 2085.803872571156
+#Iteration 49, interactions 224, total energy 2144.9199446445177
+#Iteration 19, interactions 240, total energy 2105.6848336492226
+#Iteration 29, interactions 304, total energy 2041.47403788868
+#Iteration 49, interactions 256, total energy 2130.6564340743444
+#Iteration 39, interactions 256, total energy 2081.2613509485454
+#Iteration 39, interactions 328, total energy 2089.4331752119374
+#Iteration 29, interactions 568, total energy 1876.7923780920592
+#Iteration 29, interactions 248, total energy 2066.1940890300966
+#Iteration 29, interactions 384, total energy 2035.6118395633425
+#Iteration 29, interactions 304, total energy 2079.788298420334
+#Iteration 29, interactions 176, total energy 2122.406936676862
+#Iteration 49, interactions 344, total energy 2058.1497441197744
+#Iteration 29, interactions 272, total energy 2058.9217478748114
+#Iteration 49, interactions 336, total energy 2050.4490994879384
+#Iteration 39, interactions 312, total energy 2110.970628653367
+#Iteration 29, interactions 272, total energy 2049.5829714509346
+#Iteration 29, interactions 184, total energy 2126.247826994801#Iteration 39, interactions 264, total energy 2084.1435337727157
+
+#Iteration 39, interactions 296, total energy 2099.932990463643#Iteration 49, interactions 512, total energy 2022.9554813067343
+
+#Iteration 39, interactions 312, total energy 2073.360782069931
+#Iteration 29, interactions 224, total energy 2076.041519442731
+#Iteration 29, interactions 232, total energy 2085.849660968378
+#Iteration 29, interactions 208, total energy 2087.0690167022285
+#Iteration 29, interactions 264, total energy 2051.2929621250746
+#Iteration 29, interactions 472, total energy 1949.374239741044
+#Iteration 39, interactions 352, total energy 2025.764598502979
+#Iteration 29, interactions 344, total energy 2014.570756822495#Iteration 39, interactions 336, total energy 2002.1155138391398
+
+#Iteration 39, interactions 384, total energy 2028.3776858237804#Iteration 49, interactions 208, total energy 2154.575175641746
+
+#Iteration 39, interactions 384, total energy 2013.8649383596255
+#Iteration 29, interactions 344, total energy 2015.9462307859235
+#Iteration 39, interactions 184, total energy 2138.3201049944587
+#Iteration 39, interactions 112, total energy 2183.02152979251#Iteration 49, interactions 144, total energy 2165.748139311459
+
+#Iteration 39, interactions 448, total energy 1992.6534837430838
+#Iteration 39, interactions 352, total energy 2056.3548065673617
+#Iteration 49, interactions 272, total energy 2097.5521899645355#Iteration 39, interactions 312, total energy 2097.3409392206654
+
+#Iteration 29, interactions 360, total energy 2020.2343305128172
+#Iteration 39, interactions 312, total energy 2106.94807140816
+#Iteration 49, interactions 240, total energy 2118.914549070088
+#Iteration 29, interactions 200, total energy 2116.0495440709815
+#Iteration 39, interactions 248, total energy 2083.7631718531284
+#Iteration 49, interactions 288, total energy 2105.14721525743
+#Iteration 39, interactions 312, total energy 2035.0869481141185
+#Iteration 39, interactions 208, total energy 2097.3686765932725
+#Iteration 49, interactions 224, total energy 2136.8376963843402#Iteration 39, interactions 248, total energy 2110.0812014881053
+
+#Iteration 39, interactions 344, total energy 2016.399299083729
+#Iteration 39, interactions 320, total energy 2025.9899329058987
+#Iteration 49, interactions 160, total energy 2148.898431533278#Iteration 39, interactions 248, total energy 2086.506152740923
+
+#Iteration 39, interactions 408, total energy 2014.7415220018206
+#Iteration 39, interactions 168, total energy 2131.527220543322
+#Iteration 49, interactions 240, total energy 2110.340487699979
+#Iteration 39, interactions 336, total energy 2030.1191362137395#Iteration 49, interactions 200, total energy 2131.0897944825488
+
+#Iteration 39, interactions 304, total energy 2055.921058251691#Iteration 49, interactions 256, total energy 2108.0195588856477
+
+#Iteration 39, interactions 248, total energy 2084.967813679973
+#Iteration 39, interactions 384, total energy 2061.1992699774514
+#Iteration 39, interactions 304, total energy 2102.0365291560474
+#Iteration 39, interactions 568, total energy 1906.866108659095
+#Iteration 39, interactions 272, total energy 2081.61283231478
+#Iteration 39, interactions 176, total energy 2137.9507760233555#Iteration 39, interactions 184, total energy 2140.9930792560103
+
+#Iteration 49, interactions 328, total energy 2112.765699004228
+#Iteration 29, interactions 240, total energy 2115.4498094275323
+#Iteration 39, interactions 272, total energy 2077.777815942854
+#Iteration 39, interactions 208, total energy 2097.5474347404834
+#Iteration 49, interactions 296, total energy 2135.0594371667803
+#Iteration 49, interactions 312, total energy 2134.871656790471
+#Iteration 49, interactions 264, total energy 2117.228135581607
+#Iteration 39, interactions 264, total energy 2075.893135556081
+#Iteration 39, interactions 224, total energy 2100.448531129151
+#Iteration 39, interactions 472, total energy 1987.6207548061695#Iteration 49, interactions 352, total energy 2065.147323551137
+
+#Iteration 39, interactions 344, total energy 2031.6762723566005
+#Iteration 49, interactions 384, total energy 2062.895280981812#Iteration 49, interactions 112, total energy 2188.7090091008004
+#Iteration 49, interactions 448, total energy 2045.7730407936626#Iteration 19, interactions 288, total energy 1991.7007738214716
+
+
+#Iteration 39, interactions 232, total energy 2106.4778944713944
+#Iteration 49, interactions 184, total energy 2153.9187186550375
+#Iteration 39, interactions 344, total energy 2036.5848066086978
+#Iteration 49, interactions 336, total energy 2042.686682436348
+#Iteration 49, interactions 312, total energy 2103.1754339723857
+#Iteration 49, interactions 312, total energy 2135.0874624067565
+#Iteration 49, interactions 384, total energy 2054.28076556619#Iteration 49, interactions 352, total energy 2095.7271533267285
+
+#Iteration 49, interactions 312, total energy 2124.941862529781
+#Iteration 39, interactions 200, total energy 2130.4790842106618
+#Iteration 39, interactions 360, total energy 2053.0668302475733
+#Iteration 49, interactions 312, total energy 2056.06431571194#Iteration 49, interactions 248, total energy 2110.660526697273
+
+#Iteration 49, interactions 248, total energy 2135.4588460854247
+#Iteration 49, interactions 344, total energy 2059.9331580804
+#Iteration 49, interactions 208, total energy 2116.15348355115
+#Iteration 49, interactions 320, total energy 2050.8542970902736
+#Iteration 49, interactions 248, total energy 2105.3674708783683
+#Iteration 49, interactions 408, total energy 2051.78671208474
+#Iteration 49, interactions 336, total energy 2052.1917599309168#Iteration 49, interactions 168, total energy 2156.70113187769
+
+#Iteration 49, interactions 304, total energy 2074.4089425784164
+#Iteration 49, interactions 384, total energy 2093.8286678161144
+#Iteration 49, interactions 248, total energy 2109.455621243675
+#Iteration 49, interactions 272, total energy 2111.7597279167776#Iteration 49, interactions 184, total energy 2160.018347726337
+
+#Iteration 49, interactions 176, total energy 2158.056757659925
+#Iteration 49, interactions 304, total energy 2130.612066729956
+#Iteration 49, interactions 568, total energy 1946.4019165638224
+#Iteration 49, interactions 264, total energy 2106.2913901898833
+#Iteration 49, interactions 208, total energy 2111.3413126972055
+#Iteration 49, interactions 272, total energy 2114.296336757455
+#Iteration 39, interactions 240, total energy 2129.6344663805116
+#Iteration 49, interactions 224, total energy 2132.365221052522
+#Iteration 49, interactions 344, total energy 2053.4728516874466
+#Iteration 49, interactions 232, total energy 2132.3292135564025#Iteration 49, interactions 472, total energy 2035.6739846611388
+
+#Iteration 49, interactions 344, total energy 2063.8113284328474
+#Iteration 49, interactions 360, total energy 2094.362671270563
+#Iteration 49, interactions 200, total energy 2149.5244839348607
+#Iteration 29, interactions 288, total energy 2004.6641604798415
+#Iteration 49, interactions 240, total energy 2148.2388045081602
+#Iteration 39, interactions 288, total energy 2024.8382081279387
+#Iteration 49, interactions 288, total energy 2052.2229167657624
+##################################################
+warmup 2/2
+#Iteration 9, interactions 240, total energy 2070.7683706358853#Iteration 9, interactions 256, total energy 2074.0375094452115
+
+#Iteration 9, interactions 288, total energy 2009.6049828805885
+#Iteration 9, interactions 264, total energy 2025.401092553388#Iteration 9, interactions 312, total energy 2023.3800416174865
+
+#Iteration 9, interactions 296, total energy 2037.8536038539792
+#Iteration 9, interactions 176, total energy 2105.0056848540976
+#Iteration 9, interactions 344, total energy 1994.432917144502
+#Iteration 9, interactions 272, total energy 2035.9070124809605#Iteration 9, interactions 408, total energy 1954.2813692443501
+
+#Iteration 9, interactions 160, total energy 2078.0796113170136
+#Iteration 9, interactions 328, total energy 2050.306115154571
+#Iteration 9, interactions 256, total energy 2038.552107353574
+#Iteration 9, interactions 320, total energy 1986.5720920895435
+#Iteration 9, interactions 224, total energy 2049.7565307807404
+#Iteration 9, interactions 360, total energy 1979.9593549080093
+#Iteration 9, interactions 184, total energy 2103.683137417791#Iteration 9, interactions 312, total energy 2047.036976345245
+
+#Iteration 9, interactions 224, total energy 2073.4134655084986
+#Iteration 9, interactions 312, total energy 2058.8654437091245
+#Iteration 9, interactions 240, total energy 2100.339539045583
+#Iteration 9, interactions 352, total energy 1987.196136026255
+#Iteration 9, interactions 200, total energy 2083.2953414993585
+#Iteration 9, interactions 384, total energy 1975.9917125990885#Iteration 9, interactions 224, total energy 2079.327699190438
+
+#Iteration 9, interactions 568, total energy 1845.031148971062#Iteration 9, interactions 512, total energy 1866.1174483890886
+
+#Iteration 9, interactions 248, total energy 2057.6173558356995
+#Iteration 9, interactions 272, total energy 2018.1643114351418
+#Iteration 9, interactions 384, total energy 1946.4205441893916
+#Iteration 9, interactions 384, total energy 2005.562881008786
+#Iteration 9, interactions 208, total energy 2070.144326699173
+#Iteration 9, interactions 264, total energy 2019.4868588714485
+#Iteration 9, interactions 248, total energy 2069.4458231995786
+#Iteration 9, interactions 144, total energy 2122.1243419632037
+#Iteration 9, interactions 200, total energy 2101.038042545177
+#Iteration 9, interactions 472, total energy 1902.3013539803194
+#Iteration 19, interactions 240, total energy 2075.865010679325
+#Iteration 19, interactions 264, total energy 2038.2300122586062#Iteration 19, interactions 256, total energy 2081.611064405489
+
+#Iteration 9, interactions 336, total energy 1942.527361443353#Iteration 19, interactions 288, total energy 2022.3712849850876
+
+#Iteration 19, interactions 296, total energy 2051.3300738072417#Iteration 9, interactions 304, total energy 2024.7025890537939#Iteration 9, interactions 336, total energy 1995.755464580808
+
+
+#Iteration 9, interactions 184, total energy 2109.5973710997305
+#Iteration 9, interactions 312, total energy 2005.6373405716681
+#Iteration 19, interactions 312, total energy 2033.4630858924809
+#Iteration 19, interactions 408, total energy 1965.9888505816257#Iteration 19, interactions 344, total energy 2001.8956009645253
+#Iteration 19, interactions 272, total energy 2043.6864745968724
+
+#Iteration 9, interactions 240, total energy 2047.111435908127
+#Iteration 9, interactions 344, total energy 1941.2048140070463
+#Iteration 9, interactions 208, total energy 2076.0585603811123#Iteration 9, interactions 344, total energy 1994.4329171445022
+
+#Iteration 9, interactions 112, total energy 2174.728401163947
+#Iteration 9, interactions 312, total energy 2070.693911073003
+#Iteration 9, interactions 229, total energy 2114.100138541391
+#Iteration 19, interactions 176, total energy 2111.425239620442
+#Iteration 19, interactions 328, total energy 2058.20338328711
+#Iteration 9, interactions 184, total energy 2115.51160478167#Iteration 19, interactions 160, total energy 2086.7929269521137
+
+#Iteration 19, interactions 256, total energy 2046.5276251825082
+#Iteration 19, interactions 320, total energy 1993.8488304055343
+#Iteration 9, interactions 168, total energy 2088.5855312445856
+#Iteration 9, interactions 352, total energy 1963.5392012984976#Iteration 9, interactions 232, total energy 2060.2624507083133
+
+#Iteration 9, interactions 288, total energy 1985.9480481528308#Iteration 19, interactions 224, total energy 2059.144185993261
+
+#Iteration 19, interactions 360, total energy 1995.8651720662954
+#Iteration 9, interactions 304, total energy 2054.2737574634916
+#Iteration 9, interactions 272, total energy 2035.9070124809605
+#Iteration 9, interactions 248, total energy 2045.7888884718207
+#Iteration 19, interactions 312, total energy 2058.388496128399#Iteration 19, interactions 240, total energy 2105.684833649223
+
+#Iteration 19, interactions 312, total energy 2068.837062059345
+#Iteration 19, interactions 568, total energy 1856.180724862716
+#Iteration 19, interactions 224, total energy 2087.23682861024
+#Iteration 19, interactions 384, total energy 1984.9259016324188
+#Iteration 19, interactions 200, total energy 2088.888391184815
+#Iteration 19, interactions 248, total energy 2062.63109521959#Iteration 19, interactions 184, total energy 2110.5742995254
+#Iteration 19, interactions 272, total energy 2029.7118032816988
+
+#Iteration 9, interactions 248, total energy 2039.8746547898802
+#Iteration 19, interactions 224, total energy 2082.512387546645
+#Iteration 9, interactions 448, total energy 1906.2689962892402
+#Iteration 19, interactions 264, total energy 2032.4908698968625#Iteration 19, interactions 352, total energy 2002.0892979171251
+#Iteration 19, interactions 512, total energy 1887.332256817011
+
+#Iteration 19, interactions 208, total energy 2074.364098167285
+#Iteration 19, interactions 248, total energy 2077.0746900451827
+#Iteration 19, interactions 200, total energy 2106.2358635158203
+#Iteration 19, interactions 384, total energy 2017.0663765737886
+#Iteration 19, interactions 472, total energy 1920.9344394657617
+#Iteration 29, interactions 264, total energy 2057.8108259983815#Iteration 29, interactions 240, total energy 2085.588253766172
+
+#Iteration 19, interactions 184, total energy 2115.7825909427074
+#Iteration 19, interactions 304, total energy 2031.0678814893795
+#Iteration 29, interactions 288, total energy 2042.5504244160607
+#Iteration 19, interactions 336, total energy 2001.9009885386852
+#Iteration 19, interactions 336, total energy 1952.0358533426413#Iteration 29, interactions 256, total energy 2093.572070163771
+#Iteration 19, interactions 312, total energy 2009.8734605439822
+
+#Iteration 19, interactions 208, total energy 2079.9060585824363#Iteration 19, interactions 344, total energy 1957.0351270470526
+
+#Iteration 29, interactions 408, total energy 1986.1422348341162
+#Iteration 9, interactions 264, total energy 2019.4868588714485
+#Iteration 29, interactions 312, total energy 2050.1233327099626
+#Iteration 19, interactions 344, total energy 2002.156305085128#Iteration 19, interactions 112, total energy 2176.0312258240842#Iteration 29, interactions 296, total energy 2072.023202677129
+#Iteration 19, interactions 384, total energy 1959.9348276712265
+
+
+#Iteration 19, interactions 312, total energy 2078.881755794633
+#Iteration 19, interactions 240, total energy 2113.38571814126
+#Iteration 29, interactions 328, total energy 2071.2457366395647#Iteration 29, interactions 176, total energy 2122.4069366768617
+
+#Iteration 29, interactions 344, total energy 2015.946230785924
+#Iteration 29, interactions 160, total energy 2101.5005021998572
+#Iteration 29, interactions 272, total energy 2058.9217478748114
+#Iteration 19, interactions 168, total energy 2097.46942022677#Iteration 29, interactions 320, total energy 2006.9881106776527
+
+#Iteration 29, interactions 256, total energy 2060.764039714166
+#Iteration 19, interactions 144, total energy 2127.1784928030283
+#Iteration 19, interactions 232, total energy 2070.4445130473505#Iteration 29, interactions 224, total energy 2076.0415194427314
+
+#Iteration 19, interactions 288, total energy 1991.7007738214725#Iteration 29, interactions 360, total energy 2020.2343305128163
+
+#Iteration 19, interactions 352, total energy 1974.9605373766594
+#Iteration 19, interactions 248, total energy 2053.1344472940455#Iteration 29, interactions 312, total energy 2084.864604625691
+
+#Iteration 19, interactions 240, total energy 2054.18934667523#Iteration 9, interactions 472, total energy 1872.730185570622
+#Iteration 29, interactions 312, total energy 2075.1564837535393
+
+#Iteration 29, interactions 568, total energy 1876.792378092061#Iteration 19, interactions 184, total energy 2119.1165480577765
+
+#Iteration 29, interactions 240, total energy 2115.449809427532
+#Iteration 29, interactions 384, total energy 2002.3878927073163#Iteration 29, interactions 224, total energy 2099.458204615824
+
+#Iteration 19, interactions 304, total energy 2063.8673745228157#Iteration 29, interactions 248, total energy 2072.2606941879976
+
+#Iteration 29, interactions 200, total energy 2098.7184832438315
+#Iteration 29, interactions 272, total energy 2049.582971450937
+#Iteration 19, interactions 272, total energy 2042.9960286041
+#Iteration 29, interactions 224, total energy 2097.46310808203
+#Iteration 29, interactions 200, total energy 2116.0495440709824
+#Iteration 29, interactions 352, total energy 2025.1421880974933#Iteration 39, interactions 264, total energy 2084.143533772715
+
+#Iteration 29, interactions 248, total energy 2090.6198161413586
+#Iteration 39, interactions 240, total energy 2099.9380998964266
+#Iteration 29, interactions 472, total energy 1949.374239741044
+#Iteration 29, interactions 512, total energy 1920.543531779259
+#Iteration 39, interactions 288, total energy 2070.1424011735085
+#Iteration 29, interactions 184, total energy 2122.059834299752
+#Iteration 29, interactions 304, total energy 2041.4740378886795#Iteration 29, interactions 264, total energy 2051.2929621250746
+#Iteration 29, interactions 336, total energy 2013.3555457496616
+
+#Iteration 29, interactions 208, total energy 2083.4388814653175
+#Iteration 29, interactions 384, total energy 2035.611839563343
+#Iteration 29, interactions 312, total energy 2019.6899963914652#Iteration 39, interactions 256, total energy 2109.9205267200555#Iteration 29, interactions 184, total energy 2126.247826994801
+
+
+#Iteration 19, interactions 248, total energy 2048.370235899431
+#Iteration 39, interactions 408, total energy 2014.7415220018206
+#Iteration 29, interactions 208, total energy 2087.0690167022267#Iteration 9, interactions 208, total energy 2081.972794063052
+
+#Iteration 19, interactions 448, total energy 1922.901461490873#Iteration 29, interactions 344, total energy 1982.099955405946
+
+#Iteration 29, interactions 336, total energy 1971.8985708079028
+#Iteration 19, interactions 264, total energy 2032.624719872471
+#Iteration 39, interactions 328, total energy 2089.4331752119374#Iteration 29, interactions 112, total energy 2178.7956020336064
+
+#Iteration 39, interactions 312, total energy 2073.360782069931#Iteration 39, interactions 296, total energy 2099.932990463642#Iteration 29, interactions 344, total energy 2014.570756822495#Iteration 39, interactions 344, total energy 2036.5848066086983
+
+
+#Iteration 29, interactions 249, total energy 2112.8199273302134
+
+#Iteration 39, interactions 160, total energy 2122.2023370602456
+#Iteration 39, interactions 320, total energy 2025.9899329058987
+#Iteration 29, interactions 312, total energy 2092.3073283214208
+#Iteration 29, interactions 168, total energy 2111.783316659681
+#Iteration 39, interactions 272, total energy 2081.612832314779#Iteration 39, interactions 176, total energy 2137.9507760233555#Iteration 39, interactions 256, total energy 2081.2613509485454#Iteration 39, interactions 224, total energy 2100.4485311291514
+
+
+
+#Iteration 39, interactions 360, total energy 2053.0668302475724
+#Iteration 29, interactions 384, total energy 1982.4162923946376
+#Iteration 9, interactions 344, total energy 1964.8617487348038
+#Iteration 29, interactions 232, total energy 2085.8496609683766#Iteration 29, interactions 352, total energy 1995.702336444821
+
+#Iteration 29, interactions 288, total energy 2004.6641604798406
+#Iteration 39, interactions 312, total energy 2106.94807140816
+#Iteration 29, interactions 248, total energy 2066.1940890300957
+#Iteration 19, interactions 472, total energy 1891.4542379655447
+#Iteration 39, interactions 568, total energy 1906.8661086590964
+#Iteration 39, interactions 240, total energy 2129.6344663805107
+#Iteration 29, interactions 184, total energy 2126.7193814620377
+#Iteration 39, interactions 224, total energy 2115.9918272071905
+#Iteration 39, interactions 312, total energy 2097.340939220666
+#Iteration 29, interactions 240, total energy 2067.086825562906#Iteration 39, interactions 248, total energy 2086.5061527409234
+
+#Iteration 39, interactions 384, total energy 2028.37768582378
+#Iteration 39, interactions 200, total energy 2112.785617676409
+#Iteration 29, interactions 304, total energy 2079.7882984203343
+#Iteration 39, interactions 224, total energy 2118.265627114655#Iteration 29, interactions 272, total energy 2055.633230225741
+
+#Iteration 39, interactions 200, total energy 2130.479084210662
+#Iteration 49, interactions 264, total energy 2117.2281355816062
+#Iteration 39, interactions 352, total energy 2056.3548065673617#Iteration 39, interactions 272, total energy 2077.7778159428553
+
+#Iteration 49, interactions 288, total energy 2105.1472152574293#Iteration 29, interactions 144, total energy 2136.133842641012
+
+#Iteration 49, interactions 240, total energy 2118.9145490700876#Iteration 39, interactions 472, total energy 1987.6207548061695
+
+#Iteration 39, interactions 184, total energy 2138.139741740843#Iteration 39, interactions 264, total energy 2075.893135556082#Iteration 39, interactions 208, total energy 2097.368676593273
+
+
+#Iteration 39, interactions 304, total energy 2055.9210582516903
+#Iteration 39, interactions 336, total energy 2030.119136213738#Iteration 39, interactions 312, total energy 2035.086948114118#Iteration 39, interactions 248, total energy 2110.0812014881058
+
+
+#Iteration 49, interactions 408, total energy 2051.7867120847395#Iteration 39, interactions 184, total energy 2140.9930792560103
+
+#Iteration 39, interactions 208, total energy 2097.5474347404834
+#Iteration 39, interactions 512, total energy 1965.7512732758337#Iteration 49, interactions 256, total energy 2130.6564340743444#Iteration 39, interactions 384, total energy 2061.1992699774514
+#Iteration 39, interactions 344, total energy 2016.3992990837285
+
+
+#Iteration 49, interactions 328, total energy 2112.7656990042274
+#Iteration 19, interactions 208, total energy 2091.8494567749694
+#Iteration 49, interactions 160, total energy 2148.898431533278#Iteration 39, interactions 344, total energy 2031.6762723566005#Iteration 39, interactions 336, total energy 2002.1155138391389
+#Iteration 39, interactions 112, total energy 2183.021529792511
+
+
+#Iteration 49, interactions 296, total energy 2135.05943716678
+#Iteration 29, interactions 448, total energy 1951.696290642153
+#Iteration 39, interactions 168, total energy 2131.5272205433207#Iteration 29, interactions 264, total energy 2054.0647702783986
+#Iteration 49, interactions 320, total energy 2050.8542970902727
+#Iteration 39, interactions 258, total energy 2112.267729897645
+
+#Iteration 49, interactions 224, total energy 2132.365221052521#Iteration 39, interactions 312, total energy 2110.9706286533665#Iteration 49, interactions 312, total energy 2103.1754339723857
+
+
+#Iteration 9, interactions 336, total energy 1978.01276353499
+#Iteration 49, interactions 176, total energy 2158.0567576599256
+#Iteration 49, interactions 360, total energy 2094.3626712705627#Iteration 49, interactions 272, total energy 2111.7597279167776
+#Iteration 49, interactions 344, total energy 2063.8113284328474
+#Iteration 49, interactions 256, total energy 2108.0195588856486
+
+#Iteration 39, interactions 384, total energy 2013.8649383596246
+#Iteration 19, interactions 344, total energy 1975.9148488433411#Iteration 29, interactions 248, total energy 2062.999741587181
+
+#Iteration 39, interactions 352, total energy 2025.7645985029794
+#Iteration 49, interactions 312, total energy 2135.0874624067565
+#Iteration 39, interactions 248, total energy 2084.9678136799735
+#Iteration 39, interactions 232, total energy 2106.477894471394
+#Iteration 49, interactions 568, total energy 1946.4019165638238
+#Iteration 39, interactions 288, total energy 2024.8382081279378
+#Iteration 49, interactions 240, total energy 2148.23880450816
+#Iteration 39, interactions 184, total energy 2138.3201049944582
+#Iteration 29, interactions 472, total energy 1920.831383393184
+#Iteration 49, interactions 224, total energy 2136.8376963843393
+#Iteration 49, interactions 384, total energy 2062.8952809818134
+#Iteration 49, interactions 312, total energy 2124.9418625297812
+#Iteration 39, interactions 240, total energy 2085.803872571156
+#Iteration 49, interactions 248, total energy 2105.3674708783697
+#Iteration 39, interactions 304, total energy 2102.036529156048
+#Iteration 49, interactions 200, total energy 2131.0897944825488
+#Iteration 49, interactions 200, total energy 2149.5244839348616
+#Iteration 49, interactions 272, total energy 2114.296336757455
+#Iteration 39, interactions 272, total energy 2073.8186173458867
+#Iteration 49, interactions 352, total energy 2095.727153326727
+#Iteration 49, interactions 472, total energy 2035.6739846611388#Iteration 49, interactions 224, total energy 2144.919944644519
+#Iteration 49, interactions 264, total energy 2106.2913901898833
+
+#Iteration 49, interactions 208, total energy 2116.1534835511516
+#Iteration 49, interactions 184, total energy 2158.8140218486765
+#Iteration 49, interactions 304, total energy 2074.408942578415#Iteration 49, interactions 208, total energy 2111.3413126972036#Iteration 39, interactions 144, total energy 2148.9903914771558
+
+
+#Iteration 49, interactions 312, total energy 2056.0643157119407#Iteration 49, interactions 336, total energy 2052.1917599309154
+
+#Iteration 49, interactions 184, total energy 2160.0183477263367
+#Iteration 49, interactions 344, total energy 2059.9331580804
+#Iteration 49, interactions 384, total energy 2093.8286678161144
+#Iteration 49, interactions 112, total energy 2188.7090091008004#Iteration 49, interactions 512, total energy 2022.9554813067348
+
+#Iteration 49, interactions 248, total energy 2135.4588460854247
+#Iteration 49, interactions 344, total energy 2053.472851687446
+#Iteration 49, interactions 312, total energy 2134.8716567904708
+#Iteration 39, interactions 264, total energy 2083.80701008923#Iteration 49, interactions 274, total energy 2111.290158932874#Iteration 39, interactions 448, total energy 1992.6534837430838
+
+#Iteration 49, interactions 168, total energy 2156.7011318776895
+
+#Iteration 49, interactions 336, total energy 2042.6866824363485
+#Iteration 19, interactions 336, total energy 1986.0716583398453
+#Iteration 29, interactions 208, total energy 2107.2420746087228
+#Iteration 49, interactions 384, total energy 2054.280765566189
+#Iteration 29, interactions 344, total energy 1995.147214777016#Iteration 39, interactions 248, total energy 2083.763171853128
+
+#Iteration 49, interactions 352, total energy 2065.147323551138
+#Iteration 49, interactions 248, total energy 2109.455621243675
+#Iteration 49, interactions 288, total energy 2052.2229167657615#Iteration 49, interactions 232, total energy 2132.329213556402
+
+#Iteration 49, interactions 184, total energy 2153.918718655038
+#Iteration 39, interactions 472, total energy 1960.8616218535428
+#Iteration 49, interactions 304, total energy 2130.6120667299565
+#Iteration 49, interactions 240, total energy 2110.340487699979
+#Iteration 49, interactions 272, total energy 2097.5521899645355
+#Iteration 49, interactions 144, total energy 2165.748139311459
+#Iteration 49, interactions 264, total energy 2121.8514393049654
+#Iteration 49, interactions 448, total energy 2045.7730407936626
+#Iteration 39, interactions 208, total energy 2128.1506475643155
+#Iteration 29, interactions 336, total energy 2000.8306792669555
+#Iteration 39, interactions 344, total energy 2022.5588465358264
+#Iteration 49, interactions 248, total energy 2110.6605266972733
+#Iteration 49, interactions 472, total energy 2011.5449533466187
+#Iteration 39, interactions 336, total energy 2022.2898263163192#Iteration 49, interactions 208, total energy 2154.575175641744
+
+#Iteration 49, interactions 344, total energy 2058.1497441197735
+#Iteration 49, interactions 336, total energy 2050.4490994879384
+##################################################
+main run 1/5
+#Iteration 9, interactions 5909, total energy 9068.473222442995
+#Iteration 9, interactions 10853, total energy 8567.94621439126
+#Iteration 9, interactions 9183, total energy 8614.233044082182
+#Iteration 9, interactions 9250, total energy 8388.211379656666
+#Iteration 9, interactions 8220, total energy 8707.861411613469
+#Iteration 9, interactions 6980, total energy 8810.435647315127
+#Iteration 9, interactions 9734, total energy 8587.82440905998
+#Iteration 9, interactions 12071, total energy 8303.100140431656
+#Iteration 9, interactions 10244, total energy 8329.029201756812
+#Iteration 9, interactions 6384, total energy 8795.199695438005
+#Iteration 9, interactions 6702, total energy 8817.962543544472
+#Iteration 9, interactions 8663, total energy 8954.474855071338
+#Iteration 9, interactions 9673, total energy 8610.384837893707
+#Iteration 9, interactions 9491, total energy 8276.180035286317
+#Iteration 9, interactions 11263, total energy 8650.464289682406
+#Iteration 9, interactions 10112, total energy 8352.580840953802
+#Iteration 9, interactions 8814, total energy 8508.241843659574
+#Iteration 9, interactions 8210, total energy 8850.15786668703
+#Iteration 9, interactions 9564, total energy 8221.431763378974
+#Iteration 9, interactions 11788, total energy 8379.734676395376
+#Iteration 9, interactions 7734, total energy 8788.504125880434
+#Iteration 9, interactions 9838, total energy 8529.368969184847
+#Iteration 9, interactions 9440, total energy 8529.179256033307
+#Iteration 9, interactions 7766, total energy 8964.012839029036
+#Iteration 9, interactions 9178, total energy 8560.42512132773
+#Iteration 9, interactions 9236, total energy 8663.379109204685
+#Iteration 9, interactions 10770, total energy 8276.885591394253
+#Iteration 9, interactions 8126, total energy 8617.132543731292
+#Iteration 9, interactions 7019, total energy 9076.587453150507
+#Iteration 9, interactions 9335, total energy 8488.612132479764
+#Iteration 9, interactions 7349, total energy 8705.191551829234
+#Iteration 9, interactions 15918, total energy 7651.545510434257
+#Iteration 9, interactions 8557, total energy 8542.06240492047
+#Iteration 9, interactions 9275, total energy 8772.619126525893
+#Iteration 9, interactions 9766, total energy 8603.598352087558
+#Iteration 9, interactions 9220, total energy 8224.145827487515
+#Iteration 9, interactions 8394, total energy 8744.733955872223
+#Iteration 9, interactions 11135, total energy 8228.589207929079
+#Iteration 9, interactions 12730, total energy 8239.531471983059
+#Iteration 9, interactions 11063, total energy 8393.557897950799
+#Iteration 9, interactions 11086, total energy 8680.995211854786
+#Iteration 9, interactions 6252, total energy 8872.91884171726
+#Iteration 9, interactions 7813, total energy 8790.900319680612
+#Iteration 9, interactions 9672, total energy 8312.529272842356
+#Iteration 9, interactions 9908, total energy 8343.484419250603
+#Iteration 9, interactions 7459, total energy 8812.427967365236
+#Iteration 9, interactions 10227, total energy 7935.727419484888
+#Iteration 9, interactions 6308, total energy 9185.080648218755
+#Iteration 9, interactions 7668, total energy 8609.719983706851
+#Iteration 9, interactions 9486, total energy 8440.407662753738
+#Iteration 9, interactions 8147, total energy 8254.625490908353
+#Iteration 9, interactions 8461, total energy 8634.221397750975
+#Iteration 9, interactions 6059, total energy 9186.764301555648
+#Iteration 9, interactions 10687, total energy 8295.574939186543
+#Iteration 9, interactions 6573, total energy 8788.166203548939
+#Iteration 9, interactions 10949, total energy 8247.741272678753
+#Iteration 9, interactions 9913, total energy 8562.35022301269
+#Iteration 9, interactions 8976, total energy 8560.424845744019
+#Iteration 9, interactions 7562, total energy 8966.680595562293
+#Iteration 9, interactions 9640, total energy 8608.752649144279
+#Iteration 19, interactions 5909, total energy 9093.232142973873
+#Iteration 9, interactions 12172, total energy 8448.764963501417
+#Iteration 9, interactions 8745, total energy 8684.653630648532
+#Iteration 9, interactions 10325, total energy 8423.164012740237
+#Iteration 9, interactions 9086, total energy 8367.09564099841
+#Iteration 19, interactions 9734, total energy 8637.979396315379
+#Iteration 19, interactions 9183, total energy 8652.42336933817
+#Iteration 19, interactions 8220, total energy 8746.428038234135
+#Iteration 19, interactions 10853, total energy 8609.11904281089
+#Iteration 19, interactions 10244, total energy 8385.305829579289
+#Iteration 19, interactions 6980, total energy 8839.110693900417
+#Iteration 19, interactions 9250, total energy 8432.415326932483
+#Iteration 19, interactions 8663, total energy 8980.486966799073
+#Iteration 19, interactions 6702, total energy 8855.75929989238
+#Iteration 19, interactions 9673, total energy 8647.007453352773
+#Iteration 19, interactions 8814, total energy 8572.567350868372
+#Iteration 19, interactions 6384, total energy 8835.5678917222
+#Iteration 19, interactions 11263, total energy 8687.690418484479
+#Iteration 19, interactions 12071, total energy 8355.783855311434
+#Iteration 19, interactions 10112, total energy 8397.283227530294
+#Iteration 19, interactions 8210, total energy 8878.46819909316
+#Iteration 19, interactions 9491, total energy 8319.347567269982
+#Iteration 19, interactions 11788, total energy 8436.89960788651
+#Iteration 19, interactions 9564, total energy 8257.419602069502
+#Iteration 19, interactions 9440, total energy 8577.385097676302
+#Iteration 19, interactions 7766, total energy 8993.915399546075
+#Iteration 19, interactions 7734, total energy 8813.48465913831
+#Iteration 19, interactions 10770, total energy 8337.584308775076
+#Iteration 19, interactions 9236, total energy 8709.792713802675
+#Iteration 19, interactions 9838, total energy 8559.025248590015
+#Iteration 19, interactions 9178, total energy 8604.221757352852
+#Iteration 19, interactions 8126, total energy 8645.44243676307
+#Iteration 19, interactions 7349, total energy 8748.070111933266
+#Iteration 19, interactions 15918, total energy 7719.835158586787
+#Iteration 19, interactions 7019, total energy 9094.298189479106
+#Iteration 19, interactions 8557, total energy 8574.362767138622
+#Iteration 19, interactions 9335, total energy 8534.182049135024
+#Iteration 19, interactions 9275, total energy 8814.12515550336
+#Iteration 19, interactions 9220, total energy 8265.262968509847
+#Iteration 19, interactions 6252, total energy 8897.692267239889
+#Iteration 19, interactions 11063, total energy 8433.064971509746
+#Iteration 19, interactions 8394, total energy 8786.611247430934
+#Iteration 19, interactions 9672, total energy 8353.074366948673
+#Iteration 19, interactions 7813, total energy 8831.289990718165
+#Iteration 19, interactions 11086, total energy 8726.093378901604
+#Iteration 19, interactions 9766, total energy 8634.118475703039
+#Iteration 19, interactions 7668, total energy 8648.923550788048
+#Iteration 19, interactions 12730, total energy 8281.257268522588
+#Iteration 19, interactions 11135, total energy 8281.31025024485
+#Iteration 19, interactions 10227, total energy 8002.083683092352#Iteration 19, interactions 7459, total energy 8846.740339785712
+
+#Iteration 19, interactions 9908, total energy 8380.357534744122
+#Iteration 19, interactions 9486, total energy 8484.136204858009
+#Iteration 19, interactions 6059, total energy 9201.131039013455
+#Iteration 19, interactions 6308, total energy 9201.695730669668
+#Iteration 19, interactions 8147, total energy 8301.982226357015
+#Iteration 19, interactions 10687, total energy 8351.315902934672
+#Iteration 19, interactions 8461, total energy 8679.850092307637
+#Iteration 19, interactions 6573, total energy 8827.068018392802
+#Iteration 29, interactions 5909, total energy 9135.560344710726
+#Iteration 19, interactions 10949, total energy 8314.409724146679
+#Iteration 19, interactions 8976, total energy 8613.458950717537
+#Iteration 19, interactions 9913, total energy 8609.110488591346
+#Iteration 29, interactions 9734, total energy 8725.728602905532
+#Iteration 19, interactions 7562, total energy 9004.935020492
+#Iteration 19, interactions 12172, total energy 8490.487216401987
+#Iteration 19, interactions 9223, total energy 8609.854667347561
+#Iteration 19, interactions 8745, total energy 8719.273652308078
+#Iteration 19, interactions 10325, total energy 8474.571713393489
+#Iteration 19, interactions 9086, total energy 8407.609395624335
+#Iteration 29, interactions 9183, total energy 8720.80448635451
+#Iteration 29, interactions 8220, total energy 8811.078865907011
+#Iteration 29, interactions 10244, total energy 8476.397936286185
+#Iteration 29, interactions 9673, total energy 8713.382964725879
+#Iteration 29, interactions 8814, total energy 8685.56641274477
+#Iteration 29, interactions 8663, total energy 9024.19623572141
+#Iteration 29, interactions 10853, total energy 8675.464548760623
+#Iteration 29, interactions 6702, total energy 8922.052184931592
+#Iteration 29, interactions 6980, total energy 8886.842736494344
+#Iteration 29, interactions 11263, total energy 8746.546304254565
+#Iteration 29, interactions 9250, total energy 8506.810903377629
+#Iteration 29, interactions 6384, total energy 8900.39540197111
+#Iteration 29, interactions 12071, total energy 8447.959060854464
+#Iteration 29, interactions 11788, total energy 8531.16631884262
+#Iteration 29, interactions 10112, total energy 8470.388443552896
+#Iteration 29, interactions 9564, total energy 8319.046062747899
+#Iteration 29, interactions 8210, total energy 8925.718027475308
+#Iteration 29, interactions 9440, total energy 8662.30570812774
+#Iteration 29, interactions 7766, total energy 9044.145560719602
+#Iteration 29, interactions 9491, total energy 8394.135218075095
+#Iteration 29, interactions 10770, total energy 8446.333657025758
+#Iteration 29, interactions 9236, total energy 8788.003153193156
+#Iteration 29, interactions 7734, total energy 8859.043019122024
+#Iteration 29, interactions 8126, total energy 8693.230169903813
+#Iteration 29, interactions 7349, total energy 8816.663636036339
+#Iteration 29, interactions 9178, total energy 8675.965182725076
+#Iteration 29, interactions 9838, total energy 8612.094058002012
+#Iteration 29, interactions 15918, total energy 7831.820820036905
+#Iteration 29, interactions 7668, total energy 8707.53726546292
+#Iteration 29, interactions 7019, total energy 9122.618656694855
+#Iteration 29, interactions 9220, total energy 8335.518420031874
+#Iteration 29, interactions 6252, total energy 8938.619867894025
+#Iteration 29, interactions 8557, total energy 8630.77845306761
+#Iteration 29, interactions 9275, total energy 8883.987237406316
+#Iteration 29, interactions 11063, total energy 8499.335572058946#Iteration 29, interactions 9335, total energy 8612.383980123535
+
+#Iteration 29, interactions 9672, total energy 8418.215008511066
+#Iteration 29, interactions 7813, total energy 8901.209456201655
+#Iteration 29, interactions 10227, total energy 8118.583312629854
+#Iteration 29, interactions 11086, total energy 8799.97585244548
+#Iteration 29, interactions 7459, total energy 8907.100774194421
+#Iteration 29, interactions 6059, total energy 9227.934128666368
+#Iteration 29, interactions 9486, total energy 8557.70718865616
+#Iteration 29, interactions 8394, total energy 8859.23021875002
+#Iteration 29, interactions 9908, total energy 8447.60057204101
+#Iteration 29, interactions 12730, total energy 8351.095497921733
+#Iteration 29, interactions 6308, total energy 9229.08905653705
+#Iteration 29, interactions 11135, total energy 8372.588833013944
+#Iteration 29, interactions 9766, total energy 8692.93589495834
+#Iteration 29, interactions 8147, total energy 8376.91904471227
+#Iteration 29, interactions 10687, total energy 8439.63135254459
+#Iteration 39, interactions 5909, total energy 9195.457827653552
+#Iteration 39, interactions 9734, total energy 8851.07202883043
+#Iteration 29, interactions 8461, total energy 8756.122148573411
+#Iteration 29, interactions 6573, total energy 8893.263144908444
+#Iteration 29, interactions 8976, total energy 8695.281043382922
+#Iteration 29, interactions 10949, total energy 8426.596648152721
+#Iteration 29, interactions 9913, total energy 8687.944449165034
+#Iteration 29, interactions 12172, total energy 8566.882102435813
+#Iteration 29, interactions 7562, total energy 9063.441603596488
+#Iteration 39, interactions 9183, total energy 8819.376395131203
+#Iteration 29, interactions 9183, total energy 8610.130165599347
+#Iteration 39, interactions 10244, total energy 8602.305521877492
+#Iteration 39, interactions 8220, total energy 8901.81389463208
+#Iteration 29, interactions 9086, total energy 8476.281220633096
+#Iteration 29, interactions 8745, total energy 8779.57847436262
+#Iteration 29, interactions 10325, total energy 8561.28098370958
+#Iteration 39, interactions 8814, total energy 8847.239029288765
+#Iteration 39, interactions 9673, total energy 8809.511372013041
+#Iteration 39, interactions 8663, total energy 9085.602661838346
+#Iteration 39, interactions 6702, total energy 9016.841198662114
+#Iteration 39, interactions 10853, total energy 8766.982732240458
+#Iteration 39, interactions 11263, total energy 8827.031946992653
+#Iteration 39, interactions 6980, total energy 8953.63177509693
+#Iteration 39, interactions 11788, total energy 8662.534809263709
+#Iteration 39, interactions 6384, total energy 8989.682226184734
+#Iteration 39, interactions 8210, total energy 8991.907351833459#Iteration 39, interactions 9564, total energy 8406.311145414174
+
+#Iteration 39, interactions 9250, total energy 8611.398108992118
+#Iteration 39, interactions 12071, total energy 8579.625757060752
+#Iteration 39, interactions 10112, total energy 8571.896489021616
+#Iteration 39, interactions 9440, total energy 8783.941087387628
+#Iteration 39, interactions 10770, total energy 8603.133636146282
+#Iteration 39, interactions 7766, total energy 9114.70332254961
+#Iteration 39, interactions 9236, total energy 8898.010427376134
+#Iteration 39, interactions 7349, total energy 8910.972124138443
+#Iteration 39, interactions 8126, total energy 8760.495743153519
+#Iteration 39, interactions 7734, total energy 8925.17920583157
+#Iteration 39, interactions 7668, total energy 8785.561127731467
+#Iteration 39, interactions 9178, total energy 8775.655397444403
+#Iteration 39, interactions 9491, total energy 8500.542987701654
+#Iteration 39, interactions 6252, total energy 8995.701643679668
+#Iteration 39, interactions 15918, total energy 7987.502494784604
+#Iteration 39, interactions 9838, total energy 8688.57539742085
+#Iteration 39, interactions 9220, total energy 8434.912182053584
+#Iteration 39, interactions 10227, total energy 8285.226308097395
+#Iteration 39, interactions 6059, total energy 9267.173570514387
+#Iteration 39, interactions 7019, total energy 9161.548854797758
+#Iteration 39, interactions 9672, total energy 8507.95119752953
+#Iteration 39, interactions 11063, total energy 8592.369699598412
+#Iteration 39, interactions 8557, total energy 8711.309462707446#Iteration 39, interactions 9486, total energy 8661.120614148209
+#Iteration 39, interactions 7459, total energy 8993.509270591368
+
+#Iteration 39, interactions 9275, total energy 8982.205372234748
+#Iteration 39, interactions 7813, total energy 9000.658716131087
+#Iteration 39, interactions 11086, total energy 8902.642632486424
+#Iteration 39, interactions 9908, total energy 8545.213531141271
+#Iteration 39, interactions 6308, total energy 9267.260625820898
+#Iteration 39, interactions 9335, total energy 8723.217925445304
+#Iteration 39, interactions 8394, total energy 8962.590869829488
+#Iteration 39, interactions 12730, total energy 8449.046160180491
+#Iteration 39, interactions 8147, total energy 8479.435945974139
+#Iteration 39, interactions 11135, total energy 8502.424956236351
+#Iteration 49, interactions 9734, total energy 9014.00967409007
+#Iteration 49, interactions 5909, total energy 9272.924591802353
+#Iteration 39, interactions 10687, total energy 8560.521288016287
+#Iteration 39, interactions 9766, total energy 8780.050609853459
+#Iteration 39, interactions 8976, total energy 8805.89112374018
+#Iteration 39, interactions 8461, total energy 8863.0375665483
+#Iteration 39, interactions 6573, total energy 8986.75158309587
+#Iteration 39, interactions 10949, total energy 8584.302044696886#Iteration 49, interactions 8814, total energy 9057.585200500358
+
+#Iteration 39, interactions 9913, total energy 8798.852104733742#Iteration 49, interactions 9183, total energy 8948.139095668259
+
+#Iteration 49, interactions 10244, total energy 8763.028586353214
+#Iteration 49, interactions 8220, total energy 9018.633124409356
+#Iteration 39, interactions 12172, total energy 8677.949621602897
+#Iteration 49, interactions 9673, total energy 8935.392675214252
+#Iteration 39, interactions 7562, total energy 9142.20034487576
+#Iteration 39, interactions 9086, total energy 8573.111116024693
+#Iteration 49, interactions 8663, total energy 9164.706245149879
+#Iteration 39, interactions 9183, total energy 8609.917491570206
+#Iteration 39, interactions 10325, total energy 8683.29182368851#Iteration 39, interactions 8745, total energy 8865.56809681216
+
+#Iteration 49, interactions 6702, total energy 9140.126341083947
+#Iteration 49, interactions 11263, total energy 8929.147346698748
+#Iteration 49, interactions 10853, total energy 8883.673593250393
+#Iteration 49, interactions 11788, total energy 8831.005079149774
+#Iteration 49, interactions 6980, total energy 9039.47780970815
+#Iteration 49, interactions 8210, total energy 9077.036172167616
+#Iteration 49, interactions 9564, total energy 8519.214850068318
+#Iteration 49, interactions 6384, total energy 9103.42836436307
+#Iteration 49, interactions 9440, total energy 8942.291235455961
+#Iteration 49, interactions 7668, total energy 8882.995137593689
+#Iteration 49, interactions 10112, total energy 8701.807363936443
+#Iteration 49, interactions 12071, total energy 8750.783943930284
+#Iteration 49, interactions 10770, total energy 8807.98424613666
+#Iteration 49, interactions 7349, total energy 9030.995576239577
+#Iteration 49, interactions 7766, total energy 9205.588685036111
+#Iteration 49, interactions 9236, total energy 9039.814536351603
+#Iteration 49, interactions 8126, total energy 8847.23915651219
+#Iteration 49, interactions 9250, total energy 8746.176943775938
+#Iteration 49, interactions 6252, total energy 9068.937594596813
+#Iteration 49, interactions 7734, total energy 9011.893219266945
+#Iteration 49, interactions 9178, total energy 8903.292401510827
+#Iteration 49, interactions 9220, total energy 8563.444254574992
+#Iteration 49, interactions 15918, total energy 8186.880182829894
+#Iteration 49, interactions 9838, total energy 8788.469266846527
+#Iteration 49, interactions 6059, total energy 9318.849364557514
+#Iteration 49, interactions 10227, total energy 8502.012669494972
+#Iteration 49, interactions 9491, total energy 8638.57087614966
+#Iteration 49, interactions 9486, total energy 8794.376481334146
+#Iteration 49, interactions 9672, total energy 8622.282934004066
+#Iteration 49, interactions 7459, total energy 9105.96582897655
+#Iteration 49, interactions 11063, total energy 8712.167354128138
+#Iteration 49, interactions 7813, total energy 9129.637770506451
+#Iteration 49, interactions 7019, total energy 9211.088783787807
+#Iteration 49, interactions 9275, total energy 9108.779559988667
+#Iteration 49, interactions 8557, total energy 8815.955796058133
+#Iteration 49, interactions 6308, total energy 9316.210438521213
+#Iteration 49, interactions 9908, total energy 8673.19641204489#Iteration 49, interactions 11086, total energy 9034.09371902443
+
+#Iteration 49, interactions 8147, total energy 8609.532930142608
+#Iteration 49, interactions 8394, total energy 9096.693200669324
+#Iteration 49, interactions 9335, total energy 8866.683885100323
+#Iteration 49, interactions 12730, total energy 8575.109255298863
+#Iteration 49, interactions 10687, total energy 8713.985709349776
+#Iteration 49, interactions 11135, total energy 8670.818619912086
+#Iteration 49, interactions 9766, total energy 8895.4626203884
+#Iteration 49, interactions 8976, total energy 8945.289191789296
+#Iteration 49, interactions 8461, total energy 9000.596346232298
+#Iteration 49, interactions 6573, total energy 9107.533332955069
+#Iteration 49, interactions 9913, total energy 8941.83345529747
+#Iteration 49, interactions 10949, total energy 8787.525913779165
+#Iteration 49, interactions 9086, total energy 8698.099081799126
+#Iteration 49, interactions 12172, total energy 8823.689773903237
+#Iteration 49, interactions 7562, total energy 9241.211244329807
+#Iteration 49, interactions 10325, total energy 8840.604233330278
+#Iteration 49, interactions 9224, total energy 8609.865780776614
+#Iteration 49, interactions 8745, total energy 8977.242519656695
+Validation failed
+Kinetic Energy = 9608.798929256585  7397.392307839352 diff:2211.4066214172335  1
+########################################## time: 3.476136171
+##################################################
+main run 2/5
+#Iteration 9, interactions 5909, total energy 9068.473222442995
+#Iteration 9, interactions 10853, total energy 8567.94621439126
+#Iteration 9, interactions 9183, total energy 8614.233044082182
+#Iteration 9, interactions 6980, total energy 8810.435647315127
+#Iteration 9, interactions 8220, total energy 8707.861411613469
+#Iteration 9, interactions 7019, total energy 9076.587453150507
+#Iteration 9, interactions 8663, total energy 8954.474855071338#Iteration 9, interactions 9734, total energy 8587.82440905998
+
+#Iteration 9, interactions 9250, total energy 8388.211379656666
+#Iteration 9, interactions 6702, total energy 8817.962543544472
+#Iteration 9, interactions 12071, total energy 8303.100140431656
+#Iteration 9, interactions 10244, total energy 8329.029201756812
+#Iteration 9, interactions 9673, total energy 8610.384837893707
+#Iteration 9, interactions 9491, total energy 8276.180035286317
+#Iteration 9, interactions 10112, total energy 8352.580840953802
+#Iteration 9, interactions 11263, total energy 8650.464289682406
+#Iteration 9, interactions 8814, total energy 8508.241843659574
+#Iteration 9, interactions 8210, total energy 8850.15786668703
+#Iteration 9, interactions 7734, total energy 8788.504125880434
+#Iteration 9, interactions 9564, total energy 8221.431763378974
+#Iteration 9, interactions 9838, total energy 8529.368969184847
+#Iteration 9, interactions 7766, total energy 8964.012839029036
+#Iteration 9, interactions 9440, total energy 8529.179256033307
+#Iteration 9, interactions 9178, total energy 8560.42512132773
+#Iteration 9, interactions 10770, total energy 8276.885591394253
+#Iteration 9, interactions 9236, total energy 8663.379109204685
+#Iteration 9, interactions 8126, total energy 8617.132543731292
+#Iteration 9, interactions 6384, total energy 8795.199695438005
+#Iteration 9, interactions 8557, total energy 8542.06240492047
+#Iteration 9, interactions 9335, total energy 8488.612132479764
+#Iteration 9, interactions 15918, total energy 7651.545510434257
+#Iteration 9, interactions 7349, total energy 8705.191551829234
+#Iteration 9, interactions 9275, total energy 8772.619126525893
+#Iteration 9, interactions 9766, total energy 8603.598352087558
+#Iteration 9, interactions 6573, total energy 8788.166203548939
+#Iteration 9, interactions 10325, total energy 8423.164012740237
+#Iteration 9, interactions 9220, total energy 8224.145827487515
+#Iteration 9, interactions 8394, total energy 8744.733955872223
+#Iteration 9, interactions 6252, total energy 8872.91884171726
+#Iteration 9, interactions 11086, total energy 8680.995211854786
+#Iteration 9, interactions 11063, total energy 8393.557897950799
+#Iteration 9, interactions 12730, total energy 8239.531471983059
+#Iteration 9, interactions 7813, total energy 8790.900319680612
+#Iteration 9, interactions 9672, total energy 8312.529272842356#Iteration 9, interactions 11788, total energy 8379.734676395376
+
+#Iteration 9, interactions 7459, total energy 8812.427967365236#Iteration 9, interactions 9908, total energy 8343.484419250603
+
+#Iteration 9, interactions 10227, total energy 7935.727419484888
+#Iteration 9, interactions 8461, total energy 8634.221397750975
+#Iteration 9, interactions 7668, total energy 8609.719983706851
+#Iteration 9, interactions 9486, total energy 8440.407662753738
+#Iteration 9, interactions 8147, total energy 8254.625490908353#Iteration 9, interactions 6308, total energy 9185.080648218755
+
+#Iteration 9, interactions 10687, total energy 8295.574939186543
+#Iteration 9, interactions 10949, total energy 8247.741272678753
+#Iteration 9, interactions 8976, total energy 8560.424845744019
+#Iteration 9, interactions 9913, total energy 8562.35022301269
+#Iteration 9, interactions 9640, total energy 8608.752649144279
+#Iteration 9, interactions 7562, total energy 8966.680595562293
+#Iteration 9, interactions 8745, total energy 8684.653630648532
+#Iteration 9, interactions 9086, total energy 8367.09564099841
+#Iteration 19, interactions 5909, total energy 9093.232142973871
+#Iteration 9, interactions 11135, total energy 8228.589207929079
+#Iteration 19, interactions 9734, total energy 8637.979396315382
+#Iteration 19, interactions 9183, total energy 8652.423369338167
+#Iteration 19, interactions 8663, total energy 8980.486966799068
+#Iteration 19, interactions 8220, total energy 8746.428038234137
+#Iteration 19, interactions 10853, total energy 8609.119042810891
+#Iteration 19, interactions 6980, total energy 8839.110693900411
+#Iteration 19, interactions 10244, total energy 8385.305829579293
+#Iteration 9, interactions 6059, total energy 9186.764301555648#Iteration 19, interactions 6702, total energy 8855.759299892377
+
+#Iteration 19, interactions 8814, total energy 8572.567350868374
+#Iteration 19, interactions 7019, total energy 9094.298189479108
+#Iteration 19, interactions 9673, total energy 8647.007453352771
+#Iteration 19, interactions 12071, total energy 8355.78385531143#Iteration 19, interactions 11263, total energy 8687.690418484484
+
+#Iteration 19, interactions 9250, total energy 8432.415326932482
+#Iteration 19, interactions 9491, total energy 8319.347567269982
+#Iteration 9, interactions 12172, total energy 8448.764963501417
+#Iteration 19, interactions 10112, total energy 8397.283227530297
+#Iteration 19, interactions 8210, total energy 8878.468199093164
+#Iteration 19, interactions 9564, total energy 8257.4196020695
+#Iteration 19, interactions 7734, total energy 8813.48465913831
+#Iteration 19, interactions 7766, total energy 8993.915399546075
+#Iteration 19, interactions 9440, total energy 8577.385097676302
+#Iteration 19, interactions 9838, total energy 8559.025248590015
+#Iteration 19, interactions 10770, total energy 8337.584308775075
+#Iteration 19, interactions 9178, total energy 8604.221757352852
+#Iteration 19, interactions 9236, total energy 8709.792713802677
+#Iteration 19, interactions 8126, total energy 8645.44243676307
+#Iteration 19, interactions 7349, total energy 8748.070111933264
+#Iteration 19, interactions 6384, total energy 8835.567891722196
+#Iteration 19, interactions 9275, total energy 8814.125155503356
+#Iteration 19, interactions 8557, total energy 8574.362767138618
+#Iteration 19, interactions 6252, total energy 8897.692267239889
+#Iteration 19, interactions 15918, total energy 7719.835158586785
+#Iteration 19, interactions 9335, total energy 8534.182049135023
+#Iteration 19, interactions 9220, total energy 8265.262968509847
+#Iteration 19, interactions 6573, total energy 8827.068018392803
+#Iteration 19, interactions 11063, total energy 8433.064971509744
+#Iteration 19, interactions 10325, total energy 8474.571713393489
+#Iteration 19, interactions 11086, total energy 8726.0933789016
+#Iteration 19, interactions 8394, total energy 8786.61124743093#Iteration 19, interactions 7813, total energy 8831.289990718162
+
+#Iteration 19, interactions 9672, total energy 8353.074366948675
+#Iteration 19, interactions 7668, total energy 8648.923550788048#Iteration 19, interactions 11788, total energy 8436.89960788651
+
+#Iteration 19, interactions 10227, total energy 8002.083683092357
+#Iteration 19, interactions 9766, total energy 8634.11847570304
+#Iteration 19, interactions 7459, total energy 8846.74033978571
+#Iteration 19, interactions 9908, total energy 8380.357534744126
+#Iteration 19, interactions 12730, total energy 8281.257268522588
+#Iteration 19, interactions 6308, total energy 9201.695730669668#Iteration 19, interactions 8147, total energy 8301.982226357008
+
+#Iteration 19, interactions 9486, total energy 8484.136204858012
+#Iteration 19, interactions 10687, total energy 8351.315902934672
+#Iteration 19, interactions 8461, total energy 8679.850092307639
+#Iteration 19, interactions 8976, total energy 8613.458950717537
+#Iteration 19, interactions 10949, total energy 8314.40972414668
+#Iteration 19, interactions 9913, total energy 8609.110488591345
+#Iteration 29, interactions 5909, total energy 9135.560344710722
+#Iteration 19, interactions 9223, total energy 8609.854667347561
+#Iteration 19, interactions 9086, total energy 8407.609395624335
+#Iteration 19, interactions 7562, total energy 9004.935020492001
+#Iteration 29, interactions 9734, total energy 8725.728602905534
+#Iteration 19, interactions 8745, total energy 8719.273652308078
+#Iteration 19, interactions 11135, total energy 8281.310250244855
+#Iteration 29, interactions 9183, total energy 8720.804486354511
+#Iteration 29, interactions 8663, total energy 9024.196235721407
+#Iteration 29, interactions 8220, total energy 8811.078865907011
+#Iteration 29, interactions 8814, total energy 8685.56641274477
+#Iteration 29, interactions 10244, total energy 8476.397936286186
+#Iteration 19, interactions 6059, total energy 9201.131039013457
+#Iteration 29, interactions 6702, total energy 8922.052184931592
+#Iteration 29, interactions 9673, total energy 8713.382964725879
+#Iteration 29, interactions 10853, total energy 8675.464548760621
+#Iteration 29, interactions 6980, total energy 8886.842736494344
+#Iteration 29, interactions 11263, total energy 8746.546304254567
+#Iteration 29, interactions 7019, total energy 9122.618656694858
+#Iteration 29, interactions 8210, total energy 8925.718027475308
+#Iteration 29, interactions 12071, total energy 8447.95906085446
+#Iteration 29, interactions 9440, total energy 8662.305708127742
+#Iteration 19, interactions 12172, total energy 8490.48721640199
+#Iteration 29, interactions 7734, total energy 8859.043019122022
+#Iteration 29, interactions 7766, total energy 9044.145560719606
+#Iteration 29, interactions 9491, total energy 8394.135218075095
+#Iteration 29, interactions 9564, total energy 8319.046062747899
+#Iteration 29, interactions 10112, total energy 8470.3884435529
+#Iteration 29, interactions 9250, total energy 8506.81090337763
+#Iteration 29, interactions 9838, total energy 8612.094058002016
+#Iteration 29, interactions 10770, total energy 8446.333657025756
+#Iteration 29, interactions 9236, total energy 8788.003153193158
+#Iteration 29, interactions 8126, total energy 8693.230169903814
+#Iteration 29, interactions 9178, total energy 8675.965182725078
+#Iteration 29, interactions 6252, total energy 8938.619867894027
+#Iteration 29, interactions 7349, total energy 8816.663636036335
+#Iteration 29, interactions 9275, total energy 8883.987237406312
+#Iteration 29, interactions 7668, total energy 8707.537265462921
+#Iteration 29, interactions 9220, total energy 8335.518420031873
+#Iteration 29, interactions 6384, total energy 8900.39540197111
+#Iteration 29, interactions 8557, total energy 8630.77845306761
+#Iteration 29, interactions 10227, total energy 8118.583312629856
+#Iteration 29, interactions 15918, total energy 7831.820820036905
+#Iteration 29, interactions 11063, total energy 8499.335572058946
+#Iteration 29, interactions 9672, total energy 8418.21500851107#Iteration 29, interactions 7813, total energy 8901.209456201654
+
+#Iteration 29, interactions 6573, total energy 8893.263144908446
+#Iteration 29, interactions 11788, total energy 8531.166318842621
+#Iteration 29, interactions 11086, total energy 8799.975852445476#Iteration 29, interactions 9335, total energy 8612.383980123534
+
+#Iteration 29, interactions 7459, total energy 8907.100774194423
+#Iteration 29, interactions 9908, total energy 8447.600572041014
+#Iteration 29, interactions 8394, total energy 8859.23021875002
+#Iteration 29, interactions 10325, total energy 8561.28098370958
+#Iteration 29, interactions 9486, total energy 8557.707188656163
+#Iteration 29, interactions 9766, total energy 8692.93589495834
+#Iteration 29, interactions 12730, total energy 8351.095497921737
+#Iteration 29, interactions 6308, total energy 9229.089056537048
+#Iteration 29, interactions 8147, total energy 8376.91904471227
+#Iteration 29, interactions 10687, total energy 8439.63135254459
+#Iteration 29, interactions 8976, total energy 8695.281043382925
+#Iteration 29, interactions 8461, total energy 8756.122148573413
+#Iteration 39, interactions 5909, total energy 9195.457827653552
+#Iteration 39, interactions 9734, total energy 8851.072028830431
+#Iteration 29, interactions 10949, total energy 8426.596648152721
+#Iteration 29, interactions 9913, total energy 8687.944449165032
+#Iteration 29, interactions 9086, total energy 8476.281220633096
+#Iteration 29, interactions 9183, total energy 8610.13016559935
+#Iteration 29, interactions 8745, total energy 8779.57847436262
+#Iteration 29, interactions 7562, total energy 9063.441603596488
+#Iteration 39, interactions 8814, total energy 8847.239029288765
+#Iteration 39, interactions 8663, total energy 9085.60266183834
+#Iteration 39, interactions 9183, total energy 8819.376395131205
+#Iteration 29, interactions 6059, total energy 9227.934128666368
+#Iteration 39, interactions 8220, total energy 8901.813894632085#Iteration 29, interactions 11135, total energy 8372.588833013946
+
+#Iteration 39, interactions 10244, total energy 8602.305521877492
+#Iteration 39, interactions 9673, total energy 8809.511372013043
+#Iteration 39, interactions 6702, total energy 9016.841198662114
+#Iteration 39, interactions 11263, total energy 8827.031946992656
+#Iteration 39, interactions 10853, total energy 8766.982732240458
+#Iteration 39, interactions 6980, total energy 8953.63177509693
+#Iteration 39, interactions 8210, total energy 8991.907351833466
+#Iteration 39, interactions 7019, total energy 9161.548854797762
+#Iteration 39, interactions 9440, total energy 8783.941087387628
+#Iteration 39, interactions 7766, total energy 9114.70332254961
+#Iteration 39, interactions 7734, total energy 8925.179205831568
+#Iteration 39, interactions 9564, total energy 8406.311145414174
+#Iteration 39, interactions 12071, total energy 8579.625757060752
+#Iteration 29, interactions 12172, total energy 8566.882102435819
+#Iteration 39, interactions 9491, total energy 8500.542987701654
+#Iteration 39, interactions 10112, total energy 8571.896489021614
+#Iteration 39, interactions 9236, total energy 8898.010427376134#Iteration 39, interactions 10770, total energy 8603.13363614628
+
+#Iteration 39, interactions 6252, total energy 8995.701643679668
+#Iteration 39, interactions 9838, total energy 8688.575397420853
+#Iteration 39, interactions 8126, total energy 8760.495743153519
+#Iteration 39, interactions 7668, total energy 8785.561127731467
+#Iteration 39, interactions 9250, total energy 8611.398108992116
+#Iteration 39, interactions 7349, total energy 8910.972124138438
+#Iteration 39, interactions 9178, total energy 8775.655397444405
+#Iteration 39, interactions 9220, total energy 8434.912182053584
+#Iteration 39, interactions 9275, total energy 8982.205372234748
+#Iteration 39, interactions 10227, total energy 8285.226308097399
+#Iteration 39, interactions 6384, total energy 8989.68222618473
+#Iteration 39, interactions 15918, total energy 7987.502494784606
+#Iteration 39, interactions 9672, total energy 8507.951197529535
+#Iteration 39, interactions 7459, total energy 8993.509270591367
+#Iteration 39, interactions 7813, total energy 9000.658716131087#Iteration 39, interactions 11063, total energy 8592.369699598414
+
+#Iteration 39, interactions 8557, total energy 8711.309462707448
+#Iteration 39, interactions 11788, total energy 8662.53480926371
+#Iteration 39, interactions 11086, total energy 8902.642632486424
+#Iteration 39, interactions 6573, total energy 8986.75158309587
+#Iteration 39, interactions 9486, total energy 8661.12061414821#Iteration 39, interactions 9908, total energy 8545.213531141271
+
+#Iteration 39, interactions 8394, total energy 8962.590869829488
+#Iteration 39, interactions 9335, total energy 8723.217925445302
+#Iteration 39, interactions 10325, total energy 8683.291823688513
+#Iteration 39, interactions 6308, total energy 9267.260625820898
+#Iteration 39, interactions 10687, total energy 8560.521288016289
+#Iteration 39, interactions 8147, total energy 8479.435945974134
+#Iteration 39, interactions 12730, total energy 8449.046160180491
+#Iteration 49, interactions 9734, total energy 9014.009674090074
+#Iteration 39, interactions 8976, total energy 8805.891123740177
+#Iteration 49, interactions 5909, total energy 9272.924591802352
+#Iteration 39, interactions 9766, total energy 8780.05060985346
+#Iteration 39, interactions 8461, total energy 8863.037566548302
+#Iteration 49, interactions 8814, total energy 9057.585200500358
+#Iteration 39, interactions 9913, total energy 8798.852104733744
+#Iteration 39, interactions 10949, total energy 8584.302044696888
+#Iteration 39, interactions 9086, total energy 8573.111116024693
+#Iteration 49, interactions 8663, total energy 9164.706245149875
+#Iteration 39, interactions 6059, total energy 9267.17357051439
+#Iteration 49, interactions 9183, total energy 8948.139095668259
+#Iteration 39, interactions 9183, total energy 8609.917491570206
+#Iteration 39, interactions 8745, total energy 8865.568096812163
+#Iteration 39, interactions 7562, total energy 9142.200344875759
+#Iteration 49, interactions 10244, total energy 8763.028586353214
+#Iteration 49, interactions 8220, total energy 9018.633124409358
+#Iteration 49, interactions 9673, total energy 8935.39267521425
+#Iteration 49, interactions 6702, total energy 9140.126341083947
+#Iteration 39, interactions 11135, total energy 8502.424956236357
+#Iteration 49, interactions 11263, total energy 8929.14734669875
+#Iteration 49, interactions 8210, total energy 9077.036172167616
+#Iteration 49, interactions 6980, total energy 9039.47780970815
+#Iteration 49, interactions 9440, total energy 8942.291235455961
+#Iteration 49, interactions 10853, total energy 8883.673593250393
+#Iteration 49, interactions 7766, total energy 9205.588685036111
+#Iteration 49, interactions 7734, total energy 9011.893219266947
+#Iteration 49, interactions 7019, total energy 9211.088783787807
+#Iteration 49, interactions 9564, total energy 8519.21485006832
+#Iteration 49, interactions 6252, total energy 9068.937594596815
+#Iteration 49, interactions 7668, total energy 8882.995137593693
+#Iteration 39, interactions 12172, total energy 8677.9496216029
+#Iteration 49, interactions 9236, total energy 9039.814536351601
+#Iteration 49, interactions 10770, total energy 8807.984246136659
+#Iteration 49, interactions 12071, total energy 8750.783943930277
+#Iteration 49, interactions 9491, total energy 8638.57087614966
+#Iteration 49, interactions 10112, total energy 8701.807363936445
+#Iteration 49, interactions 8126, total energy 8847.239156512194
+#Iteration 49, interactions 9838, total energy 8788.469266846529
+#Iteration 49, interactions 7349, total energy 9030.995576239575
+#Iteration 49, interactions 9178, total energy 8903.292401510831
+#Iteration 49, interactions 10227, total energy 8502.012669494974#Iteration 49, interactions 9275, total energy 9108.779559988667#Iteration 49, interactions 9220, total energy 8563.444254574992
+
+
+#Iteration 49, interactions 9250, total energy 8746.176943775934
+#Iteration 49, interactions 7459, total energy 9105.965828976552
+#Iteration 49, interactions 7813, total energy 9129.63777050645
+#Iteration 49, interactions 9672, total energy 8622.282934004068
+#Iteration 49, interactions 11788, total energy 8831.005079149776
+#Iteration 49, interactions 15918, total energy 8186.880182829896
+#Iteration 49, interactions 11063, total energy 8712.167354128138
+#Iteration 49, interactions 9486, total energy 8794.376481334148
+#Iteration 49, interactions 6384, total energy 9103.42836436307
+#Iteration 49, interactions 11086, total energy 9034.093719024428
+#Iteration 49, interactions 8557, total energy 8815.955796058133
+#Iteration 49, interactions 9908, total energy 8673.19641204489
+#Iteration 49, interactions 6573, total energy 9107.53333295507
+#Iteration 49, interactions 6308, total energy 9316.210438521217
+#Iteration 49, interactions 8394, total energy 9096.693200669324
+#Iteration 49, interactions 10687, total energy 8713.985709349776#Iteration 49, interactions 10325, total energy 8840.604233330281
+
+#Iteration 49, interactions 8147, total energy 8609.532930142605
+#Iteration 49, interactions 8976, total energy 8945.289191789296
+#Iteration 49, interactions 9335, total energy 8866.683885100321
+#Iteration 49, interactions 12730, total energy 8575.109255298863
+#Iteration 49, interactions 9766, total energy 8895.462620388402
+#Iteration 49, interactions 8461, total energy 9000.596346232302
+#Iteration 49, interactions 6059, total energy 9318.849364557514
+#Iteration 49, interactions 9913, total energy 8941.833455297467
+#Iteration 49, interactions 9086, total energy 8698.099081799128
+#Iteration 49, interactions 10949, total energy 8787.525913779164
+#Iteration 49, interactions 8745, total energy 8977.242519656698
+#Iteration 49, interactions 7562, total energy 9241.21124432981
+#Iteration 49, interactions 9224, total energy 8609.865780776612
+#Iteration 49, interactions 11135, total energy 8670.818619912088
+#Iteration 49, interactions 12172, total energy 8823.689773903237
+Validation failed
+Kinetic Energy = 9608.798929256584  7397.392307839352 diff:2211.4066214172317  1
+########################################## time: 3.57713678
+##################################################
+main run 3/5
+#Iteration 9, interactions 5909, total energy 9068.473222442995
+#Iteration 9, interactions 10853, total energy 8567.94621439126
+#Iteration 9, interactions 9250, total energy 8388.211379656666
+#Iteration 9, interactions 6980, total energy 8810.435647315127#Iteration 9, interactions 9183, total energy 8614.233044082182
+#Iteration 9, interactions 8220, total energy 8707.861411613469
+
+#Iteration 9, interactions 7019, total energy 9076.587453150507
+#Iteration 9, interactions 8663, total energy 8954.474855071338
+#Iteration 9, interactions 9734, total energy 8587.82440905998
+#Iteration 9, interactions 6702, total energy 8817.962543544472
+#Iteration 9, interactions 10244, total energy 8329.029201756812
+#Iteration 9, interactions 12071, total energy 8303.100140431656
+#Iteration 9, interactions 6384, total energy 8795.199695438005
+#Iteration 9, interactions 8814, total energy 8508.241843659574
+#Iteration 9, interactions 9491, total energy 8276.180035286317
+#Iteration 9, interactions 11263, total energy 8650.464289682406
+#Iteration 9, interactions 10112, total energy 8352.580840953802
+#Iteration 9, interactions 9673, total energy 8610.384837893707
+#Iteration 9, interactions 8210, total energy 8850.15786668703
+#Iteration 9, interactions 7734, total energy 8788.504125880434
+#Iteration 9, interactions 9838, total energy 8529.368969184847
+#Iteration 9, interactions 9440, total energy 8529.179256033307
+#Iteration 9, interactions 7766, total energy 8964.012839029036
+#Iteration 9, interactions 9564, total energy 8221.431763378974
+#Iteration 9, interactions 11788, total energy 8379.734676395376
+#Iteration 9, interactions 9178, total energy 8560.42512132773
+#Iteration 9, interactions 9236, total energy 8663.379109204685
+#Iteration 9, interactions 10770, total energy 8276.885591394253
+#Iteration 9, interactions 8126, total energy 8617.132543731292
+#Iteration 9, interactions 9335, total energy 8488.612132479764
+#Iteration 9, interactions 8557, total energy 8542.06240492047
+#Iteration 9, interactions 15918, total energy 7651.545510434257
+#Iteration 9, interactions 7349, total energy 8705.191551829234
+#Iteration 9, interactions 9275, total energy 8772.619126525893
+#Iteration 9, interactions 9766, total energy 8603.598352087558
+#Iteration 9, interactions 6573, total energy 8788.166203548939
+#Iteration 9, interactions 9220, total energy 8224.145827487515
+#Iteration 9, interactions 10325, total energy 8423.164012740237
+#Iteration 9, interactions 8394, total energy 8744.733955872223
+#Iteration 9, interactions 6252, total energy 8872.91884171726
+#Iteration 9, interactions 11135, total energy 8228.589207929079#Iteration 9, interactions 11086, total energy 8680.995211854786
+
+#Iteration 9, interactions 11063, total energy 8393.557897950799
+#Iteration 9, interactions 12730, total energy 8239.531471983059
+#Iteration 9, interactions 7813, total energy 8790.900319680612#Iteration 9, interactions 9672, total energy 8312.529272842356
+
+#Iteration 9, interactions 10227, total energy 7935.727419484888
+#Iteration 9, interactions 9908, total energy 8343.484419250603
+#Iteration 9, interactions 7459, total energy 8812.427967365236
+#Iteration 9, interactions 7668, total energy 8609.719983706851
+#Iteration 9, interactions 6308, total energy 9185.080648218755
+#Iteration 9, interactions 8147, total energy 8254.625490908353
+#Iteration 9, interactions 6059, total energy 9186.764301555648
+#Iteration 9, interactions 9486, total energy 8440.407662753738
+#Iteration 9, interactions 10687, total energy 8295.574939186543
+#Iteration 9, interactions 8976, total energy 8560.424845744019
+#Iteration 9, interactions 10949, total energy 8247.741272678753
+#Iteration 9, interactions 9913, total energy 8562.35022301269
+#Iteration 9, interactions 9640, total energy 8608.752649144279
+#Iteration 9, interactions 7562, total energy 8966.680595562293
+#Iteration 9, interactions 12172, total energy 8448.764963501417
+#Iteration 9, interactions 8745, total energy 8684.653630648532
+#Iteration 9, interactions 9086, total energy 8367.09564099841
+#Iteration 19, interactions 5909, total energy 9093.232142973871
+#Iteration 9, interactions 8461, total energy 8634.221397750975
+#Iteration 19, interactions 9734, total energy 8637.979396315379
+#Iteration 19, interactions 8220, total energy 8746.428038234139
+#Iteration 19, interactions 9183, total energy 8652.42336933817
+#Iteration 19, interactions 8663, total energy 8980.486966799068
+#Iteration 19, interactions 10853, total energy 8609.119042810895#Iteration 19, interactions 10244, total energy 8385.305829579289
+
+#Iteration 19, interactions 6702, total energy 8855.75929989238#Iteration 19, interactions 6980, total energy 8839.110693900413
+
+#Iteration 19, interactions 8814, total energy 8572.567350868374
+#Iteration 19, interactions 7019, total energy 9094.298189479105
+#Iteration 19, interactions 9250, total energy 8432.415326932482
+#Iteration 19, interactions 9673, total energy 8647.007453352773
+#Iteration 19, interactions 6384, total energy 8835.567891722196
+#Iteration 19, interactions 12071, total energy 8355.783855311427
+#Iteration 19, interactions 11263, total energy 8687.690418484484
+#Iteration 19, interactions 8210, total energy 8878.468199093164
+#Iteration 19, interactions 9491, total energy 8319.347567269979
+#Iteration 19, interactions 10112, total energy 8397.283227530297
+#Iteration 19, interactions 7734, total energy 8813.48465913831
+#Iteration 19, interactions 9440, total energy 8577.3850976763
+#Iteration 19, interactions 7766, total energy 8993.915399546075
+#Iteration 19, interactions 11788, total energy 8436.89960788651
+#Iteration 19, interactions 9564, total energy 8257.419602069502
+#Iteration 19, interactions 9838, total energy 8559.025248590016
+#Iteration 19, interactions 9236, total energy 8709.792713802675
+#Iteration 19, interactions 10770, total energy 8337.584308775076
+#Iteration 19, interactions 9178, total energy 8604.221757352852
+#Iteration 19, interactions 8126, total energy 8645.442436763067
+#Iteration 19, interactions 7349, total energy 8748.070111933264
+#Iteration 19, interactions 15918, total energy 7719.835158586787
+#Iteration 19, interactions 8557, total energy 8574.36276713862
+#Iteration 19, interactions 9220, total energy 8265.262968509849
+#Iteration 19, interactions 6252, total energy 8897.692267239889
+#Iteration 19, interactions 9335, total energy 8534.182049135024
+#Iteration 19, interactions 9275, total energy 8814.125155503358
+#Iteration 19, interactions 9766, total energy 8634.118475703039
+#Iteration 19, interactions 6573, total energy 8827.068018392802#Iteration 19, interactions 11063, total energy 8433.064971509748
+
+#Iteration 19, interactions 10325, total energy 8474.571713393489
+#Iteration 19, interactions 8394, total energy 8786.611247430927
+#Iteration 19, interactions 9672, total energy 8353.074366948673#Iteration 19, interactions 11086, total energy 8726.0933789016
+
+#Iteration 19, interactions 7668, total energy 8648.923550788048
+#Iteration 19, interactions 7813, total energy 8831.289990718164
+#Iteration 19, interactions 10227, total energy 8002.083683092357
+#Iteration 19, interactions 11135, total energy 8281.310250244853
+#Iteration 19, interactions 12730, total energy 8281.257268522588
+#Iteration 19, interactions 7459, total energy 8846.74033978571
+#Iteration 19, interactions 9908, total energy 8380.357534744126
+#Iteration 19, interactions 6059, total energy 9201.131039013455
+#Iteration 19, interactions 9486, total energy 8484.136204858012
+#Iteration 19, interactions 8147, total energy 8301.982226357011
+#Iteration 19, interactions 6308, total energy 9201.695730669668
+#Iteration 19, interactions 10687, total energy 8351.315902934672
+#Iteration 19, interactions 8976, total energy 8613.458950717537
+#Iteration 29, interactions 5909, total energy 9135.560344710722
+#Iteration 19, interactions 10949, total energy 8314.409724146679
+#Iteration 19, interactions 9913, total energy 8609.110488591352
+#Iteration 19, interactions 12172, total energy 8490.487216401985
+#Iteration 19, interactions 9086, total energy 8407.609395624339
+#Iteration 29, interactions 9734, total energy 8725.728602905532
+#Iteration 19, interactions 7562, total energy 9004.935020492
+#Iteration 19, interactions 9223, total energy 8609.85466734756
+#Iteration 19, interactions 8745, total energy 8719.273652308075
+#Iteration 29, interactions 8663, total energy 9024.196235721407
+#Iteration 29, interactions 8220, total energy 8811.078865907011
+#Iteration 19, interactions 8461, total energy 8679.85009230764#Iteration 29, interactions 10244, total energy 8476.397936286185#Iteration 29, interactions 8814, total energy 8685.56641274477
+
+
+#Iteration 29, interactions 9183, total energy 8720.80448635451
+#Iteration 29, interactions 6702, total energy 8922.052184931592
+#Iteration 29, interactions 6980, total energy 8886.842736494347
+#Iteration 29, interactions 10853, total energy 8675.464548760627
+#Iteration 29, interactions 9673, total energy 8713.382964725879
+#Iteration 29, interactions 7019, total energy 9122.618656694855
+#Iteration 29, interactions 11263, total energy 8746.546304254567
+#Iteration 29, interactions 8210, total energy 8925.718027475308
+#Iteration 29, interactions 6384, total energy 8900.395401971107
+#Iteration 29, interactions 9250, total energy 8506.810903377629
+#Iteration 29, interactions 12071, total energy 8447.95906085446
+#Iteration 29, interactions 9440, total energy 8662.305708127742
+#Iteration 29, interactions 7766, total energy 9044.1455607196#Iteration 29, interactions 9491, total energy 8394.135218075095
+
+#Iteration 29, interactions 7734, total energy 8859.043019122022
+#Iteration 29, interactions 11788, total energy 8531.16631884262
+#Iteration 29, interactions 10112, total energy 8470.3884435529
+#Iteration 29, interactions 9564, total energy 8319.046062747899
+#Iteration 29, interactions 9236, total energy 8788.003153193156
+#Iteration 29, interactions 9838, total energy 8612.094058002016
+#Iteration 29, interactions 10770, total energy 8446.333657025758
+#Iteration 29, interactions 8126, total energy 8693.230169903814
+#Iteration 29, interactions 9178, total energy 8675.965182725078
+#Iteration 29, interactions 7349, total energy 8816.663636036335
+#Iteration 29, interactions 6252, total energy 8938.619867894025
+#Iteration 29, interactions 15918, total energy 7831.820820036905
+#Iteration 29, interactions 9220, total energy 8335.518420031873
+#Iteration 29, interactions 7668, total energy 8707.53726546292
+#Iteration 29, interactions 9275, total energy 8883.987237406312
+#Iteration 29, interactions 8557, total energy 8630.77845306761
+#Iteration 29, interactions 10227, total energy 8118.583312629854
+#Iteration 29, interactions 11063, total energy 8499.33557205895
+#Iteration 29, interactions 9672, total energy 8418.215008511066
+#Iteration 29, interactions 9335, total energy 8612.383980123534
+#Iteration 29, interactions 6059, total energy 9227.934128666366
+#Iteration 29, interactions 7813, total energy 8901.209456201655#Iteration 29, interactions 11086, total energy 8799.975852445477
+
+#Iteration 29, interactions 7459, total energy 8907.10077419442
+#Iteration 29, interactions 6573, total energy 8893.263144908438
+#Iteration 29, interactions 10325, total energy 8561.28098370958
+#Iteration 29, interactions 8394, total energy 8859.230218750017
+#Iteration 29, interactions 9766, total energy 8692.93589495834
+#Iteration 29, interactions 9486, total energy 8557.707188656163
+#Iteration 29, interactions 9908, total energy 8447.600572041018
+#Iteration 29, interactions 11135, total energy 8372.588833013946
+#Iteration 29, interactions 12730, total energy 8351.095497921735
+#Iteration 29, interactions 8147, total energy 8376.919044712271
+#Iteration 29, interactions 6308, total energy 9229.089056537048
+#Iteration 29, interactions 10687, total energy 8439.631352544588
+#Iteration 29, interactions 8976, total energy 8695.281043382925
+#Iteration 39, interactions 5909, total energy 9195.457827653552
+#Iteration 39, interactions 9734, total energy 8851.072028830427
+#Iteration 29, interactions 12172, total energy 8566.882102435815
+#Iteration 29, interactions 10949, total energy 8426.596648152721#Iteration 29, interactions 9913, total energy 8687.944449165036
+
+#Iteration 29, interactions 9086, total energy 8476.281220633096
+#Iteration 29, interactions 7562, total energy 9063.441603596488
+#Iteration 29, interactions 8745, total energy 8779.57847436262
+#Iteration 29, interactions 9183, total energy 8610.130165599348
+#Iteration 39, interactions 8814, total energy 8847.239029288763
+#Iteration 39, interactions 8663, total energy 9085.60266183834
+#Iteration 39, interactions 10244, total energy 8602.30552187749
+#Iteration 39, interactions 8220, total energy 8901.813894632085
+#Iteration 39, interactions 9183, total energy 8819.376395131205
+#Iteration 39, interactions 6702, total energy 9016.841198662114
+#Iteration 29, interactions 8461, total energy 8756.122148573415
+#Iteration 39, interactions 9673, total energy 8809.511372013043
+#Iteration 39, interactions 6980, total energy 8953.63177509693
+#Iteration 39, interactions 11263, total energy 8827.031946992654
+#Iteration 39, interactions 10853, total energy 8766.982732240458
+#Iteration 39, interactions 8210, total energy 8991.907351833463
+#Iteration 39, interactions 7019, total energy 9161.54885479776
+#Iteration 39, interactions 9440, total energy 8783.941087387628
+#Iteration 39, interactions 7766, total energy 9114.703322549614
+#Iteration 39, interactions 11788, total energy 8662.53480926371
+#Iteration 39, interactions 6384, total energy 8989.68222618473
+#Iteration 39, interactions 7734, total energy 8925.179205831566
+#Iteration 39, interactions 12071, total energy 8579.625757060749
+#Iteration 39, interactions 9564, total energy 8406.311145414176
+#Iteration 39, interactions 9491, total energy 8500.542987701654
+#Iteration 39, interactions 9236, total energy 8898.010427376135#Iteration 39, interactions 10112, total energy 8571.896489021616
+
+#Iteration 39, interactions 9250, total energy 8611.398108992116
+#Iteration 39, interactions 8126, total energy 8760.495743153519
+#Iteration 39, interactions 10770, total energy 8603.133636146278
+#Iteration 39, interactions 6252, total energy 8995.701643679668
+#Iteration 39, interactions 9838, total energy 8688.575397420851
+#Iteration 39, interactions 7349, total energy 8910.972124138438
+#Iteration 39, interactions 7668, total energy 8785.561127731467
+#Iteration 39, interactions 9178, total energy 8775.655397444403
+#Iteration 39, interactions 9220, total energy 8434.912182053586
+#Iteration 39, interactions 15918, total energy 7987.502494784604
+#Iteration 39, interactions 9275, total energy 8982.205372234748
+#Iteration 39, interactions 10227, total energy 8285.226308097399
+#Iteration 39, interactions 6059, total energy 9267.17357051439
+#Iteration 39, interactions 11063, total energy 8592.369699598414
+#Iteration 39, interactions 8557, total energy 8711.309462707446
+#Iteration 39, interactions 9672, total energy 8507.95119752953
+#Iteration 39, interactions 7813, total energy 9000.658716131085
+#Iteration 39, interactions 7459, total energy 8993.509270591367
+#Iteration 39, interactions 9486, total energy 8661.120614148213
+#Iteration 39, interactions 11086, total energy 8902.642632486424
+#Iteration 39, interactions 9908, total energy 8545.213531141271
+#Iteration 39, interactions 10325, total energy 8683.291823688509
+#Iteration 39, interactions 6573, total energy 8986.751583095867
+#Iteration 39, interactions 8394, total energy 8962.590869829484
+#Iteration 39, interactions 9335, total energy 8723.217925445302
+#Iteration 39, interactions 9766, total energy 8780.05060985346
+#Iteration 39, interactions 8147, total energy 8479.435945974135
+#Iteration 39, interactions 6308, total energy 9267.2606258209
+#Iteration 39, interactions 11135, total energy 8502.424956236355
+#Iteration 39, interactions 12730, total energy 8449.046160180491
+#Iteration 49, interactions 9734, total energy 9014.00967409007
+#Iteration 39, interactions 10687, total energy 8560.521288016287#Iteration 49, interactions 5909, total energy 9272.924591802353
+
+#Iteration 39, interactions 8976, total energy 8805.89112374018
+#Iteration 39, interactions 12172, total energy 8677.949621602897
+#Iteration 49, interactions 8814, total energy 9057.585200500356
+#Iteration 39, interactions 9086, total energy 8573.111116024695
+#Iteration 39, interactions 9913, total energy 8798.852104733745
+#Iteration 39, interactions 10949, total energy 8584.302044696886
+#Iteration 49, interactions 8663, total energy 9164.706245149875
+#Iteration 49, interactions 10244, total energy 8763.028586353214
+#Iteration 39, interactions 7562, total energy 9142.200344875757
+#Iteration 39, interactions 8745, total energy 8865.568096812156
+#Iteration 49, interactions 8220, total energy 9018.633124409358
+#Iteration 39, interactions 9183, total energy 8609.917491570206
+#Iteration 49, interactions 9183, total energy 8948.13909566826
+#Iteration 49, interactions 6702, total energy 9140.126341083947
+#Iteration 49, interactions 9673, total energy 8935.39267521425
+#Iteration 39, interactions 8461, total energy 8863.037566548304
+#Iteration 49, interactions 11263, total energy 8929.14734669875
+#Iteration 49, interactions 6980, total energy 9039.47780970815
+#Iteration 49, interactions 9440, total energy 8942.291235455961
+#Iteration 49, interactions 8210, total energy 9077.036172167616
+#Iteration 49, interactions 10853, total energy 8883.673593250393
+#Iteration 49, interactions 7766, total energy 9205.588685036111
+#Iteration 49, interactions 11788, total energy 8831.005079149776
+#Iteration 49, interactions 7019, total energy 9211.088783787807
+#Iteration 49, interactions 7734, total energy 9011.893219266945
+#Iteration 49, interactions 9236, total energy 9039.8145363516
+#Iteration 49, interactions 9564, total energy 8519.214850068318
+#Iteration 49, interactions 6384, total energy 9103.42836436307
+#Iteration 49, interactions 6252, total energy 9068.937594596813
+#Iteration 49, interactions 7668, total energy 8882.995137593689
+#Iteration 49, interactions 12071, total energy 8750.783943930277
+#Iteration 49, interactions 9491, total energy 8638.570876149657
+#Iteration 49, interactions 10112, total energy 8701.807363936443
+#Iteration 49, interactions 8126, total energy 8847.23915651219
+#Iteration 49, interactions 7349, total energy 9030.995576239575
+#Iteration 49, interactions 9250, total energy 8746.176943775936
+#Iteration 49, interactions 10770, total energy 8807.98424613666
+#Iteration 49, interactions 9838, total energy 8788.469266846529
+#Iteration 49, interactions 9178, total energy 8903.292401510831
+#Iteration 49, interactions 9220, total energy 8563.444254574992
+#Iteration 49, interactions 15918, total energy 8186.880182829894
+#Iteration 49, interactions 10227, total energy 8502.012669494974
+#Iteration 49, interactions 6059, total energy 9318.849364557516
+#Iteration 49, interactions 9275, total energy 9108.779559988667
+#Iteration 49, interactions 11063, total energy 8712.167354128138
+#Iteration 49, interactions 9486, total energy 8794.376481334146
+#Iteration 49, interactions 9672, total energy 8622.282934004066
+#Iteration 49, interactions 7459, total energy 9105.96582897655
+#Iteration 49, interactions 7813, total energy 9129.63777050645
+#Iteration 49, interactions 8557, total energy 8815.955796058133
+#Iteration 49, interactions 9908, total energy 8673.196412044894
+#Iteration 49, interactions 11086, total energy 9034.093719024428
+#Iteration 49, interactions 6308, total energy 9316.210438521215
+#Iteration 49, interactions 10325, total energy 8840.604233330278
+#Iteration 49, interactions 6573, total energy 9107.533332955063
+#Iteration 49, interactions 8394, total energy 9096.69320066932
+#Iteration 49, interactions 8147, total energy 8609.532930142608
+#Iteration 49, interactions 10687, total energy 8713.985709349774
+#Iteration 49, interactions 9766, total energy 8895.462620388402
+#Iteration 49, interactions 8976, total energy 8945.289191789296
+#Iteration 49, interactions 9335, total energy 8866.683885100323
+#Iteration 49, interactions 11135, total energy 8670.818619912086
+#Iteration 49, interactions 12730, total energy 8575.109255298865
+#Iteration 49, interactions 12172, total energy 8823.689773903236
+#Iteration 49, interactions 9086, total energy 8698.099081799128
+#Iteration 49, interactions 9913, total energy 8941.833455297468
+#Iteration 49, interactions 10949, total energy 8787.525913779164
+#Iteration 49, interactions 7562, total energy 9241.211244329812
+#Iteration 49, interactions 8745, total energy 8977.242519656695
+#Iteration 49, interactions 9224, total energy 8609.865780776612
+#Iteration 49, interactions 8461, total energy 9000.596346232302
+Validation failed
+Kinetic Energy = 9608.798929256584  7397.392307839352 diff:2211.4066214172317  1
+########################################## time: 3.488994681
+##################################################
+main run 4/5
+#Iteration 9, interactions 5909, total energy 9068.473222442995
+#Iteration 9, interactions 9183, total energy 8614.233044082182
+#Iteration 9, interactions 9250, total energy 8388.211379656666
+#Iteration 9, interactions 8220, total energy 8707.861411613469
+#Iteration 9, interactions 6980, total energy 8810.435647315127
+#Iteration 9, interactions 8663, total energy 8954.474855071338
+#Iteration 9, interactions 7019, total energy 9076.587453150507
+#Iteration 9, interactions 9734, total energy 8587.82440905998
+#Iteration 9, interactions 12071, total energy 8303.100140431656
+#Iteration 9, interactions 10244, total energy 8329.029201756812
+#Iteration 9, interactions 6384, total energy 8795.199695438005
+#Iteration 9, interactions 6702, total energy 8817.962543544472
+#Iteration 9, interactions 9673, total energy 8610.384837893707
+#Iteration 9, interactions 8814, total energy 8508.241843659574
+#Iteration 9, interactions 9491, total energy 8276.180035286317
+#Iteration 9, interactions 10112, total energy 8352.580840953802#Iteration 9, interactions 11263, total energy 8650.464289682406
+
+#Iteration 9, interactions 8210, total energy 8850.15786668703
+#Iteration 9, interactions 7734, total energy 8788.504125880434
+#Iteration 9, interactions 9838, total energy 8529.368969184847
+#Iteration 9, interactions 9440, total energy 8529.179256033307
+#Iteration 9, interactions 11788, total energy 8379.734676395376
+#Iteration 9, interactions 9236, total energy 8663.379109204685
+#Iteration 9, interactions 9178, total energy 8560.42512132773
+#Iteration 9, interactions 10853, total energy 8567.94621439126
+#Iteration 9, interactions 8126, total energy 8617.132543731292
+#Iteration 9, interactions 10770, total energy 8276.885591394253
+#Iteration 9, interactions 9335, total energy 8488.612132479764
+#Iteration 9, interactions 7349, total energy 8705.191551829234
+#Iteration 9, interactions 8557, total energy 8542.06240492047
+#Iteration 9, interactions 15918, total energy 7651.545510434257
+#Iteration 9, interactions 9275, total energy 8772.619126525893
+#Iteration 9, interactions 6573, total energy 8788.166203548939
+#Iteration 9, interactions 10325, total energy 8423.164012740237
+#Iteration 9, interactions 9220, total energy 8224.145827487515
+#Iteration 9, interactions 9766, total energy 8603.598352087558
+#Iteration 9, interactions 8394, total energy 8744.733955872223
+#Iteration 9, interactions 6252, total energy 8872.91884171726
+#Iteration 9, interactions 11135, total energy 8228.589207929079
+#Iteration 9, interactions 11063, total energy 8393.557897950799
+#Iteration 9, interactions 11086, total energy 8680.995211854786
+#Iteration 9, interactions 12730, total energy 8239.531471983059
+#Iteration 9, interactions 9564, total energy 8221.431763378974
+#Iteration 9, interactions 7813, total energy 8790.900319680612
+#Iteration 9, interactions 9672, total energy 8312.529272842356
+#Iteration 9, interactions 9908, total energy 8343.484419250603
+#Iteration 9, interactions 7459, total energy 8812.427967365236
+#Iteration 9, interactions 10227, total energy 7935.727419484888
+#Iteration 9, interactions 8461, total energy 8634.221397750975
+#Iteration 9, interactions 7668, total energy 8609.719983706851#Iteration 9, interactions 6308, total energy 9185.080648218755
+
+#Iteration 9, interactions 9486, total energy 8440.407662753738
+#Iteration 9, interactions 8147, total energy 8254.625490908353
+#Iteration 9, interactions 6059, total energy 9186.764301555648
+#Iteration 9, interactions 10687, total energy 8295.574939186543
+#Iteration 9, interactions 7766, total energy 8964.012839029036
+#Iteration 9, interactions 10949, total energy 8247.741272678753
+#Iteration 9, interactions 8976, total energy 8560.424845744019
+#Iteration 9, interactions 9913, total energy 8562.35022301269
+#Iteration 9, interactions 12172, total energy 8448.764963501417
+#Iteration 9, interactions 9086, total energy 8367.09564099841
+#Iteration 9, interactions 8745, total energy 8684.653630648532
+#Iteration 9, interactions 7562, total energy 8966.680595562293
+#Iteration 19, interactions 5909, total energy 9093.232142973871
+#Iteration 19, interactions 9734, total energy 8637.979396315382
+#Iteration 19, interactions 9183, total energy 8652.423369338167
+#Iteration 19, interactions 8220, total energy 8746.42803823414
+#Iteration 19, interactions 8663, total energy 8980.486966799072
+#Iteration 19, interactions 8814, total energy 8572.567350868376
+#Iteration 19, interactions 6980, total energy 8839.110693900413
+#Iteration 19, interactions 10244, total energy 8385.305829579289
+#Iteration 19, interactions 9250, total energy 8432.415326932482
+#Iteration 19, interactions 9673, total energy 8647.007453352771
+#Iteration 19, interactions 7019, total energy 9094.29818947911
+#Iteration 19, interactions 6702, total energy 8855.759299892377
+#Iteration 19, interactions 12071, total energy 8355.78385531143
+#Iteration 19, interactions 6384, total energy 8835.567891722196
+#Iteration 19, interactions 11263, total energy 8687.690418484484
+#Iteration 9, interactions 9640, total energy 8608.752649144279
+#Iteration 19, interactions 8210, total energy 8878.468199093164
+#Iteration 19, interactions 10112, total energy 8397.283227530292#Iteration 19, interactions 7734, total energy 8813.48465913831#Iteration 19, interactions 9491, total energy 8319.347567269982
+
+
+#Iteration 19, interactions 9440, total energy 8577.3850976763
+#Iteration 19, interactions 9838, total energy 8559.025248590011
+#Iteration 19, interactions 11788, total energy 8436.89960788651
+#Iteration 19, interactions 9236, total energy 8709.792713802679
+#Iteration 19, interactions 9178, total energy 8604.221757352852
+#Iteration 19, interactions 8126, total energy 8645.44243676307
+#Iteration 19, interactions 10853, total energy 8609.119042810897
+#Iteration 19, interactions 10770, total energy 8337.584308775076
+#Iteration 19, interactions 7349, total energy 8748.070111933264
+#Iteration 19, interactions 6252, total energy 8897.692267239889
+#Iteration 19, interactions 8557, total energy 8574.362767138618
+#Iteration 19, interactions 9275, total energy 8814.125155503356
+#Iteration 19, interactions 15918, total energy 7719.83515858679
+#Iteration 19, interactions 9335, total energy 8534.182049135024
+#Iteration 19, interactions 9220, total energy 8265.262968509847
+#Iteration 19, interactions 10325, total energy 8474.571713393489#Iteration 19, interactions 11063, total energy 8433.064971509746
+
+#Iteration 19, interactions 7813, total energy 8831.289990718164#Iteration 19, interactions 11086, total energy 8726.093378901604#Iteration 19, interactions 8394, total energy 8786.611247430934
+
+
+#Iteration 19, interactions 7668, total energy 8648.923550788048
+#Iteration 19, interactions 6573, total energy 8827.068018392802
+#Iteration 19, interactions 9564, total energy 8257.419602069502
+#Iteration 19, interactions 11135, total energy 8281.310250244855
+#Iteration 19, interactions 7459, total energy 8846.74033978571
+#Iteration 19, interactions 9672, total energy 8353.074366948675
+#Iteration 19, interactions 12730, total energy 8281.257268522588
+#Iteration 19, interactions 9766, total energy 8634.118475703042
+#Iteration 19, interactions 10227, total energy 8002.083683092357
+#Iteration 19, interactions 9908, total energy 8380.357534744122
+#Iteration 19, interactions 9486, total energy 8484.13620485801
+#Iteration 19, interactions 6059, total energy 9201.131039013455
+#Iteration 19, interactions 6308, total energy 9201.695730669668
+#Iteration 19, interactions 8147, total energy 8301.982226357013
+#Iteration 19, interactions 10687, total energy 8351.31590293467
+#Iteration 19, interactions 8461, total energy 8679.850092307639
+#Iteration 19, interactions 7766, total energy 8993.915399546075
+#Iteration 19, interactions 8976, total energy 8613.458950717537
+#Iteration 19, interactions 10949, total energy 8314.409724146677
+#Iteration 19, interactions 12172, total energy 8490.487216401983#Iteration 19, interactions 9086, total energy 8407.609395624333
+
+#Iteration 19, interactions 9913, total energy 8609.11048859135
+#Iteration 29, interactions 5909, total energy 9135.56034471073
+#Iteration 19, interactions 8745, total energy 8719.273652308078#Iteration 19, interactions 7562, total energy 9004.935020492003
+
+#Iteration 29, interactions 9734, total energy 8725.728602905534
+#Iteration 29, interactions 8663, total energy 9024.19623572141
+#Iteration 29, interactions 9183, total energy 8720.804486354511
+#Iteration 29, interactions 8814, total energy 8685.566412744773
+#Iteration 29, interactions 8220, total energy 8811.078865907011
+#Iteration 29, interactions 10244, total energy 8476.397936286183
+#Iteration 29, interactions 9673, total energy 8713.382964725879
+#Iteration 29, interactions 6980, total energy 8886.842736494345
+#Iteration 29, interactions 6702, total energy 8922.052184931592
+#Iteration 29, interactions 7019, total energy 9122.618656694853
+#Iteration 29, interactions 11263, total energy 8746.54630425457
+#Iteration 29, interactions 8210, total energy 8925.718027475308
+#Iteration 29, interactions 12071, total energy 8447.95906085446
+#Iteration 29, interactions 9250, total energy 8506.810903377627
+#Iteration 29, interactions 6384, total energy 8900.395401971107
+#Iteration 29, interactions 9440, total energy 8662.305708127738
+#Iteration 19, interactions 9223, total energy 8609.854667347561
+#Iteration 29, interactions 7734, total energy 8859.043019122024
+#Iteration 29, interactions 9236, total energy 8788.003153193158
+#Iteration 29, interactions 9491, total energy 8394.135218075095
+#Iteration 29, interactions 11788, total energy 8531.166318842617
+#Iteration 29, interactions 10112, total energy 8470.388443552893
+#Iteration 29, interactions 9838, total energy 8612.094058002012
+#Iteration 29, interactions 8126, total energy 8693.230169903814
+#Iteration 29, interactions 9178, total energy 8675.96518272508
+#Iteration 29, interactions 7349, total energy 8816.663636036335
+#Iteration 29, interactions 6252, total energy 8938.619867894027
+#Iteration 29, interactions 10853, total energy 8675.464548760632
+#Iteration 29, interactions 10770, total energy 8446.333657025756
+#Iteration 29, interactions 9220, total energy 8335.51842003187
+#Iteration 29, interactions 9275, total energy 8883.987237406314
+#Iteration 29, interactions 7668, total energy 8707.53726546292
+#Iteration 29, interactions 15918, total energy 7831.820820036905
+#Iteration 29, interactions 8557, total energy 8630.77845306761
+#Iteration 29, interactions 11063, total energy 8499.335572058946
+#Iteration 29, interactions 9335, total energy 8612.383980123534
+#Iteration 29, interactions 7813, total energy 8901.209456201655
+#Iteration 29, interactions 7459, total energy 8907.100774194421
+#Iteration 29, interactions 10227, total energy 8118.583312629858
+#Iteration 29, interactions 9564, total energy 8319.046062747899
+#Iteration 29, interactions 11086, total energy 8799.975852445477#Iteration 29, interactions 6059, total energy 9227.934128666368
+
+#Iteration 29, interactions 10325, total energy 8561.280983709581
+#Iteration 29, interactions 9486, total energy 8557.707188656163
+#Iteration 29, interactions 9672, total energy 8418.215008511066
+#Iteration 29, interactions 8394, total energy 8859.23021875002
+#Iteration 29, interactions 9908, total energy 8447.600572041014
+#Iteration 29, interactions 6573, total energy 8893.263144908444
+#Iteration 29, interactions 11135, total energy 8372.58883301395
+#Iteration 29, interactions 8147, total energy 8376.91904471227
+#Iteration 29, interactions 12730, total energy 8351.095497921735
+#Iteration 29, interactions 6308, total energy 9229.08905653705
+#Iteration 29, interactions 9766, total energy 8692.935894958338
+#Iteration 29, interactions 10687, total energy 8439.631352544588
+#Iteration 29, interactions 8976, total energy 8695.281043382925
+#Iteration 29, interactions 7766, total energy 9044.145560719602
+#Iteration 29, interactions 8461, total energy 8756.122148573413#Iteration 29, interactions 9086, total energy 8476.281220633095
+
+#Iteration 29, interactions 12172, total energy 8566.882102435815
+#Iteration 39, interactions 5909, total energy 9195.457827653556
+#Iteration 29, interactions 10949, total energy 8426.59664815272
+#Iteration 39, interactions 9734, total energy 8851.072028830427
+#Iteration 29, interactions 9913, total energy 8687.944449165036
+#Iteration 29, interactions 7562, total energy 9063.441603596495
+#Iteration 29, interactions 8745, total energy 8779.57847436262#Iteration 39, interactions 8814, total energy 8847.239029288763
+
+#Iteration 39, interactions 8663, total energy 9085.602661838342
+#Iteration 39, interactions 9183, total energy 8819.376395131203
+#Iteration 39, interactions 10244, total energy 8602.305521877492
+#Iteration 39, interactions 8220, total energy 8901.813894632085
+#Iteration 39, interactions 9673, total energy 8809.511372013038
+#Iteration 39, interactions 6702, total energy 9016.841198662114
+#Iteration 39, interactions 6980, total energy 8953.63177509693
+#Iteration 39, interactions 11263, total energy 8827.031946992653
+#Iteration 39, interactions 8210, total energy 8991.907351833463
+#Iteration 39, interactions 7019, total energy 9161.54885479776
+#Iteration 39, interactions 9440, total energy 8783.941087387628
+#Iteration 39, interactions 7734, total energy 8925.179205831568
+#Iteration 39, interactions 6384, total energy 8989.68222618473
+#Iteration 39, interactions 12071, total energy 8579.625757060749
+#Iteration 29, interactions 9183, total energy 8610.130165599347
+#Iteration 39, interactions 9236, total energy 8898.010427376135
+#Iteration 39, interactions 11788, total energy 8662.534809263709
+#Iteration 39, interactions 9250, total energy 8611.398108992113
+#Iteration 39, interactions 9491, total energy 8500.542987701654
+#Iteration 39, interactions 8126, total energy 8760.495743153519
+#Iteration 39, interactions 6252, total energy 8995.701643679668
+#Iteration 39, interactions 10112, total energy 8571.89648902161
+#Iteration 39, interactions 9838, total energy 8688.575397420851
+#Iteration 39, interactions 7349, total energy 8910.97212413844
+#Iteration 39, interactions 7668, total energy 8785.561127731467
+#Iteration 39, interactions 9178, total energy 8775.655397444405
+#Iteration 39, interactions 10853, total energy 8766.982732240464
+#Iteration 39, interactions 9220, total energy 8434.912182053582
+#Iteration 39, interactions 10770, total energy 8603.133636146282
+#Iteration 39, interactions 9275, total energy 8982.205372234748
+#Iteration 39, interactions 15918, total energy 7987.50249478461
+#Iteration 39, interactions 6059, total energy 9267.17357051439
+#Iteration 39, interactions 10227, total energy 8285.226308097399
+#Iteration 39, interactions 11063, total energy 8592.36969959841
+#Iteration 39, interactions 7459, total energy 8993.509270591365
+#Iteration 39, interactions 9486, total energy 8661.120614148209
+#Iteration 39, interactions 8557, total energy 8711.309462707448
+#Iteration 39, interactions 7813, total energy 9000.658716131087
+#Iteration 39, interactions 9564, total energy 8406.311145414174
+#Iteration 39, interactions 11086, total energy 8902.642632486422
+#Iteration 39, interactions 9672, total energy 8507.95119752953
+#Iteration 39, interactions 9908, total energy 8545.213531141268
+#Iteration 39, interactions 9335, total energy 8723.217925445304#Iteration 39, interactions 10325, total energy 8683.29182368851
+
+#Iteration 39, interactions 8147, total energy 8479.435945974137
+#Iteration 39, interactions 8394, total energy 8962.590869829488
+#Iteration 39, interactions 6308, total energy 9267.260625820898
+#Iteration 39, interactions 6573, total energy 8986.75158309587
+#Iteration 39, interactions 11135, total energy 8502.42495623636
+#Iteration 39, interactions 12730, total energy 8449.04616018049
+#Iteration 39, interactions 10687, total energy 8560.521288016289
+#Iteration 39, interactions 9766, total energy 8780.050609853459
+#Iteration 39, interactions 8976, total energy 8805.89112374018
+#Iteration 39, interactions 7766, total energy 9114.70332254961
+#Iteration 49, interactions 5909, total energy 9272.924591802355#Iteration 39, interactions 9086, total energy 8573.111116024691
+
+#Iteration 39, interactions 12172, total energy 8677.949621602898
+#Iteration 39, interactions 8461, total energy 8863.0375665483
+#Iteration 39, interactions 9913, total energy 8798.852104733745#Iteration 49, interactions 8814, total energy 9057.585200500356
+
+#Iteration 39, interactions 10949, total energy 8584.302044696886
+#Iteration 49, interactions 8663, total energy 9164.706245149879
+#Iteration 39, interactions 7562, total energy 9142.200344875762
+#Iteration 49, interactions 9673, total energy 8935.392675214245
+#Iteration 39, interactions 8745, total energy 8865.568096812156
+#Iteration 49, interactions 8220, total energy 9018.633124409362
+#Iteration 49, interactions 10244, total energy 8763.028586353215#Iteration 49, interactions 9183, total energy 8948.139095668259
+
+#Iteration 49, interactions 6702, total energy 9140.126341083947
+#Iteration 49, interactions 8210, total energy 9077.036172167616
+#Iteration 49, interactions 11263, total energy 8929.147346698752
+#Iteration 49, interactions 9440, total energy 8942.29123545596
+#Iteration 49, interactions 6980, total energy 9039.477809708153
+#Iteration 49, interactions 7734, total energy 9011.893219266945
+#Iteration 49, interactions 9734, total energy 9014.009674090072
+#Iteration 49, interactions 7019, total energy 9211.088783787807
+#Iteration 49, interactions 9236, total energy 9039.814536351601
+#Iteration 49, interactions 6252, total energy 9068.937594596815
+#Iteration 49, interactions 11788, total energy 8831.005079149774
+#Iteration 49, interactions 8126, total energy 8847.23915651219
+#Iteration 49, interactions 7668, total energy 8882.99513759369
+#Iteration 49, interactions 6384, total energy 9103.42836436307
+#Iteration 49, interactions 12071, total energy 8750.78394393028
+#Iteration 39, interactions 9183, total energy 8609.917491570208
+#Iteration 49, interactions 7349, total energy 9030.995576239575
+#Iteration 49, interactions 9491, total energy 8638.57087614966
+#Iteration 49, interactions 9250, total energy 8746.176943775936
+#Iteration 49, interactions 9838, total energy 8788.469266846527
+#Iteration 49, interactions 10112, total energy 8701.807363936437
+#Iteration 49, interactions 9220, total energy 8563.444254574992
+#Iteration 49, interactions 9178, total energy 8903.292401510831
+#Iteration 49, interactions 6059, total energy 9318.849364557514
+#Iteration 49, interactions 9275, total energy 9108.779559988669
+#Iteration 49, interactions 10853, total energy 8883.673593250394
+#Iteration 49, interactions 10770, total energy 8807.984246136659
+#Iteration 49, interactions 10227, total energy 8502.012669494978
+#Iteration 49, interactions 7459, total energy 9105.96582897655
+#Iteration 49, interactions 9486, total energy 8794.376481334146
+#Iteration 49, interactions 11063, total energy 8712.167354128134
+#Iteration 49, interactions 15918, total energy 8186.880182829896
+#Iteration 49, interactions 7813, total energy 9129.637770506448
+#Iteration 49, interactions 9564, total energy 8519.214850068318
+#Iteration 49, interactions 9672, total energy 8622.282934004064
+#Iteration 49, interactions 11086, total energy 9034.09371902443
+#Iteration 49, interactions 8557, total energy 8815.955796058133
+#Iteration 49, interactions 9908, total energy 8673.19641204489
+#Iteration 49, interactions 8147, total energy 8609.532930142608
+#Iteration 49, interactions 6308, total energy 9316.210438521217
+#Iteration 49, interactions 10325, total energy 8840.604233330281
+#Iteration 49, interactions 8394, total energy 9096.693200669324
+#Iteration 49, interactions 9335, total energy 8866.683885100323
+#Iteration 49, interactions 10687, total energy 8713.985709349774
+#Iteration 49, interactions 8976, total energy 8945.289191789296#Iteration 49, interactions 6573, total energy 9107.53333295507
+
+#Iteration 49, interactions 9086, total energy 8698.099081799124
+#Iteration 49, interactions 7766, total energy 9205.588685036111
+#Iteration 49, interactions 12730, total energy 8575.109255298865#Iteration 49, interactions 11135, total energy 8670.818619912088
+
+#Iteration 49, interactions 12172, total energy 8823.689773903236
+#Iteration 49, interactions 9766, total energy 8895.462620388402
+#Iteration 49, interactions 8461, total energy 9000.596346232302
+#Iteration 49, interactions 10949, total energy 8787.525913779164
+#Iteration 49, interactions 8745, total energy 8977.242519656695
+#Iteration 49, interactions 7562, total energy 9241.211244329816
+#Iteration 49, interactions 9913, total energy 8941.833455297467
+#Iteration 49, interactions 9224, total energy 8609.86578077661
+Validation failed
+Kinetic Energy = 9608.798929256582  7397.392307839352 diff:2211.40662141723  1
+########################################## time: 3.589001031
+##################################################
+main run 5/5
+#Iteration 9, interactions 5909, total energy 9068.473222442995
+#Iteration 9, interactions 10853, total energy 8567.94621439126
+#Iteration 9, interactions 9183, total energy 8614.233044082182
+#Iteration 9, interactions 9250, total energy 8388.211379656666
+#Iteration 9, interactions 6980, total energy 8810.435647315127
+#Iteration 9, interactions 8220, total energy 8707.861411613469
+#Iteration 9, interactions 7019, total energy 9076.587453150507
+#Iteration 9, interactions 9734, total energy 8587.82440905998
+#Iteration 9, interactions 8663, total energy 8954.474855071338
+#Iteration 9, interactions 6702, total energy 8817.962543544472
+#Iteration 9, interactions 12071, total energy 8303.100140431656
+#Iteration 9, interactions 6384, total energy 8795.199695438005
+#Iteration 9, interactions 10244, total energy 8329.029201756812
+#Iteration 9, interactions 9673, total energy 8610.384837893707
+#Iteration 9, interactions 9491, total energy 8276.180035286317
+#Iteration 9, interactions 10112, total energy 8352.580840953802#Iteration 9, interactions 8814, total energy 8508.241843659574
+
+#Iteration 9, interactions 11263, total energy 8650.464289682406
+#Iteration 9, interactions 8210, total energy 8850.15786668703
+#Iteration 9, interactions 7766, total energy 8964.012839029036#Iteration 9, interactions 9838, total energy 8529.368969184847
+
+#Iteration 9, interactions 9564, total energy 8221.431763378974
+#Iteration 9, interactions 7734, total energy 8788.504125880434
+#Iteration 9, interactions 9440, total energy 8529.179256033307
+#Iteration 9, interactions 11788, total energy 8379.734676395376
+#Iteration 9, interactions 9236, total energy 8663.379109204685
+#Iteration 9, interactions 9178, total energy 8560.42512132773
+#Iteration 9, interactions 10770, total energy 8276.885591394253
+#Iteration 9, interactions 9335, total energy 8488.612132479764
+#Iteration 9, interactions 8557, total energy 8542.06240492047
+#Iteration 9, interactions 7349, total energy 8705.191551829234
+#Iteration 9, interactions 15918, total energy 7651.545510434257
+#Iteration 9, interactions 9766, total energy 8603.598352087558
+#Iteration 9, interactions 9275, total energy 8772.619126525893
+#Iteration 9, interactions 6573, total energy 8788.166203548939
+#Iteration 9, interactions 10325, total energy 8423.164012740237
+#Iteration 9, interactions 9220, total energy 8224.145827487515
+#Iteration 9, interactions 8394, total energy 8744.733955872223
+#Iteration 9, interactions 6252, total energy 8872.91884171726
+#Iteration 9, interactions 11135, total energy 8228.589207929079
+#Iteration 9, interactions 12730, total energy 8239.531471983059
+#Iteration 9, interactions 11063, total energy 8393.557897950799
+#Iteration 9, interactions 11086, total energy 8680.995211854786
+#Iteration 9, interactions 9672, total energy 8312.529272842356
+#Iteration 9, interactions 7813, total energy 8790.900319680612
+#Iteration 9, interactions 10227, total energy 7935.727419484888
+#Iteration 9, interactions 9908, total energy 8343.484419250603
+#Iteration 9, interactions 7459, total energy 8812.427967365236
+#Iteration 9, interactions 9486, total energy 8440.407662753738
+#Iteration 9, interactions 6308, total energy 9185.080648218755
+#Iteration 9, interactions 7668, total energy 8609.719983706851
+#Iteration 9, interactions 8461, total energy 8634.221397750975
+#Iteration 9, interactions 8147, total energy 8254.625490908353
+#Iteration 9, interactions 6059, total energy 9186.764301555648
+#Iteration 9, interactions 8126, total energy 8617.132543731292
+#Iteration 9, interactions 10687, total energy 8295.574939186543
+#Iteration 9, interactions 10949, total energy 8247.741272678753
+#Iteration 9, interactions 8976, total energy 8560.424845744019
+#Iteration 9, interactions 9913, total energy 8562.35022301269
+#Iteration 9, interactions 9086, total energy 8367.09564099841
+#Iteration 9, interactions 12172, total energy 8448.764963501417
+#Iteration 19, interactions 5909, total energy 9093.232142973871#Iteration 9, interactions 9640, total energy 8608.752649144279
+
+#Iteration 9, interactions 8745, total energy 8684.653630648532
+#Iteration 9, interactions 7562, total energy 8966.680595562293
+#Iteration 19, interactions 9734, total energy 8637.979396315384
+#Iteration 19, interactions 9183, total energy 8652.423369338172
+#Iteration 19, interactions 8220, total energy 8746.42803823414
+#Iteration 19, interactions 10853, total energy 8609.119042810895
+#Iteration 19, interactions 6980, total energy 8839.110693900413
+#Iteration 19, interactions 10244, total energy 8385.305829579287#Iteration 19, interactions 6702, total energy 8855.759299892383
+
+#Iteration 19, interactions 9673, total energy 8647.00745335277
+#Iteration 19, interactions 9250, total energy 8432.415326932482
+#Iteration 19, interactions 8814, total energy 8572.567350868374
+#Iteration 19, interactions 7019, total energy 9094.298189479106
+#Iteration 19, interactions 11263, total energy 8687.690418484486
+#Iteration 19, interactions 12071, total energy 8355.783855311434
+#Iteration 19, interactions 6384, total energy 8835.5678917222
+#Iteration 19, interactions 10112, total energy 8397.283227530297
+#Iteration 19, interactions 8210, total energy 8878.468199093164
+#Iteration 19, interactions 9491, total energy 8319.347567269982
+#Iteration 19, interactions 7766, total energy 8993.915399546071
+#Iteration 19, interactions 7734, total energy 8813.48465913831
+#Iteration 19, interactions 9564, total energy 8257.419602069502
+#Iteration 19, interactions 9440, total energy 8577.385097676304
+#Iteration 19, interactions 11788, total energy 8436.89960788651
+#Iteration 19, interactions 9838, total energy 8559.025248590015
+#Iteration 19, interactions 9236, total energy 8709.792713802677
+#Iteration 19, interactions 10770, total energy 8337.584308775076
+#Iteration 19, interactions 9178, total energy 8604.221757352852
+#Iteration 19, interactions 8663, total energy 8980.486966799075
+#Iteration 19, interactions 7349, total energy 8748.070111933264
+#Iteration 19, interactions 15918, total energy 7719.835158586785
+#Iteration 19, interactions 9275, total energy 8814.125155503356
+#Iteration 19, interactions 8557, total energy 8574.362767138622
+#Iteration 19, interactions 6252, total energy 8897.692267239889
+#Iteration 19, interactions 9335, total energy 8534.182049135023
+#Iteration 19, interactions 9766, total energy 8634.11847570304
+#Iteration 19, interactions 9220, total energy 8265.262968509847
+#Iteration 19, interactions 6573, total energy 8827.0680183928
+#Iteration 19, interactions 10325, total energy 8474.57171339349
+#Iteration 19, interactions 8394, total energy 8786.611247430934
+#Iteration 19, interactions 11063, total energy 8433.064971509744
+#Iteration 19, interactions 9672, total energy 8353.074366948673
+#Iteration 19, interactions 11086, total energy 8726.093378901602
+#Iteration 19, interactions 7668, total energy 8648.923550788048
+#Iteration 19, interactions 11135, total energy 8281.31025024485
+#Iteration 19, interactions 10227, total energy 8002.083683092359
+#Iteration 19, interactions 7813, total energy 8831.289990718165
+#Iteration 19, interactions 12730, total energy 8281.25726852259
+#Iteration 19, interactions 9908, total energy 8380.357534744126
+#Iteration 19, interactions 7459, total energy 8846.74033978571
+#Iteration 19, interactions 9486, total energy 8484.136204858014
+#Iteration 19, interactions 6308, total energy 9201.695730669668
+#Iteration 19, interactions 6059, total energy 9201.131039013457
+#Iteration 19, interactions 8147, total energy 8301.982226357011
+#Iteration 19, interactions 8126, total energy 8645.44243676307
+#Iteration 19, interactions 10687, total energy 8351.315902934672
+#Iteration 19, interactions 8461, total energy 8679.850092307639
+#Iteration 19, interactions 8976, total energy 8613.458950717537
+#Iteration 19, interactions 9086, total energy 8407.609395624333
+#Iteration 29, interactions 5909, total energy 9135.56034471073
+#Iteration 19, interactions 12172, total energy 8490.487216401989
+#Iteration 19, interactions 10949, total energy 8314.409724146677
+#Iteration 19, interactions 9913, total energy 8609.11048859135
+#Iteration 29, interactions 9734, total energy 8725.728602905532
+#Iteration 19, interactions 9223, total energy 8609.854667347558
+#Iteration 19, interactions 8745, total energy 8719.273652308082
+#Iteration 19, interactions 7562, total energy 9004.935020491996
+#Iteration 29, interactions 9183, total energy 8720.804486354511
+#Iteration 29, interactions 8220, total energy 8811.078865907013
+#Iteration 29, interactions 9673, total energy 8713.382964725879
+#Iteration 29, interactions 8814, total energy 8685.56641274477
+#Iteration 29, interactions 10244, total energy 8476.397936286181
+#Iteration 29, interactions 6702, total energy 8922.052184931594
+#Iteration 29, interactions 10853, total energy 8675.464548760632
+#Iteration 29, interactions 6980, total energy 8886.842736494347
+#Iteration 29, interactions 11263, total energy 8746.546304254565
+#Iteration 29, interactions 9250, total energy 8506.81090337763
+#Iteration 29, interactions 7019, total energy 9122.618656694853
+#Iteration 29, interactions 6384, total energy 8900.395401971107
+#Iteration 29, interactions 8210, total energy 8925.718027475308
+#Iteration 29, interactions 7766, total energy 9044.1455607196
+#Iteration 29, interactions 12071, total energy 8447.95906085446
+#Iteration 29, interactions 10112, total energy 8470.3884435529
+#Iteration 29, interactions 9491, total energy 8394.135218075098
+#Iteration 29, interactions 11788, total energy 8531.16631884262
+#Iteration 29, interactions 9564, total energy 8319.046062747902
+#Iteration 29, interactions 9440, total energy 8662.30570812774
+#Iteration 29, interactions 9236, total energy 8788.003153193158
+#Iteration 29, interactions 7734, total energy 8859.043019122022
+#Iteration 29, interactions 9838, total energy 8612.094058002014
+#Iteration 29, interactions 10770, total energy 8446.333657025756
+#Iteration 29, interactions 9178, total energy 8675.965182725076
+#Iteration 29, interactions 8663, total energy 9024.19623572141#Iteration 29, interactions 7349, total energy 8816.663636036334
+
+#Iteration 29, interactions 6252, total energy 8938.619867894029
+#Iteration 29, interactions 9275, total energy 8883.987237406312
+#Iteration 29, interactions 15918, total energy 7831.820820036905
+#Iteration 29, interactions 9220, total energy 8335.518420031874
+#Iteration 29, interactions 7668, total energy 8707.53726546292
+#Iteration 29, interactions 8557, total energy 8630.77845306761
+#Iteration 29, interactions 9766, total energy 8692.93589495834
+#Iteration 29, interactions 6573, total energy 8893.26314490844
+#Iteration 29, interactions 10227, total energy 8118.583312629858
+#Iteration 29, interactions 9335, total energy 8612.383980123534#Iteration 29, interactions 9672, total energy 8418.215008511064
+
+#Iteration 29, interactions 11063, total energy 8499.33557205895
+#Iteration 29, interactions 10325, total energy 8561.280983709581
+#Iteration 29, interactions 11086, total energy 8799.97585244548
+#Iteration 29, interactions 7813, total energy 8901.209456201657
+#Iteration 29, interactions 9486, total energy 8557.707188656164
+#Iteration 29, interactions 9908, total energy 8447.60057204101
+#Iteration 29, interactions 7459, total energy 8907.10077419442
+#Iteration 29, interactions 6059, total energy 9227.934128666368
+#Iteration 29, interactions 8394, total energy 8859.230218750017
+#Iteration 29, interactions 11135, total energy 8372.588833013944
+#Iteration 29, interactions 6308, total energy 9229.089056537048
+#Iteration 29, interactions 12730, total energy 8351.095497921735
+#Iteration 29, interactions 8147, total energy 8376.919044712271
+#Iteration 29, interactions 8126, total energy 8693.230169903814
+#Iteration 29, interactions 10687, total energy 8439.631352544588
+#Iteration 39, interactions 5909, total energy 9195.457827653556
+#Iteration 39, interactions 9734, total energy 8851.072028830427#Iteration 29, interactions 8976, total energy 8695.281043382925
+
+#Iteration 29, interactions 9086, total energy 8476.281220633095
+#Iteration 29, interactions 8461, total energy 8756.122148573413
+#Iteration 29, interactions 12172, total energy 8566.882102435817
+#Iteration 29, interactions 10949, total energy 8426.596648152721
+#Iteration 29, interactions 9913, total energy 8687.944449165036
+#Iteration 39, interactions 9183, total energy 8819.376395131205
+#Iteration 29, interactions 9183, total energy 8610.130165599347
+#Iteration 39, interactions 8814, total energy 8847.239029288765
+#Iteration 29, interactions 8745, total energy 8779.57847436262
+#Iteration 29, interactions 7562, total energy 9063.441603596486
+#Iteration 39, interactions 10244, total energy 8602.305521877488
+#Iteration 39, interactions 9673, total energy 8809.511372013036
+#Iteration 39, interactions 8220, total energy 8901.813894632085
+#Iteration 39, interactions 6702, total energy 9016.841198662116
+#Iteration 39, interactions 11263, total energy 8827.031946992654
+#Iteration 39, interactions 10853, total energy 8766.982732240462
+#Iteration 39, interactions 6980, total energy 8953.63177509693
+#Iteration 39, interactions 7766, total energy 9114.703322549609
+#Iteration 39, interactions 8210, total energy 8991.907351833459
+#Iteration 39, interactions 7019, total energy 9161.548854797757
+#Iteration 39, interactions 9250, total energy 8611.398108992114#Iteration 39, interactions 6384, total energy 8989.68222618473
+
+#Iteration 39, interactions 11788, total energy 8662.534809263707
+#Iteration 39, interactions 9236, total energy 8898.010427376132
+#Iteration 39, interactions 9440, total energy 8783.941087387628
+#Iteration 39, interactions 9564, total energy 8406.311145414176
+#Iteration 39, interactions 10112, total energy 8571.896489021616
+#Iteration 39, interactions 12071, total energy 8579.625757060752
+#Iteration 39, interactions 7734, total energy 8925.179205831566
+#Iteration 39, interactions 9491, total energy 8500.542987701658
+#Iteration 39, interactions 9838, total energy 8688.57539742085#Iteration 39, interactions 10770, total energy 8603.133636146282
+
+#Iteration 39, interactions 7349, total energy 8910.972124138438
+#Iteration 39, interactions 6252, total energy 8995.701643679668
+#Iteration 39, interactions 8663, total energy 9085.602661838344
+#Iteration 39, interactions 9178, total energy 8775.655397444403
+#Iteration 39, interactions 7668, total energy 8785.561127731467
+#Iteration 39, interactions 9275, total energy 8982.205372234748
+#Iteration 39, interactions 15918, total energy 7987.502494784606
+#Iteration 39, interactions 9220, total energy 8434.912182053586
+#Iteration 39, interactions 10227, total energy 8285.226308097399
+#Iteration 39, interactions 9672, total energy 8507.95119752953
+#Iteration 39, interactions 8557, total energy 8711.309462707446
+#Iteration 39, interactions 11063, total energy 8592.369699598414
+#Iteration 39, interactions 6059, total energy 9267.17357051439
+#Iteration 39, interactions 9486, total energy 8661.120614148213
+#Iteration 39, interactions 9766, total energy 8780.05060985346
+#Iteration 39, interactions 7459, total energy 8993.509270591365
+#Iteration 39, interactions 9908, total energy 8545.213531141271
+#Iteration 39, interactions 6573, total energy 8986.751583095865
+#Iteration 39, interactions 11086, total energy 8902.642632486424#Iteration 39, interactions 7813, total energy 9000.658716131087
+
+#Iteration 39, interactions 10325, total energy 8683.29182368851
+#Iteration 39, interactions 6308, total energy 9267.260625820898
+#Iteration 39, interactions 9335, total energy 8723.217925445302
+#Iteration 39, interactions 8394, total energy 8962.590869829484#Iteration 39, interactions 8147, total energy 8479.435945974137
+
+#Iteration 39, interactions 11135, total energy 8502.424956236351
+#Iteration 49, interactions 9734, total energy 9014.009674090072
+#Iteration 39, interactions 12730, total energy 8449.046160180491
+#Iteration 39, interactions 8126, total energy 8760.495743153519
+#Iteration 49, interactions 5909, total energy 9272.924591802357
+#Iteration 39, interactions 10687, total energy 8560.521288016287
+#Iteration 39, interactions 8976, total energy 8805.89112374018
+#Iteration 39, interactions 9086, total energy 8573.111116024691
+#Iteration 39, interactions 12172, total energy 8677.9496216029
+#Iteration 39, interactions 8461, total energy 8863.0375665483
+#Iteration 49, interactions 8814, total energy 9057.585200500356
+#Iteration 39, interactions 9913, total energy 8798.852104733745
+#Iteration 49, interactions 9183, total energy 8948.13909566826
+#Iteration 39, interactions 10949, total energy 8584.302044696884
+#Iteration 49, interactions 9673, total energy 8935.392675214249
+#Iteration 49, interactions 10244, total energy 8763.02858635321
+#Iteration 49, interactions 8220, total energy 9018.63312440936
+#Iteration 39, interactions 9183, total energy 8609.917491570206
+#Iteration 39, interactions 8745, total energy 8865.568096812163
+#Iteration 39, interactions 7562, total energy 9142.200344875757
+#Iteration 49, interactions 6702, total energy 9140.126341083951
+#Iteration 49, interactions 11263, total energy 8929.147346698752
+#Iteration 49, interactions 7766, total energy 9205.588685036108
+#Iteration 49, interactions 10853, total energy 8883.673593250394
+#Iteration 49, interactions 6980, total energy 9039.47780970815
+#Iteration 49, interactions 8210, total energy 9077.036172167616
+#Iteration 49, interactions 9236, total energy 9039.814536351601
+#Iteration 49, interactions 9440, total energy 8942.291235455961
+#Iteration 49, interactions 11788, total energy 8831.005079149776
+#Iteration 49, interactions 9564, total energy 8519.21485006832
+#Iteration 49, interactions 7019, total energy 9211.088783787807
+#Iteration 49, interactions 6384, total energy 9103.42836436307
+#Iteration 49, interactions 10112, total energy 8701.807363936443
+#Iteration 49, interactions 9250, total energy 8746.176943775936
+#Iteration 49, interactions 6252, total energy 9068.937594596815
+#Iteration 49, interactions 7734, total energy 9011.893219266945#Iteration 49, interactions 7668, total energy 8882.99513759369
+
+#Iteration 49, interactions 12071, total energy 8750.783943930284
+#Iteration 49, interactions 9491, total energy 8638.57087614966
+#Iteration 49, interactions 10770, total energy 8807.984246136659
+#Iteration 49, interactions 7349, total energy 9030.995576239575
+#Iteration 49, interactions 8663, total energy 9164.70624514988
+#Iteration 49, interactions 9838, total energy 8788.469266846525
+#Iteration 49, interactions 9178, total energy 8903.292401510827
+#Iteration 49, interactions 9275, total energy 9108.779559988667
+#Iteration 49, interactions 9220, total energy 8563.444254574992
+#Iteration 49, interactions 15918, total energy 8186.880182829896
+#Iteration 49, interactions 10227, total energy 8502.012669494974
+#Iteration 49, interactions 6059, total energy 9318.849364557514
+#Iteration 49, interactions 9672, total energy 8622.282934004064
+#Iteration 49, interactions 9486, total energy 8794.376481334146
+#Iteration 49, interactions 11063, total energy 8712.167354128136
+#Iteration 49, interactions 7459, total energy 9105.96582897655
+#Iteration 49, interactions 9908, total energy 8673.19641204489
+#Iteration 49, interactions 6308, total energy 9316.210438521215
+#Iteration 49, interactions 8557, total energy 8815.955796058133
+#Iteration 49, interactions 9766, total energy 8895.462620388402
+#Iteration 49, interactions 7813, total energy 9129.63777050645
+#Iteration 49, interactions 11086, total energy 9034.09371902443
+#Iteration 49, interactions 10325, total energy 8840.604233330281
+#Iteration 49, interactions 8147, total energy 8609.532930142608
+#Iteration 49, interactions 6573, total energy 9107.533332955065
+#Iteration 49, interactions 8126, total energy 8847.239156512198
+#Iteration 49, interactions 8394, total energy 9096.693200669324
+#Iteration 49, interactions 11135, total energy 8670.818619912086
+#Iteration 49, interactions 10687, total energy 8713.985709349774
+#Iteration 49, interactions 9335, total energy 8866.683885100323
+#Iteration 49, interactions 12730, total energy 8575.109255298865
+#Iteration 49, interactions 8976, total energy 8945.289191789296
+#Iteration 49, interactions 9086, total energy 8698.099081799124
+#Iteration 49, interactions 12172, total energy 8823.68977390324
+#Iteration 49, interactions 8461, total energy 9000.596346232302
+#Iteration 49, interactions 9913, total energy 8941.833455297468
+#Iteration 49, interactions 10949, total energy 8787.525913779164
+#Iteration 49, interactions 8745, total energy 8977.242519656698
+#Iteration 49, interactions 9224, total energy 8609.865780776612
+#Iteration 49, interactions 7562, total energy 9241.211244329807
+Validation failed
+Kinetic Energy = 9608.798929256584  7397.392307839352 diff:2211.4066214172317  1
+########################################## time: 3.43358269
