@@ -33,6 +33,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
 
+import apgas.MultipleException;
 import handist.collections.Chunk;
 import handist.collections.ChunkedList;
 import handist.collections.LongRange;
@@ -44,7 +45,7 @@ import handist.collections.dist.TeamedPlaceGroup;
 import mpi.MPI;
 import mpi.MPIException;
 
-public class MoldynHybrid extends Md implements Serializable {
+public class MoldynHybrid implements Serializable {
 
     private static final class LocalStatics {
         double epot, vir;
@@ -96,6 +97,169 @@ public class MoldynHybrid extends Md implements Serializable {
         }
     }
 
+    public final static class Particle implements Serializable {
+
+        private static final long serialVersionUID = 4019649624174733374L;
+        public double xcoord, ycoord, zcoord;
+        public double xvelocity, yvelocity, zvelocity;
+        public double xforce, yforce, zforce;
+
+        public Particle(double xcoord, double ycoord, double zcoord, double xvelocity, double yvelocity,
+                double zvelocity, double xforce, double yforce, double zforce) {
+            this.xcoord = xcoord;
+            this.ycoord = ycoord;
+            this.zcoord = zcoord;
+            this.xvelocity = xvelocity;
+            this.yvelocity = yvelocity;
+            this.zvelocity = zvelocity;
+            this.xforce = xforce;
+            this.yforce = yforce;
+            this.zforce = zforce;
+
+        }
+
+        public void domove(double side) {
+
+            xcoord = xcoord + xvelocity + xforce; // velocity, force is converted dimension value by deltatime(sc)
+            ycoord = ycoord + yvelocity + yforce;
+            zcoord = zcoord + zvelocity + zforce;
+
+            if (xcoord < 0) {
+                xcoord = xcoord + side;
+            }
+            if (xcoord > side) {
+                xcoord = xcoord - side;
+            }
+            if (ycoord < 0) {
+                ycoord = ycoord + side;
+            }
+            if (ycoord > side) {
+                ycoord = ycoord - side;
+            }
+            if (zcoord < 0) {
+                zcoord = zcoord + side;
+            }
+            if (zcoord > side) {
+                zcoord = zcoord - side;
+            }
+
+            xvelocity = xvelocity + xforce;
+            yvelocity = yvelocity + yforce;
+            zvelocity = zvelocity + zforce;
+
+            xforce = 0.0;
+            yforce = 0.0;
+            zforce = 0.0;
+
+        }
+
+        public void dscal(double sc) {
+
+            xvelocity = xvelocity * sc;
+            yvelocity = yvelocity * sc;
+            zvelocity = zvelocity * sc;
+
+        }
+
+        public double mkekin(double hsq2) {
+
+            double sumt = 0.0;
+
+            xforce = xforce * hsq2;
+            yforce = yforce * hsq2;
+            zforce = zforce * hsq2;
+
+            xvelocity = xvelocity + xforce;
+            yvelocity = yvelocity + yforce;
+            zvelocity = zvelocity + zforce;
+
+            sumt = (xvelocity * xvelocity) + (yvelocity * yvelocity) + (zvelocity * zvelocity);
+            return sumt;
+        }
+
+        @Override
+        public String toString() {
+            return String.format(
+                    "coord(%5.3f, %5.3f, %5.3f) \t velocity(%3.3f, %3.3f, %3.3f) \t force(%2.3f, %2.3f, %2.3f)",
+                    xcoord * 1000, ycoord * 1000, zcoord * 1000, xvelocity * 10000, yvelocity * 10000,
+                    zvelocity * 10000, xforce * 10000, yforce * 10000, zforce * 10000);
+        }
+
+        public double velavg(double vaverh, double h) {
+
+            double velt;
+            double sq;
+
+            sq = Math.sqrt(xvelocity * xvelocity + yvelocity * yvelocity + zvelocity * zvelocity);
+
+            if (sq > vaverh) {
+                MoldynHybrid.count = MoldynHybrid.count + 1.0;
+            }
+
+            velt = sq;
+            return velt;
+        }
+    }
+
+    public final static class Random implements Serializable {
+
+        private static final long serialVersionUID = 6984646650689608506L;
+        public int iseed;
+        public double v1, v2;
+
+        public Random(int iseed, double v1, double v2) {
+            this.iseed = iseed;
+            this.v1 = v1;
+            this.v2 = v2;
+        }
+
+        public double next() {
+
+            double s, u1, u2, r;
+            do {
+                u1 = update();
+                u2 = update();
+
+                v1 = 2.0 * u1 - 1.0;
+                v2 = 2.0 * u2 - 1.0;
+                s = v1 * v1 + v2 * v2;
+
+            } while (s >= 1.0);
+
+            r = Math.sqrt(-2.0 * Math.log(s) / s);
+
+            return r;
+
+        }
+
+        public double update() {
+
+            double rand;
+            final double scale = 4.656612875e-10;
+
+            int is1, is2, iss2;
+            final int imult = 16807;
+            final int imod = 2147483647;
+
+            if (iseed <= 0) {
+                iseed = 1;
+            }
+
+            is2 = iseed % 32768;
+            is1 = (iseed - is2) / 32768;
+            iss2 = is2 * imult;
+            is2 = iss2 % 32768;
+            is1 = (is1 * imult + (iss2 - is2) / 32768) % (65536);
+
+            iseed = (is1 * 32768 + is2) % imod;
+
+            rand = scale * iseed;
+
+            return rand;
+
+        }
+    }
+
     static class Sp implements Serializable {
         public double x = 0.0;
         public double y = 0.0;
@@ -111,96 +275,105 @@ public class MoldynHybrid extends Md implements Serializable {
         }
     }
 
+    public static int datasizes[] = { 8, 13, 26 };
+    public static double refval[] = { 1731.4306625334357, 7397.392307839352, -1 };
     private static final long serialVersionUID = 1364008814489556197L;
+    public static double epot = 0.0; // potential energy
+    public static double ekin = 0.0; // kinematic energy
+
+    public static double vir = 0.0; // virial
+    public static double count = 0.0; // ???
+    public static int interactions = 0; // count of interactions between particles
+    private static final boolean DEBUG = false;
 
     public static void main(String[] args) throws IOException {
         if (args.length != 3) {
-            System.err.println("Usage: java -cp [...] handist.moldyn.MoldynHybrid "
-                    + "<data size index(0or1or2)> <number of divide> <number of workers>");
+            printUsage();
             return;
         }
         final int problemSize = Integer.parseInt(args[0]);
         final int divides = Integer.parseInt(args[1]);
         final int workers = Integer.parseInt(args[2]);
 
-        final MoldynHybrid m0 = new MoldynHybrid();
-        m0.Nworkers = workers;
-        m0.Ndivide = divides;
-
-        m0.runBenchmarks(problemSize);
-    }
-
-    private LongRange allRange;
-    private TeamedPlaceGroup placeGroup;
-    private RangedList<Particle> one;
-    private CachableChunkedList<Particle> oneX;
-
-    private int Nworkers; // NOTE: if static variable, remote Nworkers cannot be set in main()
-    private int Ndivide;
-
-    private transient int prevInteractions;
-
-    transient MyAccumM myAccM;
-
-    @Override
-    protected void domove() {
-        oneX.parallelForEach(Nworkers, (p) -> {
-            p.domove(side);
-        });
-    }
-
-    @Override
-    protected void force() {
-        epot = 0.0;
-        vir = 0.0;
-        prevInteractions = interactions;
-        interactions = 0;
-
-        double start, end;
-
-        // split but sequential exec
-        start = System.nanoTime();
-        final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
-                .splitNM(Ndivide, Ndivide, placeGroup.rank(), placeGroup.size(), Nworkers, new java.util.Random(0));
-        end = System.nanoTime();
-        forceSplit_ns += (end - start);
-
-        start = System.nanoTime();
-        final List<LocalStatics> lss = new ArrayList<>(Nworkers);
-        finish(() -> {
-            for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
-                final LocalStatics ls = new LocalStatics();
-                lss.add(ls);
-                async(() -> {
-                    for (final RangedListProduct<Particle, Particle> prod : prods) {
-                        prod.forEachRow((Particle p1, RangedList<Particle> pairs) -> {
-                            force1(p1, pairs, side, rcoff, ls);
-                        });
-                    }
-                });
+        try {
+            final MoldynHybrid m0 = new MoldynHybrid();
+            System.err.println("start warmup for " + m0.warmup + " times");
+            m0.Nworkers = workers;
+            m0.Ndivide = divides;
+            for (int i = 0; i < m0.warmup; i++) {
+                System.err.println("##################################################");
+                System.err.println("warmup " + (i + 1) + "/" + m0.warmup);
+                m0.initialise(datasizes[0]);
+                m0.runiters(true);
+                // m.tidyup();
             }
-        });
-        end = System.nanoTime();
-        forceCalc_ns += (end - start);
+            System.err.println("##################################################");
+            System.err.println("main run");
+            final MoldynHybrid m = new MoldynHybrid();
+            m.Nworkers = workers;
+            m.Ndivide = divides;
+            m.initialise(datasizes[problemSize]);
+            final long start = System.nanoTime();
+            m.runiters(false);
+            final long end = System.nanoTime();
+            m.validate(problemSize);
+            System.err.println("############## handist 2CProdDist time: " + (end - start) / 1.0e9);
+            m.tidyup();
 
-        start = System.nanoTime();
-        myAccM.parallelMerge(Nworkers);
-        for (final LocalStatics ls : lss) {
-            epot += ls.epot;
-            vir += ls.vir;
-            interactions += ls.interactions;
+            System.err.println((end - start) / 1.0e9 + "\n");
+            m.printResult((end - start) / 1.0e9);
+
+        } catch (final MultipleException me) {
+            me.printStackTrace();
         }
-        end = System.nanoTime();
-        forceMerge_ns += (end - start);
     }
+
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynHybrid "
+                + "<data size index(0or1)> <number of workers> <number of divide>");
+    }
+
+    final double den = 0.83134; // density
+
+    final double tref = 0.722;
+
+    final double h = 0.064;
+    public List<LongRange> ranges;
+    public LongRange allRange;
+    public TeamedPlaceGroup placeGroup;
+
+    public RangedList<Particle> one;
+    public CachableChunkedList<Particle> oneX;
+    int mdsize; // number of particles
+    int ijk, i, j, k, lg, move; // iteration variables
+    double rcoff, rcoffs, side, sideh, hsq, hsq2;
+
+    double r, tscale, sc, ek;
+    double vaver, vaverh;
+
+    double etot, temp, pres, rp; // results(total energy/temperature/pressure/???)
+
+    int irep = 10;
+
+    int istop = 19;
+    int iprint = 10;
+    int movemx = 50;
+    int warmup = 5;
+    private int Nworkers; // num workers
+
+    private int Ndivide; // num workers
+    Random randnum;
+
+    transient double domove_ns, force_ns, reduce_ns, others_ns, barrier_ns; // timer
+
+    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
+    transient MyAccumM myAccM;
 
     private void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {
         double sideh;
         double rcoffs;
 
-        double xx, yy, zz, xi, yi, zi, fxi, fyi, fzi;
-        double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
-        double forcex, forcey, forcez;
+        double xi, yi, zi, fxi, fyi, fzi;
 
         sideh = 0.5 * side;
         rcoffs = rcoff * rcoff;
@@ -218,9 +391,9 @@ public class MoldynHybrid extends Md implements Serializable {
         int inters0 = 0;
         for (final Particle p1 : pairs) {
             final Sp p1f = fiterator.next();
-            xx = xi - p1.xcoord;
-            yy = yi - p1.ycoord;
-            zz = zi - p1.zcoord;
+            double xx = xi - p1.xcoord;
+            double yy = yi - p1.ycoord;
+            double zz = zi - p1.zcoord;
 
             if (xx < (-sideh)) {
                 xx = xx + side;
@@ -241,7 +414,8 @@ public class MoldynHybrid extends Md implements Serializable {
                 zz = zz - side;
             }
 
-            rd = xx * xx + yy * yy + zz * zz;
+            final double rd = xx * xx + yy * yy + zz * zz;
+            double rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
             if (rd <= rcoffs) {
                 rrd = 1.0 / rd;
                 rrd2 = rrd * rrd;
@@ -249,23 +423,18 @@ public class MoldynHybrid extends Md implements Serializable {
                 rrd4 = rrd2 * rrd2;
                 rrd6 = rrd2 * rrd4;
                 rrd7 = rrd6 * rrd;
-
                 epot0 = epot0 + (rrd6 - rrd3);
                 r148 = rrd7 - 0.5 * rrd4;
                 vir0 = vir0 - rd * r148;
-
-                forcex = xx * r148;
+                final double forcex = xx * r148;
                 fxi += forcex;
                 p1f.x -= forcex;
-
-                forcey = yy * r148;
+                final double forcey = yy * r148;
                 fyi += forcey;
                 p1f.y -= forcey;
-
-                forcez = zz * r148;
+                final double forcez = zz * r148;
                 fzi += forcez;
                 p1f.z -= forcez;
-
                 inters0++;
             }
         }
@@ -280,9 +449,21 @@ public class MoldynHybrid extends Md implements Serializable {
 
     }
 
-    @Override
-    @SuppressWarnings("unused")
-    public void initialize(final int mm) {
+    public void initialise(final int mm) {
+        /* Parameter determination */
+        mdsize = mm * mm * mm * 4;
+
+        side = Math.pow((mdsize / den), 0.3333333);
+        sideh = side * 0.5;
+        rcoff = mm / 4.0;
+        rcoffs = rcoff * rcoff;
+
+        hsq = h * h;
+        hsq2 = hsq * 0.5;
+        tscale = 16.0 / (1.0 * mdsize - 1.0);
+        vaver = 1.13 * Math.sqrt(tref / 24.0);
+        vaverh = vaver * h;
+
         /* Particle Generation */
         placeGroup = TeamedPlaceGroup.getWorld();
         allRange = new LongRange(0, mdsize);
@@ -291,7 +472,7 @@ public class MoldynHybrid extends Md implements Serializable {
         oneX.add(one);
 
         final double a = side / mm;
-        int ijk = 0;
+        ijk = 0;
         for (lg = 0; lg <= 1; lg++) {
             for (i = 0; i < mm; i++) {
                 for (j = 0; j < mm; j++) {
@@ -316,7 +497,12 @@ public class MoldynHybrid extends Md implements Serializable {
         }
 
         /* Initialise velocities */
-        randnum = new Random(0, 0.0, 0.0);
+
+        final int iseed = 0;
+        final double v1 = 0.0;
+        final double v2 = 0.0;
+
+        randnum = new Random(iseed, v1, v2);
 
         for (i = 0; i < mdsize; i += 2) {
             r = randnum.next();
@@ -340,32 +526,32 @@ public class MoldynHybrid extends Md implements Serializable {
         final Sp sp = new Sp();
         ekin = 0.0;
 
-        for (final Particle p : one) {
+        for (final Particle p : one) {// .forEach((p) -> {
             sp.x += p.xvelocity;
             sp.y += p.yvelocity;
             sp.z += p.zvelocity;
-        }
+        } // );
 
         sp.x = sp.x / mdsize;
         sp.y = sp.y / mdsize;
         sp.z = sp.z / mdsize;
 
-        for (final Particle p : one) {
+        for (final Particle p : one) {// one.forEach((p) -> {
             p.xvelocity -= sp.x;
             p.yvelocity -= sp.y;
             p.zvelocity -= sp.z;
             ekin += p.xvelocity * p.xvelocity;
             ekin += p.yvelocity * p.yvelocity;
             ekin += p.zvelocity * p.zvelocity;
-        }
+        } // );
 
         sc = h * Math.sqrt(tref / (tscale * ekin));
 
-        for (final Particle p : one) {
+        for (final Particle p : one) {// one.forEach((p) -> {
             p.xvelocity *= sc;
             p.yvelocity *= sc;
             p.zvelocity *= sc;
-        }
+        } // );
 
         /* share chunks */
         final CachableChunkedList<Particle> oneX0 = oneX;
@@ -378,69 +564,191 @@ public class MoldynHybrid extends Md implements Serializable {
         });
 
         if (placeGroup.rank() == 0 && DEBUG) {
-            debugPrint("#Initialized");
+            System.err.println("#Initialized");
+            System.err.println(" " + one.get(0));
         }
     }
 
-    @Override
-    protected void reduce() {
-        double start, end;
-
-        start = System.nanoTime();
-        placeGroup.barrier();
-        end = System.nanoTime();
-        barrier_ns += (end - start);
-
-        start = System.nanoTime();
-        oneX.allreduce((p) -> new Sp(p.xforce, p.yforce, p.zforce), (p, sp) -> {
-            p.xforce += sp.x;
-            p.yforce += sp.y;
-            p.zforce += sp.z;
-        });
-        epot = placeGroup.allReduce1(epot, MPI.SUM);
-        vir = placeGroup.allReduce1(vir, MPI.SUM);
-        interactions = placeGroup.allReduce1(interactions, MPI.SUM);
-        interactions += prevInteractions;
-        end = System.nanoTime();
-        reduce_ns += (end - start);
+    private void printResult(double total) {
+        domove_ns = domove_ns / 1.0e9;
+        force_ns = force_ns / 1.0e9;
+        forceSplit_ns = forceSplit_ns / 1.0e9;
+        forceCalc_ns = forceCalc_ns / 1.0e9;
+        forceMerge_ns = forceMerge_ns / 1.0e9;
+        reduce_ns = reduce_ns / 1.0e9;
+        others_ns = others_ns / 1.0e9;
+        barrier_ns = barrier_ns / 1.0e9;
+        System.out.println("Iter" + i + ";" + total + ";" + domove_ns + ";" + force_ns + ";" + forceSplit_ns + ";"
+                + forceCalc_ns + ";" + forceMerge_ns + ";" + reduce_ns + ";" + others_ns + ";" + barrier_ns);
     }
 
     // main routine
-    @Override
-    public void runIters() throws MPIException {
+    public void runiters(boolean isWarmup) throws MPIException {
         placeGroup.broadcastFlat(() -> {
-            myAccM = new MyAccumM(oneX);
-            super.runIters();
+            runiters0(isWarmup);
         });
     }
 
-    @Override
-    protected void tidyup() {
-        oneX = null;
+    public void runiters0(boolean isWarmup) throws MPIException {
+        oneX.forEachChunk((c) -> {
+            one = c;
+        });
+        myAccM = new MyAccumM(oneX);
+        move = 0;
+        double start, end;
+
+        for (move = 0; move < movemx; move++) {
+            // ===================================================================================================
+            /* move the particles and update velocities, no use global variables */
+            start = System.nanoTime();
+            oneX.parallelForEach(Nworkers, (p) -> {
+                p.domove(side);
+            });
+            end = System.nanoTime();
+            domove_ns += (end - start);
+
+            if (placeGroup.rank() == 0 && DEBUG) {
+                System.err.println(" #after domove");
+                System.err.println(" " + one.get(0));
+                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+            }
+
+            // ===================================================================================================
+            /* compute forces */
+            epot = 0.0;
+            vir = 0.0;
+
+            placeGroup.barrier();
+
+            final int prevInteractions = interactions;
+            interactions = 0;
+            // split but sequential exec
+            start = System.nanoTime();
+            final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
+                    .splitNM(Ndivide, Ndivide, placeGroup.rank(), placeGroup.size(), Nworkers, new java.util.Random(0));
+            end = System.nanoTime();
+            forceSplit_ns += (end - start);
+
+            start = System.nanoTime();
+            final List<LocalStatics> lss = new ArrayList<>();
+            finish(() -> {
+                for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
+                    final LocalStatics ls = new LocalStatics();
+                    lss.add(ls);
+                    async(() -> {
+                        for (final RangedListProduct<Particle, Particle> prod : prods) {
+                            prod.forEachRow((Particle p1, RangedList<Particle> pairs) -> {
+                                force1(p1, pairs, side, rcoff, ls);
+                            });
+                        }
+                    });
+                }
+            });
+            end = System.nanoTime();
+            forceCalc_ns += (end - start);
+
+            start = System.nanoTime();
+            myAccM.parallelMerge(Nworkers);
+            end = System.nanoTime();
+            forceMerge_ns += (end - start);
+
+            start = System.nanoTime();
+            oneX.allreduce((p) -> new Sp(p.xforce, p.yforce, p.zforce), (p, sp) -> {
+                p.xforce += sp.x;
+                p.yforce += sp.y;
+                p.zforce += sp.z;
+            });
+            end = System.nanoTime();
+            reduce_ns += (end - start);
+
+            for (final LocalStatics ls : lss) {
+                epot += ls.epot;
+                vir += ls.vir;
+                interactions += ls.interactions;
+            }
+            epot = placeGroup.allReduce1(epot, MPI.SUM);
+            vir = placeGroup.allReduce1(vir, MPI.SUM);
+            interactions = placeGroup.allReduce1(interactions, MPI.SUM);
+            interactions += prevInteractions;
+
+            placeGroup.barrier();
+
+            if (placeGroup.rank() == 0 && DEBUG) {
+                System.err.println(" #after force");
+                System.err.println(" " + one.get(0));
+                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+            }
+
+            placeGroup.barrier(); // TODO: Not need? written in original code.
+            // ===================================================================================================
+            /* scale forces, update velocities */
+            final MyReducer ekinReduce = new MyReducer((p) -> p.mkekin(hsq2));
+            oneX.parallelReduce(ekinReduce);
+            ekin = ekinReduce.val / hsq;
+
+            if (placeGroup.rank() == 0 && DEBUG) {
+                System.err.println(" #after mkekin");
+                System.err.println(" " + one.get(0));
+                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+            }
+
+            // ===================================================================================================
+            /* average velocity */
+            double vel = 0.0;
+            count = 0.0;
+
+            final MyReducer veravgReduce = new MyReducer((p) -> p.velavg(vaverh, h));
+
+            oneX.parallelReduce(Nworkers, veravgReduce);
+            vel = veravgReduce.val / h;
+
+            if (placeGroup.rank() == 0 && DEBUG) {
+                System.err.println(" #after velavg");
+                System.err.println(" " + one.get(0));
+                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+            }
+
+            // ===================================================================================================
+            /* tmeperature scale if required */
+            if ((move < istop) && (((move + 1) % irep) == 0)) {
+                sc = Math.sqrt(tref / (tscale * ekin));
+                oneX.parallelForEach(Nworkers, (p) -> {
+                    p.dscal(sc);
+                });
+                ekin = tref / tscale;
+            }
+
+            // ===================================================================================================
+            /* sum to get full potential energy and virial */
+            if (((move + 1) % iprint) == 0) {
+                ek = 24.0 * ekin;
+                epot = 4.0 * epot;
+                etot = ek + epot;
+                temp = tscale * ekin;
+                pres = den * 16.0 * (ekin - vir) / mdsize;
+                vel = vel / mdsize;
+                rp = (count / mdsize) * 100.0;
+                if (placeGroup.rank() == 0) {
+                    System.err.println("#Iteration " + move);
+                    System.err.println(" interactions : " + interactions);
+                    System.err.println(" total energy : " + etot);
+                    // System.err.println(" average vel : " + vel);
+                }
+            }
+        }
+    }
+
+    private void tidyup() {
+        one = null;
         System.gc();
     }
 
-    @Override
-    protected void updateParams() {
-        /* scale forces, update velocities */
-        final MyReducer ekinReduce = new MyReducer((p) -> p.mkekin(hsq2));
-        oneX.parallelReduce(ekinReduce);
-        ekin = ekinReduce.val / hsq;
-
-        /* average velocity */
-        vel = 0.0;
-        count = 0.0;
-        final MyReducer veravgReduce = new MyReducer((p) -> p.velavg(vaverh, h));
-        oneX.parallelReduce(Nworkers, veravgReduce);
-        vel = veravgReduce.val / h;
-
-        /* tmeperature scale if required */
-        if ((move < istop) && (((move + 1) % irep) == 0)) {
-            sc = Math.sqrt(tref / (tscale * ekin));
-            oneX.parallelForEach(Nworkers, (p) -> {
-                p.dscal(sc);
-            });
-            ekin = tref / tscale;
+    private void validate(int size) {
+        final double dev = Math.abs(ek - refval[size]);
+        if (dev > 1.0e-12) {
+            System.err.println("Validation failed");
+            System.err.println("Kinetic Energy = " + ek + "  " + refval[size] + " diff:" + dev + "  " + size);
         }
     }
+
 }
