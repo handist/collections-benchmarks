@@ -4,7 +4,12 @@
 export MPJ_HOME=/work/gp43/share/mpj-v0_44
 export I_MPI_PIN=0
 
-mpiexec.hydra -n ${PJM_MPI_PROC} \
+PROC=${PJM_MPI_PROC}
+if [ -n "$NB_PROCS" ]; then
+ PROC=${NB_PROCS}
+fi
+
+mpiexec.hydra -n ${PROC} \
 taskset -ca ${CORE_RESTRICTION} \
 java -cp ${COLLECTIONS_LIBRARY}:${DEPENDENCIES}/* \
 -Xms40g -Xmx80g \
