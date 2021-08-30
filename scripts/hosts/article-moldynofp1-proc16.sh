@@ -1,7 +1,7 @@
 ################################################################################
 # Configuration for executions on OFP                                          #
 ################################################################################
-export HOST=article-moldynofp16
+export HOST=article-moldynofp1-proc16
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
