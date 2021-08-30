@@ -29,10 +29,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.handist</groupId>
-			<artifactId>collections</artifactId>
-			<version>develop-SNAPSHOT</version>
-			<scope>compile</scope>
+			<groupId>com.github.kawanishi449</groupId>
+			<artifactId>handistCollections</artifactId>
+		 	<version>cachablechunkedlist-allreduce-54f07802ab-1</version>
 		</dependency>
 	</dependencies>
 </project>

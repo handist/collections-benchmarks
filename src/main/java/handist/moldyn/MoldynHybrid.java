@@ -181,7 +181,7 @@ public class MoldynHybrid implements Serializable {
         public String toString() {
             return String.format(
                     "coord(%5.3f, %5.3f, %5.3f) \t velocity(%3.3f, %3.3f, %3.3f) \t force(%2.3f, %2.3f, %2.3f)",
-                    xcoord * 1000, ycoord * 1000, zcoord * 1000, xvelocity * 10000, yvelocity * 10000,
+                    xcoord * 10000, ycoord * 10000, zcoord * 10000, xvelocity * 10000, yvelocity * 10000,
                     zvelocity * 10000, xforce * 10000, yforce * 10000, zforce * 10000);
         }
 
@@ -264,26 +264,19 @@ public class MoldynHybrid implements Serializable {
         public double x = 0.0;
         public double y = 0.0;
         public double z = 0.0;
-
-        Sp() {
-        }
-
-        Sp(double x, double y, double z) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
     }
 
-    public static int datasizes[] = { 8, 13, 26 };
+    public static int datasizes[] = { 8, 13, 20 };
     public static double refval[] = { 1731.4306625334357, 7397.392307839352, -1 };
+
     private static final long serialVersionUID = 1364008814489556197L;
+
     public static double epot = 0.0; // potential energy
     public static double ekin = 0.0; // kinematic energy
-
     public static double vir = 0.0; // virial
     public static double count = 0.0; // ???
     public static int interactions = 0; // count of interactions between particles
+
     private static final boolean DEBUG = false;
 
     public static void main(String[] args) throws IOException {
@@ -298,31 +291,31 @@ public class MoldynHybrid implements Serializable {
         try {
             final MoldynHybrid m0 = new MoldynHybrid();
             System.err.println("start warmup for " + m0.warmup + " times");
-            m0.Nworkers = workers;
             m0.Ndivide = divides;
+            m0.Nworkers = workers;
             for (int i = 0; i < m0.warmup; i++) {
                 System.err.println("##################################################");
                 System.err.println("warmup " + (i + 1) + "/" + m0.warmup);
                 m0.initialise(datasizes[0]);
-                m0.runiters(true);
-                // m.tidyup();
+                m0.runiters();
+                m0.tidyup();
             }
-            System.err.println("##################################################");
-            System.err.println("main run");
             final MoldynHybrid m = new MoldynHybrid();
-            m.Nworkers = workers;
             m.Ndivide = divides;
-            m.initialise(datasizes[problemSize]);
-            final long start = System.nanoTime();
-            m.runiters(false);
-            final long end = System.nanoTime();
-            m.validate(problemSize);
-            System.err.println("############## handist 2CProdDist time: " + (end - start) / 1.0e9);
-            m.tidyup();
-
-            System.err.println((end - start) / 1.0e9 + "\n");
-            m.printResult((end - start) / 1.0e9);
-
+            m.Nworkers = workers;
+            System.err.println("start main for " + m.mainLoop + " times");
+            for (int i = 0; i < m.mainLoop; i++) {
+                System.err.println("##################################################");
+                System.err.println("main run");
+                m.initialise(datasizes[problemSize]);
+                final long start = System.nanoTime();
+                m.runiters();
+                final long end = System.nanoTime();
+                m.validate(problemSize);
+                System.err.println("############## handist MoldynHybrid time: " + (end - start) / 1.0e9);
+                m.tidyup();
+                m.printResult((end - start) / 1.0e9);
+            }
         } catch (final MultipleException me) {
             me.printStackTrace();
         }
@@ -330,50 +323,54 @@ public class MoldynHybrid implements Serializable {
 
     private static void printUsage() {
         System.err.println("Usage: java -cp [...] handist.moldyn.MoldynHybrid "
-                + "<data size index(0or1)> <number of workers> <number of divide>");
+                + "<data size index(0or1)> <number of divide> <number of workers> ");
     }
 
-    final double den = 0.83134; // density
-
+    final double den = 0.83134;
     final double tref = 0.722;
-
     final double h = 0.064;
+
     public List<LongRange> ranges;
     public LongRange allRange;
     public TeamedPlaceGroup placeGroup;
-
     public RangedList<Particle> one;
     public CachableChunkedList<Particle> oneX;
+
     int mdsize; // number of particles
     int ijk, i, j, k, lg, move; // iteration variables
     double rcoff, rcoffs, side, sideh, hsq, hsq2;
-
     double r, tscale, sc, ek;
     double vaver, vaverh;
-
     double etot, temp, pres, rp; // results(total energy/temperature/pressure/???)
 
     int irep = 10;
-
     int istop = 19;
     int iprint = 10;
     int movemx = 50;
-    int warmup = 5;
-    private int Nworkers; // num workers
+    int warmup = 2;
+    int mainLoop = 4;
 
-    private int Ndivide; // num workers
+    private int Nworkers;
+    private int Ndivide;
+
     Random randnum;
-
-    transient double domove_ns, force_ns, reduce_ns, others_ns, barrier_ns; // timer
-
-    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
     transient MyAccumM myAccM;
+
+    transient double domove_ns, reduce_ns, others_ns; // timer
+    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
+
+    private void debugPrint() {
+        System.err.println(one.get(0));
+        System.err.println("ekin:" + ekin + "/epot:" + epot);
+    }
 
     private void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {
         double sideh;
         double rcoffs;
 
-        double xi, yi, zi, fxi, fyi, fzi;
+        double xx, yy, zz, xi, yi, zi, fxi, fyi, fzi;
+        double rd, rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
+        double forcex, forcey, forcez;
 
         sideh = 0.5 * side;
         rcoffs = rcoff * rcoff;
@@ -391,9 +388,9 @@ public class MoldynHybrid implements Serializable {
         int inters0 = 0;
         for (final Particle p1 : pairs) {
             final Sp p1f = fiterator.next();
-            double xx = xi - p1.xcoord;
-            double yy = yi - p1.ycoord;
-            double zz = zi - p1.zcoord;
+            xx = xi - p1.xcoord;
+            yy = yi - p1.ycoord;
+            zz = zi - p1.zcoord;
 
             if (xx < (-sideh)) {
                 xx = xx + side;
@@ -414,8 +411,7 @@ public class MoldynHybrid implements Serializable {
                 zz = zz - side;
             }
 
-            final double rd = xx * xx + yy * yy + zz * zz;
-            double rrd, rrd2, rrd3, rrd4, rrd6, rrd7, r148;
+            rd = xx * xx + yy * yy + zz * zz;
             if (rd <= rcoffs) {
                 rrd = 1.0 / rd;
                 rrd2 = rrd * rrd;
@@ -423,16 +419,20 @@ public class MoldynHybrid implements Serializable {
                 rrd4 = rrd2 * rrd2;
                 rrd6 = rrd2 * rrd4;
                 rrd7 = rrd6 * rrd;
+
                 epot0 = epot0 + (rrd6 - rrd3);
                 r148 = rrd7 - 0.5 * rrd4;
                 vir0 = vir0 - rd * r148;
-                final double forcex = xx * r148;
+
+                forcex = xx * r148;
                 fxi += forcex;
                 p1f.x -= forcex;
-                final double forcey = yy * r148;
+
+                forcey = yy * r148;
                 fyi += forcey;
                 p1f.y -= forcey;
-                final double forcez = zz * r148;
+
+                forcez = zz * r148;
                 fzi += forcez;
                 p1f.z -= forcez;
                 inters0++;
@@ -449,6 +449,7 @@ public class MoldynHybrid implements Serializable {
 
     }
 
+    @SuppressWarnings("unused")
     public void initialise(final int mm) {
         /* Parameter determination */
         mdsize = mm * mm * mm * 4;
@@ -526,32 +527,32 @@ public class MoldynHybrid implements Serializable {
         final Sp sp = new Sp();
         ekin = 0.0;
 
-        for (final Particle p : one) {// .forEach((p) -> {
+        for (final Particle p : one) {
             sp.x += p.xvelocity;
             sp.y += p.yvelocity;
             sp.z += p.zvelocity;
-        } // );
+        }
 
         sp.x = sp.x / mdsize;
         sp.y = sp.y / mdsize;
         sp.z = sp.z / mdsize;
 
-        for (final Particle p : one) {// one.forEach((p) -> {
+        for (final Particle p : one) {
             p.xvelocity -= sp.x;
             p.yvelocity -= sp.y;
             p.zvelocity -= sp.z;
             ekin += p.xvelocity * p.xvelocity;
             ekin += p.yvelocity * p.yvelocity;
             ekin += p.zvelocity * p.zvelocity;
-        } // );
+        }
 
         sc = h * Math.sqrt(tref / (tscale * ekin));
 
-        for (final Particle p : one) {// one.forEach((p) -> {
+        for (final Particle p : one) {
             p.xvelocity *= sc;
             p.yvelocity *= sc;
             p.zvelocity *= sc;
-        } // );
+        }
 
         /* share chunks */
         final CachableChunkedList<Particle> oneX0 = oneX;
@@ -564,32 +565,30 @@ public class MoldynHybrid implements Serializable {
         });
 
         if (placeGroup.rank() == 0 && DEBUG) {
-            System.err.println("#Initialized");
-            System.err.println(" " + one.get(0));
+            debugPrint();
         }
     }
 
     private void printResult(double total) {
         domove_ns = domove_ns / 1.0e9;
-        force_ns = force_ns / 1.0e9;
         forceSplit_ns = forceSplit_ns / 1.0e9;
         forceCalc_ns = forceCalc_ns / 1.0e9;
         forceMerge_ns = forceMerge_ns / 1.0e9;
         reduce_ns = reduce_ns / 1.0e9;
         others_ns = others_ns / 1.0e9;
-        barrier_ns = barrier_ns / 1.0e9;
-        System.out.println("Iter" + i + ";" + total + ";" + domove_ns + ";" + force_ns + ";" + forceSplit_ns + ";"
-                + forceCalc_ns + ";" + forceMerge_ns + ";" + reduce_ns + ";" + others_ns + ";" + barrier_ns);
+        System.out.println("Iter" + i + ";" + total + ";" + domove_ns + ";" + forceSplit_ns + ";" + forceCalc_ns + ";"
+                + forceMerge_ns + ";" + reduce_ns + ";" + others_ns);
     }
 
     // main routine
-    public void runiters(boolean isWarmup) throws MPIException {
+    public void runiters() throws MPIException {
         placeGroup.broadcastFlat(() -> {
-            runiters0(isWarmup);
+            runiters0();
         });
     }
 
-    public void runiters0(boolean isWarmup) throws MPIException {
+    @SuppressWarnings("unused")
+    public void runiters0() throws MPIException {
         oneX.forEachChunk((c) -> {
             one = c;
         });
@@ -608,9 +607,7 @@ public class MoldynHybrid implements Serializable {
             domove_ns += (end - start);
 
             if (placeGroup.rank() == 0 && DEBUG) {
-                System.err.println(" #after domove");
-                System.err.println(" " + one.get(0));
-                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+                debugPrint();
             }
 
             // ===================================================================================================
@@ -622,6 +619,7 @@ public class MoldynHybrid implements Serializable {
 
             final int prevInteractions = interactions;
             interactions = 0;
+
             // split but sequential exec
             start = System.nanoTime();
             final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
@@ -649,23 +647,34 @@ public class MoldynHybrid implements Serializable {
 
             start = System.nanoTime();
             myAccM.parallelMerge(Nworkers);
-            end = System.nanoTime();
-            forceMerge_ns += (end - start);
-
-            start = System.nanoTime();
-            oneX.allreduce((p) -> new Sp(p.xforce, p.yforce, p.zforce), (p, sp) -> {
-                p.xforce += sp.x;
-                p.yforce += sp.y;
-                p.zforce += sp.z;
-            });
-            end = System.nanoTime();
-            reduce_ns += (end - start);
-
             for (final LocalStatics ls : lss) {
                 epot += ls.epot;
                 vir += ls.vir;
                 interactions += ls.interactions;
             }
+            end = System.nanoTime();
+            forceMerge_ns += (end - start);
+
+            if (placeGroup.rank() == 0 && DEBUG) {
+                debugPrint();
+            }
+
+            // ===================================================================================================
+            /* allreduce */
+            placeGroup.barrier();
+
+            start = System.nanoTime();
+
+            oneX.allreduce((out, elem) -> {
+                out.accept(elem.xforce);
+                out.accept(elem.yforce);
+                out.accept(elem.zforce);
+            }, (in, elem) -> {
+                elem.xforce = in.get();
+                elem.yforce = in.get();
+                elem.zforce = in.get();
+            }, MPI.SUM, 3);
+
             epot = placeGroup.allReduce1(epot, MPI.SUM);
             vir = placeGroup.allReduce1(vir, MPI.SUM);
             interactions = placeGroup.allReduce1(interactions, MPI.SUM);
@@ -673,26 +682,22 @@ public class MoldynHybrid implements Serializable {
 
             placeGroup.barrier();
 
+            end = System.nanoTime();
+            reduce_ns += (end - start);
+
             if (placeGroup.rank() == 0 && DEBUG) {
-                System.err.println(" #after force");
-                System.err.println(" " + one.get(0));
-                System.err.println(" ekin:" + ekin + "/epot:" + epot);
+                debugPrint();
             }
 
-            placeGroup.barrier(); // TODO: Not need? written in original code.
             // ===================================================================================================
             /* scale forces, update velocities */
+
+            start = System.nanoTime();
+
             final MyReducer ekinReduce = new MyReducer((p) -> p.mkekin(hsq2));
             oneX.parallelReduce(ekinReduce);
             ekin = ekinReduce.val / hsq;
 
-            if (placeGroup.rank() == 0 && DEBUG) {
-                System.err.println(" #after mkekin");
-                System.err.println(" " + one.get(0));
-                System.err.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-
-            // ===================================================================================================
             /* average velocity */
             double vel = 0.0;
             count = 0.0;
@@ -702,13 +707,6 @@ public class MoldynHybrid implements Serializable {
             oneX.parallelReduce(Nworkers, veravgReduce);
             vel = veravgReduce.val / h;
 
-            if (placeGroup.rank() == 0 && DEBUG) {
-                System.err.println(" #after velavg");
-                System.err.println(" " + one.get(0));
-                System.err.println(" ekin:" + ekin + "/epot:" + epot);
-            }
-
-            // ===================================================================================================
             /* tmeperature scale if required */
             if ((move < istop) && (((move + 1) % irep) == 0)) {
                 sc = Math.sqrt(tref / (tscale * ekin));
@@ -717,6 +715,9 @@ public class MoldynHybrid implements Serializable {
                 });
                 ekin = tref / tscale;
             }
+
+            end = System.nanoTime();
+            others_ns += (end - start);
 
             // ===================================================================================================
             /* sum to get full potential energy and virial */
@@ -732,7 +733,7 @@ public class MoldynHybrid implements Serializable {
                     System.err.println("#Iteration " + move);
                     System.err.println(" interactions : " + interactions);
                     System.err.println(" total energy : " + etot);
-                    // System.err.println(" average vel : " + vel);
+                    System.err.println(" average vel : " + vel);
                 }
             }
         }
