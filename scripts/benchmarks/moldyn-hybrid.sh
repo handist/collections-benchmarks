@@ -6,7 +6,7 @@ export MAIN="handist.moldyn.MoldynHybrid"
 # <datasize index(0or1or2)> <number of split> <number of workers>
 export ARGS="1 64"
 PARAM=WORKER
-VALUES=(1 4 16 64)
+VALUES=(1)
 
 export TIMEOUT=50:00
 export BEO_TIMEOUT=5m

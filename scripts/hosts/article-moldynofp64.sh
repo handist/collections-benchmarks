@@ -5,10 +5,8 @@ export HOST=article-moldynofp64
 export HOST_TYPE=ofp
 
 # List of benchmarks that we want to run
-#BENCHMARKS="moldyn-mpi.sh moldyn-mpi-large.sh"
-#BENCHMARKS="${BENCHMARKS} moldyn-dist.sh moldyn-dist-large.sh"
-#BENCHMARKS="${BENCHMARKS} moldyn-hybrid-split128.sh moldyn-hybrid-largesplit128.sh"
-BENCHMARKS="moldyn-hybrid-split128.sh moldyn-hybrid-largesplit128.sh"
+BENCHMARKS="moldyn-mpi.sh moldyn-mpi-large.sh"
+BENCHMARKS="${BENCHMARKS} moldyn-hybrid.sh moldyn-hybrid-large.sh"
 export BENCHMARKS
 
 # List of library configruations that we want to test
