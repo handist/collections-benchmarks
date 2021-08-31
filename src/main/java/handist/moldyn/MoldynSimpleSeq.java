@@ -300,24 +300,24 @@ public class MoldynSimpleSeq implements Serializable {
 
         try {
             final MoldynSimpleSeq m0 = new MoldynSimpleSeq();
-            System.out.println("start warmup for " + m0.warmup + " times");
+            System.err.println("start warmup for " + m0.warmup + " times");
             for (int i = 0; i < m0.warmup; i++) {
-                System.out.println("##################################################");
-                System.out.println("warmup " + (i + 1) + "/" + m0.warmup);
+                System.err.println("##################################################");
+                System.err.println("warmup " + (i + 1) + "/" + m0.warmup);
                 m0.initialise(datasizes[0]);
                 m0.runiters();
                 m0.tidyup();
             }
             final MoldynSimpleSeq m = new MoldynSimpleSeq();
             for (int i = 0; i < m.mainLoop; i++) {
-                System.out.println("##################################################");
-                System.out.println("main run");
+                System.err.println("##################################################");
+                System.err.println("main run");
                 m.initialise(datasizes[problemSize]);
                 final long start = System.nanoTime();
                 m.runiters();
                 final long end = System.nanoTime();
                 m.validate(problemSize);
-                System.out.println("############## simple seq time: " + (end - start) / 1.0e9);
+                System.err.println("############## simple seq time: " + (end - start) / 1.0e9);
                 m.tidyup();
                 m.printResult((end - start) / 1.0e9);
             }
@@ -573,9 +573,9 @@ public class MoldynSimpleSeq implements Serializable {
                 vel = vel / mdsize;
                 rp = (count / mdsize) * 100.0;
 
-                System.out.println("#Iteration " + move);
-                System.out.println(" interactions : " + interactions);
-                System.out.println(" total energy : " + etot);
+                System.err.println("#Iteration " + move);
+                System.err.println(" interactions : " + interactions);
+                System.err.println(" total energy : " + etot);
                 System.err.println(" average vel : " + vel);
             }
         }
@@ -589,8 +589,8 @@ public class MoldynSimpleSeq implements Serializable {
     private void validate(int size) {
         final double dev = Math.abs(ek - refval[size]);
         if (dev > 1.0e-12) {
-            System.out.println("Validation failed");
-            System.out.println("Kinetic Energy = " + ek + "  " + dev + "  " + size);
+            System.err.println("Validation failed");
+            System.err.println("Kinetic Energy = " + ek + "  " + dev + "  " + size);
         }
     }
 

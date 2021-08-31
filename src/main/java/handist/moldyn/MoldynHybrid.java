@@ -308,13 +308,13 @@ public class MoldynHybrid implements Serializable {
                 System.err.println("##################################################");
                 System.err.println("main run");
                 m.initialise(datasizes[problemSize]);
-                final long start = System.nanoTime();
+                // final long start = System.nanoTime();
                 m.runiters();
-                final long end = System.nanoTime();
+                // final long end = System.nanoTime();
                 m.validate(problemSize);
-                System.err.println("############## handist MoldynHybrid time: " + (end - start) / 1.0e9);
+                System.err.println("############## handist MoldynHybrid time: " + m.total_ns / 1.0e9);
                 m.tidyup();
-                m.printResult((end - start) / 1.0e9);
+                m.printResult(m.total_ns / 1.0e9);
             }
         } catch (final MultipleException me) {
             me.printStackTrace();
@@ -356,7 +356,7 @@ public class MoldynHybrid implements Serializable {
     Random randnum;
     transient MyAccumM myAccM;
 
-    transient double domove_ns, reduce_ns, others_ns; // timer
+    transient double total_ns, domove_ns, reduce_ns, others_ns; // timer
     transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
 
     private void debugPrint() {
@@ -583,7 +583,10 @@ public class MoldynHybrid implements Serializable {
     // main routine
     public void runiters() throws MPIException {
         placeGroup.broadcastFlat(() -> {
+            final double start = System.nanoTime();
             runiters0();
+            final double end = System.nanoTime();
+            total_ns = (end - start);
         });
     }
 
