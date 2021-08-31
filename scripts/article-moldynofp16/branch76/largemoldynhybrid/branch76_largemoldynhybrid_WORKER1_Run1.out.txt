@@ -1,21 +1,20 @@
-Starting process <1> on on <c2170.ofp>
-Starting process <15> on on <c2186.ofp>
-Starting process <2> on on <c2171.ofp>
-Starting process <4> on on <c2173.ofp>
-Starting process <0> on on <c2169.ofp>
-Starting process <11> on on <c2181.ofp>
-Starting process <13> on on <c2183.ofp>
-Starting process <12> on on <c2182.ofp>
-Starting process <5> on on <c2174.ofp>
-Starting process <9> on on <c2179.ofp>
-Starting process <14> on on <c2184.ofp>
-Starting process <6> on on <c2176.ofp>
-Starting process <3> on on <c2172.ofp>
-Starting process <10> on on <c2180.ofp>
-Starting process <7> on on <c2177.ofp>
-Starting process <8> on on <c2178.ofp>
-Iter0;127.583581587;0.135658226;123.285336664;0.052494198;123.145130551;0.086866156;0.0;0.213551692
-Iter1;126.727062927;0.131628655;122.872637765;0.048935468;122.765002077;0.057932304;0.0;0.211355791
-Iter2;126.731259813;0.134141003;123.149517319;0.046628483;123.043199615;0.058876731;0.0;0.20180721
-Iter3;126.747871878;0.13272313;123.131257505;0.044092467;123.018375259;0.06828198;0.0;0.196426301
-Iter4;126.706248601;0.131035637;123.110594435;0.041224089;123.014383799;0.054641878;0.0;0.198325354
+Starting process <11> on on <c0289.ofp>
+Starting process <10> on on <c0288.ofp>
+Starting process <7> on on <c0285.ofp>
+Starting process <6> on on <c0284.ofp>
+Starting process <12> on on <c0291.ofp>
+Starting process <4> on on <c0282.ofp>
+Starting process <13> on on <c0292.ofp>
+Starting process <2> on on <c0259.ofp>
+Starting process <1> on on <c0258.ofp>
+Starting process <14> on on <c0293.ofp>
+Starting process <15> on on <c0294.ofp>
+Starting process <5> on on <c0283.ofp>
+Starting process <8> on on <c0286.ofp>
+Starting process <3> on on <c0281.ofp>
+Starting process <0> on on <c0257.ofp>
+Starting process <9> on on <c0287.ofp>
+Iter32000;132.053134471;0.135476723;0.072055089;123.107376479;0.059964252;5.140769692;0.21673424
+Iter32000;131.877581559;0.13404466013547672;0.06896131307205508;123.07243778710738;0.060030583059964254;5.16487023314077;0.21242840521673423
+Iter32000;131.908031702;0.13336092313404466;0.06617820306896131;123.06199753207244;0.05930291606003058;5.17567988416487;0.2064812802124284
+Iter32000;131.845007677;0.1326986981333609;0.044992622066178205;122.90971293506199;0.05781835405930291;5.13170216917568;0.19694347120648129

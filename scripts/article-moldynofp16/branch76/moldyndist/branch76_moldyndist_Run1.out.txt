@@ -1,26 +1,20 @@
-Starting process <9> on on <c1602.ofp>
-Starting process <2> on on <c1595.ofp>
-Starting process <1> on on <c1594.ofp>
-Starting process <7> on on <c1600.ofp>
-Starting process <4> on on <c1597.ofp>
-Starting process <3> on on <c1596.ofp>
-Starting process <12> on on <c1605.ofp>
-Starting process <14> on on <c1607.ofp>
-Starting process <5> on on <c1598.ofp>
-Starting process <0> on on <c1593.ofp>
-Starting process <15> on on <c1608.ofp>
-Starting process <6> on on <c1599.ofp>
-Starting process <8> on on <c1601.ofp>
-Starting process <10> on on <c1603.ofp>
-Starting process <11> on on <c1604.ofp>
-Starting process <13> on on <c1606.ofp>
-Iter0;10.666322593;0.034355856;9.482886842;0.0;0.0;0.0;0.0;0.112674434
-Iter1;10.410359828;0.03769877;9.441411611;0.0;0.0;0.0;0.0;0.10851301
-Iter2;10.380307913;0.034715113;9.503602844;0.0;0.0;0.0;0.0;0.110041903
-Iter3;10.313848837;0.033860054;9.49969074;0.0;0.0;0.0;0.0;0.109224337
-Iter4;10.295597381;0.033753054;9.499856464;0.0;0.0;0.0;0.0;0.103956089
-Iter5;10.301388419;0.034433962;9.5034907;0.0;0.0;0.0;0.0;0.104211655
-Iter6;10.359127305;0.033752804;9.518856305;0.0;0.0;0.0;0.0;0.103734667
-Iter7;10.478067358;0.034668424;9.499733468;0.0;0.0;0.0;0.0;0.108413748
-Iter8;10.298062036;0.033782525;9.489590212;0.0;0.0;0.0;0.0;0.097891752
-Iter9;10.371851989;0.03385424;9.512947273;0.0;0.0;0.0;0.0;0.096706506
+Starting process <3> on on <c0320.ofp>
+Starting process <8> on on <c0326.ofp>
+Starting process <1> on on <c0286.ofp>
+Starting process <5> on on <c0322.ofp>
+Starting process <9> on on <c0327.ofp>
+Starting process <0> on on <c0285.ofp>
+Starting process <11> on on <c0330.ofp>
+Starting process <10> on on <c0329.ofp>
+Starting process <12> on on <c0331.ofp>
+Starting process <7> on on <c0324.ofp>
+Starting process <2> on on <c0319.ofp>
+Starting process <15> on on <c0334.ofp>
+Starting process <6> on on <c0323.ofp>
+Starting process <4> on on <c0321.ofp>
+Starting process <14> on on <c0333.ofp>
+Starting process <13> on on <c0332.ofp>
+Iter8788;12.622138862;0.036793947;0.0;9.868629658;0.0;1.378370934;0.123950085
+Iter8788;12.16138418;0.03772724703679395;0.0;9.99853996286863;0.0;1.388432326378371;0.1067315391239501
+Iter8788;11.913545648;0.036600234037727254;0.0;9.810331627998538;0.0;1.3646835033884324;0.10571567010673154
+Iter8788;12.046918683;0.03653492603660023;0.0;9.872755925810331;0.0;1.3738083713646836;0.11634902810571567

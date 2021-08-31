@@ -1,21 +1,20 @@
-Starting process <5> on on <c2494.ofp>
-Starting process <6> on on <c2496.ofp>
-Starting process <10> on on <c2500.ofp>
-Starting process <1> on on <c2489.ofp>
-Starting process <14> on on <c2504.ofp>
-Starting process <13> on on <c2503.ofp>
-Starting process <3> on on <c2491.ofp>
-Starting process <12> on on <c2502.ofp>
-Starting process <15> on on <c2506.ofp>
-Starting process <0> on on <c2488.ofp>
-Starting process <4> on on <c2493.ofp>
-Starting process <8> on on <c2498.ofp>
-Starting process <9> on on <c2499.ofp>
-Starting process <11> on on <c2501.ofp>
-Starting process <7> on on <c2497.ofp>
-Starting process <2> on on <c2490.ofp>
-Iter0;142.81036844;0.129604921;130.726828702;0.0;0.0;0.0;0.0;0.248753525
-Iter1;138.946598915;0.130211983;130.695533068;0.0;0.0;0.0;0.0;0.248400822
-Iter2;138.846133042;0.12813147;130.716112674;0.0;0.0;0.0;0.0;0.237503395
-Iter3;139.123828338;0.130172587;131.362219868;0.0;0.0;0.0;0.0;0.238305513
-Iter4;139.465751336;0.128919026;130.681048077;0.0;0.0;0.0;0.0;0.236832185
+Starting process <2> on on <c0355.ofp>
+Starting process <9> on on <c0365.ofp>
+Starting process <0> on on <c0352.ofp>
+Starting process <5> on on <c0360.ofp>
+Starting process <11> on on <c0367.ofp>
+Starting process <1> on on <c0354.ofp>
+Starting process <10> on on <c0366.ofp>
+Starting process <4> on on <c0358.ofp>
+Starting process <13> on on <c0369.ofp>
+Starting process <3> on on <c0357.ofp>
+Starting process <6> on on <c0362.ofp>
+Starting process <8> on on <c0364.ofp>
+Starting process <7> on on <c0363.ofp>
+Starting process <14> on on <c0370.ofp>
+Starting process <15> on on <c0371.ofp>
+Starting process <12> on on <c0368.ofp>
+Iter32000;146.155016133;0.136744544;0.0;130.953662539;0.0;5.132314139;0.237356166
+Iter32000;144.538934503;0.13655983013674455;0.0;130.60846257795365;0.0;5.105030939132314;0.2375030902373562
+Iter32000;146.388235548;0.13615403413655985;0.0;130.90615250260845;0.0;5.144368725105031;0.24432592123750307
+Iter32000;145.595970765;0.13673487613615404;0.0;130.66213978090616;0.0;5.114984125144369;0.23291327924432595

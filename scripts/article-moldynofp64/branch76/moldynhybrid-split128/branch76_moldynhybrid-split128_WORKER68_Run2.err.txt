@@ -1,0 +1,469 @@
+start warmup for 2 times
+##################################################
+warmup 1/2
+#Iteration 9
+ interactions : 212021
+ total energy : -9092.32424652331
+ average vel : 0.13433894973118454
+#Iteration 19
+ interactions : 466213
+ total energy : -9214.93611896541
+ average vel : 0.16775716236549829
+#Iteration 29
+ interactions : 728183
+ total energy : -9232.128109243506
+ average vel : 0.16879484535851516
+#Iteration 39
+ interactions : 990554
+ total energy : -9227.305698253422
+ average vel : 0.17227701118224528
+#Iteration 49
+ interactions : 1253101
+ total energy : -9233.318484655414
+ average vel : 0.17282195184225746
+##################################################
+warmup 2/2
+#Iteration 9
+ interactions : 1465122
+ total energy : -9092.32424652331
+ average vel : 0.13433894973118454
+#Iteration 19
+ interactions : 1719314
+ total energy : -9214.93611896541
+ average vel : 0.1677571623654983
+#Iteration 29
+ interactions : 1981284
+ total energy : -9232.128109243506
+ average vel : 0.1687948453585152
+#Iteration 39
+ interactions : 2243655
+ total energy : -9227.305698253422
+ average vel : 0.17227701118224537
+#Iteration 49
+ interactions : 2506202
+ total energy : -9233.318484655414
+ average vel : 0.1728219518422575
+start main for 4 times
+##################################################
+main run
+#Iteration 9
+ interactions : 8243522
+ total energy : -46069.96962141346
+ average vel : 0.13413536625981695
+#Iteration 19
+ interactions : 13616547
+ total energy : -46006.26684647692
+ average vel : 0.1673388221327457
+#Iteration 29
+ interactions : 18904026
+ total energy : -45996.55712716367
+ average vel : 0.16991872846464243
+#Iteration 39
+ interactions : 24180096
+ total energy : -45996.87960960545
+ average vel : 0.17212559892614107
+#Iteration 49
+ interactions : 29458157
+ total energy : -45997.63672161883
+ average vel : 0.1726896400367806
+Validation failed
+Kinetic Energy = 7397.392307839364  7397.392307839352 diff:1.1823431123048067E-11  1
+############## handist MoldynHybrid time: 2.180127713
+##################################################
+main run
+#Iteration 9
+ interactions : 35195477
+ total energy : -46069.96962141346
+ average vel : 0.13413536625981692
+#Iteration 19
+ interactions : 40568502
+ total energy : -46006.26684647692
+ average vel : 0.16733882213274565
+#Iteration 29
+ interactions : 45855981
+ total energy : -45996.55712716367
+ average vel : 0.16991872846464243
+#Iteration 39
+ interactions : 51132051
+ total energy : -45996.87960960545
+ average vel : 0.17212559892614107
+#Iteration 49
+ interactions : 56410112
+ total energy : -45997.636721618815
+ average vel : 0.17268964003678064
+Validation failed
+Kinetic Energy = 7397.392307839362  7397.392307839352 diff:1.000444171950221E-11  1
+############## handist MoldynHybrid time: 2.160460283
+##################################################
+main run
+#Iteration 9
+ interactions : 62147432
+ total energy : -46069.96962141346
+ average vel : 0.13413536625981695
+#Iteration 19
+ interactions : 67520457
+ total energy : -46006.26684647692
+ average vel : 0.16733882213274567
+#Iteration 29
+ interactions : 72807936
+ total energy : -45996.55712716367
+ average vel : 0.1699187284646424
+#Iteration 39
+ interactions : 78084006
+ total energy : -45996.87960960546
+ average vel : 0.17212559892614107
+#Iteration 49
+ interactions : 83362067
+ total energy : -45997.63672161882
+ average vel : 0.1726896400367806
+Validation failed
+Kinetic Energy = 7397.392307839358  7397.392307839352 diff:6.366462912410498E-12  1
+############## handist MoldynHybrid time: 2.160934221
+##################################################
+main run
+#Iteration 9
+ interactions : 89099387
+ total energy : -46069.96962141346
+ average vel : 0.13413536625981692
+#Iteration 19
+ interactions : 94472412
+ total energy : -46006.26684647692
+ average vel : 0.1673388221327457
+#Iteration 29
+ interactions : 99759891
+ total energy : -45996.55712716367
+ average vel : 0.1699187284646424
+#Iteration 39
+ interactions : 105035961
+ total energy : -45996.87960960546
+ average vel : 0.17212559892614107
+#Iteration 49
+ interactions : 110314022
+ total energy : -45997.63672161882
+ average vel : 0.17268964003678064
+Validation failed
+Kinetic Energy = 7397.392307839362  7397.392307839352 diff:1.000444171950221E-11  1
+############## handist MoldynHybrid time: 2.996763755
+Exception in thread "hz.apgas.cached.thread-1" Exception in thread "hz.apgas.cached.thread-6" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@4a6832d8 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+Exception in thread "hz.apgas.cached.thread-12" Exception in thread "hz.apgas.cached.thread-4" Exception in thread "hz.apgas.cached.thread-13" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1309494c rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+Exception in thread "hz.apgas.cached.thread-7" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@75fec9c2 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@3ef85bcc rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@563e357e rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@35c16c25 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@10db11e7[Shutting down, pool size = 1, active threads = 0, queued tasks = 18, completed tasks = 173]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+Exception in thread "hz.apgas.cached.thread-14" Exception in thread "hz.apgas.cached.thread-11" Exception in thread "hz.apgas.cached.thread-8" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@5029f537 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+Exception in thread "hz.apgas.cached.thread-7" Exception in thread "hz.apgas.cached.thread-16" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@66693aed rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@6315e14f rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+Exception in thread "hz.apgas.cached.thread-10" Exception in thread "hz.apgas.cached.thread-5" Exception in thread "hz.apgas.cached.thread-2" Exception in thread "hz.apgas.cached.thread-1" Exception in thread "hz.apgas.cached.thread-12" Exception in thread "hz.apgas.cached.thread-9" java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@6e5b0ec6 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@658ba451 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@75e7fd24 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@624d2751 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@13e7fac1 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@5fc00a8 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@f425a54 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@642b808a rejected from java.util.concurrent.ScheduledThreadPoolExecutor@68aed850[Shutting down, pool size = 1, active threads = 0, queued tasks = 8, completed tasks = 172]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hazelcast.spi.impl.operationservice.impl.InvocationMonitor.onMemberLeft(InvocationMonitor.java:181)
+	at com.hazelcast.spi.impl.operationservice.impl.OperationServiceImpl.onMemberLeft(OperationServiceImpl.java:441)
+	at com.hazelcast.spi.impl.NodeEngineImpl.onMemberLeft(NodeEngineImpl.java:379)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.onMemberRemove(ClusterServiceImpl.java:564)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeMember(ClusterServiceImpl.java:548)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.doRemoveAddress(ClusterServiceImpl.java:258)
+	at com.hazelcast.internal.cluster.impl.ClusterServiceImpl.removeAddress(ClusterServiceImpl.java:236)
+	at com.hazelcast.nio.NodeIOService$2.run(NodeIOService.java:148)
+	at com.hazelcast.util.executor.CachedExecutorServiceDelegate$Worker.run(CachedExecutorServiceDelegate.java:212)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+	at com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
