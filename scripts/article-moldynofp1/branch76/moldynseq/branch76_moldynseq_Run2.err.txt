@@ -1,0 +1,146 @@
+start warmup for 2 times
+##################################################
+warmup 1/2
+#Iteration 9
+ interactions : 212021
+ total energy : -9092.324246523205
+ average vel : 0.13433894973118446
+#Iteration 19
+ interactions : 466213
+ total energy : -9214.936118965456
+ average vel : 0.16775716236549876
+#Iteration 29
+ interactions : 728183
+ total energy : -9232.128109243506
+ average vel : 0.16879484535851524
+#Iteration 39
+ interactions : 990554
+ total energy : -9227.305698253418
+ average vel : 0.17227701118224525
+#Iteration 49
+ interactions : 1253101
+ total energy : -9233.318484655447
+ average vel : 0.17282195184225824
+##################################################
+warmup 2/2
+#Iteration 9
+ interactions : 1465122
+ total energy : -9092.324246523205
+ average vel : 0.13433894973118446
+#Iteration 19
+ interactions : 1719314
+ total energy : -9214.936118965456
+ average vel : 0.16775716236549876
+#Iteration 29
+ interactions : 1981284
+ total energy : -9232.128109243506
+ average vel : 0.16879484535851524
+#Iteration 39
+ interactions : 2243655
+ total energy : -9227.305698253418
+ average vel : 0.17227701118224525
+#Iteration 49
+ interactions : 2506202
+ total energy : -9233.318484655447
+ average vel : 0.17282195184225824
+start main for 4 times
+##################################################
+main run
+#Iteration 9
+ interactions : 8243522
+ total energy : -46069.96962141374
+ average vel : 0.13413536625981767
+#Iteration 19
+ interactions : 13616547
+ total energy : -46006.26684647711
+ average vel : 0.16733882213274523
+#Iteration 29
+ interactions : 18904026
+ total energy : -45996.55712716382
+ average vel : 0.1699187284646429
+#Iteration 39
+ interactions : 24180096
+ total energy : -45996.879609606374
+ average vel : 0.1721255989261413
+#Iteration 49
+ interactions : 29458157
+ total energy : -45997.63672161802
+ average vel : 0.17268964003678128
+Validation failed
+Kinetic Energy = 7397.392307839314  3.8198777474462986E-11  1
+############## handist MoldynSeq time: 134.766624355
+##################################################
+main run
+#Iteration 9
+ interactions : 35195477
+ total energy : -46069.96962141374
+ average vel : 0.13413536625981767
+#Iteration 19
+ interactions : 40568502
+ total energy : -46006.26684647711
+ average vel : 0.16733882213274523
+#Iteration 29
+ interactions : 45855981
+ total energy : -45996.55712716382
+ average vel : 0.1699187284646429
+#Iteration 39
+ interactions : 51132051
+ total energy : -45996.879609606374
+ average vel : 0.1721255989261413
+#Iteration 49
+ interactions : 56410112
+ total energy : -45997.63672161802
+ average vel : 0.17268964003678128
+Validation failed
+Kinetic Energy = 7397.392307839314  3.8198777474462986E-11  1
+############## handist MoldynSeq time: 134.807944322
+##################################################
+main run
+#Iteration 9
+ interactions : 62147432
+ total energy : -46069.96962141374
+ average vel : 0.13413536625981767
+#Iteration 19
+ interactions : 67520457
+ total energy : -46006.26684647711
+ average vel : 0.16733882213274523
+#Iteration 29
+ interactions : 72807936
+ total energy : -45996.55712716382
+ average vel : 0.1699187284646429
+#Iteration 39
+ interactions : 78084006
+ total energy : -45996.879609606374
+ average vel : 0.1721255989261413
+#Iteration 49
+ interactions : 83362067
+ total energy : -45997.63672161802
+ average vel : 0.17268964003678128
+Validation failed
+Kinetic Energy = 7397.392307839314  3.8198777474462986E-11  1
+############## handist MoldynSeq time: 134.625954278
+##################################################
+main run
+#Iteration 9
+ interactions : 89099387
+ total energy : -46069.96962141374
+ average vel : 0.13413536625981767
+#Iteration 19
+ interactions : 94472412
+ total energy : -46006.26684647711
+ average vel : 0.16733882213274523
+#Iteration 29
+ interactions : 99759891
+ total energy : -45996.55712716382
+ average vel : 0.1699187284646429
+#Iteration 39
+ interactions : 105035961
+ total energy : -45996.879609606374
+ average vel : 0.1721255989261413
+#Iteration 49
+ interactions : 110314022
+ total energy : -45997.63672161802
+ average vel : 0.17268964003678128
+Validation failed
+Kinetic Energy = 7397.392307839314  3.8198777474462986E-11  1
+############## handist MoldynSeq time: 134.601860458

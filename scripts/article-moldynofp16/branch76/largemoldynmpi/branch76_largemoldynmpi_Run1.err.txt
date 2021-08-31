@@ -1,0 +1,476 @@
+start warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 times
+##################################################
+warmup 1/2
+start warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 timesstart warmup for 2 times
+##################################################
+
+
+
+
+
+##################################################
+##################################################
+
+
+##################################################
+
+##################################################
+
+##################################################
+
+##################################################
+warmup 1/2
+
+##################################################
+warmup 1/2
+######################################################################################################################################################
+##################################################
+
+warmup 1/2
+##################################################warmup 1/2
+warmup 1/2
+
+##################################################
+
+##################################################
+
+
+warmup 1/2warmup 1/2
+warmup 1/2
+
+warmup 1/2warmup 1/2
+warmup 1/2
+warmup 1/2warmup 1/2warmup 1/2
+warmup 1/2
+
+
+
+
+#Iteration 9
+ interactions : 1282453
+ total energy : 325.95536424335137
+ average vel : 0.1760366058357377
+#Iteration 19
+ interactions : -1773893283
+ total energy : 326.6110481566201
+ average vel : 0.18795846000689534
+#Iteration 29
+ interactions : -2092687195
+ total energy : 331.01902773145804
+ average vel : 0.1986420468928954
+#Iteration 39
+ interactions : -270370665
+ total energy : 332.8536400825735
+ average vel : 0.19497338839799797
+#Iteration 49
+ interactions : -1169772672
+ total energy : 336.44251124285785
+ average vel : 0.19694833524917643
+####################################################################################################
+warmup 2/2
+
+warmup 2/2
+####################################################################################################
+warmup 2/2
+
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+####################################################################################################
+warmup 2/2
+
+warmup 2/2
+####################################################################################################
+warmup 2/2
+
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+##################################################
+warmup 2/2
+#Iteration 9
+ interactions : 1282453
+ total energy : 325.95536424335137
+ average vel : 0.1760366058357377
+#Iteration 19
+ interactions : -1773893283
+ total energy : 326.6110481566201
+ average vel : 0.18795846000689534
+#Iteration 29
+ interactions : -2092687195
+ total energy : 331.01902773145804
+ average vel : 0.1986420468928954
+#Iteration 39
+ interactions : -270370665
+ total energy : 332.8536400825735
+ average vel : 0.19497338839799797
+#Iteration 49
+ interactions : -1169772672
+ total energy : 336.44251124285785
+ average vel : 0.19694833524917643
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times
+start main for 4 times##################################################
+##################################################
+####################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+main run
+##################################################main run
+##################################################
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+####################################################################################################
+main run
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+#Iteration 9
+ interactions : -1846829298
+ total energy : -171942.50502299756
+ average vel : 0.13348679840265348
+#Iteration 19
+ interactions : 1955757743
+ total energy : -171985.89240867284
+ average vel : 0.16779896666958177
+#Iteration 29
+ interactions : 272002301
+ total energy : -171995.7384385148
+ average vel : 0.16968128472249158
+#Iteration 39
+ interactions : -983179833
+ total energy : -171998.22855317377
+ average vel : 0.1714712580498431
+#Iteration 49
+ interactions : -2074340682
+ total energy : -171998.938727624
+ average vel : 0.1730015435479177
+############## mpi MoldynMPI time: 102.298765571
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Validation failed
+Validation failedValidation failedValidation failed
+Validation failedValidation failedValidation failedValidation failedValidation failedValidation failedValidation failedValidation failed
+
+Validation failedValidation failed
+
+
+Validation failed
+
+
+
+
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+######################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+main run
+##################################################
+main run
+########################################################################################################################################################################################################
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+#Iteration 9
+ interactions : -1846829298
+ total energy : -171942.50502299756
+ average vel : 0.13348679840265348
+#Iteration 19
+ interactions : 1955757743
+ total energy : -171985.89240867284
+ average vel : 0.16779896666958177
+#Iteration 29
+ interactions : 272002301
+ total energy : -171995.7384385148
+ average vel : 0.16968128472249158
+#Iteration 39
+ interactions : -983179833
+ total energy : -171998.22855317377
+ average vel : 0.1714712580498431
+#Iteration 49
+ interactions : -2074340682
+ total energy : -171998.938727624
+ average vel : 0.1730015435479177
+############## mpi MoldynMPI time: 102.108794437
+Validation failed
+Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+Validation failedValidation failed
+Validation failedValidation failedValidation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+Validation failed
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failedValidation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+Validation failedValidation failed
+
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+
+
+################################################################################################################################################################################################################################################################################################################################################################################################################
+main run
+####################################################################################################
+main run
+##################################################
+main run
+##########################################################################################################################################################################################################################################################
+main run
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+#Iteration 9
+ interactions : -1846829298
+ total energy : -171942.50502299756
+ average vel : 0.13348679840265348
+#Iteration 19
+ interactions : 1955757743
+ total energy : -171985.89240867284
+ average vel : 0.16779896666958177
+#Iteration 29
+ interactions : 272002301
+ total energy : -171995.7384385148
+ average vel : 0.16968128472249158
+#Iteration 39
+ interactions : -983179833
+ total energy : -171998.22855317377
+ average vel : 0.1714712580498431
+#Iteration 49Validation failed
+ interactions : -2074340682
+ total energy : -171998.938727624
+ average vel : 0.1730015435479177
+############## mpi MoldynMPI time: 102.012981691
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+Validation failed
+
+Validation failedValidation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failedValidation failed
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+##########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+main run######################################################################################################################################################
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+
+
+main run
+
+main run
+
+main run
+
+main run
+
+main run
+#Iteration 9
+ interactions : -1846829298
+ total energy : -171942.50502299756
+ average vel : 0.13348679840265348
+#Iteration 19
+ interactions : 1955757743
+ total energy : -171985.89240867284
+ average vel : 0.16779896666958177
+#Iteration 29
+ interactions : 272002301
+ total energy : -171995.7384385148
+ average vel : 0.16968128472249158
+#Iteration 39
+ interactions : -983179833
+ total energy : -171998.22855317377
+ average vel : 0.1714712580498431
+#Iteration 49
+Validation failedValidation failed interactions : -2074340682
+
+Validation failedValidation failedValidation failedValidation failedValidation failedValidation failed
+ total energy : -171998.938727624Validation failedKinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+
+
+
+
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Validation failed
+
+
+Validation failedValidation failedValidation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+ average vel : 0.1730015435479177Kinetic Energy = 27095.474293169944  27096.474293169944  2
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+
+
+
+
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+
+Kinetic Energy = 27095.474293169944  27096.474293169944  2
+############## mpi MoldynMPI time: 102.37451865
+
+Validation failed
+Kinetic Energy = 27095.474293169944  27096.474293169944  2

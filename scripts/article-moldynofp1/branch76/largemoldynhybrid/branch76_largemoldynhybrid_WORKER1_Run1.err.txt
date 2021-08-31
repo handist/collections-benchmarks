@@ -1,0 +1,81 @@
+start warmup for 2 times
+##################################################
+warmup 1/2
+#Iteration 9
+ interactions : 212021
+ total energy : -9092.324246523332
+ average vel : 0.13433894973118446
+#Iteration 19
+ interactions : 466213
+ total energy : -9214.93611896542
+ average vel : 0.16775716236549842
+#Iteration 29
+ interactions : 728183
+ total energy : -9232.128109243546
+ average vel : 0.16879484535851522
+#Iteration 39
+ interactions : 990554
+ total energy : -9227.305698253356
+ average vel : 0.17227701118224506
+#Iteration 49
+ interactions : 1253101
+ total energy : -9233.318484655363
+ average vel : 0.17282195184225765
+##################################################
+warmup 2/2
+#Iteration 9
+ interactions : 1465122
+ total energy : -9092.324246523332
+ average vel : 0.13433894973118446
+#Iteration 19
+ interactions : 1719314
+ total energy : -9214.936118965417
+ average vel : 0.16775716236549848
+#Iteration 29
+ interactions : 1981284
+ total energy : -9232.128109243547
+ average vel : 0.16879484535851524
+#Iteration 39
+ interactions : 2243655
+ total energy : -9227.305698253353
+ average vel : 0.17227701118224506
+#Iteration 49
+ interactions : 2506202
+ total energy : -9233.318484655363
+ average vel : 0.172821951842258
+start main for 4 times
+##################################################
+main run
+#Iteration 9
+ interactions : 70867720
+ total energy : -171942.505023005
+ average vel : 0.13348679840265373
+#Iteration 19
+ interactions : 139261955
+ total energy : -171985.89240867324
+ average vel : 0.1677989666695815
+#Iteration 29
+ interactions : 207968082
+ total energy : -171995.73843850926
+ average vel : 0.16968128472249142
+#Iteration 39
+ interactions : 276816489
+ total energy : -171998.22855317188
+ average vel : 0.17147125804984267
+#Iteration 49
+ interactions : 345751867
+ total energy : -171998.93872762707
+ average vel : 0.17300154354791797
+Validation failed
+Kinetic Energy = 27095.4742931698  -1.0 diff:27096.4742931698  2
+############## handist MoldynHybrid time: 1886.516370326
+##################################################
+main run
+#Iteration 9
+ interactions : 414113385
+ total energy : -171942.505023005
+ average vel : 0.13348679840265373
+#Iteration 19
+ interactions : 482507620
+ total energy : -171985.89240867324
+ average vel : 0.1677989666695815
