@@ -19,7 +19,7 @@ import handist.collections.dist.DistLog;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
-import handist.collections.glb.util.GlbLog;
+import handist.collections.util.SavedLog;
 import handist.kmeans.KMeans.AveragePosition;
 import handist.kmeans.KMeans.ClosestPoint;
 import handist.kmeans.KMeans.Point;
@@ -28,14 +28,14 @@ public class KMeansTriangleDistribution {
 
     public static void main(String[] args) {
         // ARGUMENT PARSING
-        if (args.length < 5) {
+        if (args.length < 6) {
             printUsage();
             return;
         }
 
         int dimension, k, repetitions, chunkSize, dataSize, chunkCount;
         long seed;
-        String logFilePrefix = null;
+        String logFile = null;
         try {
             dimension = Integer.parseInt(args[0]);
             k = Integer.parseInt(args[1]);
@@ -43,14 +43,13 @@ public class KMeansTriangleDistribution {
             chunkSize = Integer.parseInt(args[3]);
             dataSize = Integer.parseInt(args[4]);
             chunkCount = dataSize / chunkSize;
-            if (args.length > 5) {
-                seed = Long.parseLong(args[5]);
+            logFile = args[5];
+            if (args.length > 6) {
+                seed = Long.parseLong(args[6]);
             } else {
                 seed = System.nanoTime();
             }
-            if (args.length > 6) {
-                logFilePrefix = args[6];
-            }
+
         } catch (final Exception e) {
             printUsage();
             System.err.println("Arguments received were " + Arrays.toString(args));
@@ -119,92 +118,57 @@ public class KMeansTriangleDistribution {
         System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
-        int glbProgramCounter = 0; // used as suffix when saving the logs of the successive GLB programs
-        double[][] clusterCentroids = initialClusterCenter;
+        final DistLog log = new DistLog();
+        final double[][] clusterCentroids = initialClusterCenter;
         for (int iter = 0; iter < REPETITIONS; iter++) {
-            final long iterStart = System.nanoTime();
-
-            // Assign each point to a cluster
-            final double[][] centroids = clusterCentroids;
+            final int iterF = iter; // Final for use inside closure
             GlobalLoadBalancer.underGLB(() -> {
-                points.GLB.forEach(p -> p.assignCluster(centroids)).waitGlobalTermination();
-            });
-            final DistLog clusterAssignLog = GlobalLoadBalancer.getPreviousLog();
-            final long assignFinished = System.nanoTime(); // Time tracking
+                double[][] centroids = clusterCentroids; // Carry variable inside closure (cannot use clusterCentroids)
 
-            // Compute the average position for each cluster
-            final AveragePosition avgClusterPosition = new AveragePosition(K, DIMENSION);
-            GlobalLoadBalancer.underGLB(() -> {
-                // Calculate the average position of each cluster
+                final long iterStart = System.nanoTime();
+                final double[][] centroidsF = centroids; // Final for use in closure in next line
+                points.GLB.forEach(p -> p.assignCluster(centroidsF)).waitGlobalTermination();
+                final long assignFinished = System.nanoTime(); // Time tracking
+
+                // Compute the average position for each cluster
+                final AveragePosition avgClusterPosition = new AveragePosition(K, DIMENSION);
                 points.GLB.reduce(avgClusterPosition);
-            });
-            final DistLog clusterAverageLog = GlobalLoadBalancer.getPreviousLog();
+                final long avgFinished = System.nanoTime(); // Time tracking
 
-            final long avgFinished = System.nanoTime(); // Time tracking
-
-            // Find the closest point to each centroid
-            final ClosestPoint closestPoint = new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters);
-            GlobalLoadBalancer.underGLB(() -> {
-                // Calculate the new centroid of each cluster
+                // Find the closest point to each centroid
+                final ClosestPoint closestPoint = new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters);
                 points.GLB.reduce(closestPoint).result();
-            });
-            final DistLog centroidAssignLog = GlobalLoadBalancer.getPreviousLog();
 
-            final long iterEnd = System.nanoTime(); // Time tracking
+                final long iterEnd = System.nanoTime(); // Time tracking
 
-            clusterCentroids = closestPoint.closestPointCoordinates;
+                centroids = closestPoint.closestPointCoordinates;
 
-            // Part of the code used to track the distribution:
-            final long[] size = new long[WORLD.size()];
-            for (final Place p : WORLD.places()) {
-                size[p.id] = Constructs.at(p, () -> {
-                    return points.size();
-                });
-            }
-//            points.GLOBAL.getSizeDistribution(size);
-
-            // Print the elapsed time, the number of trees, and the number of nodes explored
-            // by each host on System.out
-            final StringBuilder sb = new StringBuilder(
-                    "Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + (assignFinished - iterStart) / 1e6
-                            + "; " + (avgFinished - assignFinished) / 1e6 + "; " + (iterEnd - avgFinished) / 1e6);
-            for (final long l : size) {
-                sb.append("; " + l);
-            }
-            System.out.println(sb.toString());
-
-            // If a prefix for the logs was specified, save the three successive DistLog
-            // instances
-            if (logFilePrefix != null) {
-                final GlbLog assignGlbLog = new GlbLog(clusterAssignLog);
-                final GlbLog averageGlbLog = new GlbLog(clusterAverageLog);
-                final GlbLog centroidGlbLog = new GlbLog(centroidAssignLog);
-
-                try {
-
-                    final String assignFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
-                    assignGlbLog.saveToFile(new File(assignFilename));
-                    glbProgramCounter++;
-
-                    final String averageFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
-                    averageGlbLog.saveToFile(new File(averageFilename));
-                    glbProgramCounter++;
-
-                    final String centroidFilename = logFilePrefix + "_" + glbProgramCounter + ".glblog";
-                    centroidGlbLog.saveToFile(new File(centroidFilename));
-                    glbProgramCounter++;
-
-                } catch (final IOException e) {
-                    System.err.println("Program encountered when log file");
-                    e.printStackTrace();
+                // Part of the code used to track the distribution:
+                final long[] size = new long[WORLD.size()];
+                for (final Place p : WORLD.places()) {
+                    size[p.id] = Constructs.at(p, () -> {
+                        return points.size();
+                    });
                 }
-            }
 
-//            System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
-//                    + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
-//                    + (iterEnd - avgFinished) / 1e6);
+                // Print the elapsed time, the number of trees, and the number of nodes explored
+                // by each host on System.out
+                final StringBuilder sb = new StringBuilder(
+                        "Iter " + iterF + "; " + (iterEnd - iterStart) / 1e6 + "; " + (assignFinished - iterStart) / 1e6
+                                + "; " + (avgFinished - assignFinished) / 1e6 + "; " + (iterEnd - avgFinished) / 1e6);
+                for (final long l : size) {
+                    sb.append("; " + l);
+                }
+                System.out.println(sb.toString());
+            });
         }
 
+        try {
+            new SavedLog(log).saveToFile(new File(logFile));
+        } catch (final IOException e) {
+            System.err.println("Program encountered when saving GLB log to file");
+            e.printStackTrace();
+        }
     }
 
     /**
