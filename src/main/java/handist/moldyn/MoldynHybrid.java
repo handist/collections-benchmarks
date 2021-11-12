@@ -669,14 +669,14 @@ public class MoldynHybrid implements Serializable {
             start = System.nanoTime();
 
             oneX.allreduce((out, elem) -> {
-                out.accept(elem.xforce);
-                out.accept(elem.yforce);
-                out.accept(elem.zforce);
+                out.writeDouble(elem.xforce);
+                out.writeDouble(elem.yforce);
+                out.writeDouble(elem.zforce);
             }, (in, elem) -> {
-                elem.xforce = in.get();
-                elem.yforce = in.get();
-                elem.zforce = in.get();
-            }, MPI.SUM, 3);
+                elem.xforce = in.readDouble();
+                elem.yforce = in.readDouble();
+                elem.zforce = in.readDouble();
+            }, MPI.SUM);
 
             epot = placeGroup.allReduce1(epot, MPI.SUM);
             vir = placeGroup.allReduce1(vir, MPI.SUM);
