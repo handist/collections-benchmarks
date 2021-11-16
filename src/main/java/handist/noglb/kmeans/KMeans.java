@@ -1,11 +1,20 @@
 package handist.noglb.kmeans;
 
+import static apgas.Constructs.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import apgas.Place;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.DistChunkedList;
@@ -17,7 +26,22 @@ import handist.collections.dist.TeamedPlaceGroup;
  * @author Patrick Finnerty
  *
  */
-public class KMeans {
+public class KMeans implements Serializable {
+
+    /** Serial Version UID */
+    private static final long serialVersionUID = -216740021880516992L;
+
+    /**
+     * Constant defining a property of this program. If this property is set, the
+     * detailed computation time of each host will be printed to the file specified
+     * as parameter.
+     */
+    public static final String DETAILED_PER_HOST_OUTPUT = "kmeans.detailed_output";
+
+    /**
+     * Array into which local information about computation time is recorded.
+     */
+    static transient ArrayList<Long> localStamps;
 
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
@@ -98,6 +122,7 @@ public class KMeans {
 
         final DistChunkedList<Point> points = new DistChunkedList<>();
         world.broadcastFlat(() -> {
+            localStamps = new ArrayList<>(REPETITIONS * 4);
             final List<Double[]> initialPoints = generateData(dataSize, dimension, k);
             for (int chunkNumber = 0; chunkNumber < chunkCount; chunkNumber++) {
                 final LongRange chunkRange = new LongRange(chunkNumber * chunkSize, (chunkNumber + 1) * chunkSize);
@@ -129,19 +154,30 @@ public class KMeans {
             double[][] clusterCentroids = initialClusterCenter;
             for (int iter = 0; iter < REPETITIONS; iter++) {
                 final long iterStart = System.nanoTime();
+                localStamps.add(iterStart);
                 final double[][] centroids = clusterCentroids;
                 // Assign each point to a cluster
                 points.parallelForEach(p -> p.assignCluster(centroids));
 
                 final long assignFinished = System.nanoTime();
                 // Calculate the average position of each cluster
-                final AveragePosition avgClusterPosition = points.team()
-                        .parallelReduce(new AveragePosition(K, DIMENSION));
+//                final AveragePosition avgClusterPosition = points.team()
+//                        .parallelReduce(new AveragePosition(K, DIMENSION));
+                // The above is explicitly split into two to enable us to distinguish the
+                // computation time and the communication/merging time
+                final AveragePosition localAvg = points.parallelReduce(new AveragePosition(K, DIMENSION));
+                localStamps.add(System.nanoTime());
+                final AveragePosition avgClusterPosition = localAvg.teamReduction(world);
 
                 final long avgFinished = System.nanoTime();
+                localStamps.add(System.nanoTime());
                 // Calculate the new centroid of each cluster
-                final ClosestPoint closestPoint = points.team()
+//                final ClosestPoint closestPoint = points.team()
+//                        .parallelReduce(new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters));
+                final ClosestPoint localClosestPoint = points
                         .parallelReduce(new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters));
+                localStamps.add(System.nanoTime());
+                final ClosestPoint closestPoint = localClosestPoint.teamReduction(world);
                 clusterCentroids = closestPoint.closestPointCoordinates;
 
                 final long iterEnd = System.nanoTime();
@@ -152,6 +188,78 @@ public class KMeans {
                 }
             }
         });
+
+        // The program has completed.
+        // If required, we dump some more complete output on a specified file
+        if (System.getProperties().containsKey(DETAILED_PER_HOST_OUTPUT)) {
+            final String detailedOutputFileName = System.getProperty(DETAILED_PER_HOST_OUTPUT);
+            final File outputFile = new File(detailedOutputFileName);
+            PrintStream out;
+            try {
+                out = new PrintStream(outputFile);
+            } catch (final FileNotFoundException e) {
+                System.err.println("Issue in creating file for detailed output");
+                e.printStackTrace();
+                System.err.println("Aborting ...");
+                return;
+            }
+
+            // First, collect all the remote stamps
+            final List<ArrayList<Long>> hostStamps = new ArrayList<>(world.size());
+            for (final Place p : world.places()) {
+                hostStamps.add(at(p, () -> {
+                    return localStamps;
+                }));
+            }
+
+            @SuppressWarnings("unchecked")
+            final Iterator<Long>[] stampIterator = new Iterator[world.size()];
+            for (int p = 0; p < world.size(); p++) {
+                stampIterator[p] = hostStamps.get(p).iterator();
+            }
+            // Second parse the whole lot and print line by line the computation time.
+            for (int iter = 0; iter < REPETITIONS; iter++) {
+                // For each iteration, there are 3 operations being measured:
+                // 1. assignment of cluster based on closest centroid
+                // 2. compute new cluster average
+                // 3. find closest point to average to be next centroid
+                //
+                // As 1. and 2. are measured together, this represents 4 stamps per iteration on
+                // each host
+                final long[] startStamp = new long[world.size()];
+                final long[] endStamp = new long[world.size()];
+                for (int p = 0; p < world.size(); p++) {
+                    startStamp[p] = stampIterator[p].next();
+                    endStamp[p] = stampIterator[p].next();
+                }
+                printStampDiff(out, "assign+avg", startStamp, endStamp);
+                for (int p = 0; p < world.size(); p++) {
+                    startStamp[p] = stampIterator[p].next();
+                    endStamp[p] = stampIterator[p].next();
+                }
+                printStampDiff(out, "closestpnt", startStamp, endStamp);
+            }
+            out.close();
+        }
+    }
+
+    /**
+     * Subroutine used to print on one line the elapsed time between the stamps
+     * contained in the arrays passed as parameters. Both arrays should be of the
+     * same size so that pairs can be computed without reaching an
+     * {@link ArrayIndexOutOfBoundsException}
+     *
+     * @param out        outputStream into which the information should be printed
+     * @param msg        the string to print in the first column
+     * @param startStamp start stamps
+     * @param endStamp   end stamps
+     */
+    private static void printStampDiff(PrintStream out, String msg, long[] startStamp, long[] endStamp) {
+        out.print(msg);
+        for (int i = 0; i < startStamp.length; i++) {
+            out.print(";" + (endStamp[i] - startStamp[i]) / 1e6);
+        }
+        out.println();
     }
 
     /**
