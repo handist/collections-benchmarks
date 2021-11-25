@@ -35,10 +35,11 @@ import java.util.function.Function;
 
 import apgas.MultipleException;
 import handist.collections.Chunk;
-import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.RangedList;
 import handist.collections.RangedListProduct;
+import handist.collections.accumulator.AccumulatorCompleteRange;
+import handist.collections.accumulator.ThreadLocalAccumulator;
 import handist.collections.dist.CachableChunkedList;
 import handist.collections.dist.Reducer;
 import handist.collections.dist.TeamedPlaceGroup;
@@ -52,28 +53,8 @@ public class MoldynHybrid implements Serializable {
         int interactions;
     }
 
-    static class MyAccumM extends AccumulatorManager<Particle, Sp> {
-        public MyAccumM(ChunkedList<Particle> target) {
-            super(target);
-        }
-
-        @Override
-        protected Sp init() {
-            return new Sp();
-        }
-
-        @Override
-        protected void reduce(Particle target, Sp copy) {
-            target.xforce += copy.x;
-            copy.x = 0;
-            target.yforce += copy.y;
-            copy.y = 0;
-            target.zforce += copy.z;
-            copy.z = 0;
-        }
-    }
-
     static class MyReducer extends Reducer<MyReducer, Particle> {
+        private static final long serialVersionUID = 2449999554090584509L;
         double val;
         final Function<Particle, Double> func;
 
@@ -261,6 +242,7 @@ public class MoldynHybrid implements Serializable {
     }
 
     static class Sp implements Serializable {
+        private static final long serialVersionUID = -7387311209302573067L;
         public double x = 0.0;
         public double y = 0.0;
         public double z = 0.0;
@@ -354,7 +336,7 @@ public class MoldynHybrid implements Serializable {
     private int Ndivide;
 
     Random randnum;
-    transient MyAccumM myAccM;
+    transient ThreadLocalAccumulator<Particle, Sp> myAcc;
 
     transient double total_ns, domove_ns, reduce_ns, others_ns; // timer
     transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
@@ -382,7 +364,8 @@ public class MoldynHybrid implements Serializable {
         fyi = 0.0;
         fzi = 0.0;
 
-        final RangedList<Sp> fs = myAccM.getCopy(pairs.getRange());
+        final RangedList<Sp> fs = myAcc.acquire(pairs.getRange()).subList1(pairs.getRange()); // FIXME : change not to
+                                                                                              // use sublist
         final Iterator<Sp> fiterator = fs != null ? fs.iterator() : null;
         double vir0 = 0.0, epot0 = 0.0;
         int inters0 = 0;
@@ -595,7 +578,16 @@ public class MoldynHybrid implements Serializable {
         oneX.forEachChunk((c) -> {
             one = c;
         });
-        myAccM = new MyAccumM(oneX);
+        myAcc = new AccumulatorCompleteRange<>(oneX, (Long index) -> {
+            return new Sp();
+        }, (Particle particle, Sp sp) -> {
+            particle.xforce += sp.x;
+            sp.x = 0;
+            particle.yforce += sp.y;
+            sp.y = 0;
+            particle.zforce += sp.z;
+            sp.z = 0;
+        });
         move = 0;
         double start, end;
 
@@ -649,7 +641,7 @@ public class MoldynHybrid implements Serializable {
             forceCalc_ns += (end - start);
 
             start = System.nanoTime();
-            myAccM.parallelMerge(Nworkers);
+            myAcc.parallelMerge(Nworkers);
             for (final LocalStatics ls : lss) {
                 epot += ls.epot;
                 vir += ls.vir;
