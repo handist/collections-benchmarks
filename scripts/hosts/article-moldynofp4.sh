@@ -12,7 +12,7 @@ BENCHMARKS="${BENCHMARKS} moldyn-hybrid-split128.sh moldyn-hybrid-largesplit128.
 
 export BENCHMARKS
 # List of library configruations that we want to test
-export CONFIGS="76-2dtrial-outputproduct.sh"
+export CONFIGS="112-accumulatorV1.sh"
 # Path to the MPI bindings
 export JAVALIBRARYPATH=/work/gp43/share/mpj-v0_44/lib
 # Number of hosts desired

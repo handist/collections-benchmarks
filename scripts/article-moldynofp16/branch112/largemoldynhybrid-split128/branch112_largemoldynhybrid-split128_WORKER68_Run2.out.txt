@@ -1,0 +1,20 @@
+Starting process <12> on on <c3114.ofp>
+Starting process <3> on on <c2935.ofp>
+Starting process <1> on on <c2933.ofp>
+Starting process <5> on on <c2937.ofp>
+Starting process <13> on on <c3115.ofp>
+Starting process <14> on on <c3116.ofp>
+Starting process <9> on on <c3111.ofp>
+Starting process <6> on on <c2938.ofp>
+Starting process <0> on on <c2932.ofp>
+Starting process <10> on on <c3112.ofp>
+Starting process <15> on on <c3117.ofp>
+Starting process <11> on on <c3113.ofp>
+Starting process <8> on on <c3110.ofp>
+Starting process <4> on on <c2936.ofp>
+Starting process <2> on on <c2934.ofp>
+Starting process <7> on on <c2939.ofp>
+Iter32000;10.239000378;0.04190123;0.211028214;2.371388284;0.248508643;5.427481184;0.152006941
+Iter32000;9.002536788;0.03687914504190123;0.19720401821102823;2.4775769303713884;0.22712983524850863;5.216475372427481;0.14158759915200692
+Iter32000;10.435965438;0.03946540503687915;0.19819247819720404;2.3057920104775773;0.2231312762271298;5.0518148322164755;0.1484864321415876
+Iter32000;8.755759143;0.034658383039465404;0.16890693019819247;2.2283089463057917;0.22349417722313128;5.091399682051815;0.14118656414848643
