@@ -1,4 +1,4 @@
-package handist.noglb.kmeans;
+package handist.kmeans;
 
 import static apgas.Constructs.*;
 
@@ -26,7 +26,7 @@ import handist.collections.dist.TeamedPlaceGroup;
  * @author Patrick Finnerty
  *
  */
-public class KMeans implements Serializable {
+public class KMeansNoGlb implements Serializable {
 
     /** Serial Version UID */
     private static final long serialVersionUID = -216740021880516992L;
@@ -109,7 +109,7 @@ public class KMeans implements Serializable {
         }
 
         System.err.println(
-                SingleHostKMeans.class.getCanonicalName() + "; arguments received were " + Arrays.toString(args));
+                KMeansSingleHostNoGlb.class.getCanonicalName() + "; arguments received were " + Arrays.toString(args));
 
         // initialize final constants for easier lambda serialization later
         final int K = k;
@@ -266,7 +266,7 @@ public class KMeans implements Serializable {
      * Prints usage onto standard error output
      */
     private static void printUsage() {
-        System.err.println("Usage: java -cp [...] " + KMeans.class.getCanonicalName()
+        System.err.println("Usage: java -cp [...] " + KMeansNoGlb.class.getCanonicalName()
                 + " <point dimension> <nb of clusters \"k\"> <repetitions> <nb points/host> <chunk size> [<seed>]");
     }
 

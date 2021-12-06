@@ -1,8 +1,8 @@
-package handist.noglb.kmeans;
+package handist.kmeans;
 
 import handist.collections.dist.Reducer;
 
-class AveragePosition extends Reducer<AveragePosition, Point> {
+final public class AveragePosition extends Reducer<AveragePosition, Point> {
 
     /** Serial Version UID */
     private static final long serialVersionUID = 29050701329215796L;
@@ -11,7 +11,7 @@ class AveragePosition extends Reducer<AveragePosition, Point> {
      * First index: cluster id Second index: position in the 'nth' dimension of the
      * point
      */
-    final double[][] clusterCenters;
+    public final double[][] clusterCenters;
 
     /**
      * Number of points contained in the average position contained in
@@ -37,7 +37,7 @@ class AveragePosition extends Reducer<AveragePosition, Point> {
         for (int k = 0; k < clusterCenters.length; k++) {
             // For each dimension 'd' of the centroid
             for (int d = 0; d < clusterCenters[k].length; d++) {
-                clusterCenters[k][d] = KMeans.weightedAverage(clusterCenters[k][d], includedPoints[k],
+                clusterCenters[k][d] = KMeansGlb.weightedAverage(clusterCenters[k][d], includedPoints[k],
                         reducer.clusterCenters[k][d], reducer.includedPoints[k]);
             }
             includedPoints[k] += reducer.includedPoints[k];
@@ -53,7 +53,7 @@ class AveragePosition extends Reducer<AveragePosition, Point> {
     public void reduce(Point input) {
         final int k = input.clusterAssignment;
         for (int d = 0; d < clusterCenters[k].length; d++) {
-            clusterCenters[k][d] = KMeans.weightedAverage(clusterCenters[k][d], includedPoints[k], input.position[d],
+            clusterCenters[k][d] = KMeansGlb.weightedAverage(clusterCenters[k][d], includedPoints[k], input.position[d],
                     1l);
         }
         includedPoints[k]++;

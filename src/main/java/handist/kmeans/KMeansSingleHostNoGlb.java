@@ -1,4 +1,4 @@
-package handist.noglb.kmeans;
+package handist.kmeans;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +17,7 @@ import handist.collections.LongRange;
  * @author Patrick Finnerty
  *
  */
-public class SingleHostKMeans {
+public class KMeansSingleHostNoGlb {
 
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
@@ -91,7 +91,7 @@ public class SingleHostKMeans {
         }
 
         System.err.println(
-                SingleHostKMeans.class.getCanonicalName() + "; arguments received were " + Arrays.toString(args));
+                KMeansSingleHostNoGlb.class.getCanonicalName() + "; arguments received were " + Arrays.toString(args));
 
         // initialize final constants for easier lambda serialization later
         final int K = k;
@@ -158,7 +158,7 @@ public class SingleHostKMeans {
      * Prints usage onto standard error output
      */
     private static void printUsage() {
-        System.err.println("Usage: java -cp [...] " + SingleHostKMeans.class.getCanonicalName()
+        System.err.println("Usage: java -cp [...] " + KMeansSingleHostNoGlb.class.getCanonicalName()
                 + " <point dimension> <nb of clusters \"k\"> <repetitions> <nb points> <chunk size> [<seed>]");
     }
 
