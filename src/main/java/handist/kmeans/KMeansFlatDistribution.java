@@ -21,6 +21,7 @@ import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
 import handist.collections.util.SavedLog;
 
+@Deprecated
 public class KMeansFlatDistribution {
 
     public static void main(String[] args) {

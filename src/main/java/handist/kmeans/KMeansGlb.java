@@ -9,7 +9,6 @@ import java.util.stream.IntStream;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.DistChunkedList;
-import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
 
 public class KMeansGlb {
@@ -53,39 +52,25 @@ public class KMeansGlb {
     }
 
     public static void main(String[] args) {
-        // ARGUMENT PARSING
-        if (args.length < 5) {
-            printUsage();
-            return;
-        }
-
-        int dimension, k, repetitions, chunkSize, chunkCount, dataSize;
-        long seed;
+        Arguments arguments = null;
         try {
-            dimension = Integer.parseInt(args[0]);
-            k = Integer.parseInt(args[1]);
-            repetitions = Integer.parseInt(args[2]);
-            chunkSize = Integer.parseInt(args[3]);
-            chunkCount = Integer.parseInt(args[4]);
-            dataSize = chunkSize * chunkCount;
-
-            if (args.length > 5) {
-                seed = Long.parseLong(args[5]);
-            } else {
-                seed = System.nanoTime();
-            }
+            arguments = new Arguments(args);
         } catch (final Exception e) {
-            printUsage();
+            Arguments.printHelp(KMeansNoGlb.class.getCanonicalName());
             System.err.println("Arguments received were " + Arrays.toString(args));
-            return;
+            System.exit(1);
         }
-
-        Config.printConfiguration(System.err);
 
         // initialize final constants for easier lambda serialization later
-        final int K = k;
-        final int DIMENSION = dimension;
-        final int REPETITIONS = repetitions;
+        final int k = arguments.k;
+        final int dimension = arguments.dim;
+        final int repetitions = arguments.iterations;
+        final int chunkSize = arguments.ptsPerChunk;
+        final int chunkCount = arguments.nbChunks;
+        final int dataSize = chunkSize * chunkCount;
+        final long seed = arguments.seed;
+
+        System.err.println("Arguments received were " + Arrays.toString(args));
 
         // INITIALIZATION
         final long initStart = System.nanoTime();
@@ -124,7 +109,7 @@ public class KMeansGlb {
         // ITERATIONS OF THE K-MEANS ALGORITHM
         GlobalLoadBalancer.underGLB(() -> {
             double[][] clusterCentroids = initialClusterCenter;
-            for (int iter = 0; iter < REPETITIONS; iter++) {
+            for (int iter = 0; iter < repetitions; iter++) {
                 final long iterStart = System.nanoTime();
                 final double[][] centroids = clusterCentroids;
                 // Assign each point to a cluster
@@ -132,13 +117,13 @@ public class KMeansGlb {
 
                 final long assignFinished = System.nanoTime();
                 // Calculate the average position of each cluster
-                final AveragePosition avgClusterPosition = points.GLB.reduce(new AveragePosition(K, DIMENSION))
+                final AveragePosition avgClusterPosition = points.GLB.reduce(new AveragePosition(k, dimension))
                         .result();
 
                 final long avgFinished = System.nanoTime();
                 // Calculate the new centroid of each cluster
                 final ClosestPoint closestPoint = points.GLB
-                        .reduce(new ClosestPoint(K, DIMENSION, avgClusterPosition.clusterCenters)).result();
+                        .reduce(new ClosestPoint(k, dimension, avgClusterPosition.clusterCenters)).result();
                 clusterCentroids = closestPoint.closestPointCoordinates;
 
                 final long iterEnd = System.nanoTime();
