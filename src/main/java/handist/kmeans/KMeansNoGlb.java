@@ -41,7 +41,7 @@ public class KMeansNoGlb implements Serializable {
     /**
      * Array into which local information about computation time is recorded.
      */
-    static transient ArrayList<Long> localStamps;
+    static transient ArrayList<Long> localStamps = new ArrayList<>();
 
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
