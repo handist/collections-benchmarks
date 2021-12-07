@@ -1,5 +1,7 @@
 package handist.kmeans;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -9,9 +11,13 @@ import java.util.stream.IntStream;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
 import handist.collections.dist.DistChunkedList;
+import handist.collections.dist.DistLog;
 import handist.collections.glb.GlobalLoadBalancer;
+import handist.collections.util.SavedLog;
 
 public class KMeansGlb {
+
+    private static final String GLB_LOG_FILE = "kmeans.logfile";
 
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
@@ -70,6 +76,7 @@ public class KMeansGlb {
         final int dataSize = chunkSize * chunkCount;
         final long seed = arguments.seed;
 
+        System.err.println("Main class " + KMeansGlb.class.getCanonicalName());
         System.err.println("Arguments received were " + Arrays.toString(args));
 
         // INITIALIZATION
@@ -91,8 +98,14 @@ public class KMeansGlb {
         }
 
         // Second additional step: we distribute the chunks evenly across hosts
-        PointDistribution.makeFlatDistribution(points); // TODO improve with switch(option)
-
+        switch (arguments.distribution) {
+        case "triangle":
+            PointDistribution.makeTriangleDistribution(points);
+            break;
+        case "flat":
+        default:
+            PointDistribution.makeFlatDistribution(points);
+        }
         // Third additional step, we convert the list of initial centroids to a 2Darray
         // of double
         final double[][] initialClusterCenter = new double[k][dimension];
@@ -127,20 +140,23 @@ public class KMeansGlb {
                 clusterCentroids = closestPoint.closestPointCoordinates;
 
                 final long iterEnd = System.nanoTime();
-                System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
-                        + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
-                        + (iterEnd - avgFinished) / 1e6);
+                System.out.println(
+                        "Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + (assignFinished - iterStart) / 1e6
+                                + "; " + (avgFinished - assignFinished) / 1e6 + "; " + (iterEnd - avgFinished) / 1e6);
             }
         });
 
-    }
+        if (System.getProperties().contains(GLB_LOG_FILE)) {
+            final String fileName = System.getProperty(GLB_LOG_FILE);
+            final DistLog log = GlobalLoadBalancer.getPreviousLog();
+            final SavedLog sLog = new SavedLog(log);
+            try {
+                sLog.saveToFile(new File(fileName));
+            } catch (final IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-    /**
-     * Prints usage onto standard error output
-     */
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.kmenas.KMeans "
-                + "<point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of chunks> [<seed>]");
     }
 
     /**

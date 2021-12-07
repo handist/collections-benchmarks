@@ -100,6 +100,7 @@ public class KMeansNoGlb implements Serializable {
         final int dataSize = chunkSize * chunkCount;
         final long seed = arguments.seed;
 
+        System.err.println("Main class " + KMeansNoGlb.class.getCanonicalName());
         System.err.println("Arguments received were " + Arrays.toString(args));
 
         // INITIALIZATION
@@ -176,7 +177,7 @@ public class KMeansNoGlb implements Serializable {
 
                 final long iterEnd = System.nanoTime();
                 if (world.rank() == 0) {
-                    System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + "; "
+                    System.out.println("Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; "
                             + (assignFinished - iterStart) / 1e6 + "; " + (avgFinished - assignFinished) / 1e6 + "; "
                             + (iterEnd - avgFinished) / 1e6);
                 }
