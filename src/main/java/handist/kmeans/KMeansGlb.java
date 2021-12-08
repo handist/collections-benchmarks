@@ -18,6 +18,9 @@ import handist.collections.util.SavedLog;
 public class KMeansGlb {
 
     private static final String GLB_LOG_FILE = "kmeans.logfile";
+    private static final String RESET_PERIOD = "kmeans.reset";
+
+    private static final int resetPeriod = Integer.parseInt(System.getProperty(RESET_PERIOD, "-1"));
 
     /**
      * Euclidean distance calculation between n-dimensional coordinates. The square
@@ -122,7 +125,9 @@ public class KMeansGlb {
         // ITERATIONS OF THE K-MEANS ALGORITHM
         GlobalLoadBalancer.underGLB(() -> {
             double[][] clusterCentroids = initialClusterCenter;
+            int resetCounter = 0;
             for (int iter = 0; iter < repetitions; iter++) {
+                resetCounter++;
                 final long iterStart = System.nanoTime();
                 final double[][] centroids = clusterCentroids;
                 // Assign each point to a cluster
@@ -143,6 +148,11 @@ public class KMeansGlb {
                 System.out.println(
                         "Iter " + iter + "; " + (iterEnd - iterStart) / 1e6 + "; " + (assignFinished - iterStart) / 1e6
                                 + "; " + (avgFinished - assignFinished) / 1e6 + "; " + (iterEnd - avgFinished) / 1e6);
+
+                if (resetCounter == resetPeriod) {
+                    GlobalLoadBalancer.reset(); // EXPERIMENTAL FEATURE, FOR EXPERIMENT PURPOSES
+                    resetCounter = 0;
+                }
             }
         });
 
