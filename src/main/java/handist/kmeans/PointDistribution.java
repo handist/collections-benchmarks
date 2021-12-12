@@ -62,4 +62,24 @@ public class PointDistribution {
             mm.sync();
         });
     }
+
+    public static void strongScalingTriangleDistribution(DistChunkedList<?> distCol) throws Exception {
+        final TeamedPlaceGroup world = distCol.placeGroup();
+        final CollectiveMoveManager mm = new CollectiveMoveManager(world);
+        final int hostCount = world.size();
+        int destinationHost = 0;
+        int tBound = hostCount;
+        for (final LongRange lr : distCol.ranges()) {
+            distCol.moveRangeAtSync(lr, world.places().get(destinationHost++), mm);
+            // The following if's are here to make a triangular distribution
+            if (destinationHost == tBound) {
+                destinationHost = 0;
+                tBound--;
+                if (tBound == 0) {
+                    tBound = hostCount;
+                }
+            }
+        }
+        mm.sync();
+    }
 }
