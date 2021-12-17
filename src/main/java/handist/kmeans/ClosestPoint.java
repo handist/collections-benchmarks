@@ -1,13 +1,13 @@
-package handist.noglb.kmeans;
+package handist.kmeans;
 
 import handist.collections.dist.Reducer;
 
-final class ClosestPoint extends Reducer<ClosestPoint, Point> {
+final public class ClosestPoint extends Reducer<ClosestPoint, Point> {
 
     /** Serial Version UID */
     private static final long serialVersionUID = -5053187857859985586L;
 
-    final double[][] closestPointCoordinates;
+    public final double[][] closestPointCoordinates;
     final double[][] clusterAverage;
     final double[] distanceToAverage;
 
@@ -46,7 +46,7 @@ final class ClosestPoint extends Reducer<ClosestPoint, Point> {
 
     @Override
     public void reduce(Point input) {
-        final double distance = KMeans.distance(input.position, clusterAverage[input.clusterAssignment]);
+        final double distance = KMeansGlb.distance(input.position, clusterAverage[input.clusterAssignment]);
         if (distance < distanceToAverage[input.clusterAssignment]) {
             distanceToAverage[input.clusterAssignment] = distance;
             for (int n = 0; n < input.position.length; n++) {

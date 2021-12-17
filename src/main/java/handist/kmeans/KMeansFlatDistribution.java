@@ -1,6 +1,6 @@
 package handist.kmeans;
 
-import static handist.kmeans.KMeans.*;
+import static handist.kmeans.KMeansGlb.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,10 +20,8 @@ import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
 import handist.collections.util.SavedLog;
-import handist.kmeans.KMeans.AveragePosition;
-import handist.kmeans.KMeans.ClosestPoint;
-import handist.kmeans.KMeans.Point;
 
+@Deprecated
 public class KMeansFlatDistribution {
 
     public static void main(String[] args) {

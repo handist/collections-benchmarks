@@ -1,6 +1,6 @@
 package handist.kmeans;
 
-import static handist.kmeans.KMeans.*;
+import static handist.kmeans.KMeansGlb.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,9 +11,6 @@ import handist.collections.Chunk;
 import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.glb.Config;
-import handist.kmeans.KMeans.AveragePosition;
-import handist.kmeans.KMeans.ClosestPoint;
-import handist.kmeans.KMeans.Point;
 
 public class KMeansSequential {
 

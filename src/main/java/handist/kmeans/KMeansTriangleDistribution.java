@@ -1,6 +1,6 @@
 package handist.kmeans;
 
-import static handist.kmeans.KMeans.*;
+import static handist.kmeans.KMeansGlb.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,17 +13,14 @@ import apgas.Constructs;
 import apgas.Place;
 import handist.collections.Chunk;
 import handist.collections.LongRange;
-import handist.collections.dist.CollectiveMoveManager;
 import handist.collections.dist.DistChunkedList;
 import handist.collections.dist.DistLog;
 import handist.collections.dist.TeamedPlaceGroup;
 import handist.collections.glb.Config;
 import handist.collections.glb.GlobalLoadBalancer;
 import handist.collections.util.SavedLog;
-import handist.kmeans.KMeans.AveragePosition;
-import handist.kmeans.KMeans.ClosestPoint;
-import handist.kmeans.KMeans.Point;
 
+@Deprecated
 public class KMeansTriangleDistribution {
 
     public static void main(String[] args) {
@@ -83,26 +80,8 @@ public class KMeansTriangleDistribution {
             points.add(c);
         }
 
-        // Second additional step: we distribute the chunks evenly across hosts
-        final TeamedPlaceGroup world = TeamedPlaceGroup.getWorld();
-        world.broadcastFlat(() -> {
-            final CollectiveMoveManager mm = new CollectiveMoveManager(world);
-            final int hostCount = world.size();
-            int destinationHost = 0;
-            int tBound = hostCount;
-            for (final LongRange lr : points.ranges()) {
-                points.moveRangeAtSync(lr, world.get(destinationHost++), mm);
-                // The following if's are here to make a triangular distribution
-                if (destinationHost == tBound) {
-                    destinationHost = 0;
-                    tBound--;
-                    if (tBound == 0) {
-                        tBound = hostCount;
-                    }
-                }
-            }
-            mm.sync();
-        });
+        // We distribute the points in a triangular pattern
+        PointDistribution.makeTriangleDistribution(points);
 
         // Third additional step, we convert the list of initial centroids to a 2Darray
         // of double
