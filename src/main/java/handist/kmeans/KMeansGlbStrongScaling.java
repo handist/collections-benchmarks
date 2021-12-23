@@ -114,9 +114,6 @@ public class KMeansGlbStrongScaling {
             default:
                 // Is already a flat distribution
             }
-            for (final LongRange lr : points.ranges()) {
-                System.err.println(world.rank() + " " + lr);
-            }
         });
         // Third additional step, we convert the list of initial centroids to a 2Darray
         // of double
@@ -129,7 +126,7 @@ public class KMeansGlbStrongScaling {
 
         final long initEnd = System.nanoTime();
 
-        System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
+        System.err.println("Init(s); " + (initEnd - initStart) / 1e9);
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
         GlobalLoadBalancer.underGLB(() -> {
@@ -164,6 +161,8 @@ public class KMeansGlbStrongScaling {
                 }
             }
         });
+        final long totalComputationTime = System.nanoTime() - initEnd;
+        System.err.println("ComputationTime(s); " + totalComputationTime / 1e9);
 
         if (System.getProperties().contains(GLB_LOG_FILE)) {
             final String fileName = System.getProperty(GLB_LOG_FILE);
