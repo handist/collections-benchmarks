@@ -135,9 +135,6 @@ public class KMeansNoGlbStrongScaling implements Serializable {
             default:
                 // Is already a flat distribution
             }
-            for (final LongRange lr : points.ranges()) {
-                System.err.println(world.rank() + " " + lr);
-            }
         });
 
         // We convert the list of initial centroids to a 2Darray of double
@@ -150,7 +147,7 @@ public class KMeansNoGlbStrongScaling implements Serializable {
 
         final long initEnd = System.nanoTime();
 
-        System.out.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
+        System.err.println("Init; " + (initEnd - initStart) / 1e6 + " ms");
 
         // ITERATIONS OF THE K-MEANS ALGORITHM
         world.broadcastFlat(() -> {
@@ -191,6 +188,8 @@ public class KMeansNoGlbStrongScaling implements Serializable {
                 }
             }
         });
+        final long totalComputationTime = System.nanoTime() - initEnd;
+        System.err.println("ComputationTime(s); " + totalComputationTime / 1e9);
 
         // The program has completed.
         // If required, we dump some more complete output on a specified file
