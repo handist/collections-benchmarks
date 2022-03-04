@@ -239,7 +239,7 @@ public class KMeansNoGlb implements Serializable {
     }
 
     /**
-     * Subroutine used to print on one line the elapsed time between the stamps
+     * Subroutine used to print on prl line the elapsed time between the stamps
      * contained in the arrays passed as parameters. Both arrays should be of the
      * same size so that pairs can be computed without reaching an
      * {@link ArrayIndexOutOfBoundsException}
