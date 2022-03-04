@@ -39,8 +39,9 @@ import handist.collections.ChunkedList;
 import handist.collections.LongRange;
 import handist.collections.RangedList;
 import handist.collections.RangedListProduct;
+import handist.collections.accumulator.Accumulator;
+import handist.collections.accumulator.Accumulator.ThreadLocalAccumulator;
 import handist.collections.accumulator.AccumulatorCompleteRange;
-import handist.collections.accumulator.ThreadLocalAccumulator;
 import handist.collections.dist.Reducer;
 import mpi.MPIException;
 
@@ -258,93 +259,8 @@ public class MoldynSeqMT implements Serializable {
 
     private static final boolean DEBUG = false;
 
-    public static void main(String[] args) throws IOException {
-        if (args.length != 3) {
-            printUsage();
-            return;
-        }
-        final int problemSize = Integer.parseInt(args[0]);
-        final int divides = Integer.parseInt(args[1]);
-        final int workers = Integer.parseInt(args[2]);
-
-        try {
-            final MoldynSeqMT m0 = new MoldynSeqMT();
-            System.err.println("start warmup for " + m0.warmup + " times");
-            m0.Ndivide = divides;
-            m0.Nworkers = workers;
-            for (int i = 0; i < m0.warmup; i++) {
-                System.err.println("##################################################");
-                System.err.println("warmup " + (i + 1) + "/" + m0.warmup);
-                m0.initialise(datasizes[0]);
-                m0.runiters();
-                m0.tidyup();
-            }
-            final MoldynSeqMT m = new MoldynSeqMT();
-            m.Ndivide = divides;
-            m.Nworkers = workers;
-            System.err.println("start main for " + m.mainLoop + " times");
-            for (int i = 0; i < m.mainLoop; i++) {
-                System.err.println("##################################################");
-                System.err.println("main run");
-                m.initialise(datasizes[problemSize]);
-                final long start = System.nanoTime();
-                m.runiters();
-                final long end = System.nanoTime();
-                m.validate(problemSize);
-                System.err.println("############## handist MoldynSeqMT time: " + (end - start) / 1.0e9);
-                m.tidyup();
-                m.printResult((end - start) / 1.0e9);
-            }
-        } catch (final MultipleException me) {
-            me.printStackTrace();
-        }
-    }
-
-    private static void printUsage() {
-        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
-                + "<data size index(0or1)> <number of divide> <number of workers>");
-    }
-
-    final double den = 0.83134;
-    final double tref = 0.722;
-    final double h = 0.064;
-
-    public LongRange allRange;
-    public Chunk<Particle> one;
-    public ChunkedList<Particle> oneX;
-
-    public int nprocess;
-    public int nchunks;
-
-    int mdsize; // number of particles
-    int ijk, i, j, k, lg, move; // iteration variables
-    double rcoff, rcoffs, side, sideh, hsq, hsq2;
-    double r, tscale, sc, ek;
-    double vaver, vaverh;
-    double etot, temp, pres, rp; // results(total energy/temperature/pressure/???)
-
-    int irep = 10;
-    int istop = 19;
-    int iprint = 10;
-    int movemx = 50;
-    int warmup = 2;
-    int mainLoop = 4;
-
-    int Nworkers;
-    int Ndivide;
-
-    Random randnum;
-    transient ThreadLocalAccumulator<Particle, Sp> myAcc;
-
-    transient double domove_ns, reduce_ns, others_ns; // timer
-    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
-
-    private void debugPrint() {
-        System.err.println(one.get(0));
-        System.err.println("ekin:" + ekin + "/epot:" + epot);
-    }
-
-    private void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff, LocalStatics s) {
+    private static void force1(Particle p0, RangedList<Particle> pairs, double side, double rcoff,
+            ThreadLocalAccumulator<Sp> tla, LocalStatics s) {
         double sideh;
         double rcoffs;
 
@@ -363,8 +279,8 @@ public class MoldynSeqMT implements Serializable {
         fyi = 0.0;
         fzi = 0.0;
 
-        final RangedList<Sp> fs = myAcc.acquire(pairs.getRange()).subList1(pairs.getRange()); // FIXME : change not to
-                                                                                              // use sublist
+        final ChunkedList<Sp> fs = tla.acquire(pairs.getRange());
+
         final Iterator<Sp> fiterator = fs != null ? fs.iterator() : null;
         double vir0 = 0.0, epot0 = 0.0;
         int inters0 = 0;
@@ -429,6 +345,93 @@ public class MoldynSeqMT implements Serializable {
             p0.zforce = p0.zforce + fzi;
         }
 
+    }
+
+    public static void main(String[] args) throws IOException {
+        if (args.length != 3) {
+            printUsage();
+            return;
+        }
+        final int problemSize = Integer.parseInt(args[0]);
+        final int divides = Integer.parseInt(args[1]);
+        final int workers = Integer.parseInt(args[2]);
+
+        try {
+            final MoldynSeqMT m0 = new MoldynSeqMT();
+            System.err.println("start warmup for " + m0.warmup + " times");
+            m0.Ndivide = divides;
+            m0.Nworkers = workers;
+            for (int i = 0; i < m0.warmup; i++) {
+                System.err.println("##################################################");
+                System.err.println("warmup " + (i + 1) + "/" + m0.warmup);
+                m0.initialise(datasizes[0]);
+                m0.runiters();
+                m0.tidyup();
+            }
+            final MoldynSeqMT m = new MoldynSeqMT();
+            m.Ndivide = divides;
+            m.Nworkers = workers;
+            System.err.println("start main for " + m.mainLoop + " times");
+            for (int i = 0; i < m.mainLoop; i++) {
+                System.err.println("##################################################");
+                System.err.println("main run");
+                m.initialise(datasizes[problemSize]);
+                final long start = System.nanoTime();
+                m.runiters();
+                final long end = System.nanoTime();
+                m.validate(problemSize);
+                System.err.println("############## handist MoldynSeqMT time: " + (end - start) / 1.0e9);
+                m.tidyup();
+                m.printResult((end - start) / 1.0e9);
+            }
+        } catch (final MultipleException me) {
+            me.printStackTrace();
+        }
+    }
+
+    private static void printUsage() {
+        System.err.println("Usage: java -cp [...] handist.moldyn.MoldynSeqMT "
+                + "<data size index(0or1)> <number of divide> <number of workers>");
+    }
+
+    final double den = 0.83134;
+    final double tref = 0.722;
+
+    final double h = 0.064;
+    public LongRange allRange;
+    public Chunk<Particle> one;
+
+    public ChunkedList<Particle> oneX;
+    public int nprocess;
+
+    public int nchunks;
+    int mdsize; // number of particles
+    int ijk, i, j, k, lg, move; // iteration variables
+    double rcoff, rcoffs, side, sideh, hsq, hsq2;
+    double r, tscale, sc, ek;
+    double vaver, vaverh;
+
+    double etot, temp, pres, rp; // results(total energy/temperature/pressure/???)
+    int irep = 10;
+    int istop = 19;
+    int iprint = 10;
+    int movemx = 50;
+    int warmup = 2;
+
+    int mainLoop = 4;
+    int Nworkers;
+
+    int Ndivide;
+    Random randnum;
+
+    transient Accumulator<Sp> myAcc;
+    transient double domove_ns, reduce_ns, others_ns; // timer
+
+    transient double forceSplit_ns, forceCalc_ns, forceMerge_ns; // timer
+
+    private void debugPrint() {
+        System.err.println(one.get(0));
+        System.err.println("ekin:" + ekin + "/epot:" + epot);
     }
 
     public void initialise(final int mm) {
@@ -557,13 +560,6 @@ public class MoldynSeqMT implements Serializable {
         oneX.add(one);
         myAcc = new AccumulatorCompleteRange<>(oneX, (Long index) -> {
             return new Sp();
-        }, (Particle particle, Sp sp) -> {
-            particle.xforce += sp.x;
-            sp.x = 0;
-            particle.yforce += sp.y;
-            sp.y = 0;
-            particle.zforce += sp.z;
-            sp.z = 0;
         });
         move = 0;
         double start, end;
@@ -589,21 +585,26 @@ public class MoldynSeqMT implements Serializable {
 
             // split but sequential exec
             start = System.nanoTime();
-            final List<List<RangedListProduct<Particle, Particle>>> prodsX = new RangedListProduct<>(one, one, true)
-                    .splitN(Ndivide, Ndivide, Nworkers, false);
+            final List<List<RangedListProduct<Particle, Particle>>> prodsX = RangedListProduct
+                    .newProductTriangle(one, one).splitN(Ndivide, Ndivide, Nworkers, false);
+//            final RangedListProduct<Particle, Particle> prodsX = RangedListProduct.newProductTriangle(prl, prl)
+//                    .split(Ndivide, Ndivide); // TODO convert split to return a RangedListProduct.
             end = System.nanoTime();
+            final List<ThreadLocalAccumulator<Sp>> accs = myAcc.obtainThreadLocalAccumulators(Nworkers);
             forceSplit_ns += (end - start);
 
             start = System.nanoTime();
             final List<LocalStatics> lss = new ArrayList<>();
             finish(() -> {
+                int accIndex = 0;
                 for (final List<RangedListProduct<Particle, Particle>> prods : prodsX) {
                     final LocalStatics ls = new LocalStatics();
+                    final ThreadLocalAccumulator<Sp> tla = accs.get(accIndex++);
                     lss.add(ls);
                     async(() -> {
                         for (final RangedListProduct<Particle, Particle> prod : prods) {
                             prod.forEachRow((Particle p1, RangedList<Particle> pairs) -> {
-                                force1(p1, pairs, side, rcoff, ls);
+                                force1(p1, pairs, side, rcoff, tla, ls);
                             });
                         }
                     });
@@ -613,7 +614,14 @@ public class MoldynSeqMT implements Serializable {
             forceCalc_ns += (end - start);
 
             start = System.nanoTime();
-            myAcc.parallelMerge(Nworkers);
+            oneX.parallelAccept(Nworkers, myAcc, (Particle particle, Sp sp) -> {
+                particle.xforce += sp.x;
+                sp.x = 0;
+                particle.yforce += sp.y;
+                sp.y = 0;
+                particle.zforce += sp.z;
+                sp.z = 0;
+            });
             for (final LocalStatics ls : lss) {
                 epot += ls.epot;
                 vir += ls.vir;

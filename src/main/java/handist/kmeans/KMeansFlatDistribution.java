@@ -166,7 +166,7 @@ public class KMeansFlatDistribution {
         System.err.println("Usage: java -cp [...] " + KMeansFlatDistribution.class.getCanonicalName()
                 + " <point dimension> <nb of clusters \"k\"> <repetitions> <chunk size> <number of points> <log file> [seed]");
         System.err.println(
-                "This version of the KMeans benchmark purposely makes a triangular distribution instead of a flat one.");
+                "This version of the KMeans benchmark purposely makes a triangular distribution instead of a flat prl.");
         System.err.println(
                 "This is used to test the capabilities of our GLB system to relocated entries to balance the load.");
     }

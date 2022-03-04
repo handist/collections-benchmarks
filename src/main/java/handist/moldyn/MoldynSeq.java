@@ -382,7 +382,7 @@ public class MoldynSeq implements Serializable {
 
         /* Particle Generation */
         allRange = new LongRange(0, mdsize);
-        // one = new ChunkedList<>();
+        // prl = new ChunkedList<>();
         one = new Chunk<>(allRange);
 
         final double a = side / mm;

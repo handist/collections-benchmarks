@@ -32,7 +32,7 @@ final public class ClosestPoint extends Reducer<ClosestPoint, Point> {
         for (int k = 0; k < distanceToAverage.length; k++) {
             // Check if "reducer" found a closer point than this instance
             if (reducer.distanceToAverage[k] < distanceToAverage[k]) {
-                // The reducer has a point closer than the one held by this instance
+                // The reducer has a point closer than the prl held by this instance
                 closestPointCoordinates[k] = reducer.closestPointCoordinates[k];
                 distanceToAverage[k] = reducer.distanceToAverage[k];
             }
